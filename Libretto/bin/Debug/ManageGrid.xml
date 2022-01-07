@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ManageGrid</name>
+    </assembly>
+    <members>
+        <member name="T:ManageGrid.PopulateGrid">
+            <summary>
+            Classe per la manipolazione di un oggetto DataGridView
+            </summary>
+        </member>
+        <member name="M:ManageGrid.PopulateGrid.#ctor(System.Windows.Forms.DataGridView,System.Data.DataTable)">
+            <summary>
+            Costruttore della classe a cui passere un oggetto DatagridView
+            ed un oggetto DataTable
+            </summary>
+            <param name="gridview">DataGridView, oggetto inserito nel form</param>
+            <param name="table">DataTable, tabella di gestione dei dati</param>
+        </member>
+        <member name="M:ManageGrid.PopulateGrid.#ctor(System.Windows.Forms.DataGridView)">
+            <summary>
+            Costruttore della classe a cui passere un oggetto DatagridView
+            </summary>
+            <param name="gridview">DataGridView, oggetto inserito nel form</param>
+        </member>
+        <member name="P:ManageGrid.PopulateGrid.path">
+            <summary>
+            Setter per definire il percorso di lettura del file XML degli errori
+            </summary>
+        </member>
+        <member name="P:ManageGrid.PopulateGrid.father">
+            <summary>
+            setter per definire il nodo padre
+            </summary>
+        </member>
+        <member name="P:ManageGrid.PopulateGrid.feature">
+            <summary>
+            Setter per definire l' attributo
+            </summary>
+        </member>
+        <member name="M:ManageGrid.PopulateGrid.inserisci(System.Int32,System.Collections.Generic.List{System.String})">
+            <summary>
+            Metodo void per inserire elementi nel DataGridView
+            </summary>
+            <param name="Ncol">integer, numero di colonne della tabella</param>
+            <param name="elements">list(string), lista di dati da inserire in tabella</param>
+        </member>
+        <member name="M:ManageGrid.PopulateGrid.mouveUp">
+            <summary>
+            Permette di spostare una riga verso l'alto
+            </summary>
+        </member>
+        <member name="M:ManageGrid.PopulateGrid.mouveDown">
+            <summary>
+            Permette di spostare una riga verso il basso
+            </summary>
+        </member>
+        <member name="M:ManageGrid.PopulateGrid.deleterow">
+            <summary>
+            Metodo per eliminare una riga dalla tabella
+            </summary>
+        </member>
+        <member name="T:ManageGrid.Searching">
+            <summary>
+            Classe per la ricerca di righe in una DataGridView
+            </summary>
+        </member>
+        <member name="M:ManageGrid.Searching.#ctor(System.Windows.Forms.DataGridView,System.Data.DataTable,System.Windows.Forms.TextBox)">
+            <summary>
+            Costruttore specifico per mpfa20
+            </summary>
+            <param name="grd">DatagridView dove fare la ricerca</param>
+            <param name="table">Tabella contenente i dati</param>
+            <param name="txtSearchVoice">Textbox con il testo da cercare</param>
+        </member>
+        <member name="M:ManageGrid.Searching.searchingRow(System.Int32)">
+            <summary>
+            Metodo specifico per mpfa20, cerca nella colonna specificata,evidenzia la riga trovata
+            </summary>
+            <param name="column">Numero della colonna in cui cercare</param>
+        </member>
+    </members>
+</doc>

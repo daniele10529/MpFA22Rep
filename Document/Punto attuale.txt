@@ -1,0 +1,4 @@
+refactoring del codice
+setting valori di compilazione e icone
+deployment
+test finale

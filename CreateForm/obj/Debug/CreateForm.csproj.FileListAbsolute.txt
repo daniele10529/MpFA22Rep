@@ -1,0 +1,9 @@
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\Lib\CreateForm.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\Lib\CreateForm.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\CreateForm\obj\Debug\CreateForm.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\CreateForm\obj\Debug\CreateForm.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Lib\CreateForm.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Lib\CreateForm.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\CreateForm\obj\Debug\CreateForm.csprojResolveAssemblyReference.cache
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\CreateForm\obj\Debug\CreateForm.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\CreateForm\obj\Debug\CreateForm.pdb

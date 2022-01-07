@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<string>
+  <strconnect>server=localhost;user id=root;database=mpfa20;port=3306;SslMode=none</strconnect>
+</string>

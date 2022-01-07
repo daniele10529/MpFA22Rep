@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Connection</name>
+    </assembly>
+    <members>
+        <member name="T:Connection.Connecting">
+            <summary>
+            Namespace con la classe per la connessione al database
+            </summary>
+        </member>
+        <member name="M:Connection.Connecting.#ctor(System.String)">
+            <summary>
+            Costruttore della classe a cui passare la stringa di connsessione
+            </summary>
+            <param name="stringaConnessione">stringa di connessione</param>
+        </member>
+        <member name="M:Connection.Connecting.connection">
+            <summary>
+            Metodo per aprire una connessione al DB
+            </summary>
+            <returns>MySqlConnection, restituisce una connessione aperta</returns>
+        </member>
+        <member name="M:Connection.Connecting.command(MySql.Data.MySqlClient.MySqlConnection)">
+            <summary>
+            Metodo che restituisce un oggetto MysqlCommand che permette
+            di eseguire query
+            </summary>
+            <param name="conn">MySqlConnection, connessione aperta</param>
+            <returns>MySqlCommand, restituisce un comando aperto</returns>
+        </member>
+        <member name="M:Connection.Connecting.reader(MySql.Data.MySqlClient.MySqlConnection,System.String)">
+            <summary>
+            Metodo per la restituzione di un oggetto MySqlReader che contiene
+            i risultati di una query
+            </summary>
+            <param name="conn">MySqlConnection, connessione aperta</param>
+            <param name="query">string, query da eseguire</param>
+            <returns>MySqlReader, oggetto restituito con l'arrey di lettura</returns>
+        </member>
+        <member name="M:Connection.Connecting.reader(MySql.Data.MySqlClient.MySqlCommand,System.String)">
+            <summary>
+            Polimorfismo del metodo, restituisce un oggetto MysqlReader con il risultato
+            della query
+            </summary>
+            <param name="command">MysqlCommand, comando aperto</param>
+            <param name="query">string, query da eseguire</param>
+            <returns>MysqlReader, oggetto restituito con l'arrey di lettura</returns>
+        </member>
+    </members>
+</doc>

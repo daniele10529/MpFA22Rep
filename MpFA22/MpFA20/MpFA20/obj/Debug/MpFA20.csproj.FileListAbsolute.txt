@@ -1,0 +1,16 @@
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\bin\Debug\MpFA20.exe.config
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\bin\Debug\MpFA20.exe
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\bin\Debug\MpFA20.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\bin\Debug\LeaderProcess.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\bin\Debug\Newtonsoft.Json.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\bin\Debug\ReadXML.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\bin\Debug\LeaderProcess.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\bin\Debug\Newtonsoft.Json.xml
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\bin\Debug\ReadXML.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\bin\Debug\ReadXML.xml
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\obj\Debug\MpFA20.csprojResolveAssemblyReference.cache
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\obj\Debug\MpFA20.frmMain.resources
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\obj\Debug\MpFA20.Properties.Resources.resources
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\obj\Debug\MpFA20.csproj.GenerateResource.Cache
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\obj\Debug\MpFA20.exe
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\MpFA20\MpFA20\MpFA20\obj\Debug\MpFA20.pdb

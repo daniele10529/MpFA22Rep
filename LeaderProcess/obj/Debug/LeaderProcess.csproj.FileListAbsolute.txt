@@ -1,0 +1,8 @@
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\Lib\LeaderProcess.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\Lib\LeaderProcess.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\LeaderProcess\obj\Debug\LeaderProcess.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\LeaderProcess\obj\Debug\LeaderProcess.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Lib\LeaderProcess.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Lib\LeaderProcess.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\LeaderProcess\obj\Debug\LeaderProcess.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\LeaderProcess\obj\Debug\LeaderProcess.pdb

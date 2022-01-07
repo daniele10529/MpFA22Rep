@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AACA2038-EB0A-42D2-97DA-0D3AA666F907}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SpeseAnnuali</RootNamespace>
+    <AssemblyName>SpeseAnnuali</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Spese-Annuali.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Checking, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Checking.dll</HintPath>
+    </Reference>
+    <Reference Include="Connection, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Connection.dll</HintPath>
+    </Reference>
+    <Reference Include="CreateForm">
+      <HintPath>..\..\Lib\CreateForm.dll</HintPath>
+    </Reference>
+    <Reference Include="GenericModelData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\GenericModelData.dll</HintPath>
+    </Reference>
+    <Reference Include="LeaderProcess">
+      <HintPath>..\..\Lib\LeaderProcess.dll</HintPath>
+    </Reference>
+    <Reference Include="ManageGrid, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ManageGrid\ManageGrid\ManageGrid\bin\Debug\ManageGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="MenuGenerator">
+      <HintPath>..\..\Lib\MenuGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="ReadXML, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ReadXML.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contabilita.cs" />
+    <Compile Include="frmSpeseAnnuali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSpeseAnnuali.Designer.cs">
+      <DependentUpon>frmSpeseAnnuali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModify.Designer.cs">
+      <DependentUpon>frmModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetting.Designer.cs">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmSpeseAnnuali.resx">
+      <DependentUpon>frmSpeseAnnuali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModify.resx">
+      <DependentUpon>frmModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetting.resx">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nuovo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elimina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Carica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elimina1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggiorna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Su.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Carica1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Su1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Carica2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inserisci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggiorna1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggiorna2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Impostazioni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Impostazioni2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Start setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spese Annuali.png" />
+    <None Include="Resources\Conto Corrente.png" />
+    <None Include="Resources\PPLibretto.png" />
+    <None Include="Resources\Mantenimento.png" />
+    <Content Include="Spese-Annuali.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
