@@ -5,7 +5,7 @@ using LeaderProcess;
 namespace MpFA20
 {
     /// <summary>
-    /// Modulo principale del software MpFA22
+    /// Modulo principale del software MpFA22 V3.5
     /// </summary>
     public partial class frmMain : Form
     {
