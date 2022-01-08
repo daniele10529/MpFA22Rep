@@ -63,7 +63,7 @@ namespace DumpExec
                 }
 
                 //connessione al DB essenziale per il dump attraverso la classe  MySqlBackup
-                ReaderXML readerxml = new ReaderXML(@"C:\MpFA22\StrConnection\StringConnection.xml", "string");
+                ReaderXML readerxml = new ReaderXML(@"C:\MpFA22\StrConnect\strConnect.xml", "string");
                 stringConnection = readerxml.readNode("strconnect");
                 Connecting connecting = new Connecting(stringConnection);
                
