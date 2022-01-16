@@ -243,6 +243,16 @@ namespace SpeseAnnuali.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Postpay2 {
+            get {
+                object obj = ResourceManager.GetObject("Postpay2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PPLibretto {
             get {
                 object obj = ResourceManager.GetObject("PPLibretto", resourceCulture);
@@ -296,6 +306,16 @@ namespace SpeseAnnuali.Properties {
         internal static System.Drawing.Bitmap Start_setting {
             get {
                 object obj = ResourceManager.GetObject("Start setting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Start_setting2 {
+            get {
+                object obj = ResourceManager.GetObject("Start setting2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

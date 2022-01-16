@@ -36,43 +36,28 @@
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.pgHome = new System.Windows.Forms.TabPage();
             this.grpExit = new System.Windows.Forms.GroupBox();
-            this.btnExit = new System.Windows.Forms.Button();
             this.gprSave = new System.Windows.Forms.GroupBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.gprYears = new System.Windows.Forms.GroupBox();
-            this.btnLoadYears = new System.Windows.Forms.Button();
             this.pgInsert = new System.Windows.Forms.TabPage();
             this.grpSave2 = new System.Windows.Forms.GroupBox();
-            this.btnSaveData = new System.Windows.Forms.Button();
             this.grpInsert = new System.Windows.Forms.GroupBox();
             this.btnSetOftenValue = new System.Windows.Forms.Button();
             this.txtDay = new System.Windows.Forms.TextBox();
             this.lblGiorno = new System.Windows.Forms.Label();
-            this.btnInsert = new System.Windows.Forms.Button();
             this.txtImport = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtCause = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.pgModify = new System.Windows.Forms.TabPage();
             this.grpSaveThree = new System.Windows.Forms.GroupBox();
-            this.btnSaveThree = new System.Windows.Forms.Button();
             this.grpModiryrow = new System.Windows.Forms.GroupBox();
-            this.btnModifyRow = new System.Windows.Forms.Button();
             this.grpMove = new System.Windows.Forms.GroupBox();
-            this.btnDown = new System.Windows.Forms.Button();
-            this.btnUp = new System.Windows.Forms.Button();
             this.grpDeleteRow = new System.Windows.Forms.GroupBox();
-            this.btnDeleteRow = new System.Windows.Forms.Button();
             this.pgSearch = new System.Windows.Forms.TabPage();
             this.grpSearch = new System.Windows.Forms.GroupBox();
             this.txtSearchVoice = new System.Windows.Forms.TextBox();
             this.pgModules = new System.Windows.Forms.TabPage();
-            this.btnMantenimento = new System.Windows.Forms.Button();
-            this.btnLibretto = new System.Windows.Forms.Button();
-            this.btnContoCorrente = new System.Windows.Forms.Button();
-            this.btnSpeseAnnuali = new System.Windows.Forms.Button();
             this.pnlTree = new System.Windows.Forms.Panel();
-            this.btnLoadYears2 = new System.Windows.Forms.Button();
             this.treeYears = new System.Windows.Forms.TreeView();
             this.pnlGrd = new System.Windows.Forms.Panel();
             this.grdMonthVoices = new System.Windows.Forms.DataGridView();
@@ -89,6 +74,22 @@
             this.txtBalanceST = new System.Windows.Forms.TextBox();
             this.lblSaldoIni = new System.Windows.Forms.Label();
             this.txtYearMonth = new System.Windows.Forms.TextBox();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnLoadYears2 = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnLoadYears = new System.Windows.Forms.Button();
+            this.btnSaveData = new System.Windows.Forms.Button();
+            this.btnSaveThree = new System.Windows.Forms.Button();
+            this.btnModifyRow = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.btnDeleteRow = new System.Windows.Forms.Button();
+            this.btnPostPay = new System.Windows.Forms.Button();
+            this.btnMantenimento = new System.Windows.Forms.Button();
+            this.btnLibretto = new System.Windows.Forms.Button();
+            this.btnContoCorrente = new System.Windows.Forms.Button();
+            this.btnSpeseAnnuali = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.pgHome.SuspendLayout();
@@ -164,19 +165,6 @@
             this.grpExit.TabStop = false;
             this.grpExit.Text = "Esci";
             // 
-            // btnExit
-            // 
-            this.btnExit.BackgroundImage = global::ContoCorrente.Properties.Resources.Exit;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.Green;
-            this.btnExit.Location = new System.Drawing.Point(19, 25);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(59, 44);
-            this.btnExit.TabIndex = 15;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // gprSave
             // 
             this.gprSave.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -189,19 +177,6 @@
             this.gprSave.TabStop = false;
             this.gprSave.Text = "Salva";
             // 
-            // btnSave
-            // 
-            this.btnSave.BackgroundImage = global::ContoCorrente.Properties.Resources.Salva;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.Green;
-            this.btnSave.Location = new System.Drawing.Point(12, 25);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(55, 44);
-            this.btnSave.TabIndex = 11;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // gprYears
             // 
             this.gprYears.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -213,19 +188,6 @@
             this.gprYears.TabIndex = 6;
             this.gprYears.TabStop = false;
             this.gprYears.Text = "Anni";
-            // 
-            // btnLoadYears
-            // 
-            this.btnLoadYears.BackgroundImage = global::ContoCorrente.Properties.Resources.Aggiorna;
-            this.btnLoadYears.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLoadYears.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadYears.ForeColor = System.Drawing.Color.Green;
-            this.btnLoadYears.Location = new System.Drawing.Point(6, 21);
-            this.btnLoadYears.Name = "btnLoadYears";
-            this.btnLoadYears.Size = new System.Drawing.Size(112, 48);
-            this.btnLoadYears.TabIndex = 9;
-            this.btnLoadYears.UseVisualStyleBackColor = true;
-            this.btnLoadYears.Click += new System.EventHandler(this.btnLoadYears_Click);
             // 
             // pgInsert
             // 
@@ -250,19 +212,6 @@
             this.grpSave2.TabIndex = 22;
             this.grpSave2.TabStop = false;
             this.grpSave2.Text = "Salva";
-            // 
-            // btnSaveData
-            // 
-            this.btnSaveData.BackgroundImage = global::ContoCorrente.Properties.Resources.Salva;
-            this.btnSaveData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveData.ForeColor = System.Drawing.Color.Green;
-            this.btnSaveData.Location = new System.Drawing.Point(12, 25);
-            this.btnSaveData.Name = "btnSaveData";
-            this.btnSaveData.Size = new System.Drawing.Size(55, 44);
-            this.btnSaveData.TabIndex = 23;
-            this.btnSaveData.UseVisualStyleBackColor = true;
-            this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
             // 
             // grpInsert
             // 
@@ -314,19 +263,6 @@
             this.lblGiorno.Size = new System.Drawing.Size(48, 16);
             this.lblGiorno.TabIndex = 40;
             this.lblGiorno.Text = "Giorno";
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.BackgroundImage = global::ContoCorrente.Properties.Resources.Inserisci;
-            this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.ForeColor = System.Drawing.Color.Green;
-            this.btnInsert.Location = new System.Drawing.Point(796, 14);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(93, 55);
-            this.btnInsert.TabIndex = 44;
-            this.btnInsert.UseVisualStyleBackColor = true;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // txtImport
             // 
@@ -389,19 +325,6 @@
             this.grpSaveThree.TabStop = false;
             this.grpSaveThree.Text = "Salva";
             // 
-            // btnSaveThree
-            // 
-            this.btnSaveThree.BackgroundImage = global::ContoCorrente.Properties.Resources.Salva;
-            this.btnSaveThree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveThree.ForeColor = System.Drawing.Color.Green;
-            this.btnSaveThree.Location = new System.Drawing.Point(12, 25);
-            this.btnSaveThree.Name = "btnSaveThree";
-            this.btnSaveThree.Size = new System.Drawing.Size(55, 44);
-            this.btnSaveThree.TabIndex = 11;
-            this.btnSaveThree.UseVisualStyleBackColor = true;
-            this.btnSaveThree.Click += new System.EventHandler(this.btnSaveThree_Click);
-            // 
             // grpModiryrow
             // 
             this.grpModiryrow.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -412,19 +335,6 @@
             this.grpModiryrow.TabIndex = 29;
             this.grpModiryrow.TabStop = false;
             this.grpModiryrow.Text = "Modifica riga ";
-            // 
-            // btnModifyRow
-            // 
-            this.btnModifyRow.BackgroundImage = global::ContoCorrente.Properties.Resources.Aggiorna;
-            this.btnModifyRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnModifyRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifyRow.ForeColor = System.Drawing.Color.Green;
-            this.btnModifyRow.Location = new System.Drawing.Point(22, 19);
-            this.btnModifyRow.Name = "btnModifyRow";
-            this.btnModifyRow.Size = new System.Drawing.Size(59, 50);
-            this.btnModifyRow.TabIndex = 30;
-            this.btnModifyRow.UseVisualStyleBackColor = true;
-            this.btnModifyRow.Click += new System.EventHandler(this.btnModifyRow_Click);
             // 
             // grpMove
             // 
@@ -438,32 +348,6 @@
             this.grpMove.TabStop = false;
             this.grpMove.Text = "Sposta";
             // 
-            // btnDown
-            // 
-            this.btnDown.BackgroundImage = global::ContoCorrente.Properties.Resources.Carica;
-            this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDown.ForeColor = System.Drawing.Color.Green;
-            this.btnDown.Location = new System.Drawing.Point(88, 19);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(59, 50);
-            this.btnDown.TabIndex = 28;
-            this.btnDown.UseVisualStyleBackColor = true;
-            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
-            // 
-            // btnUp
-            // 
-            this.btnUp.BackgroundImage = global::ContoCorrente.Properties.Resources.Su;
-            this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUp.ForeColor = System.Drawing.Color.Green;
-            this.btnUp.Location = new System.Drawing.Point(6, 19);
-            this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(59, 50);
-            this.btnUp.TabIndex = 27;
-            this.btnUp.UseVisualStyleBackColor = true;
-            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
-            // 
             // grpDeleteRow
             // 
             this.grpDeleteRow.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -474,19 +358,6 @@
             this.grpDeleteRow.TabIndex = 24;
             this.grpDeleteRow.TabStop = false;
             this.grpDeleteRow.Text = "Elimina Riga";
-            // 
-            // btnDeleteRow
-            // 
-            this.btnDeleteRow.BackgroundImage = global::ContoCorrente.Properties.Resources.Delete;
-            this.btnDeleteRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDeleteRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteRow.ForeColor = System.Drawing.Color.Green;
-            this.btnDeleteRow.Location = new System.Drawing.Point(21, 19);
-            this.btnDeleteRow.Name = "btnDeleteRow";
-            this.btnDeleteRow.Size = new System.Drawing.Size(59, 50);
-            this.btnDeleteRow.TabIndex = 25;
-            this.btnDeleteRow.UseVisualStyleBackColor = true;
-            this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
             // 
             // pgSearch
             // 
@@ -522,6 +393,7 @@
             // pgModules
             // 
             this.pgModules.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pgModules.Controls.Add(this.btnPostPay);
             this.pgModules.Controls.Add(this.btnMantenimento);
             this.pgModules.Controls.Add(this.btnLibretto);
             this.pgModules.Controls.Add(this.btnContoCorrente);
@@ -531,58 +403,6 @@
             this.pgModules.Size = new System.Drawing.Size(1354, 86);
             this.pgModules.TabIndex = 4;
             this.pgModules.Text = "Moduli";
-            // 
-            // btnMantenimento
-            // 
-            this.btnMantenimento.BackgroundImage = global::ContoCorrente.Properties.Resources.Mantenimento;
-            this.btnMantenimento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMantenimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMantenimento.ForeColor = System.Drawing.Color.Green;
-            this.btnMantenimento.Location = new System.Drawing.Point(398, 13);
-            this.btnMantenimento.Name = "btnMantenimento";
-            this.btnMantenimento.Size = new System.Drawing.Size(93, 70);
-            this.btnMantenimento.TabIndex = 19;
-            this.btnMantenimento.UseVisualStyleBackColor = true;
-            this.btnMantenimento.Click += new System.EventHandler(this.btnMantenimento_Click);
-            // 
-            // btnLibretto
-            // 
-            this.btnLibretto.BackgroundImage = global::ContoCorrente.Properties.Resources.PPLibretto;
-            this.btnLibretto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLibretto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibretto.ForeColor = System.Drawing.Color.Green;
-            this.btnLibretto.Location = new System.Drawing.Point(279, 13);
-            this.btnLibretto.Name = "btnLibretto";
-            this.btnLibretto.Size = new System.Drawing.Size(93, 70);
-            this.btnLibretto.TabIndex = 18;
-            this.btnLibretto.UseVisualStyleBackColor = true;
-            this.btnLibretto.Click += new System.EventHandler(this.btnLibretto_Click);
-            // 
-            // btnContoCorrente
-            // 
-            this.btnContoCorrente.BackgroundImage = global::ContoCorrente.Properties.Resources.Conto_Corrente;
-            this.btnContoCorrente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnContoCorrente.Enabled = false;
-            this.btnContoCorrente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContoCorrente.ForeColor = System.Drawing.Color.Green;
-            this.btnContoCorrente.Location = new System.Drawing.Point(161, 13);
-            this.btnContoCorrente.Name = "btnContoCorrente";
-            this.btnContoCorrente.Size = new System.Drawing.Size(93, 70);
-            this.btnContoCorrente.TabIndex = 17;
-            this.btnContoCorrente.UseVisualStyleBackColor = true;
-            // 
-            // btnSpeseAnnuali
-            // 
-            this.btnSpeseAnnuali.BackgroundImage = global::ContoCorrente.Properties.Resources.Spese_Annuali;
-            this.btnSpeseAnnuali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSpeseAnnuali.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSpeseAnnuali.ForeColor = System.Drawing.Color.Green;
-            this.btnSpeseAnnuali.Location = new System.Drawing.Point(42, 13);
-            this.btnSpeseAnnuali.Name = "btnSpeseAnnuali";
-            this.btnSpeseAnnuali.Size = new System.Drawing.Size(93, 70);
-            this.btnSpeseAnnuali.TabIndex = 16;
-            this.btnSpeseAnnuali.UseVisualStyleBackColor = true;
-            this.btnSpeseAnnuali.Click += new System.EventHandler(this.btnSpeseAnnuali_Click);
             // 
             // pnlTree
             // 
@@ -595,20 +415,6 @@
             this.pnlTree.Name = "pnlTree";
             this.pnlTree.Size = new System.Drawing.Size(182, 730);
             this.pnlTree.TabIndex = 1;
-            // 
-            // btnLoadYears2
-            // 
-            this.btnLoadYears2.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnLoadYears2.BackgroundImage = global::ContoCorrente.Properties.Resources.Aggiorna;
-            this.btnLoadYears2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLoadYears2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadYears2.ForeColor = System.Drawing.Color.Green;
-            this.btnLoadYears2.Location = new System.Drawing.Point(30, 12);
-            this.btnLoadYears2.Name = "btnLoadYears2";
-            this.btnLoadYears2.Size = new System.Drawing.Size(70, 36);
-            this.btnLoadYears2.TabIndex = 34;
-            this.btnLoadYears2.UseVisualStyleBackColor = false;
-            this.btnLoadYears2.Click += new System.EventHandler(this.btnLoadYears2_Click);
             // 
             // treeYears
             // 
@@ -829,6 +635,215 @@
             this.txtYearMonth.TabIndex = 36;
             this.txtYearMonth.TabStop = false;
             // 
+            // btnInsert
+            // 
+            this.btnInsert.BackgroundImage = global::ContoCorrente.Properties.Resources.Inserisci;
+            this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.ForeColor = System.Drawing.Color.Green;
+            this.btnInsert.Location = new System.Drawing.Point(796, 14);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(93, 55);
+            this.btnInsert.TabIndex = 44;
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // btnLoadYears2
+            // 
+            this.btnLoadYears2.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnLoadYears2.BackgroundImage = global::ContoCorrente.Properties.Resources.Aggiorna;
+            this.btnLoadYears2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLoadYears2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadYears2.ForeColor = System.Drawing.Color.Green;
+            this.btnLoadYears2.Location = new System.Drawing.Point(30, 12);
+            this.btnLoadYears2.Name = "btnLoadYears2";
+            this.btnLoadYears2.Size = new System.Drawing.Size(70, 36);
+            this.btnLoadYears2.TabIndex = 34;
+            this.btnLoadYears2.UseVisualStyleBackColor = false;
+            this.btnLoadYears2.Click += new System.EventHandler(this.btnLoadYears2_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImage = global::ContoCorrente.Properties.Resources.Exit;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.Green;
+            this.btnExit.Location = new System.Drawing.Point(19, 25);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(59, 44);
+            this.btnExit.TabIndex = 15;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackgroundImage = global::ContoCorrente.Properties.Resources.Salva;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.ForeColor = System.Drawing.Color.Green;
+            this.btnSave.Location = new System.Drawing.Point(12, 25);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(55, 44);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnLoadYears
+            // 
+            this.btnLoadYears.BackgroundImage = global::ContoCorrente.Properties.Resources.Aggiorna;
+            this.btnLoadYears.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLoadYears.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadYears.ForeColor = System.Drawing.Color.Green;
+            this.btnLoadYears.Location = new System.Drawing.Point(6, 21);
+            this.btnLoadYears.Name = "btnLoadYears";
+            this.btnLoadYears.Size = new System.Drawing.Size(112, 48);
+            this.btnLoadYears.TabIndex = 9;
+            this.btnLoadYears.UseVisualStyleBackColor = true;
+            this.btnLoadYears.Click += new System.EventHandler(this.btnLoadYears_Click);
+            // 
+            // btnSaveData
+            // 
+            this.btnSaveData.BackgroundImage = global::ContoCorrente.Properties.Resources.Salva;
+            this.btnSaveData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveData.ForeColor = System.Drawing.Color.Green;
+            this.btnSaveData.Location = new System.Drawing.Point(12, 25);
+            this.btnSaveData.Name = "btnSaveData";
+            this.btnSaveData.Size = new System.Drawing.Size(55, 44);
+            this.btnSaveData.TabIndex = 23;
+            this.btnSaveData.UseVisualStyleBackColor = true;
+            this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
+            // 
+            // btnSaveThree
+            // 
+            this.btnSaveThree.BackgroundImage = global::ContoCorrente.Properties.Resources.Salva;
+            this.btnSaveThree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveThree.ForeColor = System.Drawing.Color.Green;
+            this.btnSaveThree.Location = new System.Drawing.Point(12, 25);
+            this.btnSaveThree.Name = "btnSaveThree";
+            this.btnSaveThree.Size = new System.Drawing.Size(55, 44);
+            this.btnSaveThree.TabIndex = 11;
+            this.btnSaveThree.UseVisualStyleBackColor = true;
+            this.btnSaveThree.Click += new System.EventHandler(this.btnSaveThree_Click);
+            // 
+            // btnModifyRow
+            // 
+            this.btnModifyRow.BackgroundImage = global::ContoCorrente.Properties.Resources.Aggiorna;
+            this.btnModifyRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnModifyRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifyRow.ForeColor = System.Drawing.Color.Green;
+            this.btnModifyRow.Location = new System.Drawing.Point(22, 19);
+            this.btnModifyRow.Name = "btnModifyRow";
+            this.btnModifyRow.Size = new System.Drawing.Size(59, 50);
+            this.btnModifyRow.TabIndex = 30;
+            this.btnModifyRow.UseVisualStyleBackColor = true;
+            this.btnModifyRow.Click += new System.EventHandler(this.btnModifyRow_Click);
+            // 
+            // btnDown
+            // 
+            this.btnDown.BackgroundImage = global::ContoCorrente.Properties.Resources.Carica;
+            this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.ForeColor = System.Drawing.Color.Green;
+            this.btnDown.Location = new System.Drawing.Point(88, 19);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(59, 50);
+            this.btnDown.TabIndex = 28;
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
+            // btnUp
+            // 
+            this.btnUp.BackgroundImage = global::ContoCorrente.Properties.Resources.Su;
+            this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUp.ForeColor = System.Drawing.Color.Green;
+            this.btnUp.Location = new System.Drawing.Point(6, 19);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(59, 50);
+            this.btnUp.TabIndex = 27;
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
+            // btnDeleteRow
+            // 
+            this.btnDeleteRow.BackgroundImage = global::ContoCorrente.Properties.Resources.Delete;
+            this.btnDeleteRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDeleteRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteRow.ForeColor = System.Drawing.Color.Green;
+            this.btnDeleteRow.Location = new System.Drawing.Point(21, 19);
+            this.btnDeleteRow.Name = "btnDeleteRow";
+            this.btnDeleteRow.Size = new System.Drawing.Size(59, 50);
+            this.btnDeleteRow.TabIndex = 25;
+            this.btnDeleteRow.UseVisualStyleBackColor = true;
+            this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
+            // 
+            // btnPostPay
+            // 
+            this.btnPostPay.BackgroundImage = global::ContoCorrente.Properties.Resources.Postpay2;
+            this.btnPostPay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPostPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPostPay.ForeColor = System.Drawing.Color.Green;
+            this.btnPostPay.Location = new System.Drawing.Point(405, 13);
+            this.btnPostPay.Name = "btnPostPay";
+            this.btnPostPay.Size = new System.Drawing.Size(93, 70);
+            this.btnPostPay.TabIndex = 20;
+            this.btnPostPay.UseVisualStyleBackColor = true;
+            this.btnPostPay.Click += new System.EventHandler(this.btnPostPay_Click);
+            // 
+            // btnMantenimento
+            // 
+            this.btnMantenimento.BackgroundImage = global::ContoCorrente.Properties.Resources.Mantenimento;
+            this.btnMantenimento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMantenimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMantenimento.ForeColor = System.Drawing.Color.Green;
+            this.btnMantenimento.Location = new System.Drawing.Point(530, 13);
+            this.btnMantenimento.Name = "btnMantenimento";
+            this.btnMantenimento.Size = new System.Drawing.Size(93, 70);
+            this.btnMantenimento.TabIndex = 19;
+            this.btnMantenimento.UseVisualStyleBackColor = true;
+            this.btnMantenimento.Click += new System.EventHandler(this.btnMantenimento_Click);
+            // 
+            // btnLibretto
+            // 
+            this.btnLibretto.BackgroundImage = global::ContoCorrente.Properties.Resources.Start_setting2;
+            this.btnLibretto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLibretto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLibretto.ForeColor = System.Drawing.Color.Green;
+            this.btnLibretto.Location = new System.Drawing.Point(279, 13);
+            this.btnLibretto.Name = "btnLibretto";
+            this.btnLibretto.Size = new System.Drawing.Size(93, 70);
+            this.btnLibretto.TabIndex = 18;
+            this.btnLibretto.UseVisualStyleBackColor = true;
+            this.btnLibretto.Click += new System.EventHandler(this.btnLibretto_Click);
+            // 
+            // btnContoCorrente
+            // 
+            this.btnContoCorrente.BackgroundImage = global::ContoCorrente.Properties.Resources.Conto_Corrente;
+            this.btnContoCorrente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnContoCorrente.Enabled = false;
+            this.btnContoCorrente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContoCorrente.ForeColor = System.Drawing.Color.Green;
+            this.btnContoCorrente.Location = new System.Drawing.Point(161, 13);
+            this.btnContoCorrente.Name = "btnContoCorrente";
+            this.btnContoCorrente.Size = new System.Drawing.Size(93, 70);
+            this.btnContoCorrente.TabIndex = 17;
+            this.btnContoCorrente.UseVisualStyleBackColor = true;
+            // 
+            // btnSpeseAnnuali
+            // 
+            this.btnSpeseAnnuali.BackgroundImage = global::ContoCorrente.Properties.Resources.Spese_Annuali;
+            this.btnSpeseAnnuali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSpeseAnnuali.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSpeseAnnuali.ForeColor = System.Drawing.Color.Green;
+            this.btnSpeseAnnuali.Location = new System.Drawing.Point(42, 13);
+            this.btnSpeseAnnuali.Name = "btnSpeseAnnuali";
+            this.btnSpeseAnnuali.Size = new System.Drawing.Size(93, 70);
+            this.btnSpeseAnnuali.TabIndex = 16;
+            this.btnSpeseAnnuali.UseVisualStyleBackColor = true;
+            this.btnSpeseAnnuali.Click += new System.EventHandler(this.btnSpeseAnnuali_Click);
+            // 
             // frmContoCorrente
             // 
             this.AcceptButton = this.btnInsert;
@@ -936,6 +951,7 @@
         private System.Windows.Forms.Button btnContoCorrente;
         private System.Windows.Forms.Button btnSpeseAnnuali;
         private System.Windows.Forms.Button btnMantenimento;
+        private System.Windows.Forms.Button btnPostPay;
     }
 }
 

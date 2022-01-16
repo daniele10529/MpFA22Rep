@@ -716,12 +716,20 @@ namespace SpeseAnnuali
             processRunning.runProcess("/runpath/contocorrente", "ContoCorrente");
         }
         
-        //Avvia modulo Libretto e PostPay
+        //Avvia modulo Libretto
         private void btnLibretto_Click(object sender, EventArgs e)
         {
             ProcessRunning processRunning = new ProcessRunning();
             processRunning.XMlpathConteinerFile = runPath;
             processRunning.runProcess("/runpath/libretto", "Libretto");
+        }
+
+        //Avvia modulo PostPay
+        private void btnPostPay_Click(object sender, EventArgs e)
+        {
+            ProcessRunning processRunning = new ProcessRunning();
+            processRunning.XMlpathConteinerFile = runPath;
+            processRunning.runProcess("/runpath/postpay", "PostPay");
         }
 
         //Avvia modulo Mantenimento

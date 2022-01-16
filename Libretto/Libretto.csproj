@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Libretto.ico</ApplicationIcon>
+    <ApplicationIcon>Start-setting2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Checking">
@@ -147,6 +147,7 @@
   <ItemGroup>
     <Content Include="Libretto.ico" />
     <Content Include="PPLibretto.ico" />
+    <Content Include="Start-setting2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

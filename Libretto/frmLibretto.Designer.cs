@@ -228,7 +228,7 @@
             this.pgInsert.Location = new System.Drawing.Point(4, 25);
             this.pgInsert.Name = "pgInsert";
             this.pgInsert.Padding = new System.Windows.Forms.Padding(3);
-            this.pgInsert.Size = new System.Drawing.Size(1251, 86);
+            this.pgInsert.Size = new System.Drawing.Size(1354, 86);
             this.pgInsert.TabIndex = 1;
             this.pgInsert.Text = "Inserisci";
             // 
@@ -369,7 +369,7 @@
             this.pgModify.Controls.Add(this.grpDeleteRow);
             this.pgModify.Location = new System.Drawing.Point(4, 25);
             this.pgModify.Name = "pgModify";
-            this.pgModify.Size = new System.Drawing.Size(1251, 86);
+            this.pgModify.Size = new System.Drawing.Size(1354, 86);
             this.pgModify.TabIndex = 2;
             this.pgModify.Text = "Modifica";
             // 
@@ -491,7 +491,7 @@
             this.pgSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.pgSearch.Location = new System.Drawing.Point(4, 25);
             this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(1251, 86);
+            this.pgSearch.Size = new System.Drawing.Size(1354, 86);
             this.pgSearch.TabIndex = 3;
             this.pgSearch.Text = "Cerca";
             // 
@@ -777,7 +777,7 @@
             this.Name = "frmLibretto";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LIBRETTO-POSTPAY";
+            this.Text = "LIBRETTO";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLibretto_FormClosing);
             this.Load += new System.EventHandler(this.frmLibretto_Load);
             this.pnlMenu.ResumeLayout(false);

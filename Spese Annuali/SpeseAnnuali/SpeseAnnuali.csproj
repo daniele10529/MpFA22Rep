@@ -206,6 +206,8 @@
     <None Include="Resources\Conto Corrente.png" />
     <None Include="Resources\PPLibretto.png" />
     <None Include="Resources\Mantenimento.png" />
+    <None Include="Resources\Start setting2.png" />
+    <None Include="Resources\Postpay2.png" />
     <Content Include="Spese-Annuali.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

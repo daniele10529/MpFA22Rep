@@ -666,6 +666,13 @@ namespace ContoCorrente
             processRunning.runProcess("/runpath/libretto", "Libretto");
         }
 
+        private void btnPostPay_Click(object sender, EventArgs e)
+        {
+            ProcessRunning processRunning = new ProcessRunning();
+            processRunning.XMlpathConteinerFile = runPath;
+            processRunning.runProcess("/runpath/postpay", "PostPay");
+        }
+
         private void btnMantenimento_Click(object sender, EventArgs e)
         {
             ProcessRunning processRunning = new ProcessRunning();
@@ -716,7 +723,6 @@ namespace ContoCorrente
             //mostra il menu
             creatMenu.showContextMenu(e);
         }
-
 
         #endregion
 

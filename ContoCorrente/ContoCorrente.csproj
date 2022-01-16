@@ -149,6 +149,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Conto-Corrente.ico" />
+    <None Include="Resources\Start setting2.png" />
+    <None Include="Resources\Postpay2.png" />
     <None Include="Resources\Mantenimento.png" />
     <None Include="Resources\PPLibretto.png" />
     <None Include="Resources\Conto Corrente.png" />
