@@ -41,6 +41,9 @@
     <Reference Include="CreateForm">
       <HintPath>..\Lib\CreateForm.dll</HintPath>
     </Reference>
+    <Reference Include="DatagridviewToPDF">
+      <HintPath>..\Lib\DatagridviewToPDF.dll</HintPath>
+    </Reference>
     <Reference Include="GenericModelData">
       <HintPath>..\Lib\GenericModelData.dll</HintPath>
     </Reference>
@@ -210,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PostPay.ico" />
+    <None Include="Resources\icons8-pdf-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

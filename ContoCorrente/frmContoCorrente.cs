@@ -9,6 +9,7 @@ using Checking;
 using MenuGenerator;
 using CreateForm;
 using LeaderProcess;
+using PDFCreator;
 
 namespace ContoCorrente
 {
@@ -681,6 +682,31 @@ namespace ContoCorrente
         }
 
 
+        private void btnPDFCreator_Click(object sender, EventArgs e)
+        {
+            //Se non sono caricati dati esci
+            if (isLoad == false)
+            {
+                MessageBox.Show("Nessun mese caricato, impossibile creare il PDF", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            //Imposta l'estensione per il file pdf nel SaveDialog
+            svdPDF.Filter = "PDF (*.pdf)|*.pdf";
+            //Definisce il nome del file
+            svdPDF.FileName = year_manage.ToString() + "_" + month_manage.ToString() + "_" + "DataCC.pdf";
+            //Se premuto ok nel SaveDialog
+            if (svdPDF.ShowDialog() == DialogResult.OK)
+            {
+                //istanza alla classe
+                DataGridViewToPDF dataPDF = new DataGridViewToPDF(grdMonthVoices);
+                //imposta il setter per il percorso del file da salvare
+                dataPDF.pathFile = svdPDF.FileName;
+                //crea il pdf
+                dataPDF.CreatePDF();
+            }
+
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Dispose();
@@ -723,6 +749,7 @@ namespace ContoCorrente
             //mostra il menu
             creatMenu.showContextMenu(e);
         }
+
 
         #endregion
 

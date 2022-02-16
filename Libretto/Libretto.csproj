@@ -39,6 +39,9 @@
     <Reference Include="Checking">
       <HintPath>..\Lib\Checking.dll</HintPath>
     </Reference>
+    <Reference Include="DatagridviewToPDF">
+      <HintPath>..\Lib\DatagridviewToPDF.dll</HintPath>
+    </Reference>
     <Reference Include="GenericModelData">
       <HintPath>..\Lib\GenericModelData.dll</HintPath>
     </Reference>
@@ -147,6 +150,7 @@
   <ItemGroup>
     <Content Include="Libretto.ico" />
     <Content Include="PPLibretto.ico" />
+    <None Include="Resources\icons8-pdf-64.png" />
     <Content Include="Start-setting2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

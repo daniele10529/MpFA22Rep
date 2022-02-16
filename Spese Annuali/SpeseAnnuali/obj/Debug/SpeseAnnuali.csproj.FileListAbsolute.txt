@@ -51,12 +51,14 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\Spe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\Checking.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\Connection.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\CreateForm.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\DatagridviewToPDF.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\GenericModelData.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\LeaderProcess.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\ManageGrid.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\MenuGenerator.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\MySql.Data.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\ReadXML.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\itextsharp.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\Google.Protobuf.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\Zstandard.Net.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\K4os.Compression.LZ4.Streams.dll
@@ -71,6 +73,7 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\Spe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\Connection.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\Connection.xml
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\CreateForm.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\DatagridviewToPDF.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\GenericModelData.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\LeaderProcess.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\ManageGrid.pdb
@@ -79,7 +82,9 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\Spe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\MySql.Data.xml
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\ReadXML.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\ReadXML.xml
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\itextsharp.xml
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.csprojResolveAssemblyReference.cache
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.csproj.SpeseAnnuali.exe.config
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.frmSpeseAnnuali.resources
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.frmModify.resources
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.frmSetting.resources

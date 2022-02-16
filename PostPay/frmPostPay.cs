@@ -8,6 +8,7 @@ using GenericModelData;
 using Checking;
 using CreateForm;
 using MenuGenerator;
+using PDFCreator;
 
 namespace PostPay
 {
@@ -888,6 +889,32 @@ namespace PostPay
             //lista delle causali frequenti
             form.oftenCause = txtCause;
         }
+
+        private void btnPDFCreator_Click(object sender, EventArgs e)
+        {
+            //Se non sono caricati dati esci
+            if (isLoad == false)
+            {
+                MessageBox.Show("Nessun mese caricato, impossibile creare il PDF", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            //Imposta l'estensione per il file pdf nel SaveDialog
+            svdPDF.Filter = "PDF (*.pdf)|*.pdf";
+            //Definisce il nome del file
+            svdPDF.FileName = year_manage.ToString() + "_" + month_manage.ToString() + "_" + "DataPP.pdf";
+            //Se premuto ok nel SaveDialog
+            if (svdPDF.ShowDialog() == DialogResult.OK)
+            {
+                //istanza alla classe
+                DataGridViewToPDF dataPDF = new DataGridViewToPDF(tableSaveCount);
+                //imposta il setter per il percorso del file da salvare
+                dataPDF.pathFile = svdPDF.FileName;
+                //crea il pdf
+                dataPDF.CreatePDF();
+            }
+
+        }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {

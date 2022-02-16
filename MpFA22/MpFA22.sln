@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostPay", "..\PostPay\PostP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MpFA22", "MpFA20\MpFA20\MpFA22.csproj", "{A4FC9AAE-D061-4143-A5A3-19694E286208}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFCreator", "..\PDFCreator\DatagridviewToPDF\PDFCreator.csproj", "{547A928D-E9A3-446E-BA14-5480E92941AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{A4FC9AAE-D061-4143-A5A3-19694E286208}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4FC9AAE-D061-4143-A5A3-19694E286208}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4FC9AAE-D061-4143-A5A3-19694E286208}.Release|Any CPU.Build.0 = Release|Any CPU
+		{547A928D-E9A3-446E-BA14-5480E92941AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{547A928D-E9A3-446E-BA14-5480E92941AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{547A928D-E9A3-446E-BA14-5480E92941AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{547A928D-E9A3-446E-BA14-5480E92941AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

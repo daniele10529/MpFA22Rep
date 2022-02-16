@@ -36,38 +36,27 @@
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.pgHome = new System.Windows.Forms.TabPage();
             this.grpExit = new System.Windows.Forms.GroupBox();
-            this.btnExit = new System.Windows.Forms.Button();
             this.gprSave = new System.Windows.Forms.GroupBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.gprYears = new System.Windows.Forms.GroupBox();
-            this.btnLoadYears = new System.Windows.Forms.Button();
             this.pgInsert = new System.Windows.Forms.TabPage();
             this.grpSave2 = new System.Windows.Forms.GroupBox();
-            this.btnSaveData = new System.Windows.Forms.Button();
             this.grpInsert = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbMonths = new System.Windows.Forms.ComboBox();
             this.btnSetOftenValue = new System.Windows.Forms.Button();
-            this.btnInsert = new System.Windows.Forms.Button();
             this.txtImport = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtCause = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.pgModify = new System.Windows.Forms.TabPage();
             this.grpSaveThree = new System.Windows.Forms.GroupBox();
-            this.btnSaveThree = new System.Windows.Forms.Button();
             this.grpModiryrow = new System.Windows.Forms.GroupBox();
-            this.btnModifyRow = new System.Windows.Forms.Button();
             this.grpMove = new System.Windows.Forms.GroupBox();
-            this.btnDown = new System.Windows.Forms.Button();
-            this.btnUp = new System.Windows.Forms.Button();
             this.grpDeleteRow = new System.Windows.Forms.GroupBox();
-            this.btnDeleteRow = new System.Windows.Forms.Button();
             this.pgSearch = new System.Windows.Forms.TabPage();
             this.grpSearch = new System.Windows.Forms.GroupBox();
             this.txtSearchVoice = new System.Windows.Forms.TextBox();
             this.pnlTree = new System.Windows.Forms.Panel();
-            this.btnLoadYears2 = new System.Windows.Forms.Button();
             this.treeYears = new System.Windows.Forms.TreeView();
             this.pnlResume = new System.Windows.Forms.Panel();
             this.lblPages = new System.Windows.Forms.Label();
@@ -89,6 +78,20 @@
             this.grdMonthVoices = new System.Windows.Forms.DataGridView();
             this.pnlTexts = new System.Windows.Forms.Panel();
             this.txtYearMonth = new System.Windows.Forms.TextBox();
+            this.grpPdf = new System.Windows.Forms.GroupBox();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnLoadYears2 = new System.Windows.Forms.Button();
+            this.btnPDFCreator = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnLoadYears = new System.Windows.Forms.Button();
+            this.btnSaveData = new System.Windows.Forms.Button();
+            this.btnSaveThree = new System.Windows.Forms.Button();
+            this.btnModifyRow = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.btnDeleteRow = new System.Windows.Forms.Button();
+            this.svdPDF = new System.Windows.Forms.SaveFileDialog();
             this.pnlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.pgHome.SuspendLayout();
@@ -110,6 +113,7 @@
             this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMonthVoices)).BeginInit();
             this.pnlTexts.SuspendLayout();
+            this.grpPdf.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -139,6 +143,7 @@
             // pgHome
             // 
             this.pgHome.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pgHome.Controls.Add(this.grpPdf);
             this.pgHome.Controls.Add(this.grpExit);
             this.pgHome.Controls.Add(this.gprSave);
             this.pgHome.Controls.Add(this.gprYears);
@@ -161,19 +166,6 @@
             this.grpExit.TabStop = false;
             this.grpExit.Text = "Esci";
             // 
-            // btnExit
-            // 
-            this.btnExit.BackgroundImage = global::PostPay.Properties.Resources.Exit;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.Green;
-            this.btnExit.Location = new System.Drawing.Point(19, 25);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(59, 44);
-            this.btnExit.TabIndex = 8;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // gprSave
             // 
             this.gprSave.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -186,19 +178,6 @@
             this.gprSave.TabStop = false;
             this.gprSave.Text = "Salva";
             // 
-            // btnSave
-            // 
-            this.btnSave.BackgroundImage = global::PostPay.Properties.Resources.Salva;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.Green;
-            this.btnSave.Location = new System.Drawing.Point(12, 25);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(55, 44);
-            this.btnSave.TabIndex = 9;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // gprYears
             // 
             this.gprYears.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -210,19 +189,6 @@
             this.gprYears.TabIndex = 6;
             this.gprYears.TabStop = false;
             this.gprYears.Text = "Anni";
-            // 
-            // btnLoadYears
-            // 
-            this.btnLoadYears.BackgroundImage = global::PostPay.Properties.Resources.Aggiorna;
-            this.btnLoadYears.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLoadYears.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadYears.ForeColor = System.Drawing.Color.Green;
-            this.btnLoadYears.Location = new System.Drawing.Point(6, 21);
-            this.btnLoadYears.Name = "btnLoadYears";
-            this.btnLoadYears.Size = new System.Drawing.Size(112, 48);
-            this.btnLoadYears.TabIndex = 7;
-            this.btnLoadYears.UseVisualStyleBackColor = true;
-            this.btnLoadYears.Click += new System.EventHandler(this.btnLoadYears_Click);
             // 
             // pgInsert
             // 
@@ -247,19 +213,6 @@
             this.grpSave2.TabIndex = 16;
             this.grpSave2.TabStop = false;
             this.grpSave2.Text = "Salva";
-            // 
-            // btnSaveData
-            // 
-            this.btnSaveData.BackgroundImage = global::PostPay.Properties.Resources.Salva;
-            this.btnSaveData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveData.ForeColor = System.Drawing.Color.Green;
-            this.btnSaveData.Location = new System.Drawing.Point(12, 25);
-            this.btnSaveData.Name = "btnSaveData";
-            this.btnSaveData.Size = new System.Drawing.Size(55, 44);
-            this.btnSaveData.TabIndex = 17;
-            this.btnSaveData.UseVisualStyleBackColor = true;
-            this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
             // 
             // grpInsert
             // 
@@ -314,19 +267,6 @@
             this.btnSetOftenValue.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSetOftenValue.UseVisualStyleBackColor = false;
             this.btnSetOftenValue.Click += new System.EventHandler(this.btnSetOftenValue_Click);
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.BackgroundImage = global::PostPay.Properties.Resources.Inserisci;
-            this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.ForeColor = System.Drawing.Color.Green;
-            this.btnInsert.Location = new System.Drawing.Point(796, 14);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(93, 55);
-            this.btnInsert.TabIndex = 15;
-            this.btnInsert.UseVisualStyleBackColor = true;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // txtImport
             // 
@@ -389,19 +329,6 @@
             this.grpSaveThree.TabStop = false;
             this.grpSaveThree.Text = "Salva";
             // 
-            // btnSaveThree
-            // 
-            this.btnSaveThree.BackgroundImage = global::PostPay.Properties.Resources.Salva;
-            this.btnSaveThree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveThree.ForeColor = System.Drawing.Color.Green;
-            this.btnSaveThree.Location = new System.Drawing.Point(12, 25);
-            this.btnSaveThree.Name = "btnSaveThree";
-            this.btnSaveThree.Size = new System.Drawing.Size(55, 44);
-            this.btnSaveThree.TabIndex = 26;
-            this.btnSaveThree.UseVisualStyleBackColor = true;
-            this.btnSaveThree.Click += new System.EventHandler(this.btnSaveThree_Click);
-            // 
             // grpModiryrow
             // 
             this.grpModiryrow.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -412,19 +339,6 @@
             this.grpModiryrow.TabIndex = 23;
             this.grpModiryrow.TabStop = false;
             this.grpModiryrow.Text = "Modifica riga ";
-            // 
-            // btnModifyRow
-            // 
-            this.btnModifyRow.BackgroundImage = global::PostPay.Properties.Resources.pencil_17925;
-            this.btnModifyRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnModifyRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifyRow.ForeColor = System.Drawing.Color.Green;
-            this.btnModifyRow.Location = new System.Drawing.Point(22, 19);
-            this.btnModifyRow.Name = "btnModifyRow";
-            this.btnModifyRow.Size = new System.Drawing.Size(59, 50);
-            this.btnModifyRow.TabIndex = 24;
-            this.btnModifyRow.UseVisualStyleBackColor = true;
-            this.btnModifyRow.Click += new System.EventHandler(this.btnModifyRow_Click);
             // 
             // grpMove
             // 
@@ -438,32 +352,6 @@
             this.grpMove.TabStop = false;
             this.grpMove.Text = "Sposta";
             // 
-            // btnDown
-            // 
-            this.btnDown.BackgroundImage = global::PostPay.Properties.Resources.Carica;
-            this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDown.ForeColor = System.Drawing.Color.Green;
-            this.btnDown.Location = new System.Drawing.Point(88, 19);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(59, 50);
-            this.btnDown.TabIndex = 22;
-            this.btnDown.UseVisualStyleBackColor = true;
-            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
-            // 
-            // btnUp
-            // 
-            this.btnUp.BackgroundImage = global::PostPay.Properties.Resources.Su;
-            this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUp.ForeColor = System.Drawing.Color.Green;
-            this.btnUp.Location = new System.Drawing.Point(6, 19);
-            this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(59, 50);
-            this.btnUp.TabIndex = 21;
-            this.btnUp.UseVisualStyleBackColor = true;
-            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
-            // 
             // grpDeleteRow
             // 
             this.grpDeleteRow.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -474,19 +362,6 @@
             this.grpDeleteRow.TabIndex = 18;
             this.grpDeleteRow.TabStop = false;
             this.grpDeleteRow.Text = "Elimina Riga";
-            // 
-            // btnDeleteRow
-            // 
-            this.btnDeleteRow.BackgroundImage = global::PostPay.Properties.Resources.Delete;
-            this.btnDeleteRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDeleteRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteRow.ForeColor = System.Drawing.Color.Green;
-            this.btnDeleteRow.Location = new System.Drawing.Point(21, 19);
-            this.btnDeleteRow.Name = "btnDeleteRow";
-            this.btnDeleteRow.Size = new System.Drawing.Size(59, 50);
-            this.btnDeleteRow.TabIndex = 19;
-            this.btnDeleteRow.UseVisualStyleBackColor = true;
-            this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
             // 
             // pgSearch
             // 
@@ -530,20 +405,6 @@
             this.pnlTree.Name = "pnlTree";
             this.pnlTree.Size = new System.Drawing.Size(200, 738);
             this.pnlTree.TabIndex = 1;
-            // 
-            // btnLoadYears2
-            // 
-            this.btnLoadYears2.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnLoadYears2.BackgroundImage = global::PostPay.Properties.Resources.Aggiorna;
-            this.btnLoadYears2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLoadYears2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadYears2.ForeColor = System.Drawing.Color.Green;
-            this.btnLoadYears2.Location = new System.Drawing.Point(46, 12);
-            this.btnLoadYears2.Name = "btnLoadYears2";
-            this.btnLoadYears2.Size = new System.Drawing.Size(109, 53);
-            this.btnLoadYears2.TabIndex = 35;
-            this.btnLoadYears2.UseVisualStyleBackColor = false;
-            this.btnLoadYears2.Click += new System.EventHandler(this.btnLoadYears2_Click);
             // 
             // treeYears
             // 
@@ -826,6 +687,176 @@
             this.txtYearMonth.TabIndex = 49;
             this.txtYearMonth.TabStop = false;
             // 
+            // grpPdf
+            // 
+            this.grpPdf.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.grpPdf.Controls.Add(this.btnPDFCreator);
+            this.grpPdf.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grpPdf.Location = new System.Drawing.Point(242, 6);
+            this.grpPdf.Name = "grpPdf";
+            this.grpPdf.Size = new System.Drawing.Size(80, 75);
+            this.grpPdf.TabIndex = 35;
+            this.grpPdf.TabStop = false;
+            this.grpPdf.Text = "PDF";
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.BackgroundImage = global::PostPay.Properties.Resources.Inserisci;
+            this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.ForeColor = System.Drawing.Color.Green;
+            this.btnInsert.Location = new System.Drawing.Point(796, 14);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(93, 55);
+            this.btnInsert.TabIndex = 15;
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // btnLoadYears2
+            // 
+            this.btnLoadYears2.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnLoadYears2.BackgroundImage = global::PostPay.Properties.Resources.Aggiorna;
+            this.btnLoadYears2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLoadYears2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadYears2.ForeColor = System.Drawing.Color.Green;
+            this.btnLoadYears2.Location = new System.Drawing.Point(46, 12);
+            this.btnLoadYears2.Name = "btnLoadYears2";
+            this.btnLoadYears2.Size = new System.Drawing.Size(109, 53);
+            this.btnLoadYears2.TabIndex = 35;
+            this.btnLoadYears2.UseVisualStyleBackColor = false;
+            this.btnLoadYears2.Click += new System.EventHandler(this.btnLoadYears2_Click);
+            // 
+            // btnPDFCreator
+            // 
+            this.btnPDFCreator.BackgroundImage = global::PostPay.Properties.Resources.icons8_pdf_64;
+            this.btnPDFCreator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPDFCreator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPDFCreator.ForeColor = System.Drawing.Color.Green;
+            this.btnPDFCreator.Location = new System.Drawing.Point(12, 24);
+            this.btnPDFCreator.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPDFCreator.Name = "btnPDFCreator";
+            this.btnPDFCreator.Size = new System.Drawing.Size(55, 44);
+            this.btnPDFCreator.TabIndex = 8;
+            this.btnPDFCreator.UseVisualStyleBackColor = true;
+            this.btnPDFCreator.Click += new System.EventHandler(this.btnPDFCreator_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImage = global::PostPay.Properties.Resources.Exit;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.Green;
+            this.btnExit.Location = new System.Drawing.Point(19, 25);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(59, 44);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackgroundImage = global::PostPay.Properties.Resources.Salva;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.ForeColor = System.Drawing.Color.Green;
+            this.btnSave.Location = new System.Drawing.Point(12, 25);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(55, 44);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnLoadYears
+            // 
+            this.btnLoadYears.BackgroundImage = global::PostPay.Properties.Resources.Aggiorna;
+            this.btnLoadYears.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLoadYears.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadYears.ForeColor = System.Drawing.Color.Green;
+            this.btnLoadYears.Location = new System.Drawing.Point(6, 21);
+            this.btnLoadYears.Name = "btnLoadYears";
+            this.btnLoadYears.Size = new System.Drawing.Size(112, 48);
+            this.btnLoadYears.TabIndex = 7;
+            this.btnLoadYears.UseVisualStyleBackColor = true;
+            this.btnLoadYears.Click += new System.EventHandler(this.btnLoadYears_Click);
+            // 
+            // btnSaveData
+            // 
+            this.btnSaveData.BackgroundImage = global::PostPay.Properties.Resources.Salva;
+            this.btnSaveData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveData.ForeColor = System.Drawing.Color.Green;
+            this.btnSaveData.Location = new System.Drawing.Point(12, 25);
+            this.btnSaveData.Name = "btnSaveData";
+            this.btnSaveData.Size = new System.Drawing.Size(55, 44);
+            this.btnSaveData.TabIndex = 17;
+            this.btnSaveData.UseVisualStyleBackColor = true;
+            this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
+            // 
+            // btnSaveThree
+            // 
+            this.btnSaveThree.BackgroundImage = global::PostPay.Properties.Resources.Salva;
+            this.btnSaveThree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveThree.ForeColor = System.Drawing.Color.Green;
+            this.btnSaveThree.Location = new System.Drawing.Point(12, 25);
+            this.btnSaveThree.Name = "btnSaveThree";
+            this.btnSaveThree.Size = new System.Drawing.Size(55, 44);
+            this.btnSaveThree.TabIndex = 26;
+            this.btnSaveThree.UseVisualStyleBackColor = true;
+            this.btnSaveThree.Click += new System.EventHandler(this.btnSaveThree_Click);
+            // 
+            // btnModifyRow
+            // 
+            this.btnModifyRow.BackgroundImage = global::PostPay.Properties.Resources.pencil_17925;
+            this.btnModifyRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnModifyRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifyRow.ForeColor = System.Drawing.Color.Green;
+            this.btnModifyRow.Location = new System.Drawing.Point(22, 19);
+            this.btnModifyRow.Name = "btnModifyRow";
+            this.btnModifyRow.Size = new System.Drawing.Size(59, 50);
+            this.btnModifyRow.TabIndex = 24;
+            this.btnModifyRow.UseVisualStyleBackColor = true;
+            this.btnModifyRow.Click += new System.EventHandler(this.btnModifyRow_Click);
+            // 
+            // btnDown
+            // 
+            this.btnDown.BackgroundImage = global::PostPay.Properties.Resources.Carica;
+            this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.ForeColor = System.Drawing.Color.Green;
+            this.btnDown.Location = new System.Drawing.Point(88, 19);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(59, 50);
+            this.btnDown.TabIndex = 22;
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
+            // btnUp
+            // 
+            this.btnUp.BackgroundImage = global::PostPay.Properties.Resources.Su;
+            this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUp.ForeColor = System.Drawing.Color.Green;
+            this.btnUp.Location = new System.Drawing.Point(6, 19);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(59, 50);
+            this.btnUp.TabIndex = 21;
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
+            // btnDeleteRow
+            // 
+            this.btnDeleteRow.BackgroundImage = global::PostPay.Properties.Resources.Delete;
+            this.btnDeleteRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDeleteRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteRow.ForeColor = System.Drawing.Color.Green;
+            this.btnDeleteRow.Location = new System.Drawing.Point(21, 19);
+            this.btnDeleteRow.Name = "btnDeleteRow";
+            this.btnDeleteRow.Size = new System.Drawing.Size(59, 50);
+            this.btnDeleteRow.TabIndex = 19;
+            this.btnDeleteRow.UseVisualStyleBackColor = true;
+            this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
+            // 
             // frmPostPay
             // 
             this.AcceptButton = this.btnInsert;
@@ -870,6 +901,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdMonthVoices)).EndInit();
             this.pnlTexts.ResumeLayout(false);
             this.pnlTexts.PerformLayout();
+            this.grpPdf.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -933,6 +965,9 @@
         private System.Windows.Forms.GroupBox grpSearch;
         private System.Windows.Forms.TextBox txtSearchVoice;
         private System.Windows.Forms.Label lblPages;
+        private System.Windows.Forms.GroupBox grpPdf;
+        private System.Windows.Forms.Button btnPDFCreator;
+        private System.Windows.Forms.SaveFileDialog svdPDF;
     }
 }
 

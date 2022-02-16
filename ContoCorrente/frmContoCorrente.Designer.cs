@@ -74,8 +74,10 @@
             this.txtBalanceST = new System.Windows.Forms.TextBox();
             this.lblSaldoIni = new System.Windows.Forms.Label();
             this.txtYearMonth = new System.Windows.Forms.TextBox();
+            this.grpPdf = new System.Windows.Forms.GroupBox();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnLoadYears2 = new System.Windows.Forms.Button();
+            this.btnPDFCreator = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoadYears = new System.Windows.Forms.Button();
@@ -90,6 +92,7 @@
             this.btnLibretto = new System.Windows.Forms.Button();
             this.btnContoCorrente = new System.Windows.Forms.Button();
             this.btnSpeseAnnuali = new System.Windows.Forms.Button();
+            this.svdPDF = new System.Windows.Forms.SaveFileDialog();
             this.pnlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.pgHome.SuspendLayout();
@@ -111,6 +114,7 @@
             this.pnlGrd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMonthVoices)).BeginInit();
             this.pnlResume.SuspendLayout();
+            this.grpPdf.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -143,6 +147,7 @@
             // pgHome
             // 
             this.pgHome.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pgHome.Controls.Add(this.grpPdf);
             this.pgHome.Controls.Add(this.grpExit);
             this.pgHome.Controls.Add(this.gprSave);
             this.pgHome.Controls.Add(this.gprYears);
@@ -635,6 +640,18 @@
             this.txtYearMonth.TabIndex = 36;
             this.txtYearMonth.TabStop = false;
             // 
+            // grpPdf
+            // 
+            this.grpPdf.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.grpPdf.Controls.Add(this.btnPDFCreator);
+            this.grpPdf.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grpPdf.Location = new System.Drawing.Point(238, 6);
+            this.grpPdf.Name = "grpPdf";
+            this.grpPdf.Size = new System.Drawing.Size(80, 75);
+            this.grpPdf.TabIndex = 35;
+            this.grpPdf.TabStop = false;
+            this.grpPdf.Text = "PDF";
+            // 
             // btnInsert
             // 
             this.btnInsert.BackgroundImage = global::ContoCorrente.Properties.Resources.Inserisci;
@@ -661,6 +678,20 @@
             this.btnLoadYears2.TabIndex = 34;
             this.btnLoadYears2.UseVisualStyleBackColor = false;
             this.btnLoadYears2.Click += new System.EventHandler(this.btnLoadYears2_Click);
+            // 
+            // btnPDFCreator
+            // 
+            this.btnPDFCreator.BackgroundImage = global::ContoCorrente.Properties.Resources.icons8_pdf_64;
+            this.btnPDFCreator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPDFCreator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPDFCreator.ForeColor = System.Drawing.Color.Green;
+            this.btnPDFCreator.Location = new System.Drawing.Point(12, 24);
+            this.btnPDFCreator.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPDFCreator.Name = "btnPDFCreator";
+            this.btnPDFCreator.Size = new System.Drawing.Size(55, 44);
+            this.btnPDFCreator.TabIndex = 8;
+            this.btnPDFCreator.UseVisualStyleBackColor = true;
+            this.btnPDFCreator.Click += new System.EventHandler(this.btnPDFCreator_Click);
             // 
             // btnExit
             // 
@@ -887,6 +918,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdMonthVoices)).EndInit();
             this.pnlResume.ResumeLayout(false);
             this.pnlResume.PerformLayout();
+            this.grpPdf.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -952,6 +984,9 @@
         private System.Windows.Forms.Button btnSpeseAnnuali;
         private System.Windows.Forms.Button btnMantenimento;
         private System.Windows.Forms.Button btnPostPay;
+        private System.Windows.Forms.GroupBox grpPdf;
+        private System.Windows.Forms.Button btnPDFCreator;
+        private System.Windows.Forms.SaveFileDialog svdPDF;
     }
 }
 

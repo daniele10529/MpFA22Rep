@@ -47,6 +47,9 @@
     <Reference Include="CreateForm">
       <HintPath>..\..\Lib\CreateForm.dll</HintPath>
     </Reference>
+    <Reference Include="DatagridviewToPDF">
+      <HintPath>..\..\Lib\DatagridviewToPDF.dll</HintPath>
+    </Reference>
     <Reference Include="GenericModelData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Lib\GenericModelData.dll</HintPath>
@@ -208,6 +211,7 @@
     <None Include="Resources\Mantenimento.png" />
     <None Include="Resources\Start setting2.png" />
     <None Include="Resources\Postpay2.png" />
+    <None Include="Resources\icons8-pdf-64.png" />
     <Content Include="Spese-Annuali.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
