@@ -12,10 +12,11 @@ namespace RunningReports
     /// </summary>
     public class ExecuteReportPDF
     {
-        /// <summary>
-        /// Costruttore a cui passo l'oggetto ADT runReport
-        /// </summary>
         private ModelDataReports.RunReports runReport;
+        /// <summary>
+        /// Costruttore per l'oggetto ExcecuteReportPDF
+        /// </summary>
+        /// <param name="runReport">Oggetto ADT con dati da passare al costruttore</param>
         public ExecuteReportPDF(ModelDataReports.RunReports runReport)
         {
             this.runReport = runReport;
