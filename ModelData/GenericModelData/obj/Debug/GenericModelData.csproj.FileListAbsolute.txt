@@ -13,6 +13,5 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\ModelData\Generic
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\ModelData\GenericModelData\obj\Debug\GenericModelData.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Lib\GenericModelData.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Lib\GenericModelData.pdb
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ModelData\GenericModelData\obj\Debug\GenericModelData.csprojResolveAssemblyReference.cache
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ModelData\GenericModelData\obj\Debug\GenericModelData.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ModelData\GenericModelData\obj\Debug\GenericModelData.pdb

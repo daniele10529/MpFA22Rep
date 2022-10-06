@@ -60,6 +60,7 @@
     <Compile Include="ModelDataLibNom.cs" />
     <Compile Include="ModelDataMan.cs" />
     <Compile Include="ModelDataPP.cs" />
+    <Compile Include="ModelDataReports.cs" />
     <Compile Include="ModelOftenElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetStart.cs" />

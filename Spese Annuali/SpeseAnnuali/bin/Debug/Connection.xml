@@ -26,15 +26,23 @@
             Metodo che restituisce un oggetto MysqlCommand che permette
             di eseguire query
             </summary>
-            <param name="conn">MySqlConnection, connessione aperta</param>
+            <param name="connection">MySqlConnection, connessione aperta</param>
             <returns>MySqlCommand, restituisce un comando aperto</returns>
+        </member>
+        <member name="M:Connection.Connecting.command(MySql.Data.MySqlClient.MySqlConnection,System.String)">
+            <summary>
+            Metodo che restituisce un comando con query e connessione aperta da passare a MySqlDataAdapter
+            </summary>
+            <param name="connection">MySqlConnection, connessione aperta</param>
+            <param name="query">String, query di mapping da eseguire</param>
+            <returns></returns>
         </member>
         <member name="M:Connection.Connecting.reader(MySql.Data.MySqlClient.MySqlConnection,System.String)">
             <summary>
             Metodo per la restituzione di un oggetto MySqlReader che contiene
             i risultati di una query
             </summary>
-            <param name="conn">MySqlConnection, connessione aperta</param>
+            <param name="connection">MySqlConnection, connessione aperta</param>
             <param name="query">string, query da eseguire</param>
             <returns>MySqlReader, oggetto restituito con l'arrey di lettura</returns>
         </member>
@@ -46,6 +54,144 @@
             <param name="command">MysqlCommand, comando aperto</param>
             <param name="query">string, query da eseguire</param>
             <returns>MysqlReader, oggetto restituito con l'arrey di lettura</returns>
+        </member>
+        <member name="M:Connection.Connecting.reader(MySql.Data.MySqlClient.MySqlCommand,System.Data.DataTable)">
+            <summary>
+            Metodo per il popolamento di un DataTable
+            </summary>
+            <param name="command">Comando con connessione aperta e query per il mapping</param>
+            <param name="table">DataTable da popolare</param>
+            <returns>Ritorno true se la tabella è popolata correttamente</returns>
+        </member>
+        <member name="T:Connection.DML">
+            <summary>
+            Classe per la costruzione di query DML, eredita da DQL
+            </summary>
+        </member>
+        <member name="M:Connection.DML.#ctor">
+            <summary>
+            Costruttore di default, inizializzazione di query
+            </summary>
+        </member>
+        <member name="M:Connection.DML.InsertInto(System.String)">
+            <summary>
+            Metodo per l'Insert Into
+            </summary>
+            <param name="table">Nome della tabella in cui inserire il record</param>
+            <returns>Ritorna oggetto DML con query creata(parziale)</returns>
+        </member>
+        <member name="M:Connection.DML.Fields(System.String)">
+            <summary>
+            Metodo per definire i campi da inserire dopo il metodo InsertInto
+            </summary>
+            <param name="fields">Campi della tabella in cui inserire i valori (inserire 
+            più campi separati da virgola)</param>
+            <returns>Ritorna oggetto DML con query creata(parziale)</returns>
+        </member>
+        <member name="M:Connection.DML.Values(System.String)">
+            <summary>
+            Metodo per definire i valori da inserire nel record del DB
+            </summary>
+            <param name="values">Valori da inserire nel record del DB (inserire 
+            più campi separati da virgola)</param>
+            <returns>Ritorna oggetto DML con query creata(parziale)</returns>
+        </member>
+        <member name="M:Connection.DML.Update(System.String)">
+            <summary>
+            Metodo per l'update
+            </summary>
+            <param name="table">Tabella su cui effettuare l'update</param>
+            <returns>Ritorna oggetto DML con query creata(parziale)</returns>
+        </member>
+        <member name="M:Connection.DML.Set(System.String)">
+            <summary>
+            Metodo per definire il campo per l'update
+            </summary>
+            <param name="field">Campo per l'update</param>
+            <returns>Ritorna oggetto DML con query creata(parziale)</returns>
+        </member>
+        <member name="M:Connection.DML.DeleteFrom(System.String)">
+            <summary>
+            Metodo per il Delete
+            </summary>
+            <param name="table">Tabella su cui effettuare il delete</param>
+            <returns>Ritorna oggetto DML con query creata(parziale)</returns>
+        </member>
+        <member name="T:Connection.DQL">
+            <summary>
+            Classe per la costruzione di query per il Mapping
+            </summary>
+        </member>
+        <member name="F:Connection.DQL.query">
+            <summary>
+            Parametro ereditato stringa, query da eseguire
+            </summary>
+        </member>
+        <member name="M:Connection.DQL.#ctor">
+            <summary>
+            Costruttore di default
+            </summary>
+        </member>
+        <member name="M:Connection.DQL.Select(System.String)">
+            <summary>
+            Metodo per il Select
+            </summary>
+            <param name="field">Campo per il mapping, se vuoto tutti i campi</param>
+            <returns>Ritorna oggetto DQL con query creata(parziale)</returns>
+        </member>
+        <member name="M:Connection.DQL.From(System.String)">
+            <summary>
+            Metodo per il From 
+            </summary>
+            <param name="table">Tabella da cui fare il mapping</param>
+            <returns>Ritorna oggetto DQL con query creata(parziale)</returns>
+        </member>
+        <member name="M:Connection.DQL.Where(System.String)">
+            <summary>
+            Clausula di vincolo
+            </summary>
+            <param name="field">Campo su cui verificare la clausula</param>
+            <returns>Ritorna oggetto DQL con query creata(parziale)</returns>
+        </member>
+        <member name="M:Connection.DQL.Equals(System.Int32)">
+            <summary>
+            Operatore di uguaglianza =
+            </summary>
+            <param name="value">Valore da confrontare</param>
+            <returns>Ritorna oggetto DQL con query creata(parziale)</returns>
+        </member>
+        <member name="M:Connection.DQL.Equals(System.String)">
+            <summary>
+            Operatore di uguaglianza su stringa
+            </summary>
+            <param name="value">Valore da confrontare</param>
+            <returns>Ritorna oggetto DQL con query creata(parziale)</returns>
+        </member>
+        <member name="M:Connection.DQL.Like(System.String)">
+            <summary>
+            Metodo Like confronto completo
+            </summary>
+            <param name="value">Valore da confrontare</param>
+            <returns>Ritorna oggetto DQL con query creata(parziale)</returns>
+        </member>
+        <member name="M:Connection.DQL.And(System.String)">
+            <summary>
+            Operatore AND
+            </summary>
+            <param name="field">Campo successivo all'AND per il confronto</param>
+            <returns>Ritorna oggetto DQL con query creata(parziale)</returns>
+        </member>
+        <member name="M:Connection.DQL.endLine">
+            <summary>
+            Inserisce il ; finale
+            </summary>
+            <returns>Ritorna oggetto DQL con query creata(parziale)</returns>
+        </member>
+        <member name="M:Connection.DQL.getQuery">
+            <summary>
+            Getter query creata
+            </summary>
+            <returns>Restituisce la query creata</returns>
         </member>
     </members>
 </doc>

@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MpFA22", "MpFA20\MpFA20\MpF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFCreator", "..\PDFCreator\DatagridviewToPDF\PDFCreator.csproj", "{547A928D-E9A3-446E-BA14-5480E92941AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunningReports", "..\RunningReports\RunningReports.csproj", "{7D96AF9B-251F-42BD-B5DC-C8E45984FC94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{547A928D-E9A3-446E-BA14-5480E92941AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{547A928D-E9A3-446E-BA14-5480E92941AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{547A928D-E9A3-446E-BA14-5480E92941AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D96AF9B-251F-42BD-B5DC-C8E45984FC94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D96AF9B-251F-42BD-B5DC-C8E45984FC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D96AF9B-251F-42BD-B5DC-C8E45984FC94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D96AF9B-251F-42BD-B5DC-C8E45984FC94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReadXML</name>
+    </assembly>
+    <members>
+        <member name="T:ReadXML.ReadErrorXml">
+            <summary>
+            Libreria di gestione per la lettura di file XML
+            per la gestione degli errori
+            </summary>
+        </member>
+        <member name="M:ReadXML.ReadErrorXml.#ctor">
+            <summary>
+            Costruttore per la classe ReadErrorXml non parametrizzato
+            </summary>
+        </member>
+        <member name="M:ReadXML.ReadErrorXml.manageError(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Metodo per la lettura degli errori a cui passare il numero errore,
+            il percorso del file, il nodo padre a l'attributo
+            </summary>
+            <param name="nErrore">numero errore</param>
+            <param name="path">percorso file xml</param>
+            <param name="father">nodo padre</param>
+            <param name="feature">nome attributo</param>
+        </member>
+        <member name="T:ReadXML.ReaderXML">
+            <summary>
+            Classe per la lettura generica di File XML
+            </summary>
+        </member>
+        <member name="M:ReadXML.ReaderXML.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Costruttore della classe per la letture di file XML generici
+            a cui passare il percorso del file, il nodo padre e l'attributo
+            </summary>
+            <param name="path">percorso file xml</param>
+            <param name="father">nodo padre</param>
+            <param name="feature">nome attributo</param>
+        </member>
+        <member name="M:ReadXML.ReaderXML.#ctor(System.String,System.String)">
+            <summary>
+            Costruttore della classe per la lettura di file XML generici,
+            polimorfismo, costruttore senza attributo
+            </summary>
+            <param name="path">percorso file xml</param>
+            <param name="father">nodo padre</param>
+        </member>
+        <member name="M:ReadXML.ReaderXML.#ctor(System.String)">
+            <summary>
+            Costruttore della classe per la letture di file XML generici,
+            polimorfismo, costruttore con solo il percorso
+            </summary>
+            <param name="path">percorso file xml</param>
+        </member>
+        <member name="M:ReadXML.ReaderXML.readNode(System.String)">
+            <summary>
+            Metodo per la lettura di un nodo del file XML, restituisce un valore stringa
+            </summary>
+            <returns>restituisce valore string letto dal nodo</returns>
+        </member>
+        <member name="M:ReadXML.ReaderXML.readNode(System.String,System.String)">
+            <summary>
+            Metodo per la lettura di un nodo del file XML,
+            a cui passare il nodo padre e il nodo figlio,
+            restituisce un valore stringa
+            </summary>
+            <param name="father">nodo padre</param>
+            <param name="node">nodo figlio</param>
+            <returns>restituisce valore string letto dal nodo figlio</returns>
+        </member>
+        <member name="M:ReadXML.ReaderXML.readNodeXmlDoc(System.String)">
+            <summary>
+            Metodo per leggere un nodo xml sfruttando il parsing DOM, da XmlDocument
+            </summary>
+            <param name="pathNodes">Percorso dei nodi in cui leggere</param>
+            <returns>Ritorna il valore dell'elemento XML</returns>
+        </member>
+        <member name="T:ReadXML.WriterXML">
+            <summary>
+            Classe per la scrittura di file xml
+            </summary>
+        </member>
+        <member name="M:ReadXML.WriterXML.#ctor(System.Xml.XmlDocument,System.String)">
+            <summary>
+            Costruttore della classe
+            </summary>
+            <param name="doc">Documento xml per il salvataggio</param>
+            <param name="path">Percorso del documento da salvare</param>
+        </member>
+        <member name="M:ReadXML.WriterXML.#ctor(System.String)">
+            <summary>
+            Costruttore con solo il percorso file xml
+            </summary>
+            <param name="path">Percorso del file</param>
+        </member>
+        <member name="M:ReadXML.WriterXML.updateXmlElement(System.String,System.String)">
+            <summary>
+            Metodo per aggiornare il contenuto di un elemento XML
+            </summary>
+            <param name="nodespath">Percorso esatto dell'elemento da modificare</param>
+            <param name="value">Valore da inserire nell'elemento</param>
+            <returns>Ritorna true se aggiornamento ok</returns>
+        </member>
+    </members>
+</doc>
