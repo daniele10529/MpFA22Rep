@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<runpath>
+  <speseannuali>C:\MpFA22\Spese Annuali\SpeseAnnuali.exe</speseannuali>
+  <contocorrente>C:\MpFA22\Conto Corrente\ContoCorrente.exe</contocorrente>
+  <libretto>C:\MpFA22\Libretto\Libretto.exe</libretto>
+  <postpay>C:\MpFA22\PostPay\PostPay.exe</postpay>
+  <mantenimento>C:\MpFA22\Mantenimento\Mantenimento.exe</mantenimento>
+  <report>C:\MpFA22\Mantenimento\RunningReports.exe</report>
+</runpath>

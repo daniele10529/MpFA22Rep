@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set di attributi. Modificare i valori di questi attributi per modificare le informazioni
 // associate a un assembly.
 [assembly: AssemblyTitle("RunningReports")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Module to execute reports")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("DaamDev Software solutions")]
 [assembly: AssemblyProduct("RunningReports")]
-[assembly: AssemblyCopyright("Copyright ©  2022")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("DaamDev Software solutions Copyright ©  2022")]
+[assembly: AssemblyTrademark("DaamDev Software solutions")]
 [assembly: AssemblyCulture("")]
 
 // Se si imposta ComVisible su false, i tipi in questo assembly non saranno visibili

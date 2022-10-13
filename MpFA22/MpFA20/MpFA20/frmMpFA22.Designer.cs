@@ -74,6 +74,7 @@
             this.btnReports.Size = new System.Drawing.Size(120, 120);
             this.btnReports.TabIndex = 10;
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // panel2
             // 

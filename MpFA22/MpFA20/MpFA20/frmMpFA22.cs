@@ -49,12 +49,20 @@ namespace MpFA20
 
         private void btnPP_Click(object sender, EventArgs e)
         {
+            //chiamata al processo, eccezione gestita dal chiamante
             processRunning.runProcess("/runpath/postpay", "PostPay");
         }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            //chiamata al processo, eccezione gestita dal chiamante
+            processRunning.runProcess("/runpath/report", "RunningReports");
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Dispose();
         }
-        
+
     }
 }
