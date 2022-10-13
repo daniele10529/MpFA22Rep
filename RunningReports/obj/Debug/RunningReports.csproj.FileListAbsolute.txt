@@ -33,3 +33,8 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\RunningReports\bi
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\RunningReports\bin\Debug\itextsharp.xml
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\RunningReports\obj\Debug\RunningReports.csproj.RunningReports.exe.config
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\RunningReports\bin\Debug\BouncyCastle.Crypto.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\RunningReports\bin\Debug\RoundedButton.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\RunningReports\bin\Debug\RoundedButton.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\RunningReports\bin\Debug\RoundendControlCollections.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\RunningReports\bin\Debug\RoundendControlCollections.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\RunningReports\obj\Debug\RunningReports.frmSpendElements.resources

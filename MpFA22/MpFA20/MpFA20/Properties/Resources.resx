@@ -118,61 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="MpFA221" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MpFA221.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Start setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Start setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PPLibretto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PPLibretto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Start setting2_piccolo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Start setting2_piccolo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LibrettoSmart21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LibrettoSmart21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Spese Annuali" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Spese Annuali.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LibrettoSmart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LibrettoSmart.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Postpay2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Postpay2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imagesRep2_piccolo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagesRep2_piccolo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DaamDev2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DaamDev2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LibrettoSmart2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LibrettoSmart2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Postpay" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Postpay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Conto Corrente_piccolo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Conto Corrente_piccolo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Mantenimento" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Mantenimento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Mantenimento_piccolo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mantenimento_piccolo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Conto Corrente" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Conto Corrente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Spese Annuali_piccolo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Spese Annuali_piccolo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MpFA20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MpFA20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MpFA221" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MpFA221.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MpFA22" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MpFA22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LibrettoSmart23" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LibrettoSmart23.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LibrettoSmart22" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LibrettoSmart22.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Start setting2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Start setting2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

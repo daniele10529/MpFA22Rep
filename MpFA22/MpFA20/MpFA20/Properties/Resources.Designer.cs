@@ -63,9 +63,9 @@ namespace MpFA20.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Conto_Corrente {
+        internal static System.Drawing.Bitmap Conto_Corrente_piccolo {
             get {
-                object obj = ResourceManager.GetObject("Conto Corrente", resourceCulture);
+                object obj = ResourceManager.GetObject("Conto Corrente_piccolo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace MpFA20.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LibrettoSmart {
+        internal static System.Drawing.Bitmap images {
             get {
-                object obj = ResourceManager.GetObject("LibrettoSmart", resourceCulture);
+                object obj = ResourceManager.GetObject("images", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,39 +103,9 @@ namespace MpFA20.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LibrettoSmart2 {
+        internal static System.Drawing.Bitmap imagesRep2_piccolo {
             get {
-                object obj = ResourceManager.GetObject("LibrettoSmart2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LibrettoSmart21 {
-            get {
-                object obj = ResourceManager.GetObject("LibrettoSmart21", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LibrettoSmart22 {
-            get {
-                object obj = ResourceManager.GetObject("LibrettoSmart22", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LibrettoSmart23 {
-            get {
-                object obj = ResourceManager.GetObject("LibrettoSmart23", resourceCulture);
+                object obj = ResourceManager.GetObject("imagesRep2_piccolo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,29 +123,9 @@ namespace MpFA20.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Mantenimento {
+        internal static System.Drawing.Bitmap Mantenimento_piccolo {
             get {
-                object obj = ResourceManager.GetObject("Mantenimento", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MpFA20 {
-            get {
-                object obj = ResourceManager.GetObject("MpFA20", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MpFA22 {
-            get {
-                object obj = ResourceManager.GetObject("MpFA22", resourceCulture);
+                object obj = ResourceManager.GetObject("Mantenimento_piccolo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +143,9 @@ namespace MpFA20.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Postpay {
+        internal static System.Drawing.Bitmap Spese_Annuali_piccolo {
             get {
-                object obj = ResourceManager.GetObject("Postpay", resourceCulture);
+                object obj = ResourceManager.GetObject("Spese Annuali_piccolo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,49 +153,9 @@ namespace MpFA20.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Postpay2 {
+        internal static System.Drawing.Bitmap Start_setting2_piccolo {
             get {
-                object obj = ResourceManager.GetObject("Postpay2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PPLibretto {
-            get {
-                object obj = ResourceManager.GetObject("PPLibretto", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Spese_Annuali {
-            get {
-                object obj = ResourceManager.GetObject("Spese Annuali", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Start_setting {
-            get {
-                object obj = ResourceManager.GetObject("Start setting", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Start_setting2 {
-            get {
-                object obj = ResourceManager.GetObject("Start setting2", resourceCulture);
+                object obj = ResourceManager.GetObject("Start setting2_piccolo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

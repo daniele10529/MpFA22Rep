@@ -4,6 +4,7 @@ using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.IO;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace RunningReports
 {
@@ -16,10 +17,20 @@ namespace RunningReports
         /// <summary>
         /// Costruttore per l'oggetto ExcecuteReportPDF
         /// </summary>
-        /// <param name="runReport">Oggetto ADT con dati da passare al costruttore</param>
+        /// <param name="runReport">Oggetto ADT RunReports con dati da passare al costruttore</param>
         public ExecuteReportPDF(ModelDataReports.RunReports runReport)
         {
             this.runReport = runReport;
+        }
+
+        private List<ModelDataReports.RunReportsSpends> listSpends;
+        /// <summary>
+        /// Costruttore per l'oggeto ExcecuteReportPDF diReportsSpend
+        /// </summary>
+        /// <param name="listSpends"></param>
+        public ExecuteReportPDF(List<ModelDataReports.RunReportsSpends> listSpends)
+        {
+            this.listSpends = listSpends;
         }
 
         /// <summary>
@@ -33,7 +44,7 @@ namespace RunningReports
             for (int i = 0; i <= element; i++)
             {
                 //Definisce lo stile dell'intestazione
-                Chunk chunk = new Chunk(value[i], FontFactory.GetFont("Courier New", 12, 1));
+                Chunk chunk = new Chunk(value[i], FontFactory.GetFont("Courier New", 10, 0, BaseColor.BLACK));
                 //Aggiunge la stringa al testo da aggiungere all'intestazione
                 Phrase phrase = new Phrase(chunk);
                 Paragraph columnHeader = new Paragraph(phrase);
@@ -41,6 +52,7 @@ namespace RunningReports
                 PdfPCell cell = new PdfPCell(columnHeader);
                 //Definisce allineamento e colore di sfondo
                 cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                cell.VerticalAlignment = Element.ALIGN_CENTER;
                 cell.BackgroundColor = BaseColor.CYAN;
                 table.AddCell(cell);
             }
@@ -59,9 +71,10 @@ namespace RunningReports
             for (int i = 0; i <= 5; i++)
             {
                 //Inserisce e centra il paragrafo dentro la cella
-                text = new Paragraph("ST: "+runReport.reportMounth[a].pay.ToString());
+                text = new Paragraph("ST: "+runReport.reportMounth[a].pay.ToString(), FontFactory.GetFont("Courier New", 10, 0, BaseColor.BLACK));
                 cell = new PdfPCell(text);
                 cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                cell.VerticalAlignment = Element.ALIGN_CENTER;
                 table.AddCell(cell);
                 a++;
             }
@@ -69,9 +82,10 @@ namespace RunningReports
             for (int i = 0; i <= 5; i++)
             {
                 //Inserisce e centra il paragrafo dentro la cella
-                text = new Paragraph("SP: " + runReport.reportMounth[a].spend.ToString());
+                text = new Paragraph("SP: " + runReport.reportMounth[a].spend.ToString(), FontFactory.GetFont("Courier New", 10, 0, BaseColor.BLACK));
                 cell = new PdfPCell(text);
                 cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                cell.VerticalAlignment = Element.ALIGN_CENTER;
                 table.AddCell(cell);
                 a++;
             }
@@ -79,9 +93,10 @@ namespace RunningReports
             for (int i = 0; i <= 5; i++)
             {
                 //Inserisce e centra il paragrafo dentro la cella
-                text = new Paragraph("RS: " + runReport.reportMounth[a].safe.ToString());
+                text = new Paragraph("RS: " + runReport.reportMounth[a].safe.ToString(), FontFactory.GetFont("Courier New", 10, 0, BaseColor.BLACK));
                 cell = new PdfPCell(text);
                 cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                cell.VerticalAlignment = Element.ALIGN_CENTER;
                 table.AddCell(cell);
                 a++;
             }
@@ -149,13 +164,15 @@ namespace RunningReports
                 //Imposta gli header della tabella
                 setTableHeader(tableReportAnnuale, head_report_annuale, 1);
                 //Inserisce e centra i valori in tabella
-                Paragraph tot = new Paragraph(runReport.tot_year_gain.ToString());
+                Paragraph tot = new Paragraph(runReport.tot_year_gain.ToString(), FontFactory.GetFont("Courier New", 10, 0, BaseColor.BLACK));
                 PdfPCell cell = new PdfPCell(tot);
                 cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                cell.VerticalAlignment = Element.ALIGN_CENTER;
                 tableReportAnnuale.AddCell(cell);
-                tot = new Paragraph(runReport.tot_year_spend.ToString());
+                tot = new Paragraph(runReport.tot_year_spend.ToString(), FontFactory.GetFont("Courier New", 10, 0, BaseColor.BLACK));
                 cell = new PdfPCell(tot);
                 cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                cell.VerticalAlignment = Element.ALIGN_CENTER;
                 tableReportAnnuale.AddCell(cell);
 
                 //Calcola la media di risparmio mensile dell'anno
@@ -178,7 +195,7 @@ namespace RunningReports
                 //Imposta gli header della tabella
                 setTableHeader(tableReportMedia, mediaHeader, 0);
                 //Inserisce e centra i valori in tabella
-                Paragraph mediaText = new Paragraph(media.ToString());
+                Paragraph mediaText = new Paragraph(media.ToString(), FontFactory.GetFont("Courier New", 10, 0, BaseColor.BLACK));
                 cell = new PdfPCell(mediaText);
                 cell.HorizontalAlignment = Element.ALIGN_CENTER;
                 tableReportMedia.AddCell(cell);
@@ -213,6 +230,120 @@ namespace RunningReports
                 MessageBox.Show("Impossibile creare il report. Errore: "+ex.Message, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        /// <summary>
+        /// Metodo per generare il PDF del ReportSpends
+        /// </summary>
+        /// <param name="reportSpend"></param>
+        public void generateReport(string year, string badMonths, double badImports)
+        {
+            //Percorso dove salvare il report in PDF
+            string path = @"C:\MpFA22\RunningReports\Data\ReportSpendPDF.pdf";
+            Paragraph text;
+            PdfPCell cell;
+            double totSpend = 0;
+
+            try
+            {
+                //Separatore tra elementi
+                PdfDiv div = new PdfDiv();
+                div.Height = 30;
+                div.PercentageWidth = 100;
+
+                //Definisce lo stile dell'intestazione file
+                Chunk chunk = new Chunk("REPORT SPESE MENSILI", FontFactory.GetFont("Courier New", 12, 1));
+                //Aggiunge la stringa al testo da aggiungere all'intestazione
+                Phrase phrase = new Phrase(chunk);
+                Paragraph title = new Paragraph(phrase);
+                //Definisce l'allineamento centrato
+                title.Alignment = 1;
+
+                //Definisce lo stile del sottotitolo
+                chunk = new Chunk("REPORT ANNO: " + year, FontFactory.GetFont("Courier New", 10, 2, BaseColor.DARK_GRAY));
+                //Aggiunge la stringa al testo da aggiungere all'intestazione
+                phrase = new Phrase(chunk);
+                Paragraph subtitle = new Paragraph(phrase);
+                //Definisce l'allineamento centrato
+                title.Alignment = 1;
+
+                //Definisce la tabella con i dati del primo semestre
+                PdfPTable tableReport = new PdfPTable(3);
+                //Imposta il padding
+                tableReport.DefaultCell.Padding = 3;
+                //Imposta la larghezza delle celle
+                tableReport.WidthPercentage = 100;
+                
+                foreach(ModelDataReports.RunReportsSpends voice in listSpends)
+                {
+                    text = new Paragraph(voice.oftenCause, FontFactory.GetFont("Courier New", 12, 0, BaseColor.BLUE));
+                    cell = new PdfPCell(text);
+                    cell.HorizontalAlignment = Element.ALIGN_JUSTIFIED;
+                    cell.Border = 0;
+                    tableReport.AddCell(cell);
+                    text = new Paragraph(voice.import.ToString(), FontFactory.GetFont("Courier New", 12, 0, BaseColor.BLUE));
+                    cell = new PdfPCell(text);
+                    cell.HorizontalAlignment = Element.ALIGN_JUSTIFIED;
+                    cell.Border = 0;
+                    tableReport.AddCell(cell);
+                    text = new Paragraph(voice.mese, FontFactory.GetFont("Courier New", 12, 0, BaseColor.BLUE));
+                    cell = new PdfPCell(text);
+                    cell.HorizontalAlignment = Element.ALIGN_JUSTIFIED;
+                    cell.Border = 0;
+                    tableReport.AddCell(cell);
+
+                    //Esegue la somma annuale della spesa per aggiungerlo al file
+                    totSpend += voice.import;
+
+                }
+
+                //Definisce lo stile del footer
+                chunk = new Chunk("TOTALE ANNUALE: " + totSpend.ToString(), FontFactory.GetFont("Courier New", 10, 0, BaseColor.DARK_GRAY));
+                //Aggiunge la stringa al testo da aggiungere all'intestazione
+                phrase = new Phrase(chunk);
+                Paragraph tot = new Paragraph(phrase);
+                //Definisce l'allineamento centrato
+                title.Alignment = 1;
+
+                //Definisce lo stile del footer
+                chunk = new Chunk("MESI CON SPESA PIù ELEVATA: \r\n" + badMonths + " => " + badImports + "€", 
+                    FontFactory.GetFont("Courier New", 10, 0, BaseColor.DARK_GRAY));
+                //Aggiunge la stringa al testo da aggiungere all'intestazione
+                phrase = new Phrase(chunk);
+                Paragraph footer = new Paragraph(phrase);
+                //Definisce l'allineamento centrato
+                title.Alignment = 1;
+
+                //Apre il flusso per il file con il percorso passato attraverso il setter
+                FileStream stream = new FileStream(path, FileMode.Create);
+                //Crea il documento PDF e ne definisce il formato
+                Document document = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
+                //Assegna il documento allo stream del file per il salvataggio
+                PdfWriter.GetInstance(document, stream);
+                //Apre il documento e ci aggiunge gli elementi
+                document.Open();
+                document.Add(title);
+                document.Add(div);
+                document.Add(subtitle);
+                document.Add(div);
+                document.Add(tableReport);
+                document.Add(div);
+                document.Add(tot);
+                document.Add(div);
+                document.Add(footer);
+                document.Add(div);
+                //Scarica le risorse
+                document.Close();
+                stream.Close();
+                //Messaggio di successo
+                MessageBox.Show("Report creato correttamente !!", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Impossibile creare il report. Errore: " + ex.Message, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
     }

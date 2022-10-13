@@ -45,6 +45,12 @@
     <Reference Include="itextsharp">
       <HintPath>packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="RoundedButton">
+      <HintPath>..\..\..\RoundedButton\RoundedButton\bin\Debug\RoundedButton.dll</HintPath>
+    </Reference>
+    <Reference Include="RoundendControlCollections">
+      <HintPath>..\..\..\RoundendControlCollections\RoundendControlCollections\bin\Debug\RoundendControlCollections.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -71,6 +77,12 @@
     <Compile Include="frmSarchYear.designer.cs">
       <DependentUpon>frmSarchYear.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSpendElements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSpendElements.Designer.cs">
+      <DependentUpon>frmSpendElements.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmRunReports.resx">
@@ -78,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSarchYear.resx">
       <DependentUpon>frmSarchYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSpendElements.resx">
+      <DependentUpon>frmSpendElements.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -110,6 +125,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagesRep.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagesRep1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagesRep2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

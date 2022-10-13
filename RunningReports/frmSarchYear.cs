@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using GenericModelData;
 
@@ -22,6 +16,9 @@ namespace RunningReports
         //Istanza ModelData RunReports
         ModelDataReports modelReports;
 
+        /// <summary>
+        /// Costruttore
+        /// </summary>
         public frmSarchYear()
         {
             InitializeComponent();
@@ -29,6 +26,11 @@ namespace RunningReports
             modelReports = new ModelDataReports();
         }
 
+        /// <summary>
+        /// Assegna all'attributo statico della struttura ADT il valore della riga selezionata
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSelectYear_Click(object sender, EventArgs e)
         {
             //Preleva l'anno selezionato
@@ -37,6 +39,11 @@ namespace RunningReports
             Dispose();
         }
 
+        /// <summary>
+        /// Carica i valori nella griglia al caricamento del form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmSarchYear_Load(object sender, EventArgs e)
         {
             //Associazione dati, serve a definire la dimensione della colonna
@@ -51,5 +58,7 @@ namespace RunningReports
             grdYear.DataSource = modelReports.loadYar();
 
         }
+
+       
     }
 }

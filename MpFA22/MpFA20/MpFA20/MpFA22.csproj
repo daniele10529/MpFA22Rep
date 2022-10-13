@@ -77,19 +77,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -100,40 +100,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Spese Annuali.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Conto Corrente.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Mantenimento.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Exit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PPLibretto.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Logo.ico" />
-    <None Include="Resources\MpFA20.png" />
     <Content Include="MpFA20new.ico" />
-    <None Include="Resources\LibrettoSmart.jpg" />
-    <None Include="Resources\LibrettoSmart2.jpg" />
-    <None Include="Resources\LibrettoSmart21.jpg" />
-    <None Include="Resources\LibrettoSmart22.jpg" />
-    <None Include="Resources\Postpay.png" />
-    <None Include="Resources\Postpay2.png" />
     <None Include="Resources\DaamDev2.png" />
-    <None Include="Resources\LibrettoSmart23.jpg" />
-    <None Include="Resources\MpFA22.png" />
     <None Include="Resources\MpFA221.png" />
-    <None Include="Resources\Start setting.png" />
-    <None Include="Resources\Start setting2.png" />
     <Content Include="MpFA22.ico" />
+    <None Include="Resources\Spese Annuali_piccolo.png" />
+    <None Include="Resources\Conto Corrente_piccolo.png" />
+    <None Include="Resources\Mantenimento_piccolo.png" />
+    <None Include="Resources\Start setting2_piccolo.png" />
+    <None Include="Resources\imagesRep2_piccolo.png" />
+    <None Include="Resources\images.jpg" />
     <Content Include="RunPath.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

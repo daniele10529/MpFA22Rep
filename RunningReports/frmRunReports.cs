@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using GenericModelData;
-using Checking;
-
+using System.Drawing;
 
 namespace RunningReports
 {
@@ -13,23 +12,27 @@ namespace RunningReports
         private ModelDataReports.RunReports runReports;
 
         //Attributo privato per il caricamento dei dati
-        private bool load = false;
+        private bool reportDone = false;
 
         public frmRunReports()
         {
             InitializeComponent();
+            //Set dei tooltip sui pulsanti
             ToolTip tip = new ToolTip();
             tip.AutoPopDelay = 5000;
             tip.InitialDelay = 1000;
             tip.ReshowDelay = 500;
             tip.ShowAlways = true;
             tip.SetToolTip(btnListYears, "Apri lista Anni disponibili");
-            tip.SetToolTip(btnRunReports, "Esegui Report annuale");
+            tip.SetToolTip(btnRunningReport, "Esegui Report annuale");
             tip.SetToolTip(btnExit, "Esci");
             tip.SetToolTip(btnPDFCreator, "Stampa Report");
             //Istanza model e struttura dati
             dataReports = new ModelDataReports();
             runReports = new ModelDataReports.RunReports();
+            //Definisce il colore senza focus sulla textbox custom
+            txtSelectYear.BorderColor = Color.FromArgb(169,172,174);
+
         }
 
         #region Functions
@@ -43,7 +46,7 @@ namespace RunningReports
         private void refreshText(object sender, EventArgs e)
         {
             //Acquisisce il valore dell'attributo statico della struttura dati
-            txtSelYear.Text = ModelDataReports.RunReports.year.ToString();
+            txtSelectYear.Texts = ModelDataReports.RunReports.year.ToString();
         }
 
         /// <summary>
@@ -123,35 +126,35 @@ namespace RunningReports
 
         }
 
-        private void btnRunReports_Click(object sender, EventArgs e)
+        private void btnRunningReport_Click(object sender, EventArgs e)
         {
-            
-            //Attributi per verifica inserimento
-            string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
-            string father = "ListError";
-            string feature = "ErrorTitle";
-            Checker check = new Checker(pathxml, father, feature);
             //Attributo anno da reportare
             int year;
 
             //Verifica sia stato inserito un valore come anno da reportare
-            if(txtSelYear.Text.Length > 0)
+            if (txtSelectYear.Texts.Length > 0)
             {
-                //Verifica che il valore inserito sia numerico
-                if(check.isnumeric(txtSelYear, true))
+                try
                 {
                     //Ottiente l'ADT dalla struttura dati e esegue il binding sulle textbox
-                    year = Int32.Parse(txtSelYear.Text);
-                    runReports = dataReports.getReport(year);
-                    bindingData(runReports);
-                    load = true;
+                    year = Int32.Parse(txtSelectYear.Texts);
+
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("Il valore inserito non è numerico", "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
+                //Ottiente l'ADT dalla struttura dati e esegue il binding sulle textbox
+                runReports = dataReports.getReport(year);
+                bindingData(runReports);
+                reportDone = true;
             }
         }
 
+
         private void btnPDFCreator_Click(object sender, EventArgs e)
         {
-            if (load)
+            if (reportDone)
             {
                 ExecuteReportPDF report = new ExecuteReportPDF(runReports);
                 report.generateReport();
@@ -165,6 +168,33 @@ namespace RunningReports
             Dispose();
         }
 
+
+
+        #endregion
+
+         #region links
+
+        private void lnkSpendElements_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Mostra il form di report spese e nasconde il form principale
+            frmSpendElements frmSpendsElement = new frmSpendElements();
+            frmSpendsElement.Show();
+            this.Hide();
+        }
+
+
+        #endregion
+
+        #region Textbox
+        private void txtSelectYear_Enter(object sender, EventArgs e)
+        {
+            txtSelectYear.BorderColor = Color.FromArgb(178, 221, 249);
+        }
+
+        private void txtSelectYear_Leave(object sender, EventArgs e)
+        {
+            txtSelectYear.BorderColor = Color.FromArgb(169, 172, 174);
+        }
 
         #endregion
 
