@@ -27,7 +27,7 @@ namespace RunningReports
         /// <summary>
         /// Costruttore per l'oggeto ExcecuteReportPDF diReportsSpend
         /// </summary>
-        /// <param name="listSpends"></param>
+        /// <param name="listSpends">Lista di dati da aggiungere al file</param>
         public ExecuteReportPDF(List<ModelDataReports.RunReportsSpends> listSpends)
         {
             this.listSpends = listSpends;
@@ -102,6 +102,9 @@ namespace RunningReports
             }
         }
 
+        /// <summary>
+        /// Metodo per la creazione del PDF con report Annuale
+        /// </summary>
         public void generateReport()
         {
             //Valori degli headers della tabella inseriti dal metodo privato
@@ -232,10 +235,12 @@ namespace RunningReports
             
         }
 
-        /// <summary>
-        /// Metodo per generare il PDF del ReportSpends
-        /// </summary>
-        /// <param name="reportSpend"></param>
+       /// <summary>
+       /// Metodo per la creazione del PDF con report spese mensili
+       /// </summary>
+       /// <param name="year">Anno del report</param>
+       /// <param name="badMonths">Mese peggiore</param>
+       /// <param name="badImports">Importo peggiore</param>
         public void generateReport(string year, string badMonths, double badImports)
         {
             //Percorso dove salvare il report in PDF
@@ -274,6 +279,7 @@ namespace RunningReports
                 //Imposta la larghezza delle celle
                 tableReport.WidthPercentage = 100;
                 
+                //Crea i paragrafi dai dati della lista
                 foreach(ModelDataReports.RunReportsSpends voice in listSpends)
                 {
                     text = new Paragraph(voice.oftenCause, FontFactory.GetFont("Courier New", 12, 0, BaseColor.BLUE));

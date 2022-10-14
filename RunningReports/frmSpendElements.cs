@@ -14,9 +14,15 @@ namespace RunningReports
         private List<ModelDataReports.RunReportsSpends> list;
 
         //Attributi privati per la creazione del Report in PDF
+        /// <summary>
+        /// Getter Setter per il mese con la spesa più elevata
+        /// </summary>
         private string BadMonths { get; set; }
+        /// <summary>
+        /// Getter Setter per la cifra della spesa più elevata
+        /// </summary>
         private double BadImport { get; set; }
-
+        //Attributo di verifica dell'esecuzione del report
         private bool reportDone = false;
 
         //Costruttore di Default
@@ -88,7 +94,7 @@ namespace RunningReports
                 {
                     txtReportsSpends.Texts += voice.oftenCause.ToUpper() + "\t" + voice.import.ToString().ToUpper() + "€" + "\t" + voice.mese.ToUpper() + "\r\n";
                     totAnnuo += voice.import;
-
+                    //Calcola il mese/mesi con la spese più elevata
                     if (monthPre == voice.mese)
                     {
                         totMensile += voice.import;
@@ -128,16 +134,21 @@ namespace RunningReports
 
         private void btnListYears_Click(object sender, EventArgs e)
         {
+            //Apre la finestra degli anni disponibili da DB
             frmSarchYear frmYear = new frmSarchYear();
             frmYear.Show();
+            //Alla chiusura del form child aggiorna la casella di testo
             frmYear.Deactivate += new EventHandler(refreshText);
         }
 
         private void btnPDFCreator_Click(object sender, EventArgs e)
         {
+            //Se eseguito il report
             if (reportDone)
             {
+                //Istanza all'oggetto per la creazione del file PDF con il report
                 ExecuteReportPDF exeReport = new ExecuteReportPDF(list);
+                //Invoca il metodo per ottenere il file PDF
                 exeReport.generateReport(txtSelectYear.Texts, BadMonths, BadImport);
             }
             
@@ -165,11 +176,13 @@ namespace RunningReports
         #region Textbox
         private void txtSelectYear_Enter(object sender, EventArgs e)
         {
+            //Setta il colore del bordo al ricevimento del focus
             txtSelectYear.BorderColor = Color.FromArgb(178, 221, 249);
         }
 
         private void txtSelectYear_Leave(object sender, EventArgs e)
         {
+            //Setta il colore del bordo al rilascio del focus
             txtSelectYear.BorderColor = Color.FromArgb(169, 172, 174);
         }
 
@@ -179,10 +192,11 @@ namespace RunningReports
         /// <summary>
         /// Aggiorna il valore della textbox con l'anno selezionato
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Object</param>
+        /// <param name="e">Args</param>
         private void refreshText(object sender, EventArgs e)
         {
+            //Aggiorno la textbox
             txtSelectYear.Texts = ModelDataReports.RunReports.year.ToString();
         }
 

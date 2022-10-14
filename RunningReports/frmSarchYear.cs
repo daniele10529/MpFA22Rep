@@ -29,11 +29,11 @@ namespace RunningReports
         /// <summary>
         /// Assegna all'attributo statico della struttura ADT il valore della riga selezionata
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Object</param>
+        /// <param name="e">Args</param>
         private void btnSelectYear_Click(object sender, EventArgs e)
         {
-            //Preleva l'anno selezionato
+            //Preleva l'anno selezionato e lo assegna all'ADT 
             var selectCell = grdYear.CurrentRow.Cells;
             ModelDataReports.RunReports.year = (int)selectCell[0].Value;
             Dispose();
@@ -42,8 +42,8 @@ namespace RunningReports
         /// <summary>
         /// Carica i valori nella griglia al caricamento del form
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Object</param>
+        /// <param name="e">Args</param>
         private void frmSarchYear_Load(object sender, EventArgs e)
         {
             //Associazione dati, serve a definire la dimensione della colonna

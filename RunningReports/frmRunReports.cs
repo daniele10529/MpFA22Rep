@@ -14,6 +14,7 @@ namespace RunningReports
         //Attributo privato per il caricamento dei dati
         private bool reportDone = false;
 
+        //Costruttore
         public frmRunReports()
         {
             InitializeComponent();
@@ -154,9 +155,12 @@ namespace RunningReports
 
         private void btnPDFCreator_Click(object sender, EventArgs e)
         {
+            //Se il report è stato eseguito
             if (reportDone)
             {
+                //Istanza all'oggetto per la creazione del file PDF
                 ExecuteReportPDF report = new ExecuteReportPDF(runReports);
+                //Invoca il metodo per generare il PDF
                 report.generateReport();
             }
            
@@ -167,8 +171,6 @@ namespace RunningReports
             //Chiude il form
             Dispose();
         }
-
-
 
         #endregion
 
@@ -188,11 +190,13 @@ namespace RunningReports
         #region Textbox
         private void txtSelectYear_Enter(object sender, EventArgs e)
         {
+            //Setta il colore del bordo al ricevimento del focus
             txtSelectYear.BorderColor = Color.FromArgb(178, 221, 249);
         }
 
         private void txtSelectYear_Leave(object sender, EventArgs e)
         {
+            //Setta il colore del bordo allo scarico del focus
             txtSelectYear.BorderColor = Color.FromArgb(169, 172, 174);
         }
 

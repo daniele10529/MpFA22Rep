@@ -32,6 +32,9 @@ namespace GenericModelData
             public double tot_year_spend;
         }
 
+        /// <summary>
+        /// Struttura di rappresentazione dei dati per il report spese mensili
+        /// </summary>
         public struct RunReportsSpends
         {
             public string mese;
@@ -39,6 +42,10 @@ namespace GenericModelData
             public string oftenCause;
             public double import;
         }
+
+        //Parametri privati
+        //Oggetto per l'accesso ai comandi DQl di MySQL
+        DQL dql = new DQL();
 
         /// <summary>
         /// Costruttore di default
@@ -64,6 +71,7 @@ namespace GenericModelData
                 stringConnection = readerxml.readNode("strconnect");
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
+                //Query di mapping sulla tabella anni
                 string query = "SELECT * FROM anni";
                 var command = connecting.command(connection, query);
                 //Utilizza il DataAdapter per inserire i dati in tabella
@@ -97,12 +105,13 @@ namespace GenericModelData
 
             try
             {
-                //Carica gli anni prenseti nel DB
+                //Ottiene i valori di totale ricavi, spese e risparmio di ogni mese dell'anno selezionato
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
                 stringConnection = readerxml.readNode("strconnect");
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
+
                 string query = $"SELECT stipendio + ricavo_extra as ricavo_tot, totale_spese_mese, " +
                     $"cast((stipendio + ricavo_extra)-totale_spese_mese as decimal(16,2)) as risparmio " +
                     $"FROM resoconto_mensile WHERE anno = {year};";
@@ -117,7 +126,7 @@ namespace GenericModelData
                     runRports.reportMounth.Add(dataMounth);
                 }
                 reader.Dispose();
-
+                //Ricava i totali annui
                 query = $"SELECT totale_ricavi_anno, totale_spese_anno FROM resoconto_annuale WHERE anno = {year};";
                 reader = connecting.reader(command, query);
 
@@ -157,13 +166,13 @@ namespace GenericModelData
 
             try
             {
-                //Carica gli anni prenseti nel DB
+                //Ottiene tutte le causali frequenti
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
                 stringConnection = readerxml.readNode("strconnect");
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
-                string query = $"SELECT * FROM causali_frequenti;";
+                string query = "SELECT * FROM causali_frequenti;";
                 var reader = connecting.reader(command, query);
                 
                 //Assegna alla lista ogni valore del DB
@@ -187,6 +196,13 @@ namespace GenericModelData
             return spends;
         }
 
+        /// <summary>
+        /// Metodo per ricavare la lista delle spese mensili di un anno
+        /// dalla causale selezionata
+        /// </summary>
+        /// <param name="cause">Causale per il mapping</param>
+        /// <param name="year">Anno per il mapping</param>
+        /// <returns></returns>
         public List<RunReportsSpends> getOftenSpendsList(string cause, int year)
         {
             RunReportsSpends runReportsSpend;
@@ -197,7 +213,7 @@ namespace GenericModelData
 
             try
             {
-                //Carica gli anni prenseti nel DB
+                //Ricava tutte le spese della voce e anno selezionati
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
                 stringConnection = readerxml.readNode("strconnect");
                 Connecting connecting = new Connecting(stringConnection);
@@ -205,7 +221,7 @@ namespace GenericModelData
                 var command = connecting.command(connection);
 
                 //information_schema.tables => ricava le informazioni del database, preleva e verifica 
-                //il nome della tabella dal parametro TABLE_NAME
+                //il nome della tabella dal parametro TABLE_NAME    
                 string query = 
                     $"SELECT DISTINCT gennaio.*, TABLE_NAME as TableName FROM gennaio " +
                        $"INNER JOIN information_schema.tables ON anno={year} AND voce_spesa='{cause}' AND TABLE_NAME = 'gennaio';"+
