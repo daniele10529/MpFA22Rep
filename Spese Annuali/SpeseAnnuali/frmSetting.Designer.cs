@@ -28,219 +28,246 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlStart = new System.Windows.Forms.Panel();
-            this.btnSetStart = new System.Windows.Forms.Button();
-            this.pnlMenuStart = new System.Windows.Forms.Panel();
+            this.pnlHeader = new RoundendControlCollections.RoundedPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnlManageDB = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pnlDiv = new RoundendControlCollections.RoundedPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnlDB = new System.Windows.Forms.Panel();
-            this.btnDump = new System.Windows.Forms.Button();
-            this.btnSetPathDump = new System.Windows.Forms.Button();
-            this.pnlSet = new System.Windows.Forms.Panel();
-            this.btnChange = new System.Windows.Forms.Button();
-            this.txPathDump = new System.Windows.Forms.TextBox();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.pnlStart.SuspendLayout();
-            this.pnlMenuStart.SuspendLayout();
-            this.pnlManageDB.SuspendLayout();
-            this.pnlDB.SuspendLayout();
-            this.pnlSet.SuspendLayout();
+            this.txtPathDump = new RoundendControlCollections.RoundedTextBox();
+            this.lblSetPath = new System.Windows.Forms.Label();
+            this.btnExit = new RoundendControlCollections.RoundedButton();
+            this.btnChange = new RoundendControlCollections.RoundedButton();
+            this.btnDump = new RoundendControlCollections.RoundedButton();
+            this.brnSetPuthDump = new RoundendControlCollections.RoundedButton();
+            this.btnSetStart = new RoundendControlCollections.RoundedButton();
+            this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlStart
+            // pnlHeader
             // 
-            this.pnlStart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlStart.AutoSize = true;
-            this.pnlStart.BackColor = System.Drawing.Color.DimGray;
-            this.pnlStart.Controls.Add(this.btnSetStart);
-            this.pnlStart.ForeColor = System.Drawing.Color.Indigo;
-            this.pnlStart.Location = new System.Drawing.Point(0, 39);
-            this.pnlStart.Name = "pnlStart";
-            this.pnlStart.Size = new System.Drawing.Size(642, 124);
-            this.pnlStart.TabIndex = 1;
-            // 
-            // btnSetStart
-            // 
-            this.btnSetStart.AutoSize = true;
-            this.btnSetStart.BackColor = System.Drawing.Color.DarkGray;
-            this.btnSetStart.BackgroundImage = global::SpeseAnnuali.Properties.Resources.settings2;
-            this.btnSetStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSetStart.FlatAppearance.BorderSize = 0;
-            this.btnSetStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetStart.Location = new System.Drawing.Point(3, 6);
-            this.btnSetStart.Name = "btnSetStart";
-            this.btnSetStart.Size = new System.Drawing.Size(143, 114);
-            this.btnSetStart.TabIndex = 0;
-            this.btnSetStart.Text = "Set valori iniziali";
-            this.btnSetStart.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSetStart.UseVisualStyleBackColor = false;
-            this.btnSetStart.Click += new System.EventHandler(this.btnSetStart_Click);
-            // 
-            // pnlMenuStart
-            // 
-            this.pnlMenuStart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlMenuStart.BackColor = System.Drawing.Color.DimGray;
-            this.pnlMenuStart.Controls.Add(this.label1);
-            this.pnlMenuStart.Location = new System.Drawing.Point(0, -3);
-            this.pnlMenuStart.Name = "pnlMenuStart";
-            this.pnlMenuStart.Size = new System.Drawing.Size(639, 42);
-            this.pnlMenuStart.TabIndex = 2;
+            this.pnlHeader.BackColor = System.Drawing.Color.Transparent;
+            this.pnlHeader.BackgroundColor = System.Drawing.Color.Transparent;
+            this.pnlHeader.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlHeader.BorderRadius = 20;
+            this.pnlHeader.BorderSize = 2;
+            this.pnlHeader.Controls.Add(this.btnExit);
+            this.pnlHeader.Controls.Add(this.lblSetPath);
+            this.pnlHeader.Controls.Add(this.btnChange);
+            this.pnlHeader.Controls.Add(this.txtPathDump);
+            this.pnlHeader.Controls.Add(this.btnDump);
+            this.pnlHeader.Controls.Add(this.label3);
+            this.pnlHeader.Controls.Add(this.brnSetPuthDump);
+            this.pnlHeader.Controls.Add(this.pnlDiv);
+            this.pnlHeader.Controls.Add(this.btnSetStart);
+            this.pnlHeader.Controls.Add(this.label2);
+            this.pnlHeader.Controls.Add(this.label1);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlHeader.GradientAngle = 90F;
+            this.pnlHeader.GrdtBottom = System.Drawing.Color.WhiteSmoke;
+            this.pnlHeader.GrdtTop = System.Drawing.Color.AntiqueWhite;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(639, 554);
+            this.pnlHeader.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoEllipsis = true;
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DimGray;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Indigo;
-            this.label1.Location = new System.Drawing.Point(200, 12);
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(257, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 21);
+            this.label1.Size = new System.Drawing.Size(122, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "STARTING SETTING";
+            this.label1.Text = "IMPOSTAZIONI";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnlManageDB
+            // label3
             // 
-            this.pnlManageDB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlManageDB.BackColor = System.Drawing.Color.DimGray;
-            this.pnlManageDB.Controls.Add(this.label2);
-            this.pnlManageDB.Location = new System.Drawing.Point(0, 163);
-            this.pnlManageDB.Name = "pnlManageDB";
-            this.pnlManageDB.Size = new System.Drawing.Size(639, 42);
-            this.pnlManageDB.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(234, 195);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(166, 18);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "SETTING DATABASE";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlDiv
+            // 
+            this.pnlDiv.BackColor = System.Drawing.Color.Black;
+            this.pnlDiv.BackgroundColor = System.Drawing.Color.Black;
+            this.pnlDiv.BorderColor = System.Drawing.Color.LightGray;
+            this.pnlDiv.BorderRadius = 5;
+            this.pnlDiv.BorderSize = 1;
+            this.pnlDiv.GradientAngle = 90F;
+            this.pnlDiv.GrdtBottom = System.Drawing.Color.Empty;
+            this.pnlDiv.GrdtTop = System.Drawing.Color.Empty;
+            this.pnlDiv.Location = new System.Drawing.Point(19, 171);
+            this.pnlDiv.Name = "pnlDiv";
+            this.pnlDiv.Size = new System.Drawing.Size(600, 5);
+            this.pnlDiv.TabIndex = 9;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoEllipsis = true;
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.DimGray;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Indigo;
-            this.label2.Location = new System.Drawing.Point(200, 8);
+            this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(209, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 21);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "GESTIONE DB";
+            this.label2.Size = new System.Drawing.Size(217, 18);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "SETTING VALORI INIZIALI";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnlDB
+            // txtPathDump
             // 
-            this.pnlDB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlDB.AutoSize = true;
-            this.pnlDB.BackColor = System.Drawing.Color.DimGray;
-            this.pnlDB.Controls.Add(this.btnDump);
-            this.pnlDB.Controls.Add(this.btnSetPathDump);
-            this.pnlDB.ForeColor = System.Drawing.Color.Indigo;
-            this.pnlDB.Location = new System.Drawing.Point(-1, 205);
-            this.pnlDB.Name = "pnlDB";
-            this.pnlDB.Size = new System.Drawing.Size(642, 121);
-            this.pnlDB.TabIndex = 4;
+            this.txtPathDump.BorderColor = System.Drawing.Color.DimGray;
+            this.txtPathDump.BorderFocusColor = System.Drawing.Color.LightSteelBlue;
+            this.txtPathDump.BorderRadius = 10;
+            this.txtPathDump.BorderSize = 1;
+            this.txtPathDump.Location = new System.Drawing.Point(19, 379);
+            this.txtPathDump.Multiline = false;
+            this.txtPathDump.Name = "txtPathDump";
+            this.txtPathDump.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtPathDump.PasswordChar = false;
+            this.txtPathDump.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPathDump.PlaceholderText = "";
+            this.txtPathDump.ReadOnly = false;
+            this.txtPathDump.Size = new System.Drawing.Size(407, 28);
+            this.txtPathDump.TabIndex = 13;
+            this.txtPathDump.Texts = "";
+            this.txtPathDump.UnderlinedStyle = false;
+            this.txtPathDump.Enter += new System.EventHandler(this.txtPathDump_Enter);
+            this.txtPathDump.Leave += new System.EventHandler(this.txtPathDump_Leave);
             // 
-            // btnDump
+            // lblSetPath
             // 
-            this.btnDump.BackColor = System.Drawing.Color.DarkGray;
-            this.btnDump.BackgroundImage = global::SpeseAnnuali.Properties.Resources.dump;
-            this.btnDump.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnDump.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDump.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDump.Location = new System.Drawing.Point(153, 4);
-            this.btnDump.Name = "btnDump";
-            this.btnDump.Size = new System.Drawing.Size(143, 114);
-            this.btnDump.TabIndex = 2;
-            this.btnDump.Text = "Esegui dump";
-            this.btnDump.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDump.UseVisualStyleBackColor = false;
-            this.btnDump.Click += new System.EventHandler(this.btnDump_Click);
-            // 
-            // btnSetPathDump
-            // 
-            this.btnSetPathDump.AutoSize = true;
-            this.btnSetPathDump.BackColor = System.Drawing.Color.DarkGray;
-            this.btnSetPathDump.BackgroundImage = global::SpeseAnnuali.Properties.Resources.settings2;
-            this.btnSetPathDump.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSetPathDump.FlatAppearance.BorderSize = 0;
-            this.btnSetPathDump.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetPathDump.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetPathDump.Location = new System.Drawing.Point(4, 4);
-            this.btnSetPathDump.Name = "btnSetPathDump";
-            this.btnSetPathDump.Size = new System.Drawing.Size(143, 114);
-            this.btnSetPathDump.TabIndex = 1;
-            this.btnSetPathDump.Text = "Set Path Dump";
-            this.btnSetPathDump.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSetPathDump.UseVisualStyleBackColor = false;
-            this.btnSetPathDump.Click += new System.EventHandler(this.btnSetPathDump_Click);
-            // 
-            // pnlSet
-            // 
-            this.pnlSet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSet.AutoSize = true;
-            this.pnlSet.BackColor = System.Drawing.Color.DimGray;
-            this.pnlSet.Controls.Add(this.btnChange);
-            this.pnlSet.Controls.Add(this.txPathDump);
-            this.pnlSet.Controls.Add(this.btnExit);
-            this.pnlSet.ForeColor = System.Drawing.Color.Indigo;
-            this.pnlSet.Location = new System.Drawing.Point(0, 322);
-            this.pnlSet.Name = "pnlSet";
-            this.pnlSet.Size = new System.Drawing.Size(639, 231);
-            this.pnlSet.TabIndex = 5;
-            // 
-            // btnChange
-            // 
-            this.btnChange.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChange.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.btnChange.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Salva;
-            this.btnChange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChange.Location = new System.Drawing.Point(599, 4);
-            this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(37, 27);
-            this.btnChange.TabIndex = 3;
-            this.btnChange.UseVisualStyleBackColor = false;
-            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
-            // 
-            // txPathDump
-            // 
-            this.txPathDump.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txPathDump.BackColor = System.Drawing.Color.Gainsboro;
-            this.txPathDump.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txPathDump.ForeColor = System.Drawing.Color.Teal;
-            this.txPathDump.Location = new System.Drawing.Point(-1, 3);
-            this.txPathDump.Name = "txPathDump";
-            this.txPathDump.Size = new System.Drawing.Size(594, 27);
-            this.txPathDump.TabIndex = 2;
-            this.txPathDump.TextChanged += new System.EventHandler(this.txPathDump_TextChanged);
+            this.lblSetPath.AutoSize = true;
+            this.lblSetPath.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetPath.Location = new System.Drawing.Point(234, 342);
+            this.lblSetPath.Name = "lblSetPath";
+            this.lblSetPath.Size = new System.Drawing.Size(177, 18);
+            this.lblSetPath.TabIndex = 15;
+            this.lblSetPath.Text = "SETTING PATH DUMP";
+            this.lblSetPath.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnExit
             // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.AutoSize = true;
-            this.btnExit.BackColor = System.Drawing.Color.DarkGray;
+            this.btnExit.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnExit.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.btnExit.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Exit;
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.BorderColor = System.Drawing.Color.Turquoise;
+            this.btnExit.BorderRadius = 10;
+            this.btnExit.BorderSize = 1;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(464, 107);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.GradientAngle = 90F;
+            this.btnExit.GrdtBottom = System.Drawing.Color.Empty;
+            this.btnExit.Location = new System.Drawing.Point(589, 512);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(144, 114);
-            this.btnExit.TabIndex = 1;
-            this.btnExit.Text = "Chiudi";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
+            this.btnExit.TabIndex = 16;
+            this.btnExit.TextColor = System.Drawing.Color.White;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnChange
+            // 
+            this.btnChange.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnChange.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.btnChange.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Salva;
+            this.btnChange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnChange.BorderColor = System.Drawing.Color.Turquoise;
+            this.btnChange.BorderRadius = 10;
+            this.btnChange.BorderSize = 1;
+            this.btnChange.FlatAppearance.BorderSize = 0;
+            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChange.ForeColor = System.Drawing.Color.White;
+            this.btnChange.GradientAngle = 90F;
+            this.btnChange.GrdtBottom = System.Drawing.Color.Empty;
+            this.btnChange.Location = new System.Drawing.Point(448, 377);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(30, 30);
+            this.btnChange.TabIndex = 14;
+            this.btnChange.TextColor = System.Drawing.Color.White;
+            this.btnChange.UseVisualStyleBackColor = false;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            // 
+            // btnDump
+            // 
+            this.btnDump.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDump.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDump.BorderColor = System.Drawing.Color.Turquoise;
+            this.btnDump.BorderRadius = 10;
+            this.btnDump.BorderSize = 1;
+            this.btnDump.FlatAppearance.BorderSize = 0;
+            this.btnDump.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDump.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDump.ForeColor = System.Drawing.Color.White;
+            this.btnDump.GradientAngle = 90F;
+            this.btnDump.GrdtBottom = System.Drawing.Color.Empty;
+            this.btnDump.Image = global::SpeseAnnuali.Properties.Resources.dump1;
+            this.btnDump.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDump.Location = new System.Drawing.Point(177, 242);
+            this.btnDump.Name = "btnDump";
+            this.btnDump.Size = new System.Drawing.Size(117, 30);
+            this.btnDump.TabIndex = 12;
+            this.btnDump.Text = "Esegui Dump";
+            this.btnDump.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDump.TextColor = System.Drawing.Color.White;
+            this.btnDump.UseVisualStyleBackColor = false;
+            this.btnDump.Click += new System.EventHandler(this.btnDump_Click);
+            // 
+            // brnSetPuthDump
+            // 
+            this.brnSetPuthDump.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.brnSetPuthDump.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.brnSetPuthDump.BorderColor = System.Drawing.Color.Turquoise;
+            this.brnSetPuthDump.BorderRadius = 10;
+            this.brnSetPuthDump.BorderSize = 1;
+            this.brnSetPuthDump.FlatAppearance.BorderSize = 0;
+            this.brnSetPuthDump.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.brnSetPuthDump.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brnSetPuthDump.ForeColor = System.Drawing.Color.White;
+            this.brnSetPuthDump.GradientAngle = 90F;
+            this.brnSetPuthDump.GrdtBottom = System.Drawing.Color.Empty;
+            this.brnSetPuthDump.Image = global::SpeseAnnuali.Properties.Resources.pencil_17925;
+            this.brnSetPuthDump.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.brnSetPuthDump.Location = new System.Drawing.Point(20, 242);
+            this.brnSetPuthDump.Name = "brnSetPuthDump";
+            this.brnSetPuthDump.Size = new System.Drawing.Size(123, 30);
+            this.brnSetPuthDump.TabIndex = 10;
+            this.brnSetPuthDump.Text = "Set Path Dump";
+            this.brnSetPuthDump.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.brnSetPuthDump.TextColor = System.Drawing.Color.White;
+            this.brnSetPuthDump.UseVisualStyleBackColor = false;
+            this.brnSetPuthDump.Click += new System.EventHandler(this.btnSetPathDump_Click);
+            // 
+            // btnSetStart
+            // 
+            this.btnSetStart.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSetStart.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSetStart.BorderColor = System.Drawing.Color.Turquoise;
+            this.btnSetStart.BorderRadius = 10;
+            this.btnSetStart.BorderSize = 1;
+            this.btnSetStart.FlatAppearance.BorderSize = 0;
+            this.btnSetStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetStart.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetStart.ForeColor = System.Drawing.Color.White;
+            this.btnSetStart.GradientAngle = 90F;
+            this.btnSetStart.GrdtBottom = System.Drawing.Color.Empty;
+            this.btnSetStart.Image = global::SpeseAnnuali.Properties.Resources.Impostazioni21;
+            this.btnSetStart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSetStart.Location = new System.Drawing.Point(20, 116);
+            this.btnSetStart.Name = "btnSetStart";
+            this.btnSetStart.Size = new System.Drawing.Size(146, 31);
+            this.btnSetStart.TabIndex = 8;
+            this.btnSetStart.Text = "Set Valori Iniziali";
+            this.btnSetStart.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSetStart.TextColor = System.Drawing.Color.White;
+            this.btnSetStart.UseVisualStyleBackColor = false;
+            this.btnSetStart.Click += new System.EventHandler(this.btnSetStart_Click);
             // 
             // frmSetting
             // 
@@ -248,11 +275,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(639, 554);
-            this.Controls.Add(this.pnlSet);
-            this.Controls.Add(this.pnlDB);
-            this.Controls.Add(this.pnlManageDB);
-            this.Controls.Add(this.pnlMenuStart);
-            this.Controls.Add(this.pnlStart);
+            this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "frmSetting";
@@ -261,35 +284,25 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmSetting";
             this.Load += new System.EventHandler(this.frmSetting_Load);
-            this.pnlStart.ResumeLayout(false);
-            this.pnlStart.PerformLayout();
-            this.pnlMenuStart.ResumeLayout(false);
-            this.pnlMenuStart.PerformLayout();
-            this.pnlManageDB.ResumeLayout(false);
-            this.pnlManageDB.PerformLayout();
-            this.pnlDB.ResumeLayout(false);
-            this.pnlDB.PerformLayout();
-            this.pnlSet.ResumeLayout(false);
-            this.pnlSet.PerformLayout();
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlHeader.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnSetStart;
-        private System.Windows.Forms.Panel pnlStart;
-        private System.Windows.Forms.Panel pnlMenuStart;
+        private RoundendControlCollections.RoundedPanel pnlHeader;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel pnlManageDB;
+        private RoundendControlCollections.RoundedButton btnExit;
+        private System.Windows.Forms.Label lblSetPath;
+        private RoundendControlCollections.RoundedButton btnChange;
+        private RoundendControlCollections.RoundedTextBox txtPathDump;
+        private RoundendControlCollections.RoundedButton btnDump;
+        private System.Windows.Forms.Label label3;
+        private RoundendControlCollections.RoundedButton brnSetPuthDump;
+        private RoundendControlCollections.RoundedPanel pnlDiv;
+        private RoundendControlCollections.RoundedButton btnSetStart;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel pnlDB;
-        private System.Windows.Forms.Panel pnlSet;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnSetPathDump;
-        private System.Windows.Forms.TextBox txPathDump;
-        private System.Windows.Forms.Button btnChange;
-        private System.Windows.Forms.Button btnDump;
     }
 }

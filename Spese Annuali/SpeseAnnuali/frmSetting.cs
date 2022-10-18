@@ -21,8 +21,9 @@ namespace SpeseAnnuali
 
         private void frmSetting_Load(object sender, EventArgs e)
         {//rende invisibile la TextBox e il Button
-            txPathDump.Visible = false;
+            txtPathDump.Visible = false;
             btnChange.Visible = false;
+            lblSetPath.Visible = false;
         }
 
         private void btnSetStart_Click(object sender, EventArgs e)
@@ -44,11 +45,12 @@ namespace SpeseAnnuali
         //leggo il percorso salvato per effettuare il dump
         private void btnSetPathDump_Click(object sender, EventArgs e)
         {
-            //sen i pulsanti sono visibili nascondili
-            if (txPathDump.Visible == true && btnChange.Visible == true)
+            //se visibile la textbox con il percorso di dump nascondi gli elementi per l'aggiornamento del percorso
+            if (txtPathDump.Visible == true)
             {
-                txPathDump.Visible = false;
+                txtPathDump.Visible = false;
                 btnChange.Visible = false;
+                lblSetPath.Visible = false;
                 return;
             }
             try
@@ -58,10 +60,12 @@ namespace SpeseAnnuali
                 xml.Load(pathXML);
                 XmlNodeList nodes = xml.SelectNodes("/path/setpath");
 
-                txPathDump.Visible = true;
+                txtPathDump.Visible = true;
                 btnChange.Visible = true;
+                lblSetPath.Visible = true;
+                txtPathDump.BorderColor = Color.DimGray;
                 //imposto il valore della casella di testo dal nodo xml
-                txPathDump.Text = nodes.Item(0).InnerText;
+                txtPathDump.Texts = nodes.Item(0).InnerText;
                 
             }
             catch (Exception ex)
@@ -77,9 +81,9 @@ namespace SpeseAnnuali
             string nodespath = "/path/setpath";
             string path = "";
           
-            if (txPathDump.Text.Length > 0)
+            if (txtPathDump.Texts.Length > 0)
             {
-                path = txPathDump.Text;
+                path = txtPathDump.Texts;
                 if (Directory.Exists(path))
                 {
                     XmlDocument document = new XmlDocument();
@@ -91,17 +95,17 @@ namespace SpeseAnnuali
                     nodes.Item(0).InnerText = path;
                     //salvo il documento in base al percorso salvato
                     document.Save(pathXML);
-                    txPathDump.ForeColor = Color.Green;
+                    txtPathDump.BorderColor = Color.FromArgb(61,243,146);
 
                 }
                 else
                 {
-                    MessageBox.Show("Directory inesistente");
+                    MessageBox.Show("Directory inesistente","ERRORE",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Immettere un percorso valido");
+                MessageBox.Show("Immettere un percorso valido","ERRORE",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             
         }
@@ -128,12 +132,14 @@ namespace SpeseAnnuali
             Dispose();
         }
 
-
-        private void txPathDump_TextChanged(object sender, EventArgs e)
+        private void txtPathDump_Enter(object sender, EventArgs e)
         {
-            //reimposto il calore quando scrivo
-            txPathDump.ForeColor = Color.Teal;
+            txtPathDump.BorderColor = Color.FromArgb(161, 223, 239);
         }
 
+        private void txtPathDump_Leave(object sender, EventArgs e)
+        {
+            txtPathDump.BorderColor = Color.DimGray;
+        }
     }
 }

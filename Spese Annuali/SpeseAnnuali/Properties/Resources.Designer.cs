@@ -163,6 +163,16 @@ namespace SpeseAnnuali.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dump1 {
+            get {
+                object obj = ResourceManager.GetObject("dump1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Elimina {
             get {
                 object obj = ResourceManager.GetObject("Elimina", resourceCulture);
@@ -193,9 +203,39 @@ namespace SpeseAnnuali.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Exit1 {
+            get {
+                object obj = ResourceManager.GetObject("Exit1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_pdf_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-pdf-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagesRep2 {
+            get {
+                object obj = ResourceManager.GetObject("imagesRep2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +256,16 @@ namespace SpeseAnnuali.Properties {
         internal static System.Drawing.Bitmap Impostazioni2 {
             get {
                 object obj = ResourceManager.GetObject("Impostazioni2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Impostazioni21 {
+            get {
+                object obj = ResourceManager.GetObject("Impostazioni21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +296,26 @@ namespace SpeseAnnuali.Properties {
         internal static System.Drawing.Bitmap Nuovo {
             get {
                 object obj = ResourceManager.GetObject("Nuovo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Oficina_PDF_35460_32 {
+            get {
+                object obj = ResourceManager.GetObject("Oficina_PDF_35460_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pencil_17925 {
+            get {
+                object obj = ResourceManager.GetObject("pencil_17925", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

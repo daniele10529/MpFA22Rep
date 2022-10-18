@@ -34,6 +34,9 @@
     <Reference Include="GenericModelData">
       <HintPath>..\Lib\GenericModelData.dll</HintPath>
     </Reference>
+    <Reference Include="RoundendControlCollections">
+      <HintPath>..\..\..\RoundendControlCollections\RoundendControlCollections\bin\Debug\RoundendControlCollections.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />

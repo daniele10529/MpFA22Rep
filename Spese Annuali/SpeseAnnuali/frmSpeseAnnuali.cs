@@ -34,6 +34,9 @@ namespace SpeseAnnuali
         public int year_manage, month_manage;
         private string manage_mese;
 
+        //Evento mouse click nel DataGridView
+        MouseEventArgs mouse;
+
         public frmSpeseAnnuali()
         {
             InitializeComponent();
@@ -45,7 +48,7 @@ namespace SpeseAnnuali
         }
 
 
-#region FUNZIONI
+        #region Metodi privati
 
         /// <summary>
         /// Genera una list(ModelDataSY.PaymentSY) per l'inserimento nel DB
@@ -62,7 +65,8 @@ namespace SpeseAnnuali
                 lastrow.ItemArray = table.Rows[i].ItemArray;
                 payment.id_tupla_mese = Int32.Parse(lastrow[0].ToString());
                 payment.voce_spesa = lastrow[1].ToString();
-                payment.importo = Double.Parse(lastrow[2].ToString());
+                payment.note = lastrow[2].ToString();
+                payment.importo = Double.Parse(lastrow[3].ToString());
                 list.Add(payment);
             }
             return list;
@@ -83,7 +87,7 @@ namespace SpeseAnnuali
             {
                 row = table.NewRow();
                 row.ItemArray = table.Rows[i].ItemArray;
-                total += Double.Parse(row[2].ToString());
+                total += Double.Parse(row[3].ToString());
             }
             txtTotSpends.Text = total.ToString();
         }
@@ -265,7 +269,8 @@ namespace SpeseAnnuali
 
         #region EVENTI DEGLI OGGETTI :
 
-#region form
+        #region form
+
         private void frmSpeseAnnuali_Load(object sender, EventArgs e)
         {
             Clipboard.Clear();
@@ -281,13 +286,27 @@ namespace SpeseAnnuali
             //imposta il nome delle colonne
             table.Columns.Add("ID");
             table.Columns.Add("CAUSALE DI SPESA");
+            table.Columns.Add("NOTE");
             table.Columns.Add("IMPORTO");
             //imposta la dimensione delle colonne
-            grdMonthSpends.Columns[0].Width = 70;
-            grdMonthSpends.Columns[1].Width = 760;
-            grdMonthSpends.Columns[2].Width = 110;
+            grdMonthSpends.Columns[0].Width = (grdMonthSpends.Width * 5) / 100;
+            grdMonthSpends.Columns[1].Width = (grdMonthSpends.Width * 75) / 100;
+            //grdMonthSpends.Columns[2].Width = (grdMonthSpends.Width * 25) / 100;
+            grdMonthSpends.Columns[3].Width = (grdMonthSpends.Width * 10) / 100;
+
+            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+            button.Width = (grdMonthSpends.Width * 7) / 100;
+            button.HeaderText = "Long Description";
+            button.Text = "LD";
+            button.ToolTipText = "Inserisci la Long Description";
+            button.UseColumnTextForButtonValue = true;
+            button.FlatStyle = FlatStyle.Flat;
+            grdMonthSpends.Columns.Add(button);
+
             //la PK è di sola lettura
             grdMonthSpends.Columns[0].ReadOnly = true;
+            //La colonna note è invisibile, utilizzata come appoggio
+            grdMonthSpends.Columns[2].Visible = false;
 
             txtYearMonth.Text = "Spese.....";
 
@@ -309,7 +328,8 @@ namespace SpeseAnnuali
 
         #endregion
 
-#region Button
+        #region Button
+
         private void btnInsert_Click(object sender, EventArgs e)
         {
             isSaved = false;
@@ -318,8 +338,6 @@ namespace SpeseAnnuali
 
             PopulateGrid populate = new PopulateGrid(grdMonthSpends, table);
             List<string> list = new List<string>();
-            bool[] isempty = new bool[2];
-            bool isNumeric = false;
             int id = 0, idgrid = 0, idDB = 0;
             string father = "ListError";
             string feature = "ErrorTitle";
@@ -330,14 +348,24 @@ namespace SpeseAnnuali
             populate.path = pathxml;
             populate.father = father;
             populate.feature = feature;
-            Checker check = new Checker(pathxml, father, feature);
-            isempty[0] = check.isEmpty(txtCause);
-            isempty[1] = check.isEmpty(txtImport);
-            isNumeric = check.isnumeric(txtImport);
 
-            //Se valore numerico ko esci dalla funzione
-            if (isNumeric == false) return;
+             
+            //Verifica che ci siano i campi obbligatori e l'importo inserito sia numerico
+            try
+            {
+                //Verifica i campi obbligatori, se vuoti genera l'eccezione settando il messaggio
+                if (txtCause.Texts.Length == 0 || txtImport.Texts.Length == 0)
+                    throw new FormatException("I campi Causale e Importo sono obbligatori !!");
+                //Converte in double il valore della textbox importo per verificare sia numerico
+                double val = Double.Parse(txtImport.Texts);
+            }
+            catch (FormatException fex)
+            {
+                MessageBox.Show(fex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             
+
             //acquisisco il valore di PK da DataGridView se c'è almeno una riga
             if (!(table.Rows.Count == 0))
             {
@@ -354,22 +382,21 @@ namespace SpeseAnnuali
             //valori inseriti e non ancora salvati
             if (idgrid >= idDB) id = idgrid + 1;
             //altrimenti incrementa di 1 la chiave prelevata da DB
-            else id = idDB + 1; 
-             
+            else id = idDB + 1;
+
 
             //inserisce nella lista i valori inseriti da textbox
-            if (!(isempty[0] == true || isempty[1] == true))
-            {
-                list.Add(id.ToString());
-                list.Add(txtCause.Text);
-                list.Add(txtImport.Text.Replace('.',','));
-            }
-            else return;
+            list.Add(id.ToString());
+            list.Add(txtCause.Texts);
+            list.Add(txtNote.Texts);
+            list.Add(txtImport.Texts.Replace('.', ','));
+
             //popola la griglia attraverso la lista
-            populate.inserisci(3, list);
+            populate.inserisci(4, list);
             
-            txtCause.Clear();
-            txtImport.Clear();
+            txtCause.Texts = "";
+            txtNote.Texts = "";
+            txtImport.Texts = "";
             txtCause.Focus();
             counter();
             totKeepMoney();
@@ -448,12 +475,13 @@ namespace SpeseAnnuali
                     {
                         listinsert.Add(listdata[i].id_tupla_mese.ToString());
                         listinsert.Add(listdata[i].voce_spesa);
+                        listinsert.Add(listdata[i].note);
                         listinsert.Add(listdata[i].importo.ToString());
-                        populate.inserisci(3, listinsert);
+                        populate.inserisci(4, listinsert);
                         listinsert.Clear();
                         i++;
                     }
-                    txtYearMonth.Text = mese + " " + anno;
+                    txtYearMonth.Text = mese.ToUpper() + " " + anno.ToUpper();
                 }
             }
 
@@ -626,7 +654,7 @@ namespace SpeseAnnuali
             //istanza per form modifica e per aggiornare il datagridview
             frmModify frmMod = new frmModify();
             PopulateGrid populate = new PopulateGrid(grdMonthSpends, table);
-            string id, cause, import;
+            string id, cause, note, import;
             List<ModelDataSY.PaymentSY> listdata = new List<ModelDataSY.PaymentSY>();
             List<string> listinsert = new List<string>();
             int i;
@@ -640,10 +668,12 @@ namespace SpeseAnnuali
                 var val = grdMonthSpends.CurrentRow.Cells;
                 id = val[0].Value.ToString();
                 cause = val[1].Value.ToString();
-                import = val[2].Value.ToString();
+                note = val[2].Value.ToString();
+                import = val[3].Value.ToString();
                 //passo i dati ai setter di frmModify
                 frmMod.setId = id;
                 frmMod.setCause = cause;
+                frmMod.setNote = note;
                 frmMod.setImport = import;
                 //setto l'anno e il mese selezionato
                 frmMod.setYear = year_manage;
@@ -667,8 +697,9 @@ namespace SpeseAnnuali
                     {
                         listinsert.Add(listdata[i].id_tupla_mese.ToString());
                         listinsert.Add(listdata[i].voce_spesa);
+                        listinsert.Add(listdata[i].note);
                         listinsert.Add(listdata[i].importo.ToString());
-                        populate.inserisci(3, listinsert);
+                        populate.inserisci(4, listinsert);
                         listinsert.Clear();
                         i++;
                     }
@@ -705,9 +736,10 @@ namespace SpeseAnnuali
         {
             //istanzia la classe
             CreateFormOftenCause form = new CreateFormOftenCause();
-            //imposta nel setter la textbox che deve acquisire il valoe dalla 
+            //Imposta nel setter la textbox che deve acquisire il valore dalla 
             //lista delle causali frequenti
-            form.oftenCause = txtCause;
+            form.OftenCause = txtCause;
+
         }
         
         //Avvia modulo Conto Corrente
@@ -742,6 +774,13 @@ namespace SpeseAnnuali
             processRunning.runProcess("/runpath/mantenimento", "Mantenimento");
         }
 
+        //Avvia il modulo Reports
+        private void btnRunningReports_Click(object sender, EventArgs e)
+        {
+            ProcessRunning processRunning = new ProcessRunning();
+            processRunning.XMlpathConteinerFile = runPath;
+            processRunning.runProcess("/runpath/report", "RunningReports");
+        }
 
         private void btnPDFCreator_Click(object sender, EventArgs e)
         {
@@ -775,7 +814,7 @@ namespace SpeseAnnuali
 
         #endregion
 
-#region gridview
+        #region gridview
 
         /// <summary>
         /// gestisce la modifica diretta della griglia
@@ -794,7 +833,7 @@ namespace SpeseAnnuali
         private void grdMonthSpends_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             //modifica il . in una , per il corretto cast double
-            if(grdMonthSpends.CurrentCell.ColumnIndex == 2)
+            if(grdMonthSpends.CurrentCell.ColumnIndex == 3)
             {
                 var val = grdMonthSpends.CurrentCell.Value;
                 string valore = val.ToString().Replace('.', ',');
@@ -807,7 +846,11 @@ namespace SpeseAnnuali
         private void grdMonthSpends_MouseClick(object sender, MouseEventArgs e)
         {
             //se viene premuto il tasto SX, esci dalla funzione
-            if (e.Button == MouseButtons.Left) return;
+            if (e.Button == MouseButtons.Left)
+            {
+                mouse = e;
+                return;
+            }
             //istanza alla classe di creazione del ContextMenu
             CreateContexMenu creatMenu = new CreateContexMenu(grdMonthSpends);
             //setting degli eventi da richiamare con i pulsanti
@@ -819,9 +862,60 @@ namespace SpeseAnnuali
             creatMenu.showContextMenu(e);
         }
 
+        private void grdMonthSpends_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Se il click avviene nella colonna del pulsante visualizza il form
+            if (e.ColumnIndex == 4)
+            {
+                //Istanza al form Long Description
+                frmLongDesription frm = new frmLongDesription();
+                //Preleva il valore dalla cella delle note
+                var currentRow = grdMonthSpends.CurrentRow.Cells;
+                string note = currentRow[2].Value.ToString();
+                //Lo assegna al setter del form per la visualizzazione
+                frm.LongDescription = note;
+                //Mostra il form
+                frm.Location = new Point(mouse.X,mouse.Y);
+                //frm.Location = new Point((grdMonthSpends.Location.X + grdMonthSpends.Width), (grdMonthSpends.Location.Y+grdMonthSpends.Height));
+                frm.Show();
+                //Alla chiusura del form aggiorna il valore della cella note
+                frm.Deactivate += new EventHandler((obj, args) =>
+                {
+                    currentRow[2].Value = frm.LongDescription;
+                });
+
+            }
+
+        }
+
         #endregion
 
-#region textbox
+        #region TreeView
+        /// <summary>
+        /// Modifica l'icona alla selezione del nodo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void treeYears_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            //Se il nodo selezionato è ANNI esce dal metodo
+            if (e.Node.Text == "ANNI") return;
+            //Se viene aperto il nodo di un anno inserisce icona freccia in giù
+            if (e.Node.Parent.Text == "ANNI" && e.Node.ImageIndex == 0)
+            {
+                e.Node.ImageIndex = 1;
+            }
+            else
+            {   //se il nodo di un anno viene chiuso ripristina l'icona freccia a dx
+                e.Node.ImageIndex = 0;
+            }    
+
+        }
+
+        #endregion
+
+        #region textbox
+
         private void txtPay_TextChanged(object sender, EventArgs e)
         {
             isChanged = true;
@@ -894,17 +988,53 @@ namespace SpeseAnnuali
             if (e.KeyChar == '.') e.KeyChar = ',';
         }
 
-        /// <summary>
-        /// ricarca voci nel DB
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //Setta i colori delle TextBox per l'iserimento
+        private void txtCause_Enter(object sender, EventArgs e)
+        {
+            txtCause.BorderColor = Color.FromArgb(161, 223, 239);
+            txtCause.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtCause_Leave(object sender, EventArgs e)
+        {
+            txtCause.BorderColor = Color.DimGray;
+            txtCause.BackColor = Color.White;
+        }
+
+        private void txtNote_Enter(object sender, EventArgs e)
+        {
+            txtNote.BorderColor = Color.FromArgb(161, 223, 239);
+            txtNote.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtNote_Leave(object sender, EventArgs e)
+        {
+            txtNote.BorderColor = Color.DimGray;
+            txtNote.BackColor = Color.White;
+        }
+
+        private void txtImport_Enter(object sender, EventArgs e)
+        {
+            txtImport.BorderColor = Color.FromArgb(161, 223, 239);
+            txtImport.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtImport_Leave(object sender, EventArgs e)
+        {
+            txtImport.BorderColor = Color.DimGray;
+            txtImport.BackColor = Color.White;
+        }
+
+        
+
         private void txtSearchVoice_TextChanged(object sender, EventArgs e)
         {
             Searching searching = new Searching(grdMonthSpends, table, txtSearchVoice);
             searching.searchingRow(1);
         }
-#endregion
+
+        #endregion
+
         #endregion
 
     }

@@ -92,3 +92,6 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\Spe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.csproj.GenerateResource.Cache
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.exe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\RoundendControlCollections.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\RoundendControlCollections.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.frmLongDesription.resources

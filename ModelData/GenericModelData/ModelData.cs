@@ -41,6 +41,7 @@ namespace GenericModelData
         {
             public int id_tupla_mese;
             public string voce_spesa;
+            public string note;
             public double importo;
         }
 
@@ -97,11 +98,12 @@ namespace GenericModelData
             int n = 0;
             string[] mesi = { "Gennaio", "Febbraio" , "Marzo" , "Aprile" , "Maggio" , "Giugno" , "Luglio"
             , "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"};
-            string[] icons = { "Conto Corrente.png", "Spese Annuali.png" };
+            string[] icons = { "Ordina_dx.png", "Ordina_Giu.png" };
 
             try
             {
                 //carica le immagini e le aggiunge alla lista
+                //L'icona viene poi modificata nel form chiamante all'evento click
                 string ico = pathIco + icons[0];
                 imagelist.Images.Add(Image.FromFile(ico));
                 ico = pathIco + icons[1];
@@ -114,10 +116,14 @@ namespace GenericModelData
                 string query = "SELECT * FROM anni";
                 var reader = connecting.reader(command, query);
 
+                int a = 0;
+
                 while (reader.Read())
                 {
                     tree.Nodes[0].Nodes.Add(reader.GetString(0));
-                    tree.Nodes[0].ImageIndex = 0;
+                    //Assegna a tutti i nodi l'icona Oridna_dx
+                    tree.Nodes[0].Nodes[a].ImageIndex = 0;
+                    a++;
                 }
 
                 //Scarica le risorse
@@ -130,8 +136,8 @@ namespace GenericModelData
                     for (int i = 0; i < mesi.Length; i++)
                     {
                         tree.Nodes[0].Nodes[n].Nodes.Add(mesi[i]);
-                        tree.Nodes[0].Nodes[n].ImageIndex = 1;
                     }
+                    
                 }
                 
             }
@@ -250,7 +256,8 @@ namespace GenericModelData
                 {
                     payment.id_tupla_mese = reader.GetInt32(0);
                     payment.voce_spesa = reader.GetString(1);
-                    payment.importo = reader.GetDouble(2);
+                    payment.note = reader.GetValue(2).ToString();//GetValue per accettare i valori nulli
+                    payment.importo = reader.GetDouble(3);
                     listdata.Add(payment);
                 }
                 reader.Dispose();
@@ -328,7 +335,8 @@ namespace GenericModelData
                 {
                     payment.id_tupla_mese = reader.GetInt32(0);
                     payment.voce_spesa = reader.GetString(1);
-                    payment.importo = reader.GetDouble(2);
+                    payment.note = reader.GetValue(2).ToString();//GetValue per accettare i valori nulli
+                    payment.importo = reader.GetDouble(3);
                     listdata.Add(payment);
                 }
                 reader.Dispose();
@@ -343,15 +351,15 @@ namespace GenericModelData
                             for (i = listdata.Count; i < data.Count; i++)
                             {
                                 import = data[i].importo.ToString().Replace(',', '.');
-                                command.CommandText = $"INSERT INTO {mese}(id_{mese},voce_spesa,importo,anno) VALUES({data[i].id_tupla_mese},'{data[i].voce_spesa}',{import},{year});";
+                                command.CommandText = $"INSERT INTO {mese}(id_{mese},voce_spesa,note,importo,anno) VALUES({data[i].id_tupla_mese},'{data[i].voce_spesa}','{data[i].note}',{import},{year});";
                                 command.ExecuteNonQuery();
                             }
                             break;
                         }//se sono state modificate le righe, aggiorna i valori
-                        else if (!(listdata[i].voce_spesa == data[i].voce_spesa) || !(listdata[i].importo == data[i].importo))
+                        else if (!(listdata[i].voce_spesa == data[i].voce_spesa) || !(listdata[i].importo == data[i].importo) || !(listdata[i].note == data[i].note))
                         {
                             import = data[i].importo.ToString().Replace(',', '.');
-                            command.CommandText = $"UPDATE {mese} SET voce_spesa='{data[i].voce_spesa}',importo={import} WHERE id_{mese}={data[i].id_tupla_mese}";
+                            command.CommandText = $"UPDATE {mese} SET voce_spesa='{data[i].voce_spesa}',note='{data[i].note}',importo={import} WHERE id_{mese}={data[i].id_tupla_mese}";
                             command.ExecuteNonQuery();
                             command.Dispose();
                             //se non ci sono piu valori da aggiornare esci
@@ -368,7 +376,7 @@ namespace GenericModelData
                 {//cicla tutti i dati del DataGridView
                     for (i = 0; i < data.Count; i++)
                     {//se i dati non chiave primaria sono diversi
-                        if (!(listdata[i].voce_spesa == data[i].voce_spesa) || !(listdata[i].importo == data[i].importo))
+                        if (!(listdata[i].voce_spesa == data[i].voce_spesa) || !(listdata[i].importo == data[i].importo) || !(listdata[i].note == data[i].note))
                         {//preleva le chiavi primarie da ambo le liste
                             
                             if (listdata[i].id_tupla_mese < data[i].id_tupla_mese)//se la chiave primaria del DB è inferiore alla a quella DataGridView
@@ -382,7 +390,7 @@ namespace GenericModelData
                             else
                             {//altrimenti aggiorna la voce modificata
                                 import = data[i].importo.ToString().Replace(',', '.');
-                                command.CommandText = $"UPDATE {mese} SET voce_spesa='{data[i].voce_spesa}',importo={import} WHERE id_{mese}={data[i].id_tupla_mese}";
+                                command.CommandText = $"UPDATE {mese} SET voce_spesa='{data[i].voce_spesa}',note='{data[i].note}',importo={import} WHERE id_{mese}={data[i].id_tupla_mese}";
                                 command.ExecuteNonQuery();
                                 command.Dispose();
                             }
@@ -425,7 +433,7 @@ namespace GenericModelData
         /// <param name="month">Mese per update</param>
         /// <param name="id_month">Campo FK, selezione mese da modificare</param>
         /// <returns>Restituisce true se modifica ok</returns>
-        public bool modifyRow(int id, string cause, string import, int year, string month)
+        public bool modifyRow(int id, string cause,string note, string import, int year, string month)
         {
             ReadErrorXml xml = new ReadErrorXml();
             bool execute = false;
@@ -438,7 +446,7 @@ namespace GenericModelData
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
 
-                command.CommandText = $"UPDATE {month} SET voce_spesa = '{cause}', importo = {import.Replace(',', '.')} WHERE id_{month} = {id} AND anno = {year}";
+                command.CommandText = $"UPDATE {month} SET voce_spesa = '{cause}',note='{note}', importo = {import.Replace(',', '.')} WHERE id_{month} = {id} AND anno = {year}";
 
                 if(command.ExecuteNonQuery() > 0)
                 {

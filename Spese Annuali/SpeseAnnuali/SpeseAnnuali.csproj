@@ -72,6 +72,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Lib\ReadXML.dll</HintPath>
     </Reference>
+    <Reference Include="RoundendControlCollections">
+      <HintPath>..\..\..\..\RoundendControlCollections\RoundendControlCollections\bin\Debug\RoundendControlCollections.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -86,6 +89,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contabilita.cs" />
+    <Compile Include="frmLongDesription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLongDesription.Designer.cs">
+      <DependentUpon>frmLongDesription.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSpeseAnnuali.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +115,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmLongDesription.resx">
+      <DependentUpon>frmLongDesription.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSpeseAnnuali.resx">
       <DependentUpon>frmSpeseAnnuali.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +224,13 @@
     <None Include="Resources\Start setting2.png" />
     <None Include="Resources\Postpay2.png" />
     <None Include="Resources\icons8-pdf-64.png" />
+    <None Include="Resources\Oficina_PDF_35460_32.png" />
+    <None Include="Resources\Exit1.png" />
+    <None Include="Resources\dump1.png" />
+    <None Include="Resources\pencil_17925.png" />
+    <None Include="Resources\Impostazioni21.png" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\imagesRep2.png" />
     <Content Include="Spese-Annuali.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

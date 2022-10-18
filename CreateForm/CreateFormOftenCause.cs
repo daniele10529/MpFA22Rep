@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using GenericModelData;
+using RoundendControlCollections;
 
 /// <summary>
 /// API per generare Form
@@ -15,9 +16,10 @@ namespace CreateForm
     public class CreateFormOftenCause
     {
         /// <summary>
-        /// Setter per la TextBox a cui assegnare il valore
+        /// Setter per la TextBox di tipo rounded a cui assegnare il valore
         /// </summary>
-        public TextBox oftenCause { get; set; }
+        public RoundedTextBox OftenCause { get; set; }
+
         //componenti del form
         private Form frmAddOftenCause = new Form();
         private ListBox listItem = new ListBox();
@@ -112,7 +114,7 @@ namespace CreateForm
             //come il valore selezionato
             if (listItem.SelectedIndex > -1)
             {
-                oftenCause.Text = listItem.SelectedItem.ToString();
+                OftenCause.Texts = listItem.SelectedItem.ToString();
                 frmAddOftenCause.Dispose();//chiudi il form
             }
             else return;

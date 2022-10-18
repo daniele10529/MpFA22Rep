@@ -52,20 +52,20 @@ namespace LeaderProcess
 
                 //Istanza alla classe ReaderXML
                 reader = new ReaderXML(XMlpathConteinerFile);
-                //leggo il percorso del modulo dal file xml
+                //legge il percorso del modulo dal file xml
                 string pathProcess = reader.readNodeXmlDoc(PathNodes);
-                //istanzio la classe process per avviare un processo
+                //Istania la classe process per avviare un processo
                 Process process = new Process();
-                //ottengo il nome del processo in esecuzione
+                //Ottiene il nome del processo in esecuzione
                 Process[] current = Process.GetProcessesByName(nameProcess);
-                //se il processo di dump è già in lavoro non eseguo nulla
+                //Se il processo è già in stato di running non viene riavviato
                 if (!(current.Length > 0))
-                {   //nessun evento alla chiusura del processo
+                {   //Nessun evento alla chiusura del processo
                     process.EnableRaisingEvents = false;
-                    //set del percorso del processo da avviare
+                    //Setta il path del processo da avviare
                     process.StartInfo.FileName = pathProcess;
-                    //avvia il processo
-                    process.Start();
+                    //Avvia il processo
+                    process.Start(); 
                 }
             }
             catch(IOException exc)
@@ -78,6 +78,39 @@ namespace LeaderProcess
             }
 
         }
+
+        /// <summary>
+        /// Metodo per la chiusura di un processo
+        /// </summary>
+        /// <param name="nameProcess">Nome del processo da chiudere</param>
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        public void stopProcess(string nameProcess)
+        {
+            try
+            {
+                //Ottiene il processo corrente dal nome
+                Process[] current = Process.GetProcessesByName(nameProcess);
+                //se il processo è in esecuzione chiude il form e termina il processo
+                if (current.Length > 0)
+                {
+                    //Chiusura del form - obbligatorio altrimenti rimane a video
+                    current[0].CloseMainWindow();
+                    //Chiusura del processo
+                    current[0].Close();
+
+                }
+
+            }
+            catch(IOException exc)
+            {
+                readerError.manageError(5, path, father, featur);
+            }
+            catch(Exception ex)
+            {
+                readerError.manageError(14, path, father, featur);
+            }
+        }
+
 
     }
 }

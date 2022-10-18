@@ -61,6 +61,13 @@ namespace MpFA20
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            //Termina tutti i processi in esecuzione
+            processRunning.stopProcess("SpeseAnnuali");
+            processRunning.stopProcess("ContoCorrente");
+            processRunning.stopProcess("Mantenimento");
+            processRunning.stopProcess("Libretto");
+            processRunning.stopProcess("PostPay");
+            processRunning.stopProcess("RunningReports");
             Dispose();
         }
 
