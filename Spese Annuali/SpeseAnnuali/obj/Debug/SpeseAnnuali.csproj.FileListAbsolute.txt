@@ -58,6 +58,7 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\Spe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\MenuGenerator.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\MySql.Data.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\ReadXML.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\RoundendControlCollections.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\itextsharp.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\Google.Protobuf.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\Zstandard.Net.dll
@@ -82,9 +83,11 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\Spe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\MySql.Data.xml
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\ReadXML.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\ReadXML.xml
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\RoundendControlCollections.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\itextsharp.xml
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.csprojResolveAssemblyReference.cache
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.csproj.SpeseAnnuali.exe.config
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.frmLongDesription.resources
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.frmSpeseAnnuali.resources
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.frmModify.resources
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.frmSetting.resources
@@ -92,6 +95,3 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\Spe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.csproj.GenerateResource.Cache
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.exe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.pdb
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\RoundendControlCollections.dll
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\RoundendControlCollections.pdb
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.frmLongDesription.resources

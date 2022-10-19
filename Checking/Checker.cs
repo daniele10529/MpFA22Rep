@@ -1,6 +1,9 @@
 ﻿using System.Windows.Forms;
 using ReadXML;
 using System;
+using RoundendControlCollections;
+using System.Reflection;
+using System.IO;
 
 namespace Checking
 {
@@ -10,6 +13,7 @@ namespace Checking
     public class Checker
     {
         private ReadErrorXml xml;
+        private ReaderXML reader;
         private string path;
         private string father;
         private string featur;
@@ -30,10 +34,16 @@ namespace Checking
         /// <summary>
         /// Costruttore di default
         /// </summary>
-        public Checker()
+        public Checker(string path)
         {
-            
+            this.path = path;
+            reader = new ReaderXML(path);
         }
+
+        /// <summary>
+        /// Costruttore di default
+        /// </summary>
+        public Checker() { }
 
         /// <summary>
         /// Metodo per la verifica di campo vuoto
@@ -56,6 +66,26 @@ namespace Checking
         }
 
         /// <summary>
+        /// Metodo per la verifica del campo vuote di RoundedTextBox
+        /// </summary>
+        /// <param name="t">RoundedTextBox da verificare</param>
+        /// <returns>Ritorna true se vuota, genera eccezione</returns>
+        public bool isEmty(RoundedTextBox t)
+        {
+            bool empty = true;
+            if (t.Texts.Length > 0)
+            {
+                empty = false;
+            }
+            else
+            {
+                empty = true;
+                throw new FormatException(reader.readNode("ListError", "Error1"));
+            }
+            return empty;
+        }
+
+        /// <summary>
         /// Metodo per la verifica di valore double
         /// </summary>
         /// <param name="t">Textbox con il valore da controllare</param>
@@ -73,6 +103,25 @@ namespace Checking
             
             return ver;
 
+        }
+
+        /// <summary>
+        /// Metodo per la verifica di valore double di RoundedTextBox
+        /// </summary>
+        /// <param name="t">Textbox con il valore da controllare</param>
+        /// <returns>Ritorna true se il valore è double</returns>
+        public bool isNumeric(RoundedTextBox t)
+        {
+            string val = t.Texts;
+            double d = 0;
+            bool ver = double.TryParse(val, out d);
+
+            if (ver == false)
+            {
+                throw new FormatException(reader.readNode("ListError", "Error2"));
+            }
+
+            return ver;
         }
 
         /// <summary>

@@ -35,7 +35,9 @@ namespace SpeseAnnuali
         private string manage_mese;
 
         //Evento mouse click nel DataGridView
-        MouseEventArgs mouse;
+        private MouseEventArgs mouse;
+        //Attributo privato per inserire le note in griglia
+        private string longDescription;
 
         public frmSpeseAnnuali()
         {
@@ -281,6 +283,7 @@ namespace SpeseAnnuali
             pnlStatus.BackColor = Color.FromArgb(255, 255, 255);
             loadImage();
             toolTip();
+
             //associa i dati della griglia alla tabella
             grdMonthSpends.DataSource = table;
             //imposta il nome delle colonne
@@ -288,21 +291,26 @@ namespace SpeseAnnuali
             table.Columns.Add("CAUSALE DI SPESA");
             table.Columns.Add("NOTE");
             table.Columns.Add("IMPORTO");
+            
             //imposta la dimensione delle colonne
             grdMonthSpends.Columns[0].Width = (grdMonthSpends.Width * 5) / 100;
             grdMonthSpends.Columns[1].Width = (grdMonthSpends.Width * 75) / 100;
+            //Omessa, è invisibile solo di appoggio per il dato
             //grdMonthSpends.Columns[2].Width = (grdMonthSpends.Width * 25) / 100;
             grdMonthSpends.Columns[3].Width = (grdMonthSpends.Width * 10) / 100;
+            
 
-            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+            //Crea la colonna long description con l'immagine
+            DataGridViewImageColumn button = new DataGridViewImageColumn();
             button.Width = (grdMonthSpends.Width * 7) / 100;
             button.HeaderText = "Long Description";
-            button.Text = "LD";
-            button.ToolTipText = "Inserisci la Long Description";
-            button.UseColumnTextForButtonValue = true;
-            button.FlatStyle = FlatStyle.Flat;
+            button.ToolTipText = "Inserisci la Long Description facende click sull'icona";
+            button.ImageLayout = DataGridViewImageCellLayout.Normal;
+            //Ricava l'immagine dalla cartella Resources
+            button.Image = global::SpeseAnnuali.Properties.Resources.pencil_piccola;
+            //Aggiunge la colonna al DatagridView
             grdMonthSpends.Columns.Add(button);
-
+            
             //la PK è di sola lettura
             grdMonthSpends.Columns[0].ReadOnly = true;
             //La colonna note è invisibile, utilizzata come appoggio
@@ -336,6 +344,7 @@ namespace SpeseAnnuali
             isChanged = true;
             statusPanel();
 
+            Checker check = new Checker(pathxml);
             PopulateGrid populate = new PopulateGrid(grdMonthSpends, table);
             List<string> list = new List<string>();
             int id = 0, idgrid = 0, idDB = 0;
@@ -352,12 +361,14 @@ namespace SpeseAnnuali
              
             //Verifica che ci siano i campi obbligatori e l'importo inserito sia numerico
             try
-            {
-                //Verifica i campi obbligatori, se vuoti genera l'eccezione settando il messaggio
-                if (txtCause.Texts.Length == 0 || txtImport.Texts.Length == 0)
-                    throw new FormatException("I campi Causale e Importo sono obbligatori !!");
-                //Converte in double il valore della textbox importo per verificare sia numerico
-                double val = Double.Parse(txtImport.Texts);
+            {   
+                if(!(check.isEmty(txtCause)) || !(check.isEmty(txtImport)))
+                {
+                    if (check.isNumeric(txtImport))
+                    {
+                        double val = Double.Parse(txtImport.Texts);
+                    }
+                }
             }
             catch (FormatException fex)
             {
@@ -388,14 +399,13 @@ namespace SpeseAnnuali
             //inserisce nella lista i valori inseriti da textbox
             list.Add(id.ToString());
             list.Add(txtCause.Texts);
-            list.Add(txtNote.Texts);
+            list.Add(longDescription);
             list.Add(txtImport.Texts.Replace('.', ','));
 
             //popola la griglia attraverso la lista
             populate.inserisci(4, list);
             
             txtCause.Texts = "";
-            txtNote.Texts = "";
             txtImport.Texts = "";
             txtCause.Focus();
             counter();
@@ -882,11 +892,46 @@ namespace SpeseAnnuali
                 frm.Deactivate += new EventHandler((obj, args) =>
                 {
                     currentRow[2].Value = frm.LongDescription;
+                    longDescription = frm.LongDescription;
                 });
 
             }
 
         }
+
+        /// <summary>
+        /// Imposta il colore di sfondo della cella long description al passaggio del mouse
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void grdMonthSpends_MouseMove(object sender, MouseEventArgs e)
+        {
+            //Preleva la posizione del mouse e ne ricava l'indice della riga
+            int returnValue = grdMonthSpends.HitTest(e.X, e.Y).RowIndex;
+            int colValue = grdMonthSpends.HitTest(e.X, e.Y).ColumnIndex;
+            //Se il mouse è su una riga
+            if (returnValue >= 0 && colValue == 4)
+            {
+                //Modifica il colore di sfondo
+                grdMonthSpends.Rows[returnValue].Cells[4].Style.BackColor = Color.FromArgb(173, 215, 222);
+            }
+        }
+
+        /// <summary>
+        /// Ripristina il colore originale quando il mouse lascia la cella long description
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void grdMonthSpends_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                grdMonthSpends.Rows[e.RowIndex].Cells[4].Style.BackColor = DefaultBackColor;
+            }
+            
+        }
+
+
 
         #endregion
 
@@ -1001,18 +1046,6 @@ namespace SpeseAnnuali
             txtCause.BackColor = Color.White;
         }
 
-        private void txtNote_Enter(object sender, EventArgs e)
-        {
-            txtNote.BorderColor = Color.FromArgb(161, 223, 239);
-            txtNote.BackColor = Color.FromArgb(243, 221, 247);
-        }
-
-        private void txtNote_Leave(object sender, EventArgs e)
-        {
-            txtNote.BorderColor = Color.DimGray;
-            txtNote.BackColor = Color.White;
-        }
-
         private void txtImport_Enter(object sender, EventArgs e)
         {
             txtImport.BorderColor = Color.FromArgb(161, 223, 239);
@@ -1024,8 +1057,6 @@ namespace SpeseAnnuali
             txtImport.BorderColor = Color.DimGray;
             txtImport.BackColor = Color.White;
         }
-
-        
 
         private void txtSearchVoice_TextChanged(object sender, EventArgs e)
         {

@@ -231,6 +231,7 @@
     <None Include="Resources\Impostazioni21.png" />
     <None Include="Resources\images.jpg" />
     <None Include="Resources\imagesRep2.png" />
+    <None Include="Resources\pencil_piccola.png" />
     <Content Include="Spese-Annuali.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
