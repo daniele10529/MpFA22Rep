@@ -64,6 +64,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\ReadXML.dll</HintPath>
     </Reference>
+    <Reference Include="RoundendControlCollections">
+      <HintPath>..\..\..\RoundendControlCollections\RoundendControlCollections\bin\Debug\RoundendControlCollections.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -152,6 +155,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Conto-Corrente.ico" />
+    <None Include="Resources\Lucchetto.png" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\imagesRep2_piccolo.png" />
+    <None Include="Resources\Oficina_PDF_35460_32.png" />
     <None Include="Resources\Start setting2.png" />
     <None Include="Resources\Postpay2.png" />
     <None Include="Resources\Mantenimento.png" />

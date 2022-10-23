@@ -294,10 +294,10 @@ namespace SpeseAnnuali
             
             //imposta la dimensione delle colonne
             grdMonthSpends.Columns[0].Width = (grdMonthSpends.Width * 5) / 100;
-            grdMonthSpends.Columns[1].Width = (grdMonthSpends.Width * 75) / 100;
+            grdMonthSpends.Columns[1].Width = (grdMonthSpends.Width * 76) / 100;
             //Omessa, è invisibile solo di appoggio per il dato
             //grdMonthSpends.Columns[2].Width = (grdMonthSpends.Width * 25) / 100;
-            grdMonthSpends.Columns[3].Width = (grdMonthSpends.Width * 10) / 100;
+            grdMonthSpends.Columns[3].Width = (grdMonthSpends.Width * 12) / 100;
             
 
             //Crea la colonna long description con l'immagine
@@ -358,24 +358,9 @@ namespace SpeseAnnuali
             populate.father = father;
             populate.feature = feature;
 
-             
             //Verifica che ci siano i campi obbligatori e l'importo inserito sia numerico
-            try
-            {   
-                if(!(check.isEmty(txtCause)) || !(check.isEmty(txtImport)))
-                {
-                    if (check.isNumeric(txtImport))
-                    {
-                        double val = Double.Parse(txtImport.Texts);
-                    }
-                }
-            }
-            catch (FormatException fex)
-            {
-                MessageBox.Show(fex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            
+            if (check.isEmty(txtCause) || check.isEmty(txtImport)) return;
+            if (!(check.isNumeric(txtImport))) return;
 
             //acquisisco il valore di PK da DataGridView se c'è almeno una riga
             if (!(table.Rows.Count == 0))
@@ -944,7 +929,16 @@ namespace SpeseAnnuali
         private void treeYears_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             //Se il nodo selezionato è ANNI esce dal metodo
-            if (e.Node.Text == "ANNI") return;
+            if (e.Node.Text == "ANNI")
+            {
+                //Scambia l'icona al click sul nodo anni
+                if (e.Node.ImageIndex == 0) e.Node.ImageIndex = 1;
+                else if (e.Node.ImageIndex == 1) e.Node.ImageIndex = 0;
+                //Al primo click l'index ha valore -1 e deve essere settato.
+                else if (e.Node.ImageIndex < 0) e.Node.ImageIndex = 1;
+                return;
+            }
+            
             //Se viene aperto il nodo di un anno inserisce icona freccia in giù
             if (e.Node.Parent.Text == "ANNI" && e.Node.ImageIndex == 0)
             {
@@ -1056,6 +1050,36 @@ namespace SpeseAnnuali
         {
             txtImport.BorderColor = Color.DimGray;
             txtImport.BackColor = Color.White;
+        }
+
+        private void txtPay_Enter(object sender, EventArgs e)
+        {
+            txtPay.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtPay_Leave(object sender, EventArgs e)
+        {
+            txtPay.BackColor = Color.White;
+        }
+
+        private void txtPlusEntry_Enter(object sender, EventArgs e)
+        {
+            txtPlusEntry.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtPlusEntry_Leave(object sender, EventArgs e)
+        {
+            txtPlusEntry.BackColor = Color.White;
+        }
+
+        private void txtMoney_Enter(object sender, EventArgs e)
+        {
+            txtMoney.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtMoney_Leave(object sender, EventArgs e)
+        {
+            txtMoney.BackColor = Color.White;
         }
 
         private void txtSearchVoice_TextChanged(object sender, EventArgs e)

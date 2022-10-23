@@ -80,7 +80,7 @@ namespace Checking
             else
             {
                 empty = true;
-                throw new FormatException(reader.readNode("ListError", "Error1"));
+                MessageBox.Show(reader.readNode("ListError", "Error1"),"ERRORE",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return empty;
         }
@@ -118,7 +118,7 @@ namespace Checking
 
             if (ver == false)
             {
-                throw new FormatException(reader.readNode("ListError", "Error2"));
+                MessageBox.Show(reader.readNode("ListError", "Error2"), "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return ver;
@@ -168,6 +168,30 @@ namespace Checking
             else
             {
                 xml.manageError(13, path, father, featur);
+            }
+            return val;
+        }
+
+        /// <summary>
+        /// Metodo per il controllo TextBox rounded del valore in un range int
+        /// </summary>
+        /// <param name="t">Textbox con i valori da controllare</param>
+        /// <param name="valMin">Valore minimo compreso nel range</param>
+        /// <param name="valMax">Valore massimo compreso nel range</param>
+        /// <returns></returns>
+        public bool inRange(RoundedTextBox t, int valMin, int valMax)
+        {
+            bool val = false;
+            if (t.Texts.Length == 0) return val;
+            int v = Int32.Parse(t.Texts);
+
+            if (v >= valMin && v <= valMax)
+            {
+                val = true;
+            }
+            else
+            {
+                MessageBox.Show(reader.readNode("ListError", "Error13"), "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return val;
         }

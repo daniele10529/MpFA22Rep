@@ -133,6 +133,26 @@ namespace ContoCorrente.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagesRep2_piccolo {
+            get {
+                object obj = ResourceManager.GetObject("imagesRep2_piccolo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Impostazioni2 {
             get {
                 object obj = ResourceManager.GetObject("Impostazioni2", resourceCulture);
@@ -153,6 +173,16 @@ namespace ContoCorrente.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Lucchetto {
+            get {
+                object obj = ResourceManager.GetObject("Lucchetto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mantenimento {
             get {
                 object obj = ResourceManager.GetObject("Mantenimento", resourceCulture);
@@ -166,6 +196,16 @@ namespace ContoCorrente.Properties {
         internal static System.Drawing.Bitmap Nuovo {
             get {
                 object obj = ResourceManager.GetObject("Nuovo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Oficina_PDF_35460_32 {
+            get {
+                object obj = ResourceManager.GetObject("Oficina_PDF_35460_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

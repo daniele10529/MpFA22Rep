@@ -43,7 +43,7 @@ namespace ContoCorrente
             model = new ModelDataCC();
         }    
 
-#region FUNZIONI
+        #region FUNZIONI
 
         /// <summary>
         /// Genera una list(ModelDataSY.PaymentSY) per l'inserimento nel DB
@@ -238,11 +238,13 @@ namespace ContoCorrente
             else if (isSaved == false && isChanged == true) pnlStatus.BackColor = Color.FromArgb(255, 0, 0);
             else if (isLoad == true) pnlStatus.BackColor = Color.FromArgb(255, 255, 255);
         }
+
         #endregion
 
     #region EVENTI DEGLI OGGETTI
 
-#region form
+         #region form
+
         private void frmContoCorrente_Load(object sender, EventArgs e)
         {
             Clipboard.Clear();
@@ -279,9 +281,10 @@ namespace ContoCorrente
                 }
             }
         }
+
         #endregion
 
-#region Button
+        #region Button
        
         public void btnLoadYears_Click(object sender, EventArgs e)
         {
@@ -393,9 +396,7 @@ namespace ContoCorrente
 
             PopulateGrid populate = new PopulateGrid(grdMonthVoices, table);
             List<string> list = new List<string>();
-            bool[] isempty = new bool[3];
-            bool[] isNumeric = new bool[2];
-            bool inRange = false;
+            
             int id = 0, idgrid = 0, idDB = 0;
             string father = "ListError";
             string feature = "ErrorTitle";
@@ -407,18 +408,14 @@ namespace ContoCorrente
             populate.path = pathxml;
             populate.father = father;
             populate.feature = feature;
-            check = new Checker(pathxml, father, feature);
-            isempty[0] = check.isEmpty(txtDay);
-            isempty[1] = check.isEmpty(txtImport);
-            isempty[2] = check.isEmpty(txtCause);
-            isNumeric[0] = check.isnumeric(txtImport);
-            isNumeric[1] = check.isnumeric(txtDay, true);
-            inRange = check.inRange(txtDay, 1, 31);
+            check = new Checker(pathxml);
 
-            //esci dalla funzione se controlli ko
-            if (isNumeric[0] == false || isNumeric[1] == false || inRange == false) return;
+            //Verifica che ci siano i campi obbligatori, il giorno e l'importo inserito siano numerici, il giorno nel range
+            if (check.isEmty(txtDay) || check.isEmty(txtCause) || check.isEmty(txtImport)) return;
+            if (!(check.isNumeric(txtDay)) || !(check.isNumeric(txtImport))) return;
+            if (!(check.inRange(txtDay, 1, 31))) return;
 
-            //acquisisco il valore di PK da DataGridView se c'è almeno una riga
+            //Acquisisce il valore di PK da DataGridView se c'è almeno una riga
             if (!(table.Rows.Count == 0))
             {
                 int i = table.Rows.Count - 1;
@@ -427,7 +424,7 @@ namespace ContoCorrente
                 idgrid = Int16.Parse(lastrow[0].ToString());
             }
 
-            //acquidisco il valore di primary key da DB, in base al mese selezionato
+            //Acquidisce il valore di primary key da DB, in base al mese selezionato
             idDB = model.primaryKey($"{manage_mese}_cc", $"id_{manage_mese}_cc");
 
             //Se la chiave è maggiore quella della griglia incrementala di 1
@@ -436,21 +433,18 @@ namespace ContoCorrente
             //altrimenti incrementa di 1 la chiave prelevata da DB
             else id = idDB + 1;
 
-            //inserisce nella lista i valori inseriti da textbox
-            if (!(isempty[0] == true || isempty[1] == true || isempty[2] == true))
-            {
-                list.Add(id.ToString());
-                list.Add(txtDay.Text);
-                list.Add(txtCause.Text);
-                list.Add(txtImport.Text.Replace('.', ','));
-            }
-            else return;
+            list.Add(id.ToString());
+            list.Add(txtDay.Texts);
+            list.Add(txtCause.Texts);
+            list.Add(txtImport.Texts.Replace('.', ','));
+
             //popola la griglia attraverso la lista
             populate.inserisci(4, list);
 
-            txtDay.Clear();
-            txtCause.Clear();
-            txtImport.Clear();
+            //Resetta i valori
+            txtDay.Texts = "";
+            txtCause.Texts = "";
+            txtImport.Texts = "";
             txtDay.Focus();
             counter();
             
@@ -650,7 +644,8 @@ namespace ContoCorrente
             CreateFormOftenCause form = new CreateFormOftenCause();
             //imposta nel setter la textbox che deve acquisire il valoe dalla 
             //lista delle causali frequenti
-            form.oftenCause = txtCause;
+
+            //form.oftenCause = txtCause;
         }
 
         private void btnSpeseAnnuali_Click(object sender, EventArgs e)
@@ -713,7 +708,8 @@ namespace ContoCorrente
         }
         #endregion
 
-#region DatagridView
+        #region DatagridView
+
         private void grdMonthVoices_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             //imposta parametri al cambiamento diretto di una cella
@@ -760,6 +756,7 @@ namespace ContoCorrente
             Searching search = new Searching(grdMonthVoices, table, txtSearchVoice);
             search.searchingRow(2);
         }
+
         #endregion
     #endregion
     }
