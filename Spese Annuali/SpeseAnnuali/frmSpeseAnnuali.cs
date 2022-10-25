@@ -358,43 +358,57 @@ namespace SpeseAnnuali
             populate.father = father;
             populate.feature = feature;
 
-            //Verifica che ci siano i campi obbligatori e l'importo inserito sia numerico
-            if (check.isEmty(txtCause) || check.isEmty(txtImport)) return;
-            if (!(check.isNumeric(txtImport))) return;
-
-            //acquisisco il valore di PK da DataGridView se c'è almeno una riga
-            if (!(table.Rows.Count == 0))
+            try
             {
-                int i = table.Rows.Count - 1;
-                DataRow lastrow = table.NewRow();
-                lastrow.ItemArray = table.Rows[i].ItemArray;
-                idgrid = Int16.Parse(lastrow[0].ToString());
+                //Verifica i campi obbligatori siano inseriti
+                if(!(check.isEmpty(txtCause.Texts)) && !(check.isEmpty(txtImport.Texts)))
+                {
+                    //Verifica che l'importo inserito sia numerico
+                    if (check.isNumeric(txtImport.Texts))
+                    {
+                        //Acquisisce il valore di PK da DataGridView se c'è almeno una riga
+                        if (!(table.Rows.Count == 0))
+                        {
+                            int i = table.Rows.Count - 1;
+                            DataRow lastrow = table.NewRow();
+                            lastrow.ItemArray = table.Rows[i].ItemArray;
+                            idgrid = Int16.Parse(lastrow[0].ToString());
+                        }
+
+                        //Acquidisce il valore di primary key da DB, in base al mese selezionato
+                        idDB = model.primaryKey($"{manage_mese}", $"id_{manage_mese}");
+
+                        //Se la chiave è maggiore quella della griglia incrementala di 1
+                        //valori inseriti e non ancora salvati
+                        if (idgrid >= idDB) id = idgrid + 1;
+                        //altrimenti incrementa di 1 la chiave prelevata da DB
+                        else id = idDB + 1;
+
+
+                        //Inserisce nella lista i valori inseriti da textbox
+                        list.Add(id.ToString());
+                        list.Add(txtCause.Texts);
+                        list.Add(longDescription);
+                        list.Add(txtImport.Texts.Replace('.', ','));
+
+                        //Popola la griglia attraverso la lista
+                        populate.inserisci(4, list);
+
+                        txtCause.Texts = "";
+                        txtImport.Texts = "";
+                        txtCause.Focus();
+                        counter();
+                        totKeepMoney();
+
+                    }
+                }
+
+            }
+            catch (FormatException ex)//Eccezione generata dai metodi della classe check
+            {
+                MessageBox.Show(ex.Message, "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
-            //acquidisco il valore di primary key da DB, in base al mese selezionato
-            idDB = model.primaryKey($"{manage_mese}", $"id_{manage_mese}");
-            
-            //Se la chiave è maggiore quella della griglia incrementala di 1
-            //valori inseriti e non ancora salvati
-            if (idgrid >= idDB) id = idgrid + 1;
-            //altrimenti incrementa di 1 la chiave prelevata da DB
-            else id = idDB + 1;
-
-
-            //inserisce nella lista i valori inseriti da textbox
-            list.Add(id.ToString());
-            list.Add(txtCause.Texts);
-            list.Add(longDescription);
-            list.Add(txtImport.Texts.Replace('.', ','));
-
-            //popola la griglia attraverso la lista
-            populate.inserisci(4, list);
-            
-            txtCause.Texts = "";
-            txtImport.Texts = "";
-            txtCause.Focus();
-            counter();
-            totKeepMoney();
         }
 
         private void btnUp_Click(object sender, EventArgs e)
@@ -949,6 +963,12 @@ namespace SpeseAnnuali
                 e.Node.ImageIndex = 0;
             }    
 
+        }
+
+        //Carica i dati al doppio click sul nodo prescelto
+        private void treeYears_DoubleClick(object sender, EventArgs e)
+        {
+            btnLoadYears_Click(sender, e);
         }
 
         #endregion

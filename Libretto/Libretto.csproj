@@ -55,6 +55,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\ReadXML.dll</HintPath>
     </Reference>
+    <Reference Include="RoundendControlCollections">
+      <HintPath>..\..\..\RoundendControlCollections\RoundendControlCollections\bin\Debug\RoundendControlCollections.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -151,6 +154,9 @@
     <Content Include="Libretto.ico" />
     <Content Include="PPLibretto.ico" />
     <None Include="Resources\icons8-pdf-64.png" />
+    <None Include="Resources\pencil_piccola.png" />
+    <None Include="Resources\Lucchetto.png" />
+    <None Include="Resources\Oficina_PDF_35460_64.png" />
     <Content Include="Start-setting2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -130,9 +130,6 @@
   <data name="Su" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Su.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-pdf-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-pdf-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Spese Annuali" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Spese Annuali.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,17 +139,23 @@
   <data name="Elimina" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Elimina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Lucchetto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lucchetto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imagesRep2_piccolo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagesRep2_piccolo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Mantenimento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mantenimento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Nuovo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Nuovo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Conto Corrente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Conto Corrente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Inserisci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inserisci.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Oficina_PDF_35460_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Oficina_PDF_35460_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,22 +166,25 @@
   <data name="Impostazioni2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Impostazioni2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Inserisci" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Inserisci.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Nuovo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Nuovo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Aggiorna" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Aggiorna.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pencil_piccola" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pencil_piccola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Start setting2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Start setting2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Conto Corrente" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Conto Corrente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-pdf-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-pdf-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lucchetto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lucchetto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pencil_17925" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pencil_17925.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

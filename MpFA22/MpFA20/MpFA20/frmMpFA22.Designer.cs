@@ -171,7 +171,7 @@
             // 
             this.elementHost1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.elementHost1.BackColor = System.Drawing.Color.Turquoise;
-            this.elementHost1.BackgroundImage = global::MpFA20.Properties.Resources.MpFA221;
+            this.elementHost1.BackgroundImage = global::MpFA20.Properties.Resources.MpFA5;
             this.elementHost1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.elementHost1.Location = new System.Drawing.Point(2, 12);
             this.elementHost1.Name = "elementHost1";

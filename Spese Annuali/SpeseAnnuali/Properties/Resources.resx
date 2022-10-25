@@ -151,8 +151,11 @@
   <data name="Su1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Su1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Carica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Carica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imagesRep2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagesRep2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Aggiorna2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Aggiorna2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Start setting2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Start setting2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -162,9 +165,6 @@
   </data>
   <data name="Carica1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Carica1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Inserisci" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Inserisci.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Mantenimento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mantenimento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,14 +187,14 @@
   <data name="Exit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Exit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pencil_piccola" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pencil_piccola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Oficina_PDF_35460_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Oficina_PDF_35460_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imagesRep2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imagesRep2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Conto Corrente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Conto Corrente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,14 +202,17 @@
   <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Carica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Carica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Spese Annuali" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Spese Annuali.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Impostazioni" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Impostazioni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Aggiorna2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggiorna2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Inserisci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inserisci.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Nuovo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Nuovo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,7 +229,7 @@
   <data name="Carica2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Carica2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pencil_piccola" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pencil_piccola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pencil_179251" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pencil_179251.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

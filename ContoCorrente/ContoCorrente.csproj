@@ -155,6 +155,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Conto-Corrente.ico" />
+    <None Include="Resources\pencil_17925.png" />
+    <None Include="Resources\pencil_piccola.png" />
     <None Include="Resources\Lucchetto.png" />
     <None Include="Resources\images.jpg" />
     <None Include="Resources\imagesRep2_piccolo.png" />

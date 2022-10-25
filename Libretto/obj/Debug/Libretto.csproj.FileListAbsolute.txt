@@ -80,3 +80,6 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Libretto\obj\Debu
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Libretto\obj\Debug\Libretto.csproj.GenerateResource.Cache
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Libretto\obj\Debug\Libretto.exe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Libretto\obj\Debug\Libretto.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Libretto\bin\Debug\RoundendControlCollections.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Libretto\bin\Debug\BouncyCastle.Crypto.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Libretto\bin\Debug\RoundendControlCollections.pdb

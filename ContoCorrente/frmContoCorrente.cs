@@ -259,13 +259,13 @@ namespace ContoCorrente
             table.Columns.Add("GIORNO");
             table.Columns.Add("CAUSALE DEL MOVIMENTO");
             table.Columns.Add("IMPORTO");
-            grdMonthVoices.Columns[0].Width = 37;
-            grdMonthVoices.Columns[1].Width = 65;
-            grdMonthVoices.Columns[2].Width = 720;
-            grdMonthVoices.Columns[3].Width = 110;
+            grdMonthVoices.Columns[0].Width = (grdMonthVoices.Width * 5) / 100;
+            grdMonthVoices.Columns[1].Width = (grdMonthVoices.Width * 5) / 100;
+            grdMonthVoices.Columns[2].Width = (grdMonthVoices.Width * 75) / 100;
+            grdMonthVoices.Columns[3].Width = (grdMonthVoices.Width * 15) / 100;
             grdMonthVoices.Columns[0].ReadOnly = true;
 
-            txtYearMonth.Text = "Gestione conto corrente.....";
+            txtYearMonth.Text = "Gestione Conto Corrente.....";
 
         }
 
@@ -340,7 +340,7 @@ namespace ContoCorrente
                         listinsert.Clear();
                         i++;
                     }
-                    txtYearMonth.Text = mese + " " + anno;
+                    txtYearMonth.Text = mese.ToUpper() + " " + anno.ToUpper();
                 }
             }
 
@@ -410,43 +410,54 @@ namespace ContoCorrente
             populate.feature = feature;
             check = new Checker(pathxml);
 
-            //Verifica che ci siano i campi obbligatori, il giorno e l'importo inserito siano numerici, il giorno nel range
-            if (check.isEmty(txtDay) || check.isEmty(txtCause) || check.isEmty(txtImport)) return;
-            if (!(check.isNumeric(txtDay)) || !(check.isNumeric(txtImport))) return;
-            if (!(check.inRange(txtDay, 1, 31))) return;
-
-            //Acquisisce il valore di PK da DataGridView se c'è almeno una riga
-            if (!(table.Rows.Count == 0))
+            try
             {
-                int i = table.Rows.Count - 1;
-                DataRow lastrow = table.NewRow();
-                lastrow.ItemArray = table.Rows[i].ItemArray;
-                idgrid = Int16.Parse(lastrow[0].ToString());
+
+                if(!(check.isEmpty(txtDay.Texts)) && !(check.isEmpty(txtCause.Texts)) && !(check.isEmpty(txtImport.Texts)))
+                {
+                    if(check.isNumeric(txtDay.Texts) && check.isNumeric(txtImport.Texts) && check.inRange(txtDay.Texts, 1, 31))
+                    {
+                        //Acquisisce il valore di PK da DataGridView se c'è almeno una riga
+                        if (!(table.Rows.Count == 0))
+                        {
+                            int i = table.Rows.Count - 1;
+                            DataRow lastrow = table.NewRow();
+                            lastrow.ItemArray = table.Rows[i].ItemArray;
+                            idgrid = Int16.Parse(lastrow[0].ToString());
+                        }
+
+                        //Acquidisce il valore di primary key da DB, in base al mese selezionato
+                        idDB = model.primaryKey($"{manage_mese}_cc", $"id_{manage_mese}_cc");
+
+                        //Se la chiave è maggiore quella della griglia incrementala di 1
+                        //valori inseriti e non ancora salvati
+                        if (idgrid >= idDB) id = idgrid + 1;
+                        //altrimenti incrementa di 1 la chiave prelevata da DB
+                        else id = idDB + 1;
+
+                        list.Add(id.ToString());
+                        list.Add(txtDay.Texts);
+                        list.Add(txtCause.Texts);
+                        list.Add(txtImport.Texts.Replace('.', ','));
+
+                        //Popola la griglia attraverso la lista
+                        populate.inserisci(4, list);
+
+                        //Resetta i valori
+                        txtDay.Texts = "";
+                        txtCause.Texts = "";
+                        txtImport.Texts = "";
+                        txtDay.Focus();
+                        counter();
+
+                    }
+                }
+
             }
-
-            //Acquidisce il valore di primary key da DB, in base al mese selezionato
-            idDB = model.primaryKey($"{manage_mese}_cc", $"id_{manage_mese}_cc");
-
-            //Se la chiave è maggiore quella della griglia incrementala di 1
-            //valori inseriti e non ancora salvati
-            if (idgrid >= idDB) id = idgrid + 1;
-            //altrimenti incrementa di 1 la chiave prelevata da DB
-            else id = idDB + 1;
-
-            list.Add(id.ToString());
-            list.Add(txtDay.Texts);
-            list.Add(txtCause.Texts);
-            list.Add(txtImport.Texts.Replace('.', ','));
-
-            //popola la griglia attraverso la lista
-            populate.inserisci(4, list);
-
-            //Resetta i valori
-            txtDay.Texts = "";
-            txtCause.Texts = "";
-            txtImport.Texts = "";
-            txtDay.Focus();
-            counter();
+            catch (FormatException ex)//Eccezione generata dai metodi della classe check
+            {
+                MessageBox.Show(ex.Message, "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             
         }
 
@@ -644,38 +655,44 @@ namespace ContoCorrente
             CreateFormOftenCause form = new CreateFormOftenCause();
             //imposta nel setter la textbox che deve acquisire il valoe dalla 
             //lista delle causali frequenti
-
-            //form.oftenCause = txtCause;
+            form.OftenCause = txtCause;
         }
-
+        
+        //Avvia il modulo Spese Annuali
         private void btnSpeseAnnuali_Click(object sender, EventArgs e)
         {
             ProcessRunning processRunning = new ProcessRunning();
             processRunning.XMlpathConteinerFile = runPath;
             processRunning.runProcess("/runpath/speseannuali", "SpeseAnnuali");
         }
-
+        //Avvia il modulo Libretto
         private void btnLibretto_Click(object sender, EventArgs e)
         {
             ProcessRunning processRunning = new ProcessRunning();
             processRunning.XMlpathConteinerFile = runPath;
             processRunning.runProcess("/runpath/libretto", "Libretto");
         }
-
+        //Avvia il modulo PostPay
         private void btnPostPay_Click(object sender, EventArgs e)
         {
             ProcessRunning processRunning = new ProcessRunning();
             processRunning.XMlpathConteinerFile = runPath;
             processRunning.runProcess("/runpath/postpay", "PostPay");
         }
-
+        //Avvia il modulo Mantenimento
         private void btnMantenimento_Click(object sender, EventArgs e)
         {
             ProcessRunning processRunning = new ProcessRunning();
             processRunning.XMlpathConteinerFile = runPath;
             processRunning.runProcess("/runpath/mantenimento", "Mantenimento");
         }
-
+        //Avvia il modulo Reports
+        private void btnRunningReports_Click(object sender, EventArgs e)
+        {
+            ProcessRunning processRunning = new ProcessRunning();
+            processRunning.XMlpathConteinerFile = runPath;
+            processRunning.runProcess("/runpath/report", "RunningReports");
+        }
 
         private void btnPDFCreator_Click(object sender, EventArgs e)
         {
@@ -706,6 +723,7 @@ namespace ContoCorrente
         {
             Dispose();
         }
+
         #endregion
 
         #region DatagridView
@@ -746,10 +764,45 @@ namespace ContoCorrente
             creatMenu.showContextMenu(e);
         }
 
+        #endregion
+
+        #region TreeView
+
+        private void treeYears_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            //Se il nodo selezionato è ANNI esce dal metodo
+            if (e.Node.Text == "ANNI")
+            {
+                //Scambia l'icona al click sul nodo anni
+                if (e.Node.ImageIndex == 0) e.Node.ImageIndex = 1;
+                else if (e.Node.ImageIndex == 1) e.Node.ImageIndex = 0;
+                //Al primo click l'index ha valore -1 e deve essere settato.
+                else if (e.Node.ImageIndex < 0) e.Node.ImageIndex = 1;
+                return;
+            }
+
+            //Se viene aperto il nodo di un anno inserisce icona freccia in giù
+            if (e.Node.Parent.Text == "ANNI" && e.Node.ImageIndex == 0)
+            {
+                e.Node.ImageIndex = 1;
+            }
+            else
+            {   //se il nodo di un anno viene chiuso ripristina l'icona freccia a dx
+                e.Node.ImageIndex = 0;
+            }
+
+        }
+
+        //Carica i dati al doppio click sul nodo prescelto
+        private void treeYears_DoubleClick(object sender, EventArgs e)
+        {
+            btnLoadYears_Click(sender, e);
+        }
 
         #endregion
 
         #region Textbox
+
         private void txtSearchVoice_TextChanged(object sender, EventArgs e)
         {
             //cerco all'interno del datagridview passando la colonna in cui cercare
@@ -757,7 +810,46 @@ namespace ContoCorrente
             search.searchingRow(2);
         }
 
+        //Setta i colori delle TextBox all'inserimento 
+        private void txtDay_Enter(object sender, EventArgs e)
+        {
+            txtDay.BorderColor = Color.FromArgb(161, 223, 239);
+            txtDay.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtDay_Leave(object sender, EventArgs e)
+        {
+            txtDay.BorderColor = Color.DimGray;
+            txtDay.BackColor = Color.White;
+        }
+
+        private void txtCause_Enter(object sender, EventArgs e)
+        {
+            txtCause.BorderColor = Color.FromArgb(161, 223, 239);
+            txtCause.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtCause_Leave(object sender, EventArgs e)
+        {
+            txtCause.BorderColor = Color.DimGray;
+            txtCause.BackColor = Color.White;
+        }
+
+        private void txtImport_Enter(object sender, EventArgs e)
+        {
+            txtImport.BorderColor = Color.FromArgb(161, 223, 239);
+            txtImport.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtImport_Leave(object sender, EventArgs e)
+        {
+            txtImport.BorderColor = Color.DimGray;
+            txtImport.BackColor = Color.White;
+        }
+
         #endregion
+
     #endregion
+
     }
 }

@@ -47,7 +47,7 @@ namespace GenericModelData
             //Istanza classe connessione e assegnazione icone
             Connecting connecting = new Connecting(stringConnection);
             ImageList imagelist = new ImageList();
-            string icons = "Spese Annuali.png";
+            string icons = "Ordina_dx.png";
 
             try
             {

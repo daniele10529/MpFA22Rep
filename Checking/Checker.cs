@@ -1,9 +1,7 @@
 ﻿using System.Windows.Forms;
 using ReadXML;
 using System;
-using RoundendControlCollections;
-using System.Reflection;
-using System.IO;
+
 
 namespace Checking
 {
@@ -50,59 +48,19 @@ namespace Checking
         /// </summary>
         /// <param name="t">Textbox da verificare</param>
         /// <returns>Ritorno false se textbox compilata</returns>
-        public bool isEmpty(TextBox t)
+        public bool isEmpty(string t)
         {
             bool empty = true;
-            if (t.Text.Length > 0)
+            if (t.Length > 0)
             {
                 empty = false;
             }
             else
             {
                 empty = true;
-                xml.manageError(1, path, father, featur);
+                throw new FormatException(reader.readNode("ListError", "Error1"));
             }
             return empty;
-        }
-
-        /// <summary>
-        /// Metodo per la verifica del campo vuote di RoundedTextBox
-        /// </summary>
-        /// <param name="t">RoundedTextBox da verificare</param>
-        /// <returns>Ritorna true se vuota, genera eccezione</returns>
-        public bool isEmty(RoundedTextBox t)
-        {
-            bool empty = true;
-            if (t.Texts.Length > 0)
-            {
-                empty = false;
-            }
-            else
-            {
-                empty = true;
-                MessageBox.Show(reader.readNode("ListError", "Error1"),"ERRORE",MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return empty;
-        }
-
-        /// <summary>
-        /// Metodo per la verifica di valore double
-        /// </summary>
-        /// <param name="t">Textbox con il valore da controllare</param>
-        /// <returns>Ritorna true se il valore è double</returns>
-        public bool isnumeric(TextBox t)
-        {
-            string val = t.Text;
-            double d = 0;
-            bool ver = double.TryParse(val, out d);
-            
-            if (ver == false)
-            {
-                xml.manageError(2, path, father, featur);
-            }
-            
-            return ver;
-
         }
 
         /// <summary>
@@ -110,15 +68,14 @@ namespace Checking
         /// </summary>
         /// <param name="t">Textbox con il valore da controllare</param>
         /// <returns>Ritorna true se il valore è double</returns>
-        public bool isNumeric(RoundedTextBox t)
+        public bool isNumeric(string t)
         {
-            string val = t.Texts;
             double d = 0;
-            bool ver = double.TryParse(val, out d);
+            bool ver = double.TryParse(t, out d);
 
             if (ver == false)
             {
-                MessageBox.Show(reader.readNode("ListError", "Error2"), "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new FormatException(reader.readNode("ListError", "Error2"));
             }
 
             return ver;
@@ -130,7 +87,7 @@ namespace Checking
         /// <param name="t">Textbox con il valore da controllare</param>
         /// <param name="isInt">Parametro a true se il controllo è su integer</param>
         /// <returns>Ritorna true se il valore è integer</returns>
-        public bool isnumeric(TextBox t,bool isInt)
+        public bool isNumeric(TextBox t,bool isInt)
         {
             bool ver = false;
 
@@ -148,29 +105,6 @@ namespace Checking
             return ver;
         }
 
-        /// <summary>
-        /// Metodo per il controllo del valore in un range int
-        /// </summary>
-        /// <param name="t">Textbox con i valori da controllare</param>
-        /// <param name="valMin">Valore minimo compreso nel range</param>
-        /// <param name="valMax">Valore massimo compreso nel range</param>
-        /// <returns>Ritorna true se compreso nel range</returns>
-        public bool inRange(TextBox t, int valMin,int valMax)
-        {
-            bool val = false;
-            if (t.Text.Length == 0) return val;
-            int v = Int32.Parse(t.Text);
-
-            if(v >= valMin && v <= valMax)
-            {
-                val = true;
-            }
-            else
-            {
-                xml.manageError(13, path, father, featur);
-            }
-            return val;
-        }
 
         /// <summary>
         /// Metodo per il controllo TextBox rounded del valore in un range int
@@ -179,11 +113,11 @@ namespace Checking
         /// <param name="valMin">Valore minimo compreso nel range</param>
         /// <param name="valMax">Valore massimo compreso nel range</param>
         /// <returns></returns>
-        public bool inRange(RoundedTextBox t, int valMin, int valMax)
+        public bool inRange(string t, int valMin, int valMax)
         {
             bool val = false;
-            if (t.Texts.Length == 0) return val;
-            int v = Int32.Parse(t.Texts);
+            if (t.Length == 0) return val;
+            int v = Int32.Parse(t);
 
             if (v >= valMin && v <= valMax)
             {
@@ -191,7 +125,7 @@ namespace Checking
             }
             else
             {
-                MessageBox.Show(reader.readNode("ListError", "Error13"), "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new FormatException(reader.readNode("ListError", "Error13"));
             }
             return val;
         }
@@ -260,7 +194,7 @@ namespace Checking
             }
             else
             {
-                xml.manageError(1, path, father, featur);
+                throw new FormatException(reader.readNode("ListError", "Error1"));
             }
             return val;
 

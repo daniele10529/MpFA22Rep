@@ -304,10 +304,10 @@ namespace Libretto
             table.Columns.Add("CAUSALE DEL MOVIMENTO");
             table.Columns.Add("IMPORTO");
             table.Columns.Add("MESE");
-            grdMovLibVoices.Columns[0].Width = 90;
-            grdMovLibVoices.Columns[1].Width = 650;
-            grdMovLibVoices.Columns[2].Width = 100;
-            grdMovLibVoices.Columns[3].Width = 80;
+            grdMovLibVoices.Columns[0].Width = (grdMovLibVoices.Width * 5) / 100;
+            grdMovLibVoices.Columns[1].Width = (grdMovLibVoices.Width * 70) / 100;
+            grdMovLibVoices.Columns[2].Width = (grdMovLibVoices.Width * 15) / 100;
+            grdMovLibVoices.Columns[3].Width = (grdMovLibVoices.Width * 10) / 100;
             grdMovLibVoices.Columns[0].ReadOnly = true;
 
             //set valori comboBox mesi
@@ -386,7 +386,7 @@ namespace Libretto
                         listinsert.Clear();
                         i++;
                     }
-                    txtYearMonth.Text = "Anno caricato : " + anno;
+                    txtYearMonth.Text = "Anno caricato : ".ToUpper() + anno.ToUpper();
                 }
             }
 
@@ -445,9 +445,6 @@ namespace Libretto
             PopulateGrid populate = new PopulateGrid(grdMovLibVoices, table);
             Checker check;
             List<string> list = new List<string>();
-            bool[] isempty = new bool[2];
-            bool isNumeric = false;
-            bool isSelected = false;
             int id = 0;
             string father = "ListError";
             string feature = "ErrorTitle";
@@ -458,50 +455,57 @@ namespace Libretto
             populate.path = pathxml;
             populate.father = father;
             populate.feature = feature;
-            check = new Checker(pathxml, father, feature);
-            isempty[0] = check.isEmpty(txtImport);
-            isempty[1] = check.isEmpty(txtCause);
-            isNumeric = check.isnumeric(txtImport);
-            isSelected = check.isSelected(cmbMonths);
+            check = new Checker(pathxml);
 
-            //esci dalla funzione se controlli ko
-            if (isNumeric == false || isSelected == false) return;
-
-            //acquisisco il valore di PK da DataGridView
-            if (!(table.Rows.Count == 0))
+            try
             {
-                int i = table.Rows.Count - 1;
-                DataRow lastrow = table.NewRow();
-                lastrow.ItemArray = table.Rows[i].ItemArray;
-                idgrid = Int16.Parse(lastrow[0].ToString());
+
+                if (check.isSelected(cmbMonths) && !(check.isEmpty(txtCause.Texts)) && !(check.isEmpty(txtImport.Texts)))
+                {
+                    if (check.isNumeric(txtImport.Texts))
+                    {
+                        //Acquisisce il valore di PK da DataGridView
+                        if (!(table.Rows.Count == 0))
+                        {
+                            int i = table.Rows.Count - 1;
+                            DataRow lastrow = table.NewRow();
+                            lastrow.ItemArray = table.Rows[i].ItemArray;
+                            idgrid = Int16.Parse(lastrow[0].ToString());
+                        }
+
+                        //Acquidisce il valore di primary key da DB
+                        idDB = model.primaryKey("libretto_postale", "id_libretto");
+
+                        //Se la chiave è maggiore quella della griglia incrementala di 1
+                        //valori inseriti e non ancora salvati
+                        if (idgrid >= idDB) id = idgrid + 1;
+                        //altrimenti incrementa di 1 la chiave prelevata da DB
+                        else id = idDB + 1;
+
+                        list.Add(id.ToString());
+                        list.Add(txtCause.Texts);
+                        list.Add(txtImport.Texts.Replace('.', ','));
+                        list.Add(cmbMonths.SelectedItem.ToString());
+
+                        //Popola la griglia attraverso la lista
+                        populate.inserisci(4, list);
+
+                        //Resetta i valori
+                        txtCause.Texts = "";
+                        txtImport.Texts = "";
+                        cmbMonths.SelectedItem = null;
+                        cmbMonths.Focus();
+                        counter();
+
+                    }
+                }
+
             }
-
-            //acquidisco il valore di primary key da DB
-            idDB = model.primaryKey("libretto_postale", "id_libretto");
-
-            //Se la chiave è maggiore quella della griglia incrementala di 1
-            //valori inseriti e non ancora salvati
-            if (idgrid >= idDB) id = idgrid + 1;
-            //altrimenti incrementa di 1 la chiave prelevata da DB
-            else id = idDB + 1;
-
-            //inserisce nella lista i valori inseriti da textbox
-            if (!(isempty[0] == true || isempty[1] == true))
+            catch (FormatException ex)//Eccezione generata dai metodi della classe check
             {
-                list.Add(id.ToString());
-                list.Add(txtCause.Text);
-                list.Add(txtImport.Text.Replace('.', ','));
-                list.Add(cmbMonths.SelectedItem.ToString());
+                MessageBox.Show(ex.Message, "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else return;
-            //popola la griglia attraverso la lista
-            populate.inserisci(4, list);
-
-            txtCause.Clear();
-            txtImport.Clear();
-            cmbMonths.SelectedItem = null;
-            cmbMonths.Focus();
-            counter();
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -567,11 +571,11 @@ namespace Libretto
         {
             btnSave_Click(sender, e);
         }
+
         private void btnSaveThree_Click(object sender, EventArgs e)
         {
             btnSave_Click(sender, e);
         }
-
 
         private void btnDeleteRow_Click(object sender, EventArgs e)
         {
@@ -686,7 +690,7 @@ namespace Libretto
             CreateFormOftenCause form = new CreateFormOftenCause();
             //imposta nel setter la textbox che deve acquisire il valoe dalla 
             //lista delle causali frequenti
-            form.oftenCause = txtCause;
+            form.OftenCause = txtCause;
         }
 
 
@@ -718,9 +722,11 @@ namespace Libretto
         {
             Dispose();
         }
+
         #endregion
 
         #region DatagridView
+
         private void grdMovLibVoices_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             //imposta parametri al cambiamento diretto di una cella
@@ -761,17 +767,66 @@ namespace Libretto
         #endregion
 
         #region Textbox
+
         private void txtSearchVoice_TextChanged(object sender, EventArgs e)
         {
             //cerco all'interno del datagridview passando la colonna in cui cercare
             Searching search = new Searching(grdMovLibVoices, table, txtSearchVoice);
             search.searchingRow(1);
         }
+
+        //Setta i colori delle TextBox all'inserimento 
+        private void txtCause_Enter(object sender, EventArgs e)
+        {
+            txtCause.BorderColor = Color.FromArgb(161, 223, 239);
+            txtCause.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtCause_Leave(object sender, EventArgs e)
+        {
+            txtCause.BorderColor = Color.DimGray;
+            txtCause.BackColor = Color.White;
+        }
+
+        private void txtImport_Enter(object sender, EventArgs e)
+        {
+            txtImport.BorderColor = Color.FromArgb(161, 223, 239);
+            txtImport.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtImport_Leave(object sender, EventArgs e)
+        {
+            txtImport.BorderColor = Color.DimGray;
+            txtImport.BackColor = Color.White;
+        }
+
         #endregion
 
+        #region ComboBox
+        //Setta i colori di inserimento
+        private void cmbMonths_Enter(object sender, EventArgs e)
+        {
+            cmbMonths.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void cmbMonths_Leave(object sender, EventArgs e)
+        {
+            cmbMonths.BackColor = Color.White;
+        }
+
+        #endregion
+
+        #region TreeView
+        //Carica i dati al doppio click sul nodo prescelto
+        private void treeYears_DoubleClick(object sender, EventArgs e)
+        {
+            btnLoadYears_Click(sender, e);
+        }
+
+        #endregion
 
         #endregion
 
     }
-    
+
 }

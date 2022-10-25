@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("ANNI");
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("ANNI");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.pageHome = new System.Windows.Forms.TabPage();
             this.roundedPanel3 = new RoundendControlCollections.RoundedPanel();
@@ -670,7 +670,7 @@
             // 
             // btnModifyRow
             // 
-            this.btnModifyRow.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Aggiorna1;
+            this.btnModifyRow.BackgroundImage = global::SpeseAnnuali.Properties.Resources.pencil_179251;
             this.btnModifyRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnModifyRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModifyRow.ForeColor = System.Drawing.Color.Green;
@@ -969,18 +969,19 @@
             this.treeYears.ItemHeight = 20;
             this.treeYears.Location = new System.Drawing.Point(1, 83);
             this.treeYears.Name = "treeYears";
-            treeNode6.BackColor = System.Drawing.Color.Gainsboro;
-            treeNode6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode6.Name = "nodeYears";
-            treeNode6.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode6.Text = "ANNI";
+            treeNode1.BackColor = System.Drawing.Color.Gainsboro;
+            treeNode1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode1.Name = "nodeYears";
+            treeNode1.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode1.Text = "ANNI";
             this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            treeNode1});
             this.treeYears.ShowLines = false;
             this.treeYears.ShowNodeToolTips = true;
             this.treeYears.Size = new System.Drawing.Size(177, 645);
             this.treeYears.TabIndex = 4;
             this.treeYears.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeYears_NodeMouseClick);
+            this.treeYears.DoubleClick += new System.EventHandler(this.treeYears_DoubleClick);
             // 
             // pnlResumes
             // 
@@ -1362,24 +1363,24 @@
             this.grdMonthSpends.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grdMonthSpends.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdMonthSpends.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMonthSpends.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMonthSpends.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdMonthSpends.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdMonthSpends.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdMonthSpends.DefaultCellStyle = dataGridViewCellStyle2;
             this.grdMonthSpends.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdMonthSpends.EnableHeadersVisualStyles = false;
             this.grdMonthSpends.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -1388,14 +1389,14 @@
             this.grdMonthSpends.MultiSelect = false;
             this.grdMonthSpends.Name = "grdMonthSpends";
             this.grdMonthSpends.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMonthSpends.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMonthSpends.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grdMonthSpends.RowHeadersVisible = false;
             this.grdMonthSpends.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdMonthSpends.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkSlateGray;

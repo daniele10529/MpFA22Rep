@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using GenericModelData;
 using Checking;
-
+using System.Drawing;
 
 namespace ContoCorrente
 {
@@ -17,8 +17,13 @@ namespace ContoCorrente
        
         //istanza alla classe ContoCorrente
         private frmContoCorrente fr = new frmContoCorrente();
+        //Istanza alla textbox per la somma o sottrazione
+        TextBox txtAdd = new TextBox();
+        //Istanza alla classe tooltip, visualizza istruzioni
+        ToolTip tip = new ToolTip();
 
-#region getter and setter
+        #region getter and setter
+
         public string setId { get; set; }
         public string setDay { get; set; }
         public string setCause { get; set; }
@@ -27,7 +32,10 @@ namespace ContoCorrente
         public int setId_month { get; set; }
         public int setYear { get; set; }
         public bool verify { get; set; }
-#endregion
+
+        #endregion
+
+        #region Metodi Privati
 
         //assegna il mese in formato stringa dal numero di id_mese passato
         private string selmonth(int m)
@@ -75,13 +83,17 @@ namespace ContoCorrente
             return n;
         }
 
+        #endregion
+
+
+        #region Form
         private void frmModify_Load(object sender, EventArgs e)
         {
             //assegna i valori dai getter alle textbox
-            txtId.Text = setId;
-            txtDay.Text = setDay;
-            txtCause.Text = setCause;
-            txtImport.Text = setImport;
+            txtId.Texts = setId;
+            txtDay.Texts = setDay;
+            txtCause.Texts = setCause;
+            txtImport.Texts = setImport;
             //assegna alle variabili pubbliche di frmContocorrente i valori passati ai setter.
             //Passaggio necessario per l'aggiornamento del datagridview
             //dato che le variabili si scaricano all'istanza del form, e tornando indietro non c'è 
@@ -90,51 +102,176 @@ namespace ContoCorrente
             fr.month_manage = setId_month;
         }
 
+        #endregion
+
+
+        #region Button
+
         private void btnModify_Click(object sender, EventArgs e)
         {
-            string father = "ListError";
-            string feature = "ErrorTitle";
             string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
-            string cause,import;
+            string cause, import;
             string month = selmonth(setId_month);
-            int id = 0,day = 0;
+            int id = 0, day = 0;
             bool[] verifyValues = new bool[5];
 
             //istanze alle classi model e checker
             ModelDataCC model = new ModelDataCC();
-            Checker check = new Checker(pathxml, father, feature);
+            Checker check = new Checker(pathxml);
 
-            //essegna al setter il valore recepito dalla funzione, necessario come getter per
-            //frmContoCorrente per l'aggiornamento del datagridview
-            setMonth = month;
-            //setta i parametri per l'inserimento
-            id = Int32.Parse(txtId.Text);
-            day = Int32.Parse(txtDay.Text);
-            cause = txtCause.Text;
-            import = txtImport.Text.Replace(",",".");
-
-            //verifico la correttezza dei dati e che non siano vuoti
-            verifyValues[0] = check.isnumeric(txtImport);
-            verifyValues[1] = check.inRange(txtDay, 1, 31);
-            verifyValues[2] = check.isEmpty(txtCause);
-            verifyValues[3] = check.isEmpty(txtImport);
-            verifyValues[4] = check.isEmpty(txtDay);
-            if (verifyValues[0] == false || verifyValues[1] == false || verifyValues[2] == true || verifyValues[3] == true || verifyValues[4] == true) return;
-
-            //modifica il DB e riceve true se tutto ok
-            verify = model.modifyRow(id, day, cause, import, setYear, month);    
-
-            if (verify == true)
+            try
             {
-                MessageBox.Show("Inserimento avvenuto con successo");
+
+                if(!(check.isEmpty(txtDay.Texts)) && !(check.isEmpty(txtCause.Texts)) && !(check.isEmpty(txtImport.Texts)))
+                {
+                    if (check.isNumeric(txtDay.Texts) && check.isNumeric(txtImport.Texts) && check.inRange(txtDay.Texts, 1, 31))
+                    {
+                        //essegna al setter il valore recepito dalla funzione, necessario come getter per
+                        //frmContoCorrente per l'aggiornamento del datagridview
+                        setMonth = month;
+                        //setta i parametri per l'inserimento
+                        id = Int32.Parse(txtId.Texts);
+                        day = Int32.Parse(txtDay.Texts);
+                        cause = txtCause.Texts;
+                        import = txtImport.Texts.Replace(",", ".");
+
+                        //modifica il DB e riceve true se tutto ok
+                        verify = model.modifyRow(id, day, cause, import, setYear, month);
+
+                        if (verify == true)
+                        {
+                            MessageBox.Show("Inserimento avvenuto con successo");
+                        }
+                        //scarica appena fatto.
+                        Dispose();
+                    }
+                }
+
             }
-            //scarica appena fatto.
-            Dispose();
+            catch(FormatException ex)
+            {
+                MessageBox.Show(ex.Message, "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            //costruisce la textbox e la visualizza
+            txtAdd.Name = "txtAdd";
+            txtAdd.Font = new Font("Modern No. 20", 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            txtAdd.Size = new Size(50, 50);
+            txtAdd.Location = new Point((btnPlus.Location.X) + 10, (btnPlus.Location.Y) + 40);
+            txtAdd.Visible = true;
+            txtAdd.KeyPress += new KeyPressEventHandler(txtAdd_KeyPress);
+            //viene aggiunto il controllo al pannello principale e si visualizza
+            pnlMain.Controls.Add(txtAdd);
+            //resetta la finestra prima della visualizzazione
+            txtAdd.ResetText();
+            //ottiene il focus
+            txtAdd.Focus();
+            //setta il tooltip
+            tip.AutoPopDelay = 5000;
+            tip.InitialDelay = 100;
+            tip.ReshowDelay = 500;
+            tip.ShowAlways = true;
+            tip.IsBalloon = true;
+            tip.Show("Inserire la cifra e premere il tasto + per fare la somma", txtAdd, new Point(1, -50));
+        }
+
+        
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Dispose();
         }
+
+        #endregion
+
+        #region TextBox
+
+        private void txtAdd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //sostituisce il punto con la virgola per il corretto calcolo
+            if (e.KeyChar == '.') e.KeyChar = ',';
+
+            //se viene premuto +, keychar = 43 codice ascii tasto +
+            if (e.KeyChar == 43)
+            {
+                string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+
+                //istanza alla classe checker per il controllo del valore numerico
+                Checker check = new Checker(pathxml);
+                //Verifica che il valore inserito obbligatorio sia numerico
+                try
+                {
+                    if (!(check.isEmpty(txtAdd.Text)))
+                    {
+                        if (check.isNumeric(txtAdd.Text))
+                        {
+                            //acquisisci i valori e fai la somma
+                            double val = Double.Parse(txtImport.Texts);
+                            double plus = Double.Parse(txtAdd.Text);
+                            txtImport.Texts = (val + plus).ToString();
+                            //resetta il testo
+                            txtAdd.ResetText();
+                            //rendi invisibile la textbox e elimina il controllo per le visualizzazioni future
+                            txtAdd.Visible = false;
+                            pnlMain.Controls.Remove(txtAdd);
+                            tip.RemoveAll();
+                        }
+                    }
+
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show(ex.Message, "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+
+        }
+
+        //Setting dei colori sulla casella di testo con il focus
+        private void txtDay_Enter(object sender, EventArgs e)
+        {
+            txtDay.BorderColor = Color.FromArgb(161, 223, 239);
+            txtDay.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtDay_Leave(object sender, EventArgs e)
+        {
+            txtDay.BorderColor = Color.DimGray;
+            txtDay.BackColor = Color.White;
+        }
+
+        private void txtCause_Enter(object sender, EventArgs e)
+        {
+            txtCause.BorderColor = Color.FromArgb(161, 223, 239);
+            txtCause.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtCause_Leave(object sender, EventArgs e)
+        {
+            txtCause.BorderColor = Color.DimGray;
+            txtCause.BackColor = Color.White;
+        }
+
+        private void txtImport_Enter(object sender, EventArgs e)
+        {
+            txtImport.BorderColor = Color.FromArgb(161, 223, 239);
+            txtImport.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtImport_Leave(object sender, EventArgs e)
+        {
+            txtImport.BorderColor = Color.DimGray;
+            txtImport.BackColor = Color.White;
+        }
+
+
+        #endregion
+
+        
     }
 }

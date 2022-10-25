@@ -143,6 +143,16 @@ namespace MpFA20.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MpFA5 {
+            get {
+                object obj = ResourceManager.GetObject("MpFA5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Spese_Annuali_piccolo {
             get {
                 object obj = ResourceManager.GetObject("Spese Annuali_piccolo", resourceCulture);

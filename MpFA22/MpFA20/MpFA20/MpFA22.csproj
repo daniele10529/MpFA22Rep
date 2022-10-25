@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>MpFA22.ico</ApplicationIcon>
+    <ApplicationIcon>MpFA5.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LeaderProcess">
@@ -114,6 +114,8 @@
     <None Include="Resources\Start setting2_piccolo.png" />
     <None Include="Resources\imagesRep2_piccolo.png" />
     <None Include="Resources\images.jpg" />
+    <None Include="Resources\MpFA5.png" />
+    <Content Include="MpFA5.ico" />
     <Content Include="RunPath.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

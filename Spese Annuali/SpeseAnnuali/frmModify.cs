@@ -185,30 +185,37 @@ namespace SpeseAnnuali
 
             //se viene premuto +, keychar = 43 codice ascii tasto +
             if (e.KeyChar == 43)
-            {
-                //se la casella è vuota esci
-                if (txtAdd.Text.Length == 0) return;
-
-                string father = "ListError";
-                string feature = "ErrorTitle";
+            { 
                 string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
 
                 //istanza alla classe checker per il controllo del valore numerico
-                Checker check = new Checker(pathxml, father, feature);
-                bool check_number = check.isnumeric(txtAdd);
-                //se il controllo è true
-                if (check_number)
-                {//acquisisci i valori e fai la somma
-                    double val = Double.Parse(txtImport.Texts);
-                    double plus = Double.Parse(txtAdd.Text);
-                    txtImport.Texts = (val + plus).ToString();
-                    //resetta il testo
-                    txtAdd.ResetText();
-                    //rendi invisibile la textbox e elimina il controllo per le visualizzazioni future
-                    txtAdd.Visible = false;
-                    pnlMain.Controls.Remove(txtAdd);
-                    tip.RemoveAll();
+                Checker check = new Checker(pathxml);
+                //Verifica che il valore inserito obbligatorio sia numerico
+                try
+                {
+                    if (!(check.isEmpty(txtAdd.Text)))
+                    {
+                        if (check.isNumeric(txtAdd.Text))
+                        {
+                            //acquisisci i valori e fai la somma
+                            double val = Double.Parse(txtImport.Texts);
+                            double plus = Double.Parse(txtAdd.Text);
+                            txtImport.Texts = (val + plus).ToString();
+                            //resetta il testo
+                            txtAdd.ResetText();
+                            //rendi invisibile la textbox e elimina il controllo per le visualizzazioni future
+                            txtAdd.Visible = false;
+                            pnlMain.Controls.Remove(txtAdd);
+                            tip.RemoveAll();
+                        }
+                    }
+
                 }
+                catch(FormatException ex)
+                {
+                    MessageBox.Show(ex.Message, "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
 
         }

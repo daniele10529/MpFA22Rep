@@ -11,6 +11,5 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\Checking\obj\Debu
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA20\Checking\obj\Debug\Checking.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Lib\Checking.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Lib\Checking.pdb
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Checking\obj\Debug\Checking.csprojResolveAssemblyReference.cache
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Checking\obj\Debug\Checking.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Checking\obj\Debug\Checking.pdb
