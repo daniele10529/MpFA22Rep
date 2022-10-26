@@ -963,13 +963,15 @@
             // treeYears
             // 
             this.treeYears.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeYears.BackColor = System.Drawing.Color.Gainsboro;
+            this.treeYears.BackColor = System.Drawing.Color.WhiteSmoke;
             this.treeYears.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeYears.ForeColor = System.Drawing.Color.Indigo;
+            this.treeYears.FullRowSelect = true;
             this.treeYears.ItemHeight = 20;
+            this.treeYears.LineColor = System.Drawing.Color.LightSteelBlue;
             this.treeYears.Location = new System.Drawing.Point(1, 83);
             this.treeYears.Name = "treeYears";
-            treeNode1.BackColor = System.Drawing.Color.Gainsboro;
+            treeNode1.BackColor = System.Drawing.Color.AntiqueWhite;
             treeNode1.ForeColor = System.Drawing.Color.DarkSlateGray;
             treeNode1.Name = "nodeYears";
             treeNode1.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

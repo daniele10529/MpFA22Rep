@@ -35,13 +35,56 @@
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.pgHome = new System.Windows.Forms.TabPage();
+            this.roundedPanel3 = new RoundendControlCollections.RoundedPanel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.grpRoundAnni = new RoundendControlCollections.RoundedPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblGrAnni = new System.Windows.Forms.Label();
+            this.btnLoadYears = new System.Windows.Forms.Button();
+            this.btnPDFCreator = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.pgInsert = new System.Windows.Forms.TabPage();
+            this.roundedPanel5 = new RoundendControlCollections.RoundedPanel();
+            this.btnSetOftenValue = new RoundendControlCollections.RoundedButton();
+            this.txtImport = new RoundendControlCollections.RoundedTextBox();
             this.cmbMonths = new System.Windows.Forms.ComboBox();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.txtCause = new RoundendControlCollections.RoundedTextBox();
+            this.lblMese = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.roundedPanel4 = new RoundendControlCollections.RoundedPanel();
+            this.btnSaveData = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.pgModify = new System.Windows.Forms.TabPage();
+            this.roundedPanel7 = new RoundendControlCollections.RoundedPanel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnDeleteRow = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.btnModifyRow = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.roundedPanel6 = new RoundendControlCollections.RoundedPanel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSaveThree = new System.Windows.Forms.Button();
             this.pgSearch = new System.Windows.Forms.TabPage();
+            this.roundedPanel8 = new RoundendControlCollections.RoundedPanel();
+            this.txtSearchVoice = new System.Windows.Forms.TextBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.pnlTree = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnLoadYears2 = new System.Windows.Forms.Button();
             this.treeYears = new System.Windows.Forms.TreeView();
             this.pnlResume = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnCloseYear = new RoundendControlCollections.RoundedButton();
             this.pnlStatus = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -52,78 +95,35 @@
             this.txtBalanceST = new System.Windows.Forms.TextBox();
             this.lblSaldoIni = new System.Windows.Forms.Label();
             this.svdPDF = new System.Windows.Forms.SaveFileDialog();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.pnlFooter = new RoundendControlCollections.RoundedPanel();
             this.txtYearMonth = new System.Windows.Forms.TextBox();
             this.pnlGrid = new RoundendControlCollections.RoundedPanel();
             this.grdMovLibVoices = new System.Windows.Forms.DataGridView();
-            this.roundedPanel3 = new RoundendControlCollections.RoundedPanel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.grpRoundAnni = new RoundendControlCollections.RoundedPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblGrAnni = new System.Windows.Forms.Label();
-            this.btnInsert = new System.Windows.Forms.Button();
-            this.btnCloseYear = new RoundendControlCollections.RoundedButton();
-            this.btnLoadYears2 = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnLoadYears = new System.Windows.Forms.Button();
-            this.btnPDFCreator = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnSaveData = new System.Windows.Forms.Button();
-            this.btnSaveThree = new System.Windows.Forms.Button();
-            this.btnModifyRow = new System.Windows.Forms.Button();
-            this.btnDown = new System.Windows.Forms.Button();
-            this.btnUp = new System.Windows.Forms.Button();
-            this.btnDeleteRow = new System.Windows.Forms.Button();
-            this.roundedPanel5 = new RoundendControlCollections.RoundedPanel();
-            this.btnSetOftenValue = new RoundendControlCollections.RoundedButton();
-            this.txtImport = new RoundendControlCollections.RoundedTextBox();
-            this.txtCause = new RoundendControlCollections.RoundedTextBox();
-            this.lblMese = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.roundedPanel4 = new RoundendControlCollections.RoundedPanel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.roundedPanel7 = new RoundendControlCollections.RoundedPanel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.roundedPanel6 = new RoundendControlCollections.RoundedPanel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.roundedPanel8 = new RoundendControlCollections.RoundedPanel();
-            this.txtSearchVoice = new System.Windows.Forms.TextBox();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.pgHome.SuspendLayout();
+            this.roundedPanel3.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.grpRoundAnni.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.pgInsert.SuspendLayout();
+            this.roundedPanel5.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.roundedPanel4.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.pgModify.SuspendLayout();
+            this.roundedPanel7.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.roundedPanel6.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.pgSearch.SuspendLayout();
+            this.roundedPanel8.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.pnlTree.SuspendLayout();
             this.pnlResume.SuspendLayout();
             this.pnlFooter.SuspendLayout();
             this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMovLibVoices)).BeginInit();
-            this.roundedPanel3.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.grpRoundAnni.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.roundedPanel5.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.roundedPanel4.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.roundedPanel7.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.roundedPanel6.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.roundedPanel8.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -139,14 +139,14 @@
             // 
             // tabMenu
             // 
-            this.tabMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.tabMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabMenu.Controls.Add(this.pgHome);
             this.tabMenu.Controls.Add(this.pgInsert);
             this.tabMenu.Controls.Add(this.pgModify);
             this.tabMenu.Controls.Add(this.pgSearch);
             this.tabMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabMenu.Location = new System.Drawing.Point(-1, 3);
+            this.tabMenu.Location = new System.Drawing.Point(0, 1);
             this.tabMenu.Name = "tabMenu";
             this.tabMenu.SelectedIndex = 0;
             this.tabMenu.Size = new System.Drawing.Size(1366, 115);
@@ -164,331 +164,6 @@
             this.pgHome.Size = new System.Drawing.Size(1358, 86);
             this.pgHome.TabIndex = 0;
             this.pgHome.Text = "Home";
-            // 
-            // pgInsert
-            // 
-            this.pgInsert.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.pgInsert.Controls.Add(this.roundedPanel5);
-            this.pgInsert.Controls.Add(this.roundedPanel4);
-            this.pgInsert.Location = new System.Drawing.Point(4, 25);
-            this.pgInsert.Name = "pgInsert";
-            this.pgInsert.Padding = new System.Windows.Forms.Padding(3);
-            this.pgInsert.Size = new System.Drawing.Size(1358, 86);
-            this.pgInsert.TabIndex = 1;
-            this.pgInsert.Text = "Inserisci";
-            // 
-            // cmbMonths
-            // 
-            this.cmbMonths.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cmbMonths.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbMonths.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMonths.FormattingEnabled = true;
-            this.cmbMonths.Location = new System.Drawing.Point(6, 46);
-            this.cmbMonths.Name = "cmbMonths";
-            this.cmbMonths.Size = new System.Drawing.Size(121, 24);
-            this.cmbMonths.TabIndex = 50;
-            this.cmbMonths.Enter += new System.EventHandler(this.cmbMonths_Enter);
-            this.cmbMonths.Leave += new System.EventHandler(this.cmbMonths_Leave);
-            // 
-            // pgModify
-            // 
-            this.pgModify.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.pgModify.Controls.Add(this.roundedPanel7);
-            this.pgModify.Controls.Add(this.roundedPanel6);
-            this.pgModify.Location = new System.Drawing.Point(4, 25);
-            this.pgModify.Name = "pgModify";
-            this.pgModify.Size = new System.Drawing.Size(1358, 86);
-            this.pgModify.TabIndex = 2;
-            this.pgModify.Text = "Modifica";
-            // 
-            // pgSearch
-            // 
-            this.pgSearch.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.pgSearch.Controls.Add(this.roundedPanel8);
-            this.pgSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.pgSearch.Location = new System.Drawing.Point(4, 25);
-            this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(1358, 86);
-            this.pgSearch.TabIndex = 3;
-            this.pgSearch.Text = "Cerca";
-            // 
-            // pnlTree
-            // 
-            this.pnlTree.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnlTree.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlTree.Controls.Add(this.label15);
-            this.pnlTree.Controls.Add(this.btnLoadYears2);
-            this.pnlTree.Controls.Add(this.treeYears);
-            this.pnlTree.Location = new System.Drawing.Point(1, 124);
-            this.pnlTree.Name = "pnlTree";
-            this.pnlTree.Size = new System.Drawing.Size(182, 730);
-            this.pnlTree.TabIndex = 2;
-            // 
-            // treeYears
-            // 
-            this.treeYears.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeYears.BackColor = System.Drawing.Color.Gainsboro;
-            this.treeYears.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeYears.ForeColor = System.Drawing.Color.Indigo;
-            this.treeYears.ItemHeight = 20;
-            this.treeYears.Location = new System.Drawing.Point(1, 83);
-            this.treeYears.Name = "treeYears";
-            treeNode1.BackColor = System.Drawing.Color.Gainsboro;
-            treeNode1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode1.Name = "nodeYears";
-            treeNode1.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode1.Text = "ANNI   ";
-            this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.treeYears.ShowLines = false;
-            this.treeYears.ShowNodeToolTips = true;
-            this.treeYears.Size = new System.Drawing.Size(177, 645);
-            this.treeYears.TabIndex = 33;
-            this.treeYears.DoubleClick += new System.EventHandler(this.treeYears_DoubleClick);
-            // 
-            // pnlResume
-            // 
-            this.pnlResume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlResume.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnlResume.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlResume.Controls.Add(this.label16);
-            this.pnlResume.Controls.Add(this.btnCloseYear);
-            this.pnlResume.Controls.Add(this.pnlStatus);
-            this.pnlResume.Controls.Add(this.panel2);
-            this.pnlResume.Controls.Add(this.textBox2);
-            this.pnlResume.Controls.Add(this.txtBalanceOV);
-            this.pnlResume.Controls.Add(this.lblSaldoFine);
-            this.pnlResume.Controls.Add(this.panel1);
-            this.pnlResume.Controls.Add(this.textBox1);
-            this.pnlResume.Controls.Add(this.txtBalanceST);
-            this.pnlResume.Controls.Add(this.lblSaldoIni);
-            this.pnlResume.Location = new System.Drawing.Point(1175, 122);
-            this.pnlResume.Name = "pnlResume";
-            this.pnlResume.Size = new System.Drawing.Size(190, 730);
-            this.pnlResume.TabIndex = 4;
-            // 
-            // pnlStatus
-            // 
-            this.pnlStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlStatus.Location = new System.Drawing.Point(3, 634);
-            this.pnlStatus.Name = "pnlStatus";
-            this.pnlStatus.Size = new System.Drawing.Size(181, 23);
-            this.pnlStatus.TabIndex = 45;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Location = new System.Drawing.Point(7, 264);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(177, 10);
-            this.panel2.TabIndex = 41;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(152, 210);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(27, 22);
-            this.textBox2.TabIndex = 52;
-            this.textBox2.Text = "€";
-            // 
-            // txtBalanceOV
-            // 
-            this.txtBalanceOV.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtBalanceOV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBalanceOV.Location = new System.Drawing.Point(8, 210);
-            this.txtBalanceOV.Name = "txtBalanceOV";
-            this.txtBalanceOV.Size = new System.Drawing.Size(146, 22);
-            this.txtBalanceOV.TabIndex = 39;
-            // 
-            // lblSaldoFine
-            // 
-            this.lblSaldoFine.AutoSize = true;
-            this.lblSaldoFine.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaldoFine.Location = new System.Drawing.Point(5, 191);
-            this.lblSaldoFine.Name = "lblSaldoFine";
-            this.lblSaldoFine.Size = new System.Drawing.Size(84, 16);
-            this.lblSaldoFine.TabIndex = 50;
-            this.lblSaldoFine.Text = "Saldo finale";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(7, 162);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(177, 10);
-            this.panel1.TabIndex = 40;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(150, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(27, 22);
-            this.textBox1.TabIndex = 48;
-            this.textBox1.Text = "€";
-            // 
-            // txtBalanceST
-            // 
-            this.txtBalanceST.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtBalanceST.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBalanceST.Location = new System.Drawing.Point(6, 118);
-            this.txtBalanceST.Name = "txtBalanceST";
-            this.txtBalanceST.Size = new System.Drawing.Size(146, 22);
-            this.txtBalanceST.TabIndex = 38;
-            // 
-            // lblSaldoIni
-            // 
-            this.lblSaldoIni.AutoSize = true;
-            this.lblSaldoIni.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaldoIni.Location = new System.Drawing.Point(3, 99);
-            this.lblSaldoIni.Name = "lblSaldoIni";
-            this.lblSaldoIni.Size = new System.Drawing.Size(92, 16);
-            this.lblSaldoIni.TabIndex = 37;
-            this.lblSaldoIni.Text = "Saldo iniziale";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label15.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label15.Location = new System.Drawing.Point(5, 12);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(171, 20);
-            this.label15.TabIndex = 36;
-            this.label15.Text = "GESTIONE ANNUALE";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label16.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(22, 14);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(142, 20);
-            this.label16.TabIndex = 57;
-            this.label16.Text = "DATI CONTABILI";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlFooter
-            // 
-            this.pnlFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlFooter.BackColor = System.Drawing.Color.Transparent;
-            this.pnlFooter.BackgroundColor = System.Drawing.Color.Transparent;
-            this.pnlFooter.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlFooter.BorderRadius = 10;
-            this.pnlFooter.BorderSize = 3;
-            this.pnlFooter.Controls.Add(this.txtYearMonth);
-            this.pnlFooter.GradientAngle = 90F;
-            this.pnlFooter.GrdtBottom = System.Drawing.Color.WhiteSmoke;
-            this.pnlFooter.GrdtTop = System.Drawing.Color.AntiqueWhite;
-            this.pnlFooter.Location = new System.Drawing.Point(1, 858);
-            this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new System.Drawing.Size(1366, 156);
-            this.pnlFooter.TabIndex = 38;
-            // 
-            // txtYearMonth
-            // 
-            this.txtYearMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtYearMonth.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtYearMonth.Enabled = false;
-            this.txtYearMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYearMonth.ForeColor = System.Drawing.Color.Black;
-            this.txtYearMonth.Location = new System.Drawing.Point(189, 31);
-            this.txtYearMonth.Name = "txtYearMonth";
-            this.txtYearMonth.ReadOnly = true;
-            this.txtYearMonth.Size = new System.Drawing.Size(985, 22);
-            this.txtYearMonth.TabIndex = 36;
-            this.txtYearMonth.TabStop = false;
-            // 
-            // pnlGrid
-            // 
-            this.pnlGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlGrid.BackColor = System.Drawing.Color.LightGray;
-            this.pnlGrid.BackgroundColor = System.Drawing.Color.LightGray;
-            this.pnlGrid.BorderColor = System.Drawing.Color.MediumTurquoise;
-            this.pnlGrid.BorderRadius = 10;
-            this.pnlGrid.BorderSize = 2;
-            this.pnlGrid.Controls.Add(this.grdMovLibVoices);
-            this.pnlGrid.GradientAngle = 90F;
-            this.pnlGrid.GrdtBottom = System.Drawing.Color.WhiteSmoke;
-            this.pnlGrid.GrdtTop = System.Drawing.Color.Gainsboro;
-            this.pnlGrid.Location = new System.Drawing.Point(184, 124);
-            this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlGrid.Size = new System.Drawing.Size(994, 730);
-            this.pnlGrid.TabIndex = 43;
-            // 
-            // grdMovLibVoices
-            // 
-            this.grdMovLibVoices.AllowUserToAddRows = false;
-            this.grdMovLibVoices.AllowUserToResizeRows = false;
-            this.grdMovLibVoices.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.grdMovLibVoices.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.grdMovLibVoices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.grdMovLibVoices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMovLibVoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.grdMovLibVoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdMovLibVoices.DefaultCellStyle = dataGridViewCellStyle2;
-            this.grdMovLibVoices.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdMovLibVoices.EnableHeadersVisualStyles = false;
-            this.grdMovLibVoices.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.grdMovLibVoices.Location = new System.Drawing.Point(5, 5);
-            this.grdMovLibVoices.Margin = new System.Windows.Forms.Padding(5);
-            this.grdMovLibVoices.MultiSelect = false;
-            this.grdMovLibVoices.Name = "grdMovLibVoices";
-            this.grdMovLibVoices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMovLibVoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.grdMovLibVoices.RowHeadersVisible = false;
-            this.grdMovLibVoices.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdMovLibVoices.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.grdMovLibVoices.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.grdMovLibVoices.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.grdMovLibVoices.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            this.grdMovLibVoices.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMovLibVoices.RowTemplate.DividerHeight = 1;
-            this.grdMovLibVoices.ShowEditingIcon = false;
-            this.grdMovLibVoices.Size = new System.Drawing.Size(984, 720);
-            this.grdMovLibVoices.TabIndex = 21;
-            this.grdMovLibVoices.MouseClick += new System.Windows.Forms.MouseEventHandler(this.grdMovLibVoices_MouseClick);
             // 
             // roundedPanel3
             // 
@@ -530,6 +205,19 @@
             this.label3.Size = new System.Drawing.Size(34, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Esci";
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImage = global::Libretto.Properties.Resources.Exit;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.Green;
+            this.btnExit.Location = new System.Drawing.Point(20, 34);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
+            this.btnExit.TabIndex = 15;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // grpRoundAnni
             // 
@@ -574,70 +262,6 @@
             this.lblGrAnni.TabIndex = 0;
             this.lblGrAnni.Text = "File";
             // 
-            // btnInsert
-            // 
-            this.btnInsert.BackgroundImage = global::Libretto.Properties.Resources.pencil_piccola;
-            this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.ForeColor = System.Drawing.Color.Green;
-            this.btnInsert.Location = new System.Drawing.Point(946, 42);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(30, 30);
-            this.btnInsert.TabIndex = 54;
-            this.btnInsert.UseVisualStyleBackColor = true;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            // 
-            // btnCloseYear
-            // 
-            this.btnCloseYear.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnCloseYear.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.btnCloseYear.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnCloseYear.BorderRadius = 10;
-            this.btnCloseYear.BorderSize = 1;
-            this.btnCloseYear.FlatAppearance.BorderSize = 0;
-            this.btnCloseYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseYear.ForeColor = System.Drawing.Color.Indigo;
-            this.btnCloseYear.GradientAngle = 10F;
-            this.btnCloseYear.GrdtBottom = System.Drawing.Color.Transparent;
-            this.btnCloseYear.Image = global::Libretto.Properties.Resources.Lucchetto;
-            this.btnCloseYear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCloseYear.Location = new System.Drawing.Point(13, 300);
-            this.btnCloseYear.Name = "btnCloseYear";
-            this.btnCloseYear.Size = new System.Drawing.Size(164, 40);
-            this.btnCloseYear.TabIndex = 56;
-            this.btnCloseYear.Text = "Chiudi Anno";
-            this.btnCloseYear.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnCloseYear.TextColor = System.Drawing.Color.Indigo;
-            this.btnCloseYear.UseVisualStyleBackColor = false;
-            this.btnCloseYear.Click += new System.EventHandler(this.btnCloseYear_Click);
-            // 
-            // btnLoadYears2
-            // 
-            this.btnLoadYears2.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnLoadYears2.BackgroundImage = global::Libretto.Properties.Resources.Aggiorna1;
-            this.btnLoadYears2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLoadYears2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadYears2.ForeColor = System.Drawing.Color.Green;
-            this.btnLoadYears2.Location = new System.Drawing.Point(131, 47);
-            this.btnLoadYears2.Name = "btnLoadYears2";
-            this.btnLoadYears2.Size = new System.Drawing.Size(30, 30);
-            this.btnLoadYears2.TabIndex = 34;
-            this.btnLoadYears2.UseVisualStyleBackColor = false;
-            this.btnLoadYears2.Click += new System.EventHandler(this.btnLoadYears2_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackgroundImage = global::Libretto.Properties.Resources.Exit;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.Green;
-            this.btnExit.Location = new System.Drawing.Point(20, 34);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(30, 30);
-            this.btnExit.TabIndex = 15;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // btnLoadYears
             // 
             this.btnLoadYears.BackgroundImage = global::Libretto.Properties.Resources.Aggiorna;
@@ -678,83 +302,17 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnSaveData
+            // pgInsert
             // 
-            this.btnSaveData.BackgroundImage = global::Libretto.Properties.Resources.Salva;
-            this.btnSaveData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveData.ForeColor = System.Drawing.Color.Green;
-            this.btnSaveData.Location = new System.Drawing.Point(20, 35);
-            this.btnSaveData.Name = "btnSaveData";
-            this.btnSaveData.Size = new System.Drawing.Size(30, 30);
-            this.btnSaveData.TabIndex = 23;
-            this.btnSaveData.UseVisualStyleBackColor = true;
-            this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
-            // 
-            // btnSaveThree
-            // 
-            this.btnSaveThree.BackgroundImage = global::Libretto.Properties.Resources.Salva;
-            this.btnSaveThree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveThree.ForeColor = System.Drawing.Color.Green;
-            this.btnSaveThree.Location = new System.Drawing.Point(20, 34);
-            this.btnSaveThree.Name = "btnSaveThree";
-            this.btnSaveThree.Size = new System.Drawing.Size(30, 30);
-            this.btnSaveThree.TabIndex = 23;
-            this.btnSaveThree.UseVisualStyleBackColor = true;
-            this.btnSaveThree.Click += new System.EventHandler(this.btnSaveThree_Click);
-            // 
-            // btnModifyRow
-            // 
-            this.btnModifyRow.BackgroundImage = global::Libretto.Properties.Resources.Aggiorna1;
-            this.btnModifyRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnModifyRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifyRow.ForeColor = System.Drawing.Color.Green;
-            this.btnModifyRow.Location = new System.Drawing.Point(78, 34);
-            this.btnModifyRow.Name = "btnModifyRow";
-            this.btnModifyRow.Size = new System.Drawing.Size(30, 30);
-            this.btnModifyRow.TabIndex = 30;
-            this.btnModifyRow.UseVisualStyleBackColor = true;
-            this.btnModifyRow.Click += new System.EventHandler(this.btnModifyRow_Click);
-            // 
-            // btnDown
-            // 
-            this.btnDown.BackgroundImage = global::Libretto.Properties.Resources.Carica;
-            this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDown.ForeColor = System.Drawing.Color.Green;
-            this.btnDown.Location = new System.Drawing.Point(202, 34);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(30, 30);
-            this.btnDown.TabIndex = 28;
-            this.btnDown.UseVisualStyleBackColor = true;
-            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
-            // 
-            // btnUp
-            // 
-            this.btnUp.BackgroundImage = global::Libretto.Properties.Resources.Su;
-            this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUp.ForeColor = System.Drawing.Color.Green;
-            this.btnUp.Location = new System.Drawing.Point(140, 34);
-            this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(30, 30);
-            this.btnUp.TabIndex = 27;
-            this.btnUp.UseVisualStyleBackColor = true;
-            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
-            // 
-            // btnDeleteRow
-            // 
-            this.btnDeleteRow.BackgroundImage = global::Libretto.Properties.Resources.Delete;
-            this.btnDeleteRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDeleteRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteRow.ForeColor = System.Drawing.Color.Green;
-            this.btnDeleteRow.Location = new System.Drawing.Point(16, 34);
-            this.btnDeleteRow.Name = "btnDeleteRow";
-            this.btnDeleteRow.Size = new System.Drawing.Size(30, 30);
-            this.btnDeleteRow.TabIndex = 25;
-            this.btnDeleteRow.UseVisualStyleBackColor = true;
-            this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
+            this.pgInsert.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pgInsert.Controls.Add(this.roundedPanel5);
+            this.pgInsert.Controls.Add(this.roundedPanel4);
+            this.pgInsert.Location = new System.Drawing.Point(4, 25);
+            this.pgInsert.Name = "pgInsert";
+            this.pgInsert.Padding = new System.Windows.Forms.Padding(3);
+            this.pgInsert.Size = new System.Drawing.Size(1358, 86);
+            this.pgInsert.TabIndex = 1;
+            this.pgInsert.Text = "Inserisci";
             // 
             // roundedPanel5
             // 
@@ -826,6 +384,32 @@
             this.txtImport.UnderlinedStyle = false;
             this.txtImport.Enter += new System.EventHandler(this.txtImport_Enter);
             this.txtImport.Leave += new System.EventHandler(this.txtImport_Leave);
+            // 
+            // cmbMonths
+            // 
+            this.cmbMonths.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cmbMonths.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbMonths.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMonths.FormattingEnabled = true;
+            this.cmbMonths.Location = new System.Drawing.Point(6, 46);
+            this.cmbMonths.Name = "cmbMonths";
+            this.cmbMonths.Size = new System.Drawing.Size(121, 24);
+            this.cmbMonths.TabIndex = 50;
+            this.cmbMonths.Enter += new System.EventHandler(this.cmbMonths_Enter);
+            this.cmbMonths.Leave += new System.EventHandler(this.cmbMonths_Leave);
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.BackgroundImage = global::Libretto.Properties.Resources.pencil_piccola;
+            this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.ForeColor = System.Drawing.Color.Green;
+            this.btnInsert.Location = new System.Drawing.Point(946, 42);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(30, 30);
+            this.btnInsert.TabIndex = 54;
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // txtCause
             // 
@@ -924,6 +508,19 @@
             this.roundedPanel4.Size = new System.Drawing.Size(70, 80);
             this.roundedPanel4.TabIndex = 54;
             // 
+            // btnSaveData
+            // 
+            this.btnSaveData.BackgroundImage = global::Libretto.Properties.Resources.Salva;
+            this.btnSaveData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveData.ForeColor = System.Drawing.Color.Green;
+            this.btnSaveData.Location = new System.Drawing.Point(20, 35);
+            this.btnSaveData.Name = "btnSaveData";
+            this.btnSaveData.Size = new System.Drawing.Size(30, 30);
+            this.btnSaveData.TabIndex = 23;
+            this.btnSaveData.UseVisualStyleBackColor = true;
+            this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -945,6 +542,17 @@
             this.label6.Size = new System.Drawing.Size(44, 16);
             this.label6.TabIndex = 0;
             this.label6.Text = "Salva";
+            // 
+            // pgModify
+            // 
+            this.pgModify.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pgModify.Controls.Add(this.roundedPanel7);
+            this.pgModify.Controls.Add(this.roundedPanel6);
+            this.pgModify.Location = new System.Drawing.Point(4, 25);
+            this.pgModify.Name = "pgModify";
+            this.pgModify.Size = new System.Drawing.Size(1358, 86);
+            this.pgModify.TabIndex = 2;
+            this.pgModify.Text = "Modifica";
             // 
             // roundedPanel7
             // 
@@ -990,6 +598,58 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Opzioni di modifica";
             // 
+            // btnDeleteRow
+            // 
+            this.btnDeleteRow.BackgroundImage = global::Libretto.Properties.Resources.Delete;
+            this.btnDeleteRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDeleteRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteRow.ForeColor = System.Drawing.Color.Green;
+            this.btnDeleteRow.Location = new System.Drawing.Point(16, 34);
+            this.btnDeleteRow.Name = "btnDeleteRow";
+            this.btnDeleteRow.Size = new System.Drawing.Size(30, 30);
+            this.btnDeleteRow.TabIndex = 25;
+            this.btnDeleteRow.UseVisualStyleBackColor = true;
+            this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
+            // 
+            // btnDown
+            // 
+            this.btnDown.BackgroundImage = global::Libretto.Properties.Resources.Carica;
+            this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.ForeColor = System.Drawing.Color.Green;
+            this.btnDown.Location = new System.Drawing.Point(202, 34);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(30, 30);
+            this.btnDown.TabIndex = 28;
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
+            // btnModifyRow
+            // 
+            this.btnModifyRow.BackgroundImage = global::Libretto.Properties.Resources.Aggiorna1;
+            this.btnModifyRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnModifyRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifyRow.ForeColor = System.Drawing.Color.Green;
+            this.btnModifyRow.Location = new System.Drawing.Point(78, 34);
+            this.btnModifyRow.Name = "btnModifyRow";
+            this.btnModifyRow.Size = new System.Drawing.Size(30, 30);
+            this.btnModifyRow.TabIndex = 30;
+            this.btnModifyRow.UseVisualStyleBackColor = true;
+            this.btnModifyRow.Click += new System.EventHandler(this.btnModifyRow_Click);
+            // 
+            // btnUp
+            // 
+            this.btnUp.BackgroundImage = global::Libretto.Properties.Resources.Su;
+            this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUp.ForeColor = System.Drawing.Color.Green;
+            this.btnUp.Location = new System.Drawing.Point(140, 34);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(30, 30);
+            this.btnUp.TabIndex = 27;
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
             // roundedPanel6
             // 
             this.roundedPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1031,6 +691,30 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Salva";
             // 
+            // btnSaveThree
+            // 
+            this.btnSaveThree.BackgroundImage = global::Libretto.Properties.Resources.Salva;
+            this.btnSaveThree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveThree.ForeColor = System.Drawing.Color.Green;
+            this.btnSaveThree.Location = new System.Drawing.Point(20, 34);
+            this.btnSaveThree.Name = "btnSaveThree";
+            this.btnSaveThree.Size = new System.Drawing.Size(30, 30);
+            this.btnSaveThree.TabIndex = 23;
+            this.btnSaveThree.UseVisualStyleBackColor = true;
+            this.btnSaveThree.Click += new System.EventHandler(this.btnSaveThree_Click);
+            // 
+            // pgSearch
+            // 
+            this.pgSearch.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pgSearch.Controls.Add(this.roundedPanel8);
+            this.pgSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pgSearch.Location = new System.Drawing.Point(4, 25);
+            this.pgSearch.Name = "pgSearch";
+            this.pgSearch.Size = new System.Drawing.Size(1358, 86);
+            this.pgSearch.TabIndex = 3;
+            this.pgSearch.Text = "Cerca";
+            // 
             // roundedPanel8
             // 
             this.roundedPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -1052,6 +736,7 @@
             // 
             // txtSearchVoice
             // 
+            this.txtSearchVoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchVoice.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchVoice.Location = new System.Drawing.Point(6, 36);
             this.txtSearchVoice.Name = "txtSearchVoice";
@@ -1080,6 +765,322 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Cerca";
             // 
+            // pnlTree
+            // 
+            this.pnlTree.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlTree.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlTree.Controls.Add(this.label15);
+            this.pnlTree.Controls.Add(this.btnLoadYears2);
+            this.pnlTree.Controls.Add(this.treeYears);
+            this.pnlTree.Location = new System.Drawing.Point(1, 124);
+            this.pnlTree.Name = "pnlTree";
+            this.pnlTree.Size = new System.Drawing.Size(182, 730);
+            this.pnlTree.TabIndex = 2;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label15.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label15.Location = new System.Drawing.Point(5, 12);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(171, 20);
+            this.label15.TabIndex = 36;
+            this.label15.Text = "GESTIONE ANNUALE";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnLoadYears2
+            // 
+            this.btnLoadYears2.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnLoadYears2.BackgroundImage = global::Libretto.Properties.Resources.Aggiorna1;
+            this.btnLoadYears2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLoadYears2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadYears2.ForeColor = System.Drawing.Color.Green;
+            this.btnLoadYears2.Location = new System.Drawing.Point(131, 47);
+            this.btnLoadYears2.Name = "btnLoadYears2";
+            this.btnLoadYears2.Size = new System.Drawing.Size(30, 30);
+            this.btnLoadYears2.TabIndex = 34;
+            this.btnLoadYears2.UseVisualStyleBackColor = false;
+            this.btnLoadYears2.Click += new System.EventHandler(this.btnLoadYears2_Click);
+            // 
+            // treeYears
+            // 
+            this.treeYears.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.treeYears.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeYears.ForeColor = System.Drawing.Color.Indigo;
+            this.treeYears.FullRowSelect = true;
+            this.treeYears.ItemHeight = 20;
+            this.treeYears.LineColor = System.Drawing.Color.LightSteelBlue;
+            this.treeYears.Location = new System.Drawing.Point(1, 83);
+            this.treeYears.Name = "treeYears";
+            treeNode1.BackColor = System.Drawing.Color.AntiqueWhite;
+            treeNode1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode1.Name = "nodeYears";
+            treeNode1.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode1.Text = "ANNI   ";
+            this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            this.treeYears.ShowLines = false;
+            this.treeYears.ShowNodeToolTips = true;
+            this.treeYears.Size = new System.Drawing.Size(177, 645);
+            this.treeYears.TabIndex = 33;
+            this.treeYears.DoubleClick += new System.EventHandler(this.treeYears_DoubleClick);
+            // 
+            // pnlResume
+            // 
+            this.pnlResume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlResume.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlResume.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlResume.Controls.Add(this.label16);
+            this.pnlResume.Controls.Add(this.btnCloseYear);
+            this.pnlResume.Controls.Add(this.pnlStatus);
+            this.pnlResume.Controls.Add(this.panel2);
+            this.pnlResume.Controls.Add(this.textBox2);
+            this.pnlResume.Controls.Add(this.txtBalanceOV);
+            this.pnlResume.Controls.Add(this.lblSaldoFine);
+            this.pnlResume.Controls.Add(this.panel1);
+            this.pnlResume.Controls.Add(this.textBox1);
+            this.pnlResume.Controls.Add(this.txtBalanceST);
+            this.pnlResume.Controls.Add(this.lblSaldoIni);
+            this.pnlResume.Location = new System.Drawing.Point(1175, 122);
+            this.pnlResume.Name = "pnlResume";
+            this.pnlResume.Size = new System.Drawing.Size(190, 730);
+            this.pnlResume.TabIndex = 4;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label16.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(22, 14);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(142, 20);
+            this.label16.TabIndex = 57;
+            this.label16.Text = "DATI CONTABILI";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCloseYear
+            // 
+            this.btnCloseYear.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCloseYear.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCloseYear.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnCloseYear.BorderRadius = 10;
+            this.btnCloseYear.BorderSize = 1;
+            this.btnCloseYear.FlatAppearance.BorderSize = 0;
+            this.btnCloseYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseYear.ForeColor = System.Drawing.Color.Indigo;
+            this.btnCloseYear.GradientAngle = 10F;
+            this.btnCloseYear.GrdtBottom = System.Drawing.Color.Transparent;
+            this.btnCloseYear.Image = global::Libretto.Properties.Resources.Lucchetto;
+            this.btnCloseYear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCloseYear.Location = new System.Drawing.Point(13, 300);
+            this.btnCloseYear.Name = "btnCloseYear";
+            this.btnCloseYear.Size = new System.Drawing.Size(164, 40);
+            this.btnCloseYear.TabIndex = 56;
+            this.btnCloseYear.Text = "Chiudi Anno";
+            this.btnCloseYear.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnCloseYear.TextColor = System.Drawing.Color.Indigo;
+            this.btnCloseYear.UseVisualStyleBackColor = false;
+            this.btnCloseYear.Click += new System.EventHandler(this.btnCloseYear_Click);
+            // 
+            // pnlStatus
+            // 
+            this.pnlStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlStatus.Location = new System.Drawing.Point(3, 634);
+            this.pnlStatus.Name = "pnlStatus";
+            this.pnlStatus.Size = new System.Drawing.Size(181, 23);
+            this.pnlStatus.TabIndex = 45;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Location = new System.Drawing.Point(7, 264);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(177, 10);
+            this.panel2.TabIndex = 41;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(152, 210);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(27, 22);
+            this.textBox2.TabIndex = 52;
+            this.textBox2.Text = "€";
+            // 
+            // txtBalanceOV
+            // 
+            this.txtBalanceOV.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtBalanceOV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBalanceOV.Location = new System.Drawing.Point(8, 210);
+            this.txtBalanceOV.Name = "txtBalanceOV";
+            this.txtBalanceOV.Size = new System.Drawing.Size(146, 22);
+            this.txtBalanceOV.TabIndex = 39;
+            // 
+            // lblSaldoFine
+            // 
+            this.lblSaldoFine.AutoSize = true;
+            this.lblSaldoFine.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoFine.Location = new System.Drawing.Point(5, 191);
+            this.lblSaldoFine.Name = "lblSaldoFine";
+            this.lblSaldoFine.Size = new System.Drawing.Size(84, 16);
+            this.lblSaldoFine.TabIndex = 50;
+            this.lblSaldoFine.Text = "Saldo finale";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Location = new System.Drawing.Point(7, 162);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(177, 10);
+            this.panel1.TabIndex = 40;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(150, 118);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(27, 22);
+            this.textBox1.TabIndex = 48;
+            this.textBox1.Text = "€";
+            // 
+            // txtBalanceST
+            // 
+            this.txtBalanceST.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtBalanceST.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBalanceST.Location = new System.Drawing.Point(6, 118);
+            this.txtBalanceST.Name = "txtBalanceST";
+            this.txtBalanceST.Size = new System.Drawing.Size(146, 22);
+            this.txtBalanceST.TabIndex = 38;
+            // 
+            // lblSaldoIni
+            // 
+            this.lblSaldoIni.AutoSize = true;
+            this.lblSaldoIni.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoIni.Location = new System.Drawing.Point(3, 99);
+            this.lblSaldoIni.Name = "lblSaldoIni";
+            this.lblSaldoIni.Size = new System.Drawing.Size(92, 16);
+            this.lblSaldoIni.TabIndex = 37;
+            this.lblSaldoIni.Text = "Saldo iniziale";
+            // 
+            // pnlFooter
+            // 
+            this.pnlFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFooter.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFooter.BackgroundColor = System.Drawing.Color.Transparent;
+            this.pnlFooter.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlFooter.BorderRadius = 10;
+            this.pnlFooter.BorderSize = 3;
+            this.pnlFooter.Controls.Add(this.txtYearMonth);
+            this.pnlFooter.GradientAngle = 90F;
+            this.pnlFooter.GrdtBottom = System.Drawing.Color.WhiteSmoke;
+            this.pnlFooter.GrdtTop = System.Drawing.Color.AntiqueWhite;
+            this.pnlFooter.Location = new System.Drawing.Point(1, 858);
+            this.pnlFooter.Name = "pnlFooter";
+            this.pnlFooter.Size = new System.Drawing.Size(1366, 156);
+            this.pnlFooter.TabIndex = 38;
+            // 
+            // txtYearMonth
+            // 
+            this.txtYearMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtYearMonth.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtYearMonth.Enabled = false;
+            this.txtYearMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtYearMonth.ForeColor = System.Drawing.Color.Black;
+            this.txtYearMonth.Location = new System.Drawing.Point(189, 31);
+            this.txtYearMonth.Name = "txtYearMonth";
+            this.txtYearMonth.ReadOnly = true;
+            this.txtYearMonth.Size = new System.Drawing.Size(985, 22);
+            this.txtYearMonth.TabIndex = 36;
+            this.txtYearMonth.TabStop = false;
+            // 
+            // pnlGrid
+            // 
+            this.pnlGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlGrid.BackColor = System.Drawing.Color.LightGray;
+            this.pnlGrid.BackgroundColor = System.Drawing.Color.LightGray;
+            this.pnlGrid.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.pnlGrid.BorderRadius = 10;
+            this.pnlGrid.BorderSize = 2;
+            this.pnlGrid.Controls.Add(this.grdMovLibVoices);
+            this.pnlGrid.GradientAngle = 90F;
+            this.pnlGrid.GrdtBottom = System.Drawing.Color.WhiteSmoke;
+            this.pnlGrid.GrdtTop = System.Drawing.Color.Gainsboro;
+            this.pnlGrid.Location = new System.Drawing.Point(184, 124);
+            this.pnlGrid.Name = "pnlGrid";
+            this.pnlGrid.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlGrid.Size = new System.Drawing.Size(994, 730);
+            this.pnlGrid.TabIndex = 43;
+            // 
+            // grdMovLibVoices
+            // 
+            this.grdMovLibVoices.AllowUserToAddRows = false;
+            this.grdMovLibVoices.AllowUserToResizeRows = false;
+            this.grdMovLibVoices.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.grdMovLibVoices.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.grdMovLibVoices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.grdMovLibVoices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMovLibVoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.grdMovLibVoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdMovLibVoices.DefaultCellStyle = dataGridViewCellStyle2;
+            this.grdMovLibVoices.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdMovLibVoices.EnableHeadersVisualStyles = false;
+            this.grdMovLibVoices.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.grdMovLibVoices.Location = new System.Drawing.Point(5, 5);
+            this.grdMovLibVoices.Margin = new System.Windows.Forms.Padding(5);
+            this.grdMovLibVoices.MultiSelect = false;
+            this.grdMovLibVoices.Name = "grdMovLibVoices";
+            this.grdMovLibVoices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMovLibVoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.grdMovLibVoices.RowHeadersVisible = false;
+            this.grdMovLibVoices.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdMovLibVoices.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.grdMovLibVoices.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.grdMovLibVoices.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.grdMovLibVoices.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            this.grdMovLibVoices.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMovLibVoices.RowTemplate.DividerHeight = 1;
+            this.grdMovLibVoices.ShowEditingIcon = false;
+            this.grdMovLibVoices.Size = new System.Drawing.Size(984, 720);
+            this.grdMovLibVoices.TabIndex = 21;
+            this.grdMovLibVoices.MouseClick += new System.Windows.Forms.MouseEventHandler(this.grdMovLibVoices_MouseClick);
+            // 
             // frmLibretto
             // 
             this.AcceptButton = this.btnInsert;
@@ -1092,7 +1093,6 @@
             this.Controls.Add(this.pnlResume);
             this.Controls.Add(this.pnlTree);
             this.Controls.Add(this.pnlMenu);
-            this.MaximizeBox = false;
             this.Name = "frmLibretto";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1103,9 +1103,32 @@
             this.pnlMenu.ResumeLayout(false);
             this.tabMenu.ResumeLayout(false);
             this.pgHome.ResumeLayout(false);
+            this.roundedPanel3.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.grpRoundAnni.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.pgInsert.ResumeLayout(false);
+            this.roundedPanel5.ResumeLayout(false);
+            this.roundedPanel5.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.roundedPanel4.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.pgModify.ResumeLayout(false);
+            this.roundedPanel7.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.roundedPanel6.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.pgSearch.ResumeLayout(false);
+            this.roundedPanel8.ResumeLayout(false);
+            this.roundedPanel8.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.pnlTree.ResumeLayout(false);
             this.pnlTree.PerformLayout();
             this.pnlResume.ResumeLayout(false);
@@ -1114,29 +1137,6 @@
             this.pnlFooter.PerformLayout();
             this.pnlGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdMovLibVoices)).EndInit();
-            this.roundedPanel3.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.grpRoundAnni.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.roundedPanel5.ResumeLayout(false);
-            this.roundedPanel5.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.roundedPanel4.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.roundedPanel7.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.roundedPanel6.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.roundedPanel8.ResumeLayout(false);
-            this.roundedPanel8.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }

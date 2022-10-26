@@ -31,6 +31,8 @@
             this.pnlMain = new RoundendControlCollections.RoundedPanel();
             this.txtMonth = new RoundendControlCollections.RoundedTextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnClose = new RoundendControlCollections.RoundedButton();
+            this.btnModify = new RoundendControlCollections.RoundedButton();
             this.btnPlus = new RoundendControlCollections.RoundedButton();
             this.txtImport = new RoundendControlCollections.RoundedTextBox();
             this.txtCause = new RoundendControlCollections.RoundedTextBox();
@@ -38,8 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnClose = new RoundendControlCollections.RoundedButton();
-            this.btnModify = new RoundendControlCollections.RoundedButton();
+            this.Label1 = new System.Windows.Forms.Label();
             this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             this.pnlMain.BorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnlMain.BorderRadius = 15;
             this.pnlMain.BorderSize = 1;
+            this.pnlMain.Controls.Add(this.Label1);
             this.pnlMain.Controls.Add(this.txtMonth);
             this.pnlMain.Controls.Add(this.label6);
             this.pnlMain.Controls.Add(this.btnClose);
@@ -102,6 +104,53 @@
             this.label6.Size = new System.Drawing.Size(43, 15);
             this.label6.TabIndex = 36;
             this.label6.Text = "MESE";
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnClose.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.btnClose.BackgroundImage = global::Libretto.Properties.Resources.Exit;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.BorderColor = System.Drawing.Color.Turquoise;
+            this.btnClose.BorderRadius = 10;
+            this.btnClose.BorderSize = 1;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.GradientAngle = 90F;
+            this.btnClose.GrdtBottom = System.Drawing.Color.Empty;
+            this.btnClose.Location = new System.Drawing.Point(323, 441);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 30);
+            this.btnClose.TabIndex = 30;
+            this.btnClose.TextColor = System.Drawing.Color.White;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnModify
+            // 
+            this.btnModify.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnModify.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.btnModify.BorderColor = System.Drawing.Color.Turquoise;
+            this.btnModify.BorderRadius = 10;
+            this.btnModify.BorderSize = 1;
+            this.btnModify.FlatAppearance.BorderSize = 0;
+            this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModify.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModify.ForeColor = System.Drawing.Color.White;
+            this.btnModify.GradientAngle = 90F;
+            this.btnModify.GrdtBottom = System.Drawing.Color.Empty;
+            this.btnModify.Image = global::Libretto.Properties.Resources.pencil_piccola;
+            this.btnModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModify.Location = new System.Drawing.Point(216, 441);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(88, 30);
+            this.btnModify.TabIndex = 29;
+            this.btnModify.Text = "Modifica";
+            this.btnModify.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModify.TextColor = System.Drawing.Color.White;
+            this.btnModify.UseVisualStyleBackColor = false;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // btnPlus
             // 
@@ -225,52 +274,15 @@
             this.label2.TabIndex = 31;
             this.label2.Text = "CAUSALE";
             // 
-            // btnClose
+            // Label1
             // 
-            this.btnClose.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnClose.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.btnClose.BackgroundImage = global::Libretto.Properties.Resources.Exit;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClose.BorderColor = System.Drawing.Color.Turquoise;
-            this.btnClose.BorderRadius = 10;
-            this.btnClose.BorderSize = 1;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.GradientAngle = 90F;
-            this.btnClose.GrdtBottom = System.Drawing.Color.Empty;
-            this.btnClose.Location = new System.Drawing.Point(323, 441);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.TabIndex = 30;
-            this.btnClose.TextColor = System.Drawing.Color.White;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnModify
-            // 
-            this.btnModify.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnModify.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.btnModify.BorderColor = System.Drawing.Color.Turquoise;
-            this.btnModify.BorderRadius = 10;
-            this.btnModify.BorderSize = 1;
-            this.btnModify.FlatAppearance.BorderSize = 0;
-            this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModify.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModify.ForeColor = System.Drawing.Color.White;
-            this.btnModify.GradientAngle = 90F;
-            this.btnModify.GrdtBottom = System.Drawing.Color.Empty;
-            this.btnModify.Image = global::Libretto.Properties.Resources.pencil_piccola;
-            this.btnModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModify.Location = new System.Drawing.Point(216, 441);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(88, 30);
-            this.btnModify.TabIndex = 29;
-            this.btnModify.Text = "Modifica";
-            this.btnModify.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModify.TextColor = System.Drawing.Color.White;
-            this.btnModify.UseVisualStyleBackColor = false;
-            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
+            this.Label1.AutoSize = true;
+            this.Label1.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1.Location = new System.Drawing.Point(17, 61);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(21, 15);
+            this.Label1.TabIndex = 37;
+            this.Label1.Text = "ID";
             // 
             // frmModify
             // 
@@ -306,5 +318,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Label1;
     }
 }

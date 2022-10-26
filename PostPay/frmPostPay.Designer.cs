@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("ANNI   ");
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("ANNI");
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.pgHome = new System.Windows.Forms.TabPage();
+            this.grpPdf = new System.Windows.Forms.GroupBox();
             this.grpExit = new System.Windows.Forms.GroupBox();
             this.gprSave = new System.Windows.Forms.GroupBox();
             this.gprYears = new System.Windows.Forms.GroupBox();
@@ -57,29 +58,31 @@
             this.grpSearch = new System.Windows.Forms.GroupBox();
             this.txtSearchVoice = new System.Windows.Forms.TextBox();
             this.pnlTree = new System.Windows.Forms.Panel();
-            this.treeYears = new System.Windows.Forms.TreeView();
             this.pnlResume = new System.Windows.Forms.Panel();
             this.lblPages = new System.Windows.Forms.Label();
             this.btnForward = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnCloseYear = new System.Windows.Forms.Button();
             this.pnlStatus = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.txtBalanceOV = new System.Windows.Forms.TextBox();
             this.lblSaldoFine = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtBalanceST = new System.Windows.Forms.TextBox();
             this.lblSaldoIni = new System.Windows.Forms.Label();
             this.pnlGrid = new System.Windows.Forms.Panel();
             this.grdMonthVoices = new System.Windows.Forms.DataGridView();
-            this.pnlTexts = new System.Windows.Forms.Panel();
+            this.svdPDF = new System.Windows.Forms.SaveFileDialog();
+            this.treeYears = new System.Windows.Forms.TreeView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pnlFooter = new RoundendControlCollections.RoundedPanel();
             this.txtYearMonth = new System.Windows.Forms.TextBox();
-            this.grpPdf = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnInsert = new System.Windows.Forms.Button();
+            this.btnCloseYear = new RoundendControlCollections.RoundedButton();
             this.btnLoadYears2 = new System.Windows.Forms.Button();
             this.btnPDFCreator = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -91,10 +94,10 @@
             this.btnDown = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDeleteRow = new System.Windows.Forms.Button();
-            this.svdPDF = new System.Windows.Forms.SaveFileDialog();
             this.pnlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.pgHome.SuspendLayout();
+            this.grpPdf.SuspendLayout();
             this.grpExit.SuspendLayout();
             this.gprSave.SuspendLayout();
             this.gprYears.SuspendLayout();
@@ -112,8 +115,7 @@
             this.pnlResume.SuspendLayout();
             this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMonthVoices)).BeginInit();
-            this.pnlTexts.SuspendLayout();
-            this.grpPdf.SuspendLayout();
+            this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -123,21 +125,22 @@
             this.pnlMenu.Controls.Add(this.tabMenu);
             this.pnlMenu.Location = new System.Drawing.Point(1, 1);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(1363, 120);
+            this.pnlMenu.Size = new System.Drawing.Size(1367, 120);
             this.pnlMenu.TabIndex = 0;
             // 
             // tabMenu
             // 
-            this.tabMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabMenu.Controls.Add(this.pgHome);
             this.tabMenu.Controls.Add(this.pgInsert);
             this.tabMenu.Controls.Add(this.pgModify);
             this.tabMenu.Controls.Add(this.pgSearch);
             this.tabMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabMenu.Location = new System.Drawing.Point(0, 3);
+            this.tabMenu.Location = new System.Drawing.Point(0, 1);
             this.tabMenu.Name = "tabMenu";
             this.tabMenu.SelectedIndex = 0;
-            this.tabMenu.Size = new System.Drawing.Size(1362, 115);
+            this.tabMenu.Size = new System.Drawing.Size(1366, 115);
             this.tabMenu.TabIndex = 5;
             // 
             // pgHome
@@ -151,9 +154,21 @@
             this.pgHome.Location = new System.Drawing.Point(4, 25);
             this.pgHome.Name = "pgHome";
             this.pgHome.Padding = new System.Windows.Forms.Padding(3);
-            this.pgHome.Size = new System.Drawing.Size(1354, 86);
+            this.pgHome.Size = new System.Drawing.Size(1358, 86);
             this.pgHome.TabIndex = 0;
             this.pgHome.Text = "Home";
+            // 
+            // grpPdf
+            // 
+            this.grpPdf.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.grpPdf.Controls.Add(this.btnPDFCreator);
+            this.grpPdf.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grpPdf.Location = new System.Drawing.Point(242, 6);
+            this.grpPdf.Name = "grpPdf";
+            this.grpPdf.Size = new System.Drawing.Size(80, 75);
+            this.grpPdf.TabIndex = 35;
+            this.grpPdf.TabStop = false;
+            this.grpPdf.Text = "PDF";
             // 
             // grpExit
             // 
@@ -198,7 +213,7 @@
             this.pgInsert.Location = new System.Drawing.Point(4, 25);
             this.pgInsert.Name = "pgInsert";
             this.pgInsert.Padding = new System.Windows.Forms.Padding(3);
-            this.pgInsert.Size = new System.Drawing.Size(1354, 86);
+            this.pgInsert.Size = new System.Drawing.Size(1358, 86);
             this.pgInsert.TabIndex = 1;
             this.pgInsert.Text = "Inserisci";
             // 
@@ -313,7 +328,7 @@
             this.pgModify.Controls.Add(this.grpDeleteRow);
             this.pgModify.Location = new System.Drawing.Point(4, 25);
             this.pgModify.Name = "pgModify";
-            this.pgModify.Size = new System.Drawing.Size(1354, 86);
+            this.pgModify.Size = new System.Drawing.Size(1358, 86);
             this.pgModify.TabIndex = 2;
             this.pgModify.Text = "Modifica";
             // 
@@ -370,7 +385,7 @@
             this.pgSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.pgSearch.Location = new System.Drawing.Point(4, 25);
             this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(1354, 86);
+            this.pgSearch.Size = new System.Drawing.Size(1358, 86);
             this.pgSearch.TabIndex = 3;
             this.pgSearch.Text = "Cerca";
             // 
@@ -396,70 +411,49 @@
             // 
             // pnlTree
             // 
-            this.pnlTree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlTree.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnlTree.Controls.Add(this.btnLoadYears2);
+            this.pnlTree.Controls.Add(this.label15);
             this.pnlTree.Controls.Add(this.treeYears);
-            this.pnlTree.Location = new System.Drawing.Point(1, 121);
+            this.pnlTree.Controls.Add(this.btnLoadYears2);
+            this.pnlTree.Location = new System.Drawing.Point(1, 124);
             this.pnlTree.Name = "pnlTree";
-            this.pnlTree.Size = new System.Drawing.Size(200, 738);
+            this.pnlTree.Size = new System.Drawing.Size(182, 730);
             this.pnlTree.TabIndex = 1;
-            // 
-            // treeYears
-            // 
-            this.treeYears.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.treeYears.BackColor = System.Drawing.Color.Gainsboro;
-            this.treeYears.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeYears.ForeColor = System.Drawing.Color.Indigo;
-            this.treeYears.ItemHeight = 20;
-            this.treeYears.Location = new System.Drawing.Point(0, 80);
-            this.treeYears.Name = "treeYears";
-            treeNode1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            treeNode1.ForeColor = System.Drawing.Color.Red;
-            treeNode1.Name = "nodeYears";
-            treeNode1.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode1.Text = "ANNI   ";
-            this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.treeYears.ShowLines = false;
-            this.treeYears.ShowNodeToolTips = true;
-            this.treeYears.Size = new System.Drawing.Size(197, 658);
-            this.treeYears.TabIndex = 33;
             // 
             // pnlResume
             // 
-            this.pnlResume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlResume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlResume.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlResume.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlResume.Controls.Add(this.btnCloseYear);
+            this.pnlResume.Controls.Add(this.panel4);
+            this.pnlResume.Controls.Add(this.panel3);
+            this.pnlResume.Controls.Add(this.label16);
+            this.pnlResume.Controls.Add(this.panel1);
             this.pnlResume.Controls.Add(this.lblPages);
             this.pnlResume.Controls.Add(this.btnForward);
             this.pnlResume.Controls.Add(this.btnBack);
-            this.pnlResume.Controls.Add(this.panel4);
-            this.pnlResume.Controls.Add(this.panel3);
-            this.pnlResume.Controls.Add(this.btnCloseYear);
             this.pnlResume.Controls.Add(this.pnlStatus);
             this.pnlResume.Controls.Add(this.panel2);
             this.pnlResume.Controls.Add(this.textBox2);
             this.pnlResume.Controls.Add(this.txtBalanceOV);
             this.pnlResume.Controls.Add(this.lblSaldoFine);
-            this.pnlResume.Controls.Add(this.panel1);
             this.pnlResume.Controls.Add(this.textBox1);
             this.pnlResume.Controls.Add(this.txtBalanceST);
             this.pnlResume.Controls.Add(this.lblSaldoIni);
-            this.pnlResume.Location = new System.Drawing.Point(1163, 121);
+            this.pnlResume.Location = new System.Drawing.Point(1175, 122);
             this.pnlResume.Name = "pnlResume";
-            this.pnlResume.Size = new System.Drawing.Size(200, 738);
+            this.pnlResume.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.pnlResume.Size = new System.Drawing.Size(190, 730);
             this.pnlResume.TabIndex = 2;
             // 
             // lblPages
             // 
             this.lblPages.AutoSize = true;
-            this.lblPages.BackColor = System.Drawing.Color.LightGray;
+            this.lblPages.BackColor = System.Drawing.Color.Transparent;
             this.lblPages.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPages.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblPages.Location = new System.Drawing.Point(71, 523);
+            this.lblPages.Location = new System.Drawing.Point(76, 523);
             this.lblPages.Name = "lblPages";
             this.lblPages.Size = new System.Drawing.Size(56, 21);
             this.lblPages.TabIndex = 63;
@@ -493,60 +487,28 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Location = new System.Drawing.Point(4, 619);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(197, 10);
-            this.panel4.TabIndex = 46;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Location = new System.Drawing.Point(3, 552);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(197, 10);
-            this.panel3.TabIndex = 45;
-            // 
-            // btnCloseYear
-            // 
-            this.btnCloseYear.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCloseYear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCloseYear.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCloseYear.ForeColor = System.Drawing.Color.Indigo;
-            this.btnCloseYear.Location = new System.Drawing.Point(11, 255);
-            this.btnCloseYear.Name = "btnCloseYear";
-            this.btnCloseYear.Size = new System.Drawing.Size(163, 32);
-            this.btnCloseYear.TabIndex = 41;
-            this.btnCloseYear.Text = "Chiudi Anno";
-            this.btnCloseYear.UseVisualStyleBackColor = false;
-            this.btnCloseYear.Click += new System.EventHandler(this.btnCloseYear_Click);
-            // 
             // pnlStatus
             // 
             this.pnlStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlStatus.Location = new System.Drawing.Point(7, 670);
+            this.pnlStatus.Location = new System.Drawing.Point(3, 670);
             this.pnlStatus.Name = "pnlStatus";
-            this.pnlStatus.Size = new System.Drawing.Size(186, 23);
+            this.pnlStatus.Size = new System.Drawing.Size(181, 23);
             this.pnlStatus.TabIndex = 42;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Location = new System.Drawing.Point(-2, 210);
+            this.panel2.Location = new System.Drawing.Point(7, 264);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(197, 10);
+            this.panel2.Size = new System.Drawing.Size(177, 10);
             this.panel2.TabIndex = 44;
             // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(149, 156);
+            this.textBox2.Location = new System.Drawing.Point(149, 210);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(27, 22);
@@ -558,7 +520,7 @@
             // 
             this.txtBalanceOV.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtBalanceOV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBalanceOV.Location = new System.Drawing.Point(5, 156);
+            this.txtBalanceOV.Location = new System.Drawing.Point(5, 210);
             this.txtBalanceOV.Name = "txtBalanceOV";
             this.txtBalanceOV.Size = new System.Drawing.Size(146, 22);
             this.txtBalanceOV.TabIndex = 39;
@@ -566,27 +528,18 @@
             // lblSaldoFine
             // 
             this.lblSaldoFine.AutoSize = true;
-            this.lblSaldoFine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaldoFine.Location = new System.Drawing.Point(2, 137);
+            this.lblSaldoFine.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoFine.Location = new System.Drawing.Point(7, 191);
             this.lblSaldoFine.Name = "lblSaldoFine";
-            this.lblSaldoFine.Size = new System.Drawing.Size(79, 16);
+            this.lblSaldoFine.Size = new System.Drawing.Size(84, 16);
             this.lblSaldoFine.TabIndex = 62;
             this.lblSaldoFine.Text = "Saldo finale";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(-7, 108);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(215, 10);
-            this.panel1.TabIndex = 43;
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(147, 64);
+            this.textBox1.Location = new System.Drawing.Point(147, 118);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(27, 22);
@@ -598,7 +551,7 @@
             // 
             this.txtBalanceST.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtBalanceST.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBalanceST.Location = new System.Drawing.Point(3, 64);
+            this.txtBalanceST.Location = new System.Drawing.Point(3, 118);
             this.txtBalanceST.Name = "txtBalanceST";
             this.txtBalanceST.Size = new System.Drawing.Size(146, 22);
             this.txtBalanceST.TabIndex = 37;
@@ -606,10 +559,10 @@
             // lblSaldoIni
             // 
             this.lblSaldoIni.AutoSize = true;
-            this.lblSaldoIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaldoIni.Location = new System.Drawing.Point(0, 45);
+            this.lblSaldoIni.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoIni.Location = new System.Drawing.Point(5, 99);
             this.lblSaldoIni.Name = "lblSaldoIni";
-            this.lblSaldoIni.Size = new System.Drawing.Size(88, 16);
+            this.lblSaldoIni.Size = new System.Drawing.Size(92, 16);
             this.lblSaldoIni.TabIndex = 55;
             this.lblSaldoIni.Text = "Saldo iniziale";
             // 
@@ -665,39 +618,115 @@
             this.grdMonthVoices.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.grdMonthVoices_KeyPress);
             this.grdMonthVoices.MouseClick += new System.Windows.Forms.MouseEventHandler(this.grdMonthVoices_MouseClick);
             // 
-            // pnlTexts
+            // treeYears
             // 
-            this.pnlTexts.Controls.Add(this.txtYearMonth);
-            this.pnlTexts.Location = new System.Drawing.Point(201, 751);
-            this.pnlTexts.Name = "pnlTexts";
-            this.pnlTexts.Size = new System.Drawing.Size(962, 106);
-            this.pnlTexts.TabIndex = 4;
+            this.treeYears.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.treeYears.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeYears.ForeColor = System.Drawing.Color.Indigo;
+            this.treeYears.FullRowSelect = true;
+            this.treeYears.ItemHeight = 20;
+            this.treeYears.LineColor = System.Drawing.Color.LightSteelBlue;
+            this.treeYears.Location = new System.Drawing.Point(1, 83);
+            this.treeYears.Name = "treeYears";
+            treeNode1.BackColor = System.Drawing.Color.AntiqueWhite;
+            treeNode1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode1.Name = "nodeYears";
+            treeNode1.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode1.Text = "ANNI";
+            this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            this.treeYears.ShowLines = false;
+            this.treeYears.ShowNodeToolTips = true;
+            this.treeYears.Size = new System.Drawing.Size(177, 645);
+            this.treeYears.TabIndex = 36;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Location = new System.Drawing.Point(7, 159);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(177, 10);
+            this.panel1.TabIndex = 64;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label16.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(22, 14);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(142, 20);
+            this.label16.TabIndex = 65;
+            this.label16.Text = "DATI CONTABILI";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label15.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label15.Location = new System.Drawing.Point(5, 12);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(171, 20);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "GESTIONE ANNUALE";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlFooter
+            // 
+            this.pnlFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFooter.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFooter.BackgroundColor = System.Drawing.Color.Transparent;
+            this.pnlFooter.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlFooter.BorderRadius = 10;
+            this.pnlFooter.BorderSize = 3;
+            this.pnlFooter.Controls.Add(this.txtYearMonth);
+            this.pnlFooter.GradientAngle = 90F;
+            this.pnlFooter.GrdtBottom = System.Drawing.Color.WhiteSmoke;
+            this.pnlFooter.GrdtTop = System.Drawing.Color.AntiqueWhite;
+            this.pnlFooter.Location = new System.Drawing.Point(1, 858);
+            this.pnlFooter.Name = "pnlFooter";
+            this.pnlFooter.Size = new System.Drawing.Size(1366, 156);
+            this.pnlFooter.TabIndex = 38;
             // 
             // txtYearMonth
             // 
-            this.txtYearMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtYearMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtYearMonth.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtYearMonth.Enabled = false;
             this.txtYearMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYearMonth.ForeColor = System.Drawing.Color.Black;
-            this.txtYearMonth.Location = new System.Drawing.Point(6, 18);
+            this.txtYearMonth.Location = new System.Drawing.Point(189, 31);
             this.txtYearMonth.Name = "txtYearMonth";
             this.txtYearMonth.ReadOnly = true;
-            this.txtYearMonth.Size = new System.Drawing.Size(950, 22);
-            this.txtYearMonth.TabIndex = 49;
+            this.txtYearMonth.Size = new System.Drawing.Size(985, 22);
+            this.txtYearMonth.TabIndex = 36;
             this.txtYearMonth.TabStop = false;
             // 
-            // grpPdf
+            // panel3
             // 
-            this.grpPdf.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.grpPdf.Controls.Add(this.btnPDFCreator);
-            this.grpPdf.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.grpPdf.Location = new System.Drawing.Point(242, 6);
-            this.grpPdf.Name = "grpPdf";
-            this.grpPdf.Size = new System.Drawing.Size(80, 75);
-            this.grpPdf.TabIndex = 35;
-            this.grpPdf.TabStop = false;
-            this.grpPdf.Text = "PDF";
+            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Location = new System.Drawing.Point(5, 551);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(177, 10);
+            this.panel3.TabIndex = 66;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Location = new System.Drawing.Point(5, 622);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(177, 10);
+            this.panel4.TabIndex = 67;
             // 
             // btnInsert
             // 
@@ -712,6 +741,29 @@
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
+            // btnCloseYear
+            // 
+            this.btnCloseYear.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCloseYear.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCloseYear.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnCloseYear.BorderRadius = 10;
+            this.btnCloseYear.BorderSize = 1;
+            this.btnCloseYear.FlatAppearance.BorderSize = 0;
+            this.btnCloseYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseYear.ForeColor = System.Drawing.Color.Indigo;
+            this.btnCloseYear.GradientAngle = 10F;
+            this.btnCloseYear.GrdtBottom = System.Drawing.Color.Transparent;
+            this.btnCloseYear.Image = global::PostPay.Properties.Resources.Lucchetto;
+            this.btnCloseYear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCloseYear.Location = new System.Drawing.Point(13, 300);
+            this.btnCloseYear.Name = "btnCloseYear";
+            this.btnCloseYear.Size = new System.Drawing.Size(164, 40);
+            this.btnCloseYear.TabIndex = 68;
+            this.btnCloseYear.Text = "Chiudi Anno";
+            this.btnCloseYear.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnCloseYear.TextColor = System.Drawing.Color.Indigo;
+            this.btnCloseYear.UseVisualStyleBackColor = false;
+            // 
             // btnLoadYears2
             // 
             this.btnLoadYears2.BackColor = System.Drawing.Color.Gainsboro;
@@ -719,9 +771,9 @@
             this.btnLoadYears2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLoadYears2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadYears2.ForeColor = System.Drawing.Color.Green;
-            this.btnLoadYears2.Location = new System.Drawing.Point(46, 12);
+            this.btnLoadYears2.Location = new System.Drawing.Point(49, 60);
             this.btnLoadYears2.Name = "btnLoadYears2";
-            this.btnLoadYears2.Size = new System.Drawing.Size(109, 53);
+            this.btnLoadYears2.Size = new System.Drawing.Size(109, 32);
             this.btnLoadYears2.TabIndex = 35;
             this.btnLoadYears2.UseVisualStyleBackColor = false;
             this.btnLoadYears2.Click += new System.EventHandler(this.btnLoadYears2_Click);
@@ -862,23 +914,24 @@
             this.AcceptButton = this.btnInsert;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1367, 861);
-            this.Controls.Add(this.pnlTexts);
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.ClientSize = new System.Drawing.Size(1371, 1020);
+            this.Controls.Add(this.pnlFooter);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pnlResume);
             this.Controls.Add(this.pnlTree);
             this.Controls.Add(this.pnlMenu);
-            this.MaximizeBox = false;
             this.Name = "frmPostPay";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POSTPAY";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPostPay_FormClosing);
             this.Load += new System.EventHandler(this.frmPostPay_Load);
             this.pnlMenu.ResumeLayout(false);
             this.tabMenu.ResumeLayout(false);
             this.pgHome.ResumeLayout(false);
+            this.grpPdf.ResumeLayout(false);
             this.grpExit.ResumeLayout(false);
             this.gprSave.ResumeLayout(false);
             this.gprYears.ResumeLayout(false);
@@ -895,13 +948,13 @@
             this.grpSearch.ResumeLayout(false);
             this.grpSearch.PerformLayout();
             this.pnlTree.ResumeLayout(false);
+            this.pnlTree.PerformLayout();
             this.pnlResume.ResumeLayout(false);
             this.pnlResume.PerformLayout();
             this.pnlGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdMonthVoices)).EndInit();
-            this.pnlTexts.ResumeLayout(false);
-            this.pnlTexts.PerformLayout();
-            this.grpPdf.ResumeLayout(false);
+            this.pnlFooter.ResumeLayout(false);
+            this.pnlFooter.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -912,25 +965,18 @@
         private System.Windows.Forms.Panel pnlTree;
         private System.Windows.Forms.Panel pnlResume;
         private System.Windows.Forms.Panel pnlGrid;
-        private System.Windows.Forms.Panel pnlTexts;
-        private System.Windows.Forms.TreeView treeYears;
         private System.Windows.Forms.Button btnLoadYears2;
         private System.Windows.Forms.DataGridView grdMonthVoices;
-        private System.Windows.Forms.Button btnCloseYear;
         private System.Windows.Forms.Panel pnlStatus;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox txtBalanceOV;
         private System.Windows.Forms.Label lblSaldoFine;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtBalanceST;
         private System.Windows.Forms.Label lblSaldoIni;
         private System.Windows.Forms.Button btnForward;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtYearMonth;
         private System.Windows.Forms.TabControl tabMenu;
         private System.Windows.Forms.TabPage pgHome;
         private System.Windows.Forms.GroupBox grpExit;
@@ -968,6 +1014,15 @@
         private System.Windows.Forms.GroupBox grpPdf;
         private System.Windows.Forms.Button btnPDFCreator;
         private System.Windows.Forms.SaveFileDialog svdPDF;
+        private System.Windows.Forms.TreeView treeYears;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private RoundendControlCollections.RoundedPanel pnlFooter;
+        private System.Windows.Forms.TextBox txtYearMonth;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private RoundendControlCollections.RoundedButton btnCloseYear;
     }
 }
 

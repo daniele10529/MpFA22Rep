@@ -684,9 +684,9 @@ namespace PostPay
             populate.father = father;
             populate.feature = feature;
             check = new Checker(pathxml, father, feature);
-            isempty[0] = check.isEmpty(txtImport);
+            /*isempty[0] = check.isEmpty(txtImport);
             isempty[1] = check.isEmpty(txtCause);
-            isNumeric = check.isnumeric(txtImport);
+            isNumeric = check.isnumeric(txtImport);*/
             isSelected = check.isSelected(cmbMonths);
 
             //esci dalla funzione se controlli ko
@@ -887,7 +887,7 @@ namespace PostPay
             CreateFormOftenCause form = new CreateFormOftenCause();
             //imposta nel setter la textbox che deve acquisire il valoe dalla 
             //lista delle causali frequenti
-            form.oftenCause = txtCause;
+            //form.OftenCause = txtCause;
         }
 
         private void btnPDFCreator_Click(object sender, EventArgs e)

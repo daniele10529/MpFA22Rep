@@ -13,7 +13,7 @@ namespace Libretto
             InitializeComponent();
         }
 
-        //istanza alla classe Libretto
+        //Istanza alla classe Libretto
         private frmLibretto fr = new frmLibretto();
         //Istanza alla textbox per la somma o sottrazione
         TextBox txtAdd = new TextBox();

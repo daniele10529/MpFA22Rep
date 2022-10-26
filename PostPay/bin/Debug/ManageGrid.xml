@@ -73,9 +73,23 @@
             <param name="table">Tabella contenente i dati</param>
             <param name="txtSearchVoice">Textbox con il testo da cercare</param>
         </member>
+        <member name="M:ManageGrid.Searching.#ctor(System.Windows.Forms.DataGridView,System.Data.DataTable,RoundendControlCollections.RoundedTextBox)">
+            <summary>
+            Polimorfismo del costruttore per TextBox di tipo rounded
+            </summary>
+            <param name="grd">DatagridView dove fare la ricerca</param>
+            <param name="table">Tabella contenente i dati</param>
+            <param name="txtRoundSearchVoice">Textbox con il testo da cercare</param>
+        </member>
         <member name="M:ManageGrid.Searching.searchingRow(System.Int32)">
             <summary>
             Metodo specifico per mpfa20, cerca nella colonna specificata,evidenzia la riga trovata
+            </summary>
+            <param name="column">Numero della colonna in cui cercare</param>
+        </member>
+        <member name="M:ManageGrid.Searching.searchingRow(System.Int32,System.Boolean)">
+            <summary>
+            Metodo specifico per mpfa20 polimorfo di tipo rounded, cerca nella colonna specificata,evidenzia la riga trovata
             </summary>
             <param name="column">Numero della colonna in cui cercare</param>
         </member>

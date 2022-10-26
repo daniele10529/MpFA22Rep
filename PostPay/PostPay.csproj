@@ -56,6 +56,9 @@
     <Reference Include="ReadXML">
       <HintPath>..\Lib\ReadXML.dll</HintPath>
     </Reference>
+    <Reference Include="RoundendControlCollections">
+      <HintPath>..\..\..\RoundendControlCollections\RoundendControlCollections\bin\Debug\RoundendControlCollections.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -213,6 +216,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PostPay.ico" />
+    <None Include="Resources\Lucchetto.png" />
+    <None Include="Resources\pencil_piccola.png" />
     <None Include="Resources\icons8-pdf-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
