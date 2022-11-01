@@ -216,6 +216,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PostPay.ico" />
+    <None Include="Resources\Oficina_PDF_35460_64.png" />
+    <None Include="Resources\Forward.png" />
+    <None Include="Resources\Back.png" />
     <None Include="Resources\Lucchetto.png" />
     <None Include="Resources\pencil_piccola.png" />
     <None Include="Resources\icons8-pdf-64.png" />

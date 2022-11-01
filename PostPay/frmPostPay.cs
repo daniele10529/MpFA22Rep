@@ -25,30 +25,24 @@ namespace PostPay
         private bool isLoad;
         private bool isSaved;
         private bool isChanged;
-        //istanza alla classe di gestione con DB
-        ModelDataPP model;
+        //Gestione DB
+        ModelDataPostPay modelPP;
+        ModelDataPostPay.RecordPostPay record;
         //Istanza alla classe checker
         private Checker check;
         //numero dell'anno e mese caricato
         public int year_manage, month_manage;
-        //Variabili private necessarie alla paginazione
-        private int[] min;
-        private int[] max;
-        private double pages;
-        private int range;
-        //Massimo numero di righe per pagina
-        private const int MAXROW = 20;
-        //Lista popolata da DB per la paginazione
-        private List<ModelDataPP.PaymentPP> listdata;
+        
 
         public frmPostPay()
         {
             InitializeComponent();
             table = new DataTable();
             tableSaveCount = new DataTable();
-            model = new ModelDataPP();
-            pages = 0;
-            range = 0;
+
+            modelPP = new ModelDataPostPay();
+            record = new ModelDataPostPay.RecordPostPay();
+
             pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
             isLoad = false;
             isSaved = false;
@@ -56,7 +50,7 @@ namespace PostPay
 
     }
 
-        #region FUNZIONI
+        #region Metodi Privati
         /// <summary>
         /// Metodo per la gestione lista di PostPay basata sulla struttura PaymentLibPP
         /// </summary>
@@ -82,87 +76,6 @@ namespace PostPay
         }
 
         /// <summary>
-        /// Metodo per paginare la tabella del Datagrdiview
-        /// </summary>
-        /// <param name="populate">Oggetto per popolare la Datagridview in base alla tabella passata al costruttore</param>
-        private void loadPaginationTable(PopulateGrid populate)
-        {            
-            //Variabili per la paginazione
-            //Con calcolo della divisione in pagine
-            double countpages = (double)listdata.Count / (double)MAXROW;
-            int minimum = 0; int maxim = 19; int i; range = 0;
-
-            //indicizza l'array
-            pages = Math.Ceiling(countpages);
-            min = new int[(int)pages];
-            max = new int[(int)pages];
-
-            //Se la lista è inferiore al max numero di righe non deve paginare
-            if (listdata.Count <= MAXROW)
-            {
-                min[0] = minimum;
-                max[0] = listdata.Count;
-            }
-            else
-            {
-                //Definisce i range di minimo e massimo per la paginazione
-                for (i = 0; i < pages; i++)
-                {
-                    min[i] = minimum;
-                    max[i] = maxim;
-                    minimum = minimum + 19;
-                    maxim = maxim + 19;
-
-                }
-            }
-
-            //Carica i dati nel datagridview per il primo range
-            populateGridview(populate, min[range], max[range]);
-      
-        }
-
-        /// <summary>
-        /// Metodo per la popolazione del DataTable di visualizzazione, conversione da numero mese a nome mese
-        /// </summary>
-        /// <param name="listdata"></param>
-        /// <param name="populate"></param>
-        /// <param name="min"></param>
-        /// <param name="max"></param>
-        private void populateGridview(PopulateGrid populate, int min, int max)
-        {
-            List<string> listinsert = new List<string>();
-            int i = min;
-            while (i < max)
-            {
-                if (i == listdata.Count) return;
-               
-                listinsert.Add(listdata[i].id_postpay.ToString());
-                listinsert.Add(listdata[i].causale);
-                listinsert.Add(listdata[i].importo.ToString());
-                listinsert.Add(selmonth(listdata[i].id_mese));
-                populate.inserisci(4, listinsert);
-                listinsert.Clear();
-                i++;
-            }
-        }
-
-        private void populateDataTable(PopulateGrid populateCount)
-        {
-            List<string> listinsert = new List<string>();
-            int j = 0;
-            while (j < listdata.Count)
-            {
-                listinsert.Add(listdata[j].id_postpay.ToString());
-                listinsert.Add(listdata[j].causale);
-                listinsert.Add(listdata[j].importo.ToString());
-                listinsert.Add(listdata[j].id_mese.ToString());
-                populateCount.inserisci(4, listinsert);
-                listinsert.Clear();
-                j++;
-            }
-        }
-
-        /// <summary>
         /// Metodo per salvare il saldo annuo
         /// </summary>
         /// <returns></returns>
@@ -170,15 +83,57 @@ namespace PostPay
         {
             double balance = Double.Parse(txtBalanceOV.Text);
             bool isSavedBalance = false;
+     
             try
             {
-                isSavedBalance = model.saveBalanceYear(balance, year_manage, true);
+                isSavedBalance = modelPP.saveBalanceYear(balance, record);
             }
             catch (Exception ex)
             {
                 isSavedBalance = false;
             }
             return isSavedBalance;
+        }
+
+        /// <summary>
+        /// Metodo per l'aggiornamento di visualizzazione della griglia
+        /// </summary>
+        /// <param name="modify">Stabilisce il chiamante per la pagina da visualizzare</param>
+        private void updateGridView(bool modify)
+        {
+            int page;
+
+            //aggiorno il datagridview
+            isSaved = true;
+            table.Rows.Clear();
+            tableSaveCount.Rows.Clear();
+
+            //Valorizza la tabella con il totale dei dati per PDF e count
+            tableSaveCount = modelPP.getAll(record);
+            //Calcola l'indice di partenza della pagina da visualizzare
+            //in base al chiamante => insert o modifyrow
+            if(modify) page = modelPP.CurrentPage;
+            else page = modelPP.Pages;
+
+            int maxrow = ModelDataPostPay.MAXROW;
+            int index = (page * maxrow) - maxrow;
+            //Binding sui dati per visualizzazione della griglia
+            modelPP.selectData(grdMonthVoices, table, record, index);
+            //Print sulle pagine
+            lblPages.Text = "(" + modelPP.CurrentPage + " / " + modelPP.Pages + ")";
+
+            //Abilita i pulsanti in base alla posizione della pagina
+            if (modelPP.CurrentPage == modelPP.Pages)
+            {
+                btnBack.Enabled = true;
+                btnForward.Enabled = false;
+            }
+            else if(modelPP.CurrentPage == 1)
+            {
+                btnForward.Enabled = true;
+                btnBack.Enabled = false;
+            }
+
         }
 
         /// <summary>
@@ -411,7 +366,7 @@ namespace PostPay
             Clipboard.Clear();
             toolTip();
             loadImage();
-            model.loadTree(treeYears, true);
+            modelPP.loadTree(treeYears, true);
             pnlStatus.BackColor = Color.FromArgb(255, 255, 255);
 
             //impostazioni di tabella e datagridview
@@ -420,10 +375,10 @@ namespace PostPay
             table.Columns.Add("CAUSALE DEL MOVIMENTO");
             table.Columns.Add("IMPORTO");
             table.Columns.Add("MESE");
-            grdMonthVoices.Columns[0].Width = 70;
-            grdMonthVoices.Columns[1].Width = 650;
-            grdMonthVoices.Columns[2].Width = 90;
-            grdMonthVoices.Columns[3].Width = 80;
+            grdMonthVoices.Columns[0].Width = (grdMonthVoices.Width * 5) / 100;
+            grdMonthVoices.Columns[1].Width = (grdMonthVoices.Width * 70) / 100;
+            grdMonthVoices.Columns[2].Width = (grdMonthVoices.Width * 15) / 100;
+            grdMonthVoices.Columns[3].Width = (grdMonthVoices.Width * 10) / 100;
             grdMonthVoices.Columns[0].ReadOnly = true;
             grdMonthVoices.ReadOnly = true;
 
@@ -463,18 +418,11 @@ namespace PostPay
         #endregion
 
         #region BUTTON
+
         private void btnLoadYears_Click(object sender, EventArgs e)
         {
-            PopulateGrid populate = new PopulateGrid(grdMonthVoices, table);
-            //Necessario al conteggio del saldo
-            PopulateGrid populateCount = new PopulateGrid(grdMonthVoices, tableSaveCount);
-            listdata = new List<ModelDataPP.PaymentPP>();
-            string selezione, anno;
-            int year;
             bool lastyear = false;
-
-            table.Rows.Clear();
-            tableSaveCount.Rows.Clear();
+            string selezione, anno;
 
             if (isChanged == true && isSaved == false)
             {
@@ -484,52 +432,61 @@ namespace PostPay
                 }
             }
 
-            //controllo sulla selezione del nodo anno\mese dall'albero
-            if (treeYears.SelectedNode == null) return;
+            //Reinizializza le tabelle al caricamento
+            table.Rows.Clear();
+            tableSaveCount.Rows.Clear();
 
+
+            //Controllo sulla selezione del nodo anno\mese dall'albero
+            if (treeYears.SelectedNode == null) return;
+            //Verifica di essere sul nodo ANNI
             selezione = treeYears.SelectedNode.Text;
             if (selezione == "ANNI") return;
             else
             {
-                //assegna il valore di anno\mese in base al nodo selezionato
+                //Assegna il valore di anno\mese in base al nodo selezionato
                 anno = treeYears.SelectedNode.Text;
-
+                // Verifica di essere sul nodo ANNI
                 if (anno == "ANNI") return;
                 else
                 {
-                    year = Int32.Parse(anno);
+                    //Assegna all'ADT il valore dell'anno selezionato
+                    record.anno = Int32.Parse(anno);
                     //assegna il valore alle variabili globali per la gestione con DB
-                    year_manage = year;
-                    //carica i dati da DB e li assegna alla lista
-                    listdata = model.loadDataPP(year);
+                    year_manage = record.anno;
+                    //Valorizza la tabella con il totale dei dati per PDF e count
+                    tableSaveCount = modelPP.getAll(record);
+                    //Binding sui dati per visualizzazione della griglia
+                    modelPP.selectData(grdMonthVoices, table, record);
+                    //Print sulle pagine
+                    lblPages.Text = "(" + modelPP.CurrentPage + " / " + modelPP.Pages + ")";
 
-                    //Verifica ci siano elementi per la paginazione
-                    if(listdata.Count > 0)
-                    {
-                        //Invoca il metodo per popolare la DataTable per il salvataggio e conteggio
-                        populateDataTable(populateCount);
-
-                        //Invoco il metodo per paginare la datageridview
-                        loadPaginationTable(populate);
-                        //Aggiorno la grafica
-                        double writepages = pages - 1;
-                        lblPages.Text = "(" + range.ToString() + " / " + writepages.ToString() + ")";
-                        //Abilita il pulsante avanti se c'è più di una pagina
-                        if(listdata.Count > MAXROW) btnForward.Enabled = true;
-
-                    }
-
-                    txtYearMonth.Text = "Anno caricato : " + anno;                   
                 }
+                //Print sulla TextBox
+                txtYearMonth.Text = "Anno caricato : ".ToUpper() + anno.ToUpper();
             }
-           
+
+            //Verifica lo stato dei pulsanti abilita l'avanti se ci sono più pagina
+            //Disabilita il back
+            if(modelPP.Pages == 1)
+            {
+                btnForward.Enabled = false;
+                btnBack.Enabled = false;
+            }
+            else
+            {
+                btnForward.Enabled = true;
+                btnBack.Enabled = false;
+            }
+
+            //Setta lo stato dell'applicazione
             isChanged = false;
             isLoad = true;
             //deseleziona l'albero 
             treeYears.SelectedNode = null;
             //carica il valore di saldo del mese precedente e lo inserisce nella textbox
-            txtBalanceST.Text = model.balanceYearPre(year, true).ToString();
-            //Esegue il conteggio della tabella
+            txtBalanceST.Text = modelPP.getBalanceYearPrev(record).ToString();
+            //Esegue il conteggio del saldo dalla tabella interamente valorizzata
             counter();
             //tronca il bilancio iniziale
             if (txtBalanceST.Text.Length > 1)
@@ -545,8 +502,6 @@ namespace PostPay
             {
                 btnInsert.Enabled = false;
                 btnSave.Enabled = false;
-                btnSaveData.Enabled = false;
-                btnSaveThree.Enabled = false;
                 btnModifyRow.Enabled = false;
                 btnDeleteRow.Enabled = false;
             }
@@ -554,56 +509,10 @@ namespace PostPay
             {
                 btnInsert.Enabled = true;
                 btnSave.Enabled = true;
-                btnSaveData.Enabled = true;
-                btnSaveThree.Enabled = true;
                 btnModifyRow.Enabled = true;
                 btnDeleteRow.Enabled = true;
             }
 
-        }
-
-        //Metodo per avanzare con il range della paginazione
-        private void btnForward_Click(object sender, EventArgs e)
-        {
-            PopulateGrid populate = new PopulateGrid(grdMonthVoices, table);
-
-            //Verifica di non essere arrivato all'ultimo range
-            if (range < pages - 1) range++;
-            else range = 0;
-            //Stabilisce il punto minimo da cui partire
-            int i = min[range];
-            //Per la visualizzazione pagine
-            double writepages = pages - 1;
-
-            //Definisce e popola la Datagridview
-            table.Rows.Clear();       
-            populateGridview(populate, min[range], max[range]);
-           
-            //Abilita il tasto indietro
-            btnBack.Enabled = true;
-            //Aggiorna la posizione pagina
-            lblPages.Text = "(" + range.ToString() + " / " + writepages.ToString() + ")";
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            PopulateGrid populate = new PopulateGrid(grdMonthVoices, table);
-
-            //Per la visualizzazione pagine
-            double writepages = pages - 1;
-
-            if (range > 0) range--;
-            else return;
-
-            //Stabilisce il punto minimo da cui partire
-            int i = min[range];
-
-            //Definisce e popola la Datagridview
-            table.Rows.Clear();
-            populateGridview(populate, min[range], max[range]);
-           
-            //Aggiorna la posizione pagina
-            lblPages.Text = "(" + range.ToString() + " / " + writepages.ToString() + ")";
         }
 
         private void btnLoadYears2_Click(object sender, EventArgs e)
@@ -611,134 +520,114 @@ namespace PostPay
             btnLoadYears_Click(sender, e);
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        //Metodo per avanzare con il range della paginazione
+        private void btnForward_Click(object sender, EventArgs e)
         {
-            //in questo metodo non è necessario passare per riferimento l'anno
-            //in quanto il valore passato è già valorizzato dopo il caricamento
-            //sono necessari gli altri puntatori
-            if (isLoad == false || isSaved == true) return;
-            if (isChanged == false) return;
+            //Abilita il pulsante indietro
+            btnBack.Enabled = true;
 
-            //genera la lista dalla tabella e salva i dati nel DB attraverso la classe modeldata
-            List<ModelDataPP.PaymentPP> lista = createListStruct(tableSaveCount);
-            isSaved = model.saveDataPP(year_manage, lista);
-            bool isSavedBalance = saveBalance();
+            //Carica i dati dal range della pagina attuale, per l'anno selezionato
+            record.anno = year_manage;
+            modelPP.forward(grdMonthVoices, table, record);
+            //Visualizza lo stato pagine
+            lblPages.Text = "(" + modelPP.CurrentPage + " / " + modelPP.Pages + ")";
+            //Se arrivato all'ultima pagina disabilita il pulsante ed esce dal metodo
+            if (modelPP.CurrentPage == modelPP.Pages)
+            {
+                btnForward.Enabled = false;
+                return;
+            }
             
-            //verifica il corretto salvataggio dei dati
-            if (isSavedBalance == false || isSaved == false)
-            {
-                MessageBox.Show("Errore di salvataggio dei dati", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-            else
-            {
-                statusPanel();
-            }
-
         }
 
-        private void btnSaveData_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            btnSave_Click(sender, e);
-        }
-
-        private void btnSaveThree_Click(object sender, EventArgs e)
-        {
-            btnSave_Click(sender, e);
+            //Abilita il pulsante farward
+            btnForward.Enabled = true;
+            //Carica i dati dal range della pagina attuale, per l'anno selezionato
+            record.anno = year_manage;
+            modelPP.back(grdMonthVoices, table, record);
+            //Visualizza lo stato pagine
+            lblPages.Text = "(" + modelPP.CurrentPage + " / " + modelPP.Pages + ")";
+            //Se arrivato all'ultima pagina disabilita il pulsante ed esce dal metodo
+            if (modelPP.CurrentPage == 1)
+            {
+                btnBack.Enabled = false;
+                return;
+            }
+            
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            //Se non è stato caricato l'anno esce dal metodo
+            if (isLoad == false) return;
+            //Inizializza variabili e pannello per l'insert
             isSaved = false;
             isChanged = true;
             statusPanel();
 
-            //Inserisce solo sull'ultima pagina
-            if (range < pages - 1)
+            Checker check = new Checker(pathxml);
+            bool isSavedBalance = false;
+
+            try
             {
-                MessageBox.Show("Posizionarsi sull'ultima pagina per l'inserimento", "Attenzione!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
 
-            PopulateGrid populate = new PopulateGrid(grdMonthVoices, table);
-            //Necessario al conteggio del saldo
-            PopulateGrid populateCount = new PopulateGrid(grdMonthVoices, tableSaveCount);
-            Checker check;
-            //Lista di inserimento per il salvataggio
-            List<string> listCountSave = new List<string>();
-            //Lista di inserimento per la visualizzazione con il mese in formato stringa
-            List<string> list = new List<string>();
-            bool[] isempty = new bool[2];
-            bool isNumeric = false;
-            bool isSelected = false;
-            int id = 0;
-            int month;
-            string father = "ListError";
-            string feature = "ErrorTitle";
-            int idgrid = 0, idDB = 0;
-            
-            //verifica sulla presenza di tutti i campi dalla classe checker
-            //e che sia stato caricato un anno\mese
-            if (isLoad == false) return;
-            populate.path = pathxml;
-            populate.father = father;
-            populate.feature = feature;
-            check = new Checker(pathxml, father, feature);
-            /*isempty[0] = check.isEmpty(txtImport);
-            isempty[1] = check.isEmpty(txtCause);
-            isNumeric = check.isnumeric(txtImport);*/
-            isSelected = check.isSelected(cmbMonths);
+                if (check.isSelected(cmbMonths) && !(check.isEmpty(txtCause.Texts)) && !(check.isEmpty(txtImport.Texts)))
+                {
+                    if (check.isNumeric(txtImport.Texts))
+                    {
+                        //Acquisisce i dati dai controls
+                        record.causale = txtCause.Texts;
+                        record.importo = Double.Parse(txtImport.Texts);
+                        //Preleva il numero del mese dal nome e lo assegna al record 
+                        record.id_mese = selmonth(cmbMonths.SelectedItem.ToString());
+                        //L'anno è già acquisito in fase di caricamento
 
-            //esci dalla funzione se controlli ko
-            if (isNumeric == false || isSelected == false) return;
+                        //Inserisco i dati del record nel DB
+                        isSaved = modelPP.insert(record);
 
-            //acquisisco il valore di PK da DataGridView
-            if (!(table.Rows.Count == 0))
-            {
-                int i = table.Rows.Count - 1;
-                DataRow lastrow = table.NewRow();
-                lastrow.ItemArray = table.Rows[i].ItemArray;
-                idgrid = Int16.Parse(lastrow[0].ToString());
-            }
+                        //Verifica il corretto salvataggio dei dati, e aggiorna la visualizzazione
+                        if (isSaved == false)
+                        {
+                            MessageBox.Show("Errore di inserimento del record", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
 
-            //acquidisco il valore di primary key da DB
-            idDB = model.primaryKey("postpay", "id_postpay");
+                        }
+                        else
+                        {
+                            //Se l'inserimento del record è ok 
+                            //Inserisce i dati del bilancio nel DB
+                            isSavedBalance = saveBalance();
 
-            //Se la chiave è maggiore quella della griglia incrementala di 1
-            //valori inseriti e non ancora salvati
-            if (idgrid >= idDB) id = idgrid + 1;
-            //altrimenti incrementa di 1 la chiave prelevata da DB
-            else id = idDB + 1;
+                            if (isSavedBalance == false)
+                            {
+                                MessageBox.Show("Errore di inserimento del bilancio annuale", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            //inserisce nella lista i valori inseriti da textbox
-            if (!(isempty[0] == true || isempty[1] == true))
-            {
-                listCountSave.Add(id.ToString());
-                listCountSave.Add(txtCause.Text);
-                listCountSave.Add(txtImport.Text.Replace('.', ','));
-                //ottiene il numero del mese dal mese selezionato
-                month = selmonth(cmbMonths.SelectedItem.ToString());
-                listCountSave.Add(month.ToString());
-                //lista di visualizzazione mese in formato stringa
-                list.Add(id.ToString());
-                list.Add(txtCause.Text);
-                list.Add(txtImport.Text.Replace('.', ','));
-                list.Add(cmbMonths.SelectedItem.ToString());
+                            }
+
+                            //Aggiorna la griglia e il pannello
+                            updateGridView(false);
+                            statusPanel();
+                        }
+
+                        //Resetta i valori
+                        txtCause.Texts = "";
+                        txtImport.Texts = "";
+                        cmbMonths.SelectedItem = null;
+                        cmbMonths.Focus();
+                        counter();
+
+                    }
+                }
 
             }
-            else return;
-            //popola la griglia attraverso la lista
-            populate.inserisci(4, list);
-            //popola la tabella per il calcolo del saldo
-            populateCount.inserisci(4, listCountSave);
+            catch (FormatException ex)//Eccezione generata dai metodi della classe check
+            {
+                MessageBox.Show(ex.Message, "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            txtCause.Clear();
-            txtImport.Clear();
-            cmbMonths.SelectedItem = null;
-            cmbMonths.Focus();
-            counter();
         }
-
 
         private void btnCloseYear_Click(object sender, EventArgs e)
         {
@@ -753,7 +642,7 @@ namespace PostPay
             lastyear = checkLastYear(yearnext);
             if (lastyear)
             {
-                isSavedBalance = model.saveBalanceYear(balance, yearnext, true);
+                isSavedBalance = modelPP.saveBalanceYear(balance, yearnext);
                 if (isSavedBalance == false)
                 {
                     MessageBox.Show("Errore di salvataggio dei dati", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -774,7 +663,10 @@ namespace PostPay
 
         private void btnDeleteRow_Click(object sender, EventArgs e)
         {
-            isSaved = false;
+
+            //Metodo da affrontare
+
+           /* isSaved = false;
             isChanged = true;
             statusPanel();
             //preleva l'indice dalla riga selezionata, se non selezionata non fa nulla
@@ -789,10 +681,10 @@ namespace PostPay
                 //Calcola l'indice della riga selezionata in base al numero di pagina
                 //e elimina la riga dalla tabella per il salvataggio e il conteggio
                 //20 = righe per pagina; range = pagina corrente; index = riga corrente
-                int indexTableSave = (MAXROW * range) + index;
-                tableSaveCount.Rows.RemoveAt(indexTableSave);
+                //int indexTableSave = (MAXROW * range) + index;
+                //tableSaveCount.Rows.RemoveAt(indexTableSave);
             }
-            counter();
+            counter();*/
         }
 
         private void btnUp_Click(object sender, EventArgs e)
@@ -819,6 +711,13 @@ namespace PostPay
 
         private void btnModifyRow_Click(object sender, EventArgs e)
         {
+            //Verifica siano state salvate la righe introdotte prima di essere modificate
+            if(isSaved == false && isChanged == true)
+            {
+                MessageBox.Show("Salvare i dati prima di procedere alla modifica !!", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             //istanza per form modifica e per aggiornare il datagridview
             frmModify frmMod = new frmModify();
             PopulateGrid populate = new PopulateGrid(grdMonthVoices, table);
@@ -841,44 +740,31 @@ namespace PostPay
                 frmMod.setImport = import;
                 frmMod.setMonth = id_month;
                 //setto l'anno selezionato
-                frmMod.setYear = year_manage;
+                frmMod.setYear = record.anno;
                 //visualizzo il form
                 frmMod.ShowDialog();
                 //ricevo tru dal getter se alvataggio avvenuto con successo
                 modifyRow = frmMod.verify;
                 if (modifyRow == true)
-                {//aggiorno il datagridview
-                    isSaved = true;
-                    table.Rows.Clear();
-                    tableSaveCount.Rows.Clear();
-                    
-                    //Carica i dati da DB e li assegna alla lista
-                    //Aggiorna la tabella integrale per salvataggio e conteggio
-                    //Invocando il metodo di popolazione
-                    listdata = model.loadDataPP(year_manage);
-                    populateDataTable(populateCount);
-
-                    //Invoco il metodo per paginare la datageridview
-                    loadPaginationTable(populate);
-
+                {
+                    //Aggiorna il datagridview
+                    updateGridView(true);
                 }
-                
+
+                //Calcola il saldo mensile
                 counter();
                 //Salva il saldo annuo e aggiorna lo stato di salvataggio
                 bool isSavedBalance = saveBalance();
                 if (isSavedBalance == false)
                     MessageBox.Show("Errore di salvataggio dei dati", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else statusPanel();
-
-                //Aggiorna la posizione pagina
-                //Per la visualizzazione pagine
-                double writepages = pages - 1;
-                lblPages.Text = "(" + range.ToString() + " / " + writepages.ToString() + ")";
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Nessuna riga selezionata per la modifica, selezionare una riga" + ex.Message, "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
         private void btnSetOftenValue_Click(object sender, EventArgs e)
@@ -887,7 +773,7 @@ namespace PostPay
             CreateFormOftenCause form = new CreateFormOftenCause();
             //imposta nel setter la textbox che deve acquisire il valoe dalla 
             //lista delle causali frequenti
-            //form.OftenCause = txtCause;
+            form.OftenCause = txtCause;
         }
 
         private void btnPDFCreator_Click(object sender, EventArgs e)
@@ -914,7 +800,6 @@ namespace PostPay
             }
 
         }
-
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -955,6 +840,54 @@ namespace PostPay
             //cerco all'interno del datagridview passando la colonna in cui cercare
             Searching search = new Searching(grdMonthVoices, table, txtSearchVoice);
             search.searchingRow(1);
+        }
+
+        //Setta i colori delle TextBox all'inserimento 
+        private void txtCause_Enter(object sender, EventArgs e)
+        {
+            txtCause.BorderColor = Color.FromArgb(161, 223, 239);
+            txtCause.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtCause_Leave(object sender, EventArgs e)
+        {
+            txtCause.BorderColor = Color.DimGray;
+            txtCause.BackColor = Color.White;
+        }
+
+        private void txtImport_Enter(object sender, EventArgs e)
+        {
+            txtImport.BorderColor = Color.FromArgb(161, 223, 239);
+            txtImport.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void txtImport_Leave(object sender, EventArgs e)
+        {
+            txtImport.BorderColor = Color.DimGray;
+            txtImport.BackColor = Color.White;
+        }
+
+        #endregion
+
+        #region ComboBox
+        //Setta i colori di inserimento
+        private void cmbMonths_Enter(object sender, EventArgs e)
+        {
+            cmbMonths.BackColor = Color.FromArgb(243, 221, 247);
+        }
+
+        private void cmbMonths_Leave(object sender, EventArgs e)
+        {
+            cmbMonths.BackColor = Color.White;
+        }
+
+        #endregion
+
+        #region TreeView
+        //Carica i dati al doppio click sul nodo prescelto
+        private void treeYears_DoubleClick(object sender, EventArgs e)
+        {
+            btnLoadYears_Click(sender, e);
         }
 
         #endregion

@@ -59,6 +59,7 @@
     <Compile Include="ModelDataCC.cs" />
     <Compile Include="ModelDataLibNom.cs" />
     <Compile Include="ModelDataMan.cs" />
+    <Compile Include="ModelDataPostPay.cs" />
     <Compile Include="ModelDataPP.cs" />
     <Compile Include="ModelDataReports.cs" />
     <Compile Include="ModelOftenElement.cs" />
