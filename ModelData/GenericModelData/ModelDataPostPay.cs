@@ -465,7 +465,8 @@ namespace GenericModelData
 
             ReadErrorXml xml = new ReadErrorXml();
             try
-            {//aggiorno il valore del saldo finale già generato alla creazione dell'anno
+            {
+                //Inserisce il record nella tabella postpay
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
                 stringConnection = readerxml.readNode("strconnect");
                 Connecting connecting = new Connecting(stringConnection);
@@ -475,7 +476,7 @@ namespace GenericModelData
                 string query = $"INSERT INTO postpay(causale,importo,anno,id_mese) VALUES('{record.causale}',{import},{record.anno},{record.id_mese});";
                 command.CommandText = query;
 
-                //verifico ci sia stato l'inserimento e restituisco true
+                //Verifica ci sia stato l'inserimento e restituisce true
                 if (command.ExecuteNonQuery() > 0)
                 {
                     insert = true;
