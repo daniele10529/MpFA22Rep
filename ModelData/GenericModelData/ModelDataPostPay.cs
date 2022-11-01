@@ -1,11 +1,7 @@
 ﻿using Connection;
 using ReadXML;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GenericModelData
@@ -401,11 +397,9 @@ namespace GenericModelData
                 command.CommandText = query;
 
                 //verifico ci sia stato l'inserimento e restituisco true
-                if (command.ExecuteNonQuery() > 0)
-                {
-                    save = true;
-                }
+                if (command.ExecuteNonQuery() > 0) save = true;
 
+                //Scarica le risorse
                 command.Dispose();
                 connection.Close();
             }
@@ -438,11 +432,9 @@ namespace GenericModelData
                 command.CommandText = query;
 
                 //verifico ci sia stato l'inserimento e restituisco true
-                if (command.ExecuteNonQuery() > 0)
-                {
-                    save = true;
-                }
+                if (command.ExecuteNonQuery() > 0) save = true;
 
+                //Scarica le risorse
                 command.Dispose();
                 connection.Close();
             }
@@ -477,10 +469,7 @@ namespace GenericModelData
                 command.CommandText = query;
 
                 //Verifica ci sia stato l'inserimento e restituisce true
-                if (command.ExecuteNonQuery() > 0)
-                {
-                    insert = true;
-                }
+                if (command.ExecuteNonQuery() > 0) insert = true;
 
                 command.Dispose();
                 connection.Close();
@@ -489,7 +478,82 @@ namespace GenericModelData
             {
                 xml.manageError(9, path, father, featur);
             }
+            //Ritorna il risultato dell'inserimento
             return insert;
+
+        }
+
+        /// <summary>
+        /// Metodo per la modifica di una riga
+        /// </summary>
+        /// <param name="record">Record da modificare</param>
+        /// <returns>Ritorna true se modifica corretta</returns>
+        public bool modifyRow(RecordPostPay record)
+        {
+            //polimorfismo del motodo di Spese Annuali
+            ReadErrorXml xml = new ReadErrorXml();
+            bool execute = false;
+
+            try
+            {
+                ReaderXML readerxml = new ReaderXML(pathconn, "string");
+                stringConnection = readerxml.readNode("strconnect");
+                Connecting connecting = new Connecting(stringConnection);
+                var connection = connecting.connection();
+                var command = connecting.command(connection);
+
+                string import = record.importo.ToString().Replace(',', '.');
+
+                command.CommandText = $"UPDATE libretto_postale SET causale='{record.causale}', importo = {import},id_mese = {record.id_mese} WHERE id_postpay = {record.id_postpay} AND anno = {record.anno}";
+
+                if (command.ExecuteNonQuery() > 0) execute = true;
+
+                command.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                xml.manageError(9, path, father, featur);
+            }
+            //restituisco true se non genero alcuna eccezione
+            return execute;
+
+        }
+
+        /// <summary>
+        /// Metodo per eliminare un record dalla tabella postpay
+        /// </summary>
+        /// <param name="record">Record da eliminare</param>
+        /// <returns>Ritorna true se viene eliminato il record</returns>
+        public bool delete(RecordPostPay record)
+        {
+            bool delete = false;
+
+            ReadErrorXml xml = new ReadErrorXml();
+            try
+            {
+                //Inserisce il record nella tabella postpay
+                ReaderXML readerxml = new ReaderXML(pathconn, "string");
+                stringConnection = readerxml.readNode("strconnect");
+                Connecting connecting = new Connecting(stringConnection);
+                var connection = connecting.connection();
+                var command = connecting.command(connection);
+                string import = record.importo.ToString().Replace(',', '.');
+                string query = $"DELETE FROM postpay WHERE id_postpay={record.id_postpay} AND anno={record.anno};";
+                command.CommandText = query;
+
+                //Verifica ci sia stato l'inserimento e restituisce true
+                if (command.ExecuteNonQuery() > 0) delete = true;
+
+                command.Dispose();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                xml.manageError(9, path, father, featur);
+            }
+            //Ritorna il risultato dell'eliminazione
+            return delete;
 
         }
 

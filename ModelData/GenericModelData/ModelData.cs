@@ -21,12 +21,12 @@ namespace GenericModelData
         // = "server=localhost;user id=root;database=mpfa20;port=3308;SslMode=none";
         //stringa di connessione prelevata da file xml
         protected string stringConnection;
-        protected const string pathconn = @"C:\MpFA22\StrConnect\strConnect.xml";
-        protected const string path = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
-        protected const string pathIco = @"C:\MpFA22\Icons\";
+        protected const string pathconn = Routes.XMLCONNECTION;
+        protected const string path = Routes.XMLErrors;
+        protected const string pathIco = Routes.ICONS;
         protected const string father = "ListError";
         protected const string featur = "ErrorTitle";
-        protected const string pathSetIni = @"C:\MpFA22\SetIni\SetIni.xml";
+        protected const string pathSetIni = Routes.XMLSETINI;
         protected const string fatherIni = "setIni";
 
         /// <summary>

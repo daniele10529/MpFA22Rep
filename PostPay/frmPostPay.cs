@@ -30,9 +30,8 @@ namespace PostPay
         ModelDataPostPay.RecordPostPay record;
         //Istanza alla classe checker
         private Checker check;
-        //numero dell'anno e mese caricato
-        public int year_manage, month_manage;
-        
+        //Variabile anno di passaggio a form modify
+        public int year_manage;
 
         public frmPostPay()
         {
@@ -43,37 +42,14 @@ namespace PostPay
             modelPP = new ModelDataPostPay();
             record = new ModelDataPostPay.RecordPostPay();
 
-            pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+            pathxml = Routes.XMLErrors;
             isLoad = false;
             isSaved = false;
             isChanged = false;
 
-    }
+        }
 
         #region Metodi Privati
-        /// <summary>
-        /// Metodo per la gestione lista di PostPay basata sulla struttura PaymentLibPP
-        /// </summary>
-        /// <param name="table">tabella per creare la lista</param>
-        /// <returns>Ritorna la lista(PaymentLibPP) per il salvataggio su DB</returns>
-        private List<ModelDataPP.PaymentPP> createListStruct(DataTable table)
-        {
-            ModelDataPP.PaymentPP payment;
-            List<ModelDataPP.PaymentPP> lista = new List<ModelDataPP.PaymentPP>();
-            //cicla tutta la tabella e aggiunge gli elementi alla lista
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                DataRow lastrow = table.NewRow();
-                lastrow.ItemArray = table.Rows[i].ItemArray;
-                payment.id_postpay = Int32.Parse(lastrow[0].ToString());
-                payment.causale = lastrow[1].ToString();
-                payment.importo = Double.Parse(lastrow[2].ToString());
-                payment.id_mese = Int32.Parse(lastrow[3].ToString());
-                lista.Add(payment);
-
-            }
-            return lista;
-        }
 
         /// <summary>
         /// Metodo per salvare il saldo annuo
@@ -83,15 +59,9 @@ namespace PostPay
         {
             double balance = Double.Parse(txtBalanceOV.Text);
             bool isSavedBalance = false;
-     
-            try
-            {
-                isSavedBalance = modelPP.saveBalanceYear(balance, record);
-            }
-            catch (Exception ex)
-            {
-                isSavedBalance = false;
-            }
+            //Esegue e verifica il corretto salvataggio del saldo annuale
+            if (modelPP.saveBalanceYear(balance, record)) isSavedBalance = true;
+            
             return isSavedBalance;
         }
 
@@ -115,6 +85,10 @@ namespace PostPay
             if(modify) page = modelPP.CurrentPage;
             else page = modelPP.Pages;
 
+            //Verifica in caso di eliminazione righe se sia necessario eliminare una pagina
+            if (page > modelPP.Pages) page = modelPP.Pages;
+
+            //Calcola l'indice di partenza della pagina
             int maxrow = ModelDataPostPay.MAXROW;
             int index = (page * maxrow) - maxrow;
             //Binding sui dati per visualizzazione della griglia
@@ -122,7 +96,13 @@ namespace PostPay
             //Print sulle pagine
             lblPages.Text = "(" + modelPP.CurrentPage + " / " + modelPP.Pages + ")";
 
-            //Abilita i pulsanti in base alla posizione della pagina
+            //Abilita i pulsanti in base alla posizione e numero delle pagine
+            if(modelPP.Pages == 1)
+            {
+                btnBack.Enabled = false;
+                btnForward.Enabled = false;
+                return;
+            }
             if (modelPP.CurrentPage == modelPP.Pages)
             {
                 btnBack.Enabled = true;
@@ -158,7 +138,6 @@ namespace PostPay
             tip.SetToolTip(btnDown, "Sposta in basso la riga");
             tip.SetToolTip(btnModifyRow, "Modifica una riga");
             tip.SetToolTip(treeYears, "Seleziona il mese da caricare");
-            tip.SetToolTip(btnSaveData, "Salva le modifiche");
             tip.SetToolTip(txtSearchVoice, "Ricarca nel DataGridView");
             tip.SetToolTip(cmbMonths, "Seleziona il mese per l'inserimento");
             tip.SetToolTip(btnCloseYear, "Chiudere l'anno soltanto dopo aver creato un nuovo anno!!");
@@ -169,7 +148,7 @@ namespace PostPay
         /// </summary>
         private void loadImage()
         {
-            string pathIco = @"C:\MpFA22\Icons\";
+            string pathIco = Routes.ICONS;
             ImageList list = new ImageList();
 
             try
@@ -239,57 +218,6 @@ namespace PostPay
                     break;
                 case "dicembre":
                     n = 12;
-                    break;
-            }
-            return n;
-        }
-
-        /// <summary>
-        /// Restituisce il mese in stringa in base al suo numero
-        /// necessario alla visualizzazione
-        /// </summary>
-        /// <param name="m"></param>
-        /// <returns></returns>
-        private string selmonth(int m)
-        {
-            string n = "";
-            switch (m)
-            {
-                case 1:
-                    n = "gennaio";
-                    break;
-                case 2:
-                    n = "febbraio";
-                    break;
-                case 3:
-                    n = "marzo";
-                    break;
-                case 4:
-                    n = "aprile";
-                    break;
-                case 5:
-                    n = "maggio";
-                    break;
-                case 6:
-                    n = "giugno";
-                    break;
-                case 7:
-                    n = "luglio";
-                    break;
-                case 8:
-                    n = "agosto";
-                    break;
-                case 9:
-                    n = "settembre";
-                    break;
-                case 10:
-                    n = "ottobre";
-                    break;
-                case 11:
-                    n = "novembre";
-                    break;
-                case 12:
-                    n = "dicembre";
                     break;
             }
             return n;
@@ -452,7 +380,7 @@ namespace PostPay
                 {
                     //Assegna all'ADT il valore dell'anno selezionato
                     record.anno = Int32.Parse(anno);
-                    //assegna il valore alle variabili globali per la gestione con DB
+                    //Assegna il valore alla variabile protetta globale
                     year_manage = record.anno;
                     //Valorizza la tabella con il totale dei dati per PDF e count
                     tableSaveCount = modelPP.getAll(record);
@@ -497,7 +425,7 @@ namespace PostPay
 
             //Se non caricato l'ultimo anno il Datagridview è disabilitato
             //Disabilito inserimento, modifiche, calcellazione e salvataggio
-            lastyear = checkLastYear(year_manage);
+            lastyear = checkLastYear(record.anno);
             if (!lastyear)
             {
                 btnInsert.Enabled = false;
@@ -525,9 +453,7 @@ namespace PostPay
         {
             //Abilita il pulsante indietro
             btnBack.Enabled = true;
-
-            //Carica i dati dal range della pagina attuale, per l'anno selezionato
-            record.anno = year_manage;
+            //Mouve in avanti la pagina
             modelPP.forward(grdMonthVoices, table, record);
             //Visualizza lo stato pagine
             lblPages.Text = "(" + modelPP.CurrentPage + " / " + modelPP.Pages + ")";
@@ -544,8 +470,7 @@ namespace PostPay
         {
             //Abilita il pulsante farward
             btnForward.Enabled = true;
-            //Carica i dati dal range della pagina attuale, per l'anno selezionato
-            record.anno = year_manage;
+            //Muove indietro la pagina
             modelPP.back(grdMonthVoices, table, record);
             //Visualizza lo stato pagine
             lblPages.Text = "(" + modelPP.CurrentPage + " / " + modelPP.Pages + ")";
@@ -608,6 +533,8 @@ namespace PostPay
 
                             //Aggiorna la griglia e il pannello
                             updateGridView(false);
+                            isSaved = true;
+                            isChanged = false;
                             statusPanel();
                         }
 
@@ -636,7 +563,7 @@ namespace PostPay
             bool isSavedBalance = false;
             double balance = Double.Parse(txtBalanceOV.Text);
             bool lastyear = false;
-            int yearnext = year_manage + 1;
+            int yearnext = record.anno + 1;
 
             //Verifica sia stato creato il nuovo anno per la chiusura
             lastyear = checkLastYear(yearnext);
@@ -663,28 +590,34 @@ namespace PostPay
 
         private void btnDeleteRow_Click(object sender, EventArgs e)
         {
-
-            //Metodo da affrontare
-
-           /* isSaved = false;
+            
+            isSaved = false;
             isChanged = true;
             statusPanel();
+
             //preleva l'indice dalla riga selezionata, se non selezionata non fa nulla
             int index = grdMonthVoices.Rows.IndexOf(grdMonthVoices.CurrentRow);
-            if (index < 0) return;                      
-                                                       
-            PopulateGrid populate = new PopulateGrid(grdMonthVoices, table);
-            //se confermato elimina la riga
-            if (MessageBox.Show("Sicuro di voler eliminare la riga ?", "ATTENZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (index < 0) return;
+
+            //Preleve i dati dalla riga selezionata del DataGridview
+            var val = grdMonthVoices.CurrentRow.Cells;
+            record.id_postpay = Int32.Parse(val[0].Value.ToString());
+
+            //Se confermata eliminazione della riga
+            if (MessageBox.Show($"Sicuro di voler eliminare la riga N° {record.id_postpay}?", "ATTENZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                populate.deleterow();
-                //Calcola l'indice della riga selezionata in base al numero di pagina
-                //e elimina la riga dalla tabella per il salvataggio e il conteggio
-                //20 = righe per pagina; range = pagina corrente; index = riga corrente
-                //int indexTableSave = (MAXROW * range) + index;
-                //tableSaveCount.Rows.RemoveAt(indexTableSave);
+                //Se le riga viene eliminata dal DB, viene eliminata dalla tabella totale
+                if (modelPP.delete(record))
+                {
+                    isSaved = true;
+                    isChanged = false;
+                    statusPanel();
+                    updateGridView(true);
+                } 
+
             }
-            counter();*/
+            counter();
+
         }
 
         private void btnUp_Click(object sender, EventArgs e)
@@ -711,53 +644,51 @@ namespace PostPay
 
         private void btnModifyRow_Click(object sender, EventArgs e)
         {
-            //Verifica siano state salvate la righe introdotte prima di essere modificate
-            if(isSaved == false && isChanged == true)
-            {
-                MessageBox.Show("Salvare i dati prima di procedere alla modifica !!", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            //istanza per form modifica e per aggiornare il datagridview
+           
+            //Istanza per form modifica e per aggiornare il datagridview
             frmModify frmMod = new frmModify();
-            PopulateGrid populate = new PopulateGrid(grdMonthVoices, table);
-            PopulateGrid populateCount = new PopulateGrid(grdMonthVoices, tableSaveCount);
             string id, cause, import, id_month;
 
-            //variabile di avvenuta modifica
+            //Variabile di avvenuta modifica
             bool modifyRow = false;
             try
             {
-                //prelevo i dati dal datagridview
+                //Preleva i dati dal DataGridView
                 var val = grdMonthVoices.CurrentRow.Cells;
                 id = val[0].Value.ToString();
                 cause = val[1].Value.ToString();
                 import = val[2].Value.ToString();
                 id_month = val[3].Value.ToString();
-                //passo i dati ai setter di frmModify
+                //Passa i dati ai setter di frmModify
                 frmMod.setId = id;
                 frmMod.setCause = cause;
                 frmMod.setImport = import;
                 frmMod.setMonth = id_month;
-                //setto l'anno selezionato
+                //Setta l'anno selezionato
                 frmMod.setYear = record.anno;
-                //visualizzo il form
+                //Visualizza il form
                 frmMod.ShowDialog();
-                //ricevo tru dal getter se alvataggio avvenuto con successo
+                
+                //Riceve true dal getter se alvataggio avvenuto con successo
                 modifyRow = frmMod.verify;
                 if (modifyRow == true)
                 {
                     //Aggiorna il datagridview
                     updateGridView(true);
-                }
+                    //Calcola il saldo mensile
+                    counter();
+                    //Salva il saldo annuo e aggiorna lo stato di salvataggio
+                    bool isSavedBalance = saveBalance();
+                    if (isSavedBalance == false)
+                        MessageBox.Show("Errore di salvataggio dei dati", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        isChanged = false;
+                        isSaved = true;
+                        statusPanel();
+                    }
 
-                //Calcola il saldo mensile
-                counter();
-                //Salva il saldo annuo e aggiorna lo stato di salvataggio
-                bool isSavedBalance = saveBalance();
-                if (isSavedBalance == false)
-                    MessageBox.Show("Errore di salvataggio dei dati", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else statusPanel();
+                }
                 
             }
             catch (Exception ex)
@@ -787,7 +718,7 @@ namespace PostPay
             //Imposta l'estensione per il file pdf nel SaveDialog
             svdPDF.Filter = "PDF (*.pdf)|*.pdf";
             //Definisce il nome del file
-            svdPDF.FileName = year_manage.ToString() + "_" + month_manage.ToString() + "_" + "DataPP.pdf";
+            svdPDF.FileName = record.anno.ToString() + "_" + "DataPostPay.pdf";
             //Se premuto ok nel SaveDialog
             if (svdPDF.ShowDialog() == DialogResult.OK)
             {
@@ -866,6 +797,17 @@ namespace PostPay
             txtImport.BorderColor = Color.DimGray;
             txtImport.BackColor = Color.White;
         }
+
+
+        private void txtImport_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Se viene premuto il punto mette la virgola.
+            //il carattere viene poi modificato dalla funzione di 
+            //salvataggio della classe model
+            if (e.KeyChar == '.') e.KeyChar = ',';
+
+        }
+
 
         #endregion
 

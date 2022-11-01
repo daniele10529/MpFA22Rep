@@ -286,16 +286,10 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackgroundImage = global::PostPay.Properties.Resources.Salva;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.Green;
-            this.btnSave.Location = new System.Drawing.Point(54, 34);
+            this.btnSave.Location = new System.Drawing.Point(0, 0);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(30, 30);
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 9;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pgInsert
             // 
@@ -377,6 +371,7 @@
             this.txtImport.Texts = "";
             this.txtImport.UnderlinedStyle = false;
             this.txtImport.Enter += new System.EventHandler(this.txtImport_Enter);
+            this.txtImport.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImport_KeyPress);
             this.txtImport.Leave += new System.EventHandler(this.txtImport_Leave);
             // 
             // cmbMonths
@@ -1071,6 +1066,7 @@
             this.grdMonthVoices.ShowEditingIcon = false;
             this.grdMonthVoices.Size = new System.Drawing.Size(984, 720);
             this.grdMonthVoices.TabIndex = 21;
+            this.grdMonthVoices.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.grdMonthVoices_KeyPress);
             // 
             // frmPostPay
             // 

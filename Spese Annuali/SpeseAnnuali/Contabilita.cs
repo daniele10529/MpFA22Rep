@@ -11,7 +11,7 @@ namespace SpeseAnnuali
     /// </summary>
     class Contabilita
     {
-        private const string pathSetIni = @"C:\MpFA20\SetIni\SetIni.xml";
+        private const string pathSetIni = @"C:\MpFA22\SetIni\SetIni.xml";
         private const string fatherIni = "setIni";
         private int manage_year;
         private int manage_month;

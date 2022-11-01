@@ -107,12 +107,13 @@ namespace PostPay
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+            string pathxml = Routes.XMLErrors;
             string cause, import, month;
             int id = 0, id_month = 0;
 
-            //istanze alle classi model e checker
-            ModelDataPP model = new ModelDataPP();
+            //Istanze alle classi model, record e checker
+            ModelDataPostPay model = new ModelDataPostPay();
+            ModelDataPostPay.RecordPostPay record = new ModelDataPostPay.RecordPostPay();
             Checker check = new Checker(pathxml);
 
             try
@@ -126,13 +127,20 @@ namespace PostPay
                         id = Int32.Parse(txtId.Texts);
                         month = txtMonth.Texts;
                         cause = txtCause.Texts;
-                        import = txtImport.Texts.Replace(",", ".");
+                        import = txtImport.Texts;
 
                         //Definisce il numero del mese dal nome
                         id_month = selmonth(month);
 
+                        //Istanzia il record
+                        record.id_postpay = id;
+                        record.causale = cause;
+                        record.importo = Double.Parse(import);
+                        record.id_mese = id_month;
+                        record.anno = setYear;
+
                         //modifica il DB e riceve true se tutto ok
-                        verify = model.modifyRow(id, setYear, cause, import, id_month, true);
+                        verify = model.modifyRow(record);
 
                         if (verify == true)
                         {
@@ -192,7 +200,7 @@ namespace PostPay
             //se viene premuto +, keychar = 43 codice ascii tasto +
             if (e.KeyChar == 43)
             {
-                string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+                string pathxml = Routes.XMLErrors;
 
                 //istanza alla classe checker per il controllo del valore numerico
                 Checker check = new Checker(pathxml);
