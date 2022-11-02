@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("ANNI");
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("ANNI");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.pageHome = new System.Windows.Forms.TabPage();
             this.roundedPanel3 = new RoundendControlCollections.RoundedPanel();
@@ -91,6 +91,8 @@
             this.btnNewYear = new System.Windows.Forms.Button();
             this.treeYears = new System.Windows.Forms.TreeView();
             this.pnlResumes = new System.Windows.Forms.Panel();
+            this.btnCountability = new RoundendControlCollections.RoundedButton();
+            this.txtContability = new RoundendControlCollections.RoundedTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -113,7 +115,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMoney = new System.Windows.Forms.TextBox();
-            this.txtContability = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtMoneyKeep = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -971,13 +972,13 @@
             this.treeYears.LineColor = System.Drawing.Color.LightSteelBlue;
             this.treeYears.Location = new System.Drawing.Point(1, 83);
             this.treeYears.Name = "treeYears";
-            treeNode1.BackColor = System.Drawing.Color.AntiqueWhite;
-            treeNode1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode1.Name = "nodeYears";
-            treeNode1.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode1.Text = "ANNI";
+            treeNode4.BackColor = System.Drawing.Color.AntiqueWhite;
+            treeNode4.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode4.Name = "nodeYears";
+            treeNode4.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode4.Text = "ANNI";
             this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode4});
             this.treeYears.ShowLines = false;
             this.treeYears.ShowNodeToolTips = true;
             this.treeYears.Size = new System.Drawing.Size(177, 645);
@@ -990,6 +991,8 @@
             this.pnlResumes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlResumes.BackColor = System.Drawing.Color.Gainsboro;
             this.pnlResumes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlResumes.Controls.Add(this.btnCountability);
+            this.pnlResumes.Controls.Add(this.txtContability);
             this.pnlResumes.Controls.Add(this.label16);
             this.pnlResumes.Controls.Add(this.textBox8);
             this.pnlResumes.Controls.Add(this.textBox7);
@@ -1012,7 +1015,6 @@
             this.pnlResumes.Controls.Add(this.label7);
             this.pnlResumes.Controls.Add(this.label2);
             this.pnlResumes.Controls.Add(this.txtMoney);
-            this.pnlResumes.Controls.Add(this.txtContability);
             this.pnlResumes.Controls.Add(this.label6);
             this.pnlResumes.Controls.Add(this.txtMoneyKeep);
             this.pnlResumes.Controls.Add(this.label5);
@@ -1028,6 +1030,49 @@
             this.pnlResumes.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.pnlResumes.Size = new System.Drawing.Size(188, 730);
             this.pnlResumes.TabIndex = 2;
+            // 
+            // btnCountability
+            // 
+            this.btnCountability.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCountability.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCountability.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Countability;
+            this.btnCountability.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCountability.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnCountability.BorderRadius = 10;
+            this.btnCountability.BorderSize = 1;
+            this.btnCountability.FlatAppearance.BorderSize = 0;
+            this.btnCountability.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCountability.ForeColor = System.Drawing.Color.White;
+            this.btnCountability.GradientAngle = 90F;
+            this.btnCountability.GrdtBottom = System.Drawing.Color.Empty;
+            this.btnCountability.Location = new System.Drawing.Point(11, 651);
+            this.btnCountability.Name = "btnCountability";
+            this.btnCountability.Size = new System.Drawing.Size(20, 20);
+            this.btnCountability.TabIndex = 55;
+            this.btnCountability.TextColor = System.Drawing.Color.White;
+            this.btnCountability.UseVisualStyleBackColor = false;
+            this.btnCountability.Click += new System.EventHandler(this.btnCountability_Click);
+            // 
+            // txtContability
+            // 
+            this.txtContability.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtContability.BorderColor = System.Drawing.Color.DimGray;
+            this.txtContability.BorderFocusColor = System.Drawing.Color.LightSteelBlue;
+            this.txtContability.BorderRadius = 10;
+            this.txtContability.BorderSize = 1;
+            this.txtContability.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContability.Location = new System.Drawing.Point(8, 616);
+            this.txtContability.Multiline = false;
+            this.txtContability.Name = "txtContability";
+            this.txtContability.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtContability.PasswordChar = false;
+            this.txtContability.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtContability.PlaceholderText = "";
+            this.txtContability.ReadOnly = true;
+            this.txtContability.Size = new System.Drawing.Size(169, 30);
+            this.txtContability.TabIndex = 54;
+            this.txtContability.Texts = "";
+            this.txtContability.UnderlinedStyle = false;
             // 
             // label16
             // 
@@ -1250,23 +1295,11 @@
             this.txtMoney.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMoney_KeyPress);
             this.txtMoney.Leave += new System.EventHandler(this.txtMoney_Leave);
             // 
-            // txtContability
-            // 
-            this.txtContability.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtContability.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContability.Location = new System.Drawing.Point(11, 618);
-            this.txtContability.Name = "txtContability";
-            this.txtContability.ReadOnly = true;
-            this.txtContability.Size = new System.Drawing.Size(169, 26);
-            this.txtContability.TabIndex = 20;
-            this.txtContability.TabStop = false;
-            this.txtContability.Click += new System.EventHandler(this.txtContability_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 599);
+            this.label6.Location = new System.Drawing.Point(8, 596);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 16);
             this.label6.TabIndex = 9;
@@ -1365,24 +1398,24 @@
             this.grdMonthSpends.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grdMonthSpends.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdMonthSpends.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMonthSpends.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMonthSpends.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.grdMonthSpends.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdMonthSpends.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdMonthSpends.DefaultCellStyle = dataGridViewCellStyle11;
             this.grdMonthSpends.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdMonthSpends.EnableHeadersVisualStyles = false;
             this.grdMonthSpends.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -1391,14 +1424,14 @@
             this.grdMonthSpends.MultiSelect = false;
             this.grdMonthSpends.Name = "grdMonthSpends";
             this.grdMonthSpends.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMonthSpends.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMonthSpends.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.grdMonthSpends.RowHeadersVisible = false;
             this.grdMonthSpends.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdMonthSpends.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -1592,7 +1625,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPay;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtContability;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtMoneyKeep;
         private System.Windows.Forms.Label label5;
@@ -1681,6 +1713,8 @@
         private RoundendControlCollections.RoundedPanel roundedPanel8;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label21;
+        private RoundendControlCollections.RoundedTextBox txtContability;
+        private RoundendControlCollections.RoundedButton btnCountability;
     }
 }
 

@@ -22,6 +22,10 @@ namespace GenericModelData
         /// Percorso con il file xml contenente i valori iniziali
         /// </summary>
         public const string XMLSETINI = @"C:\MpFA22\SetIni\SetIni.xml";
+        /// <summary>
+        /// Percorso per il file xml con i path di avvio dei processi
+        /// </summary>
+        public const string RUNPATH = @"C:\MpFA22\RunPath\RunPath.xml";
 
 
     }

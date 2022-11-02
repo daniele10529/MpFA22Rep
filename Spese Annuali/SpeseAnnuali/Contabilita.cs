@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using GenericModelData;
 using ReadXML;
 using System;
+using RoundendControlCollections;
 
 namespace SpeseAnnuali
 {
@@ -36,7 +37,7 @@ namespace SpeseAnnuali
         /// <param name="saldoPP">double, saldo pp attuale</param>
         /// <param name="t">textbox, oggetto su form, gestione colori</param>
         /// <returns>restituisce valore string per la textbox</returns>
-        public string conteggio(double risparmiati,double contanti,double saldoCC,double saldoLib,double saldoPP,TextBox t)
+        public string conteggio(double risparmiati,double contanti,double saldoCC,double saldoLib,double saldoPP, RoundedTextBox t)
         {
             //22963.83;
             double tot_cc = 0, tot_lib = 0, tot_pp = 0;
@@ -65,16 +66,18 @@ namespace SpeseAnnuali
 
             if(conteggio == risparmiati || (conteggio > tolmin && conteggio < tolmax))
             {
-                t.ForeColor = Color.Green;
+                t.ForeColor = Color.FromArgb(6, 179, 29);
+                t.BorderColor = Color.FromArgb(133, 247, 190);
                 return "Contabilità ok";
             }
             else
             {
-                t.ForeColor = Color.Red;
+                t.ForeColor = Color.FromArgb(195, 74, 78);
+                t.BorderColor = Color.FromArgb(255, 10, 10);
                 dif = conteggio - risparmiati;
                 if(!(dif.ToString().Length > 6))
                 {
-                    return "Contabilità ko..." + dif.ToString();
+                    return "Contabilità ko..." + dif.ToString() + "€";
                 }
                 return "Contabilità ko..." + dif.ToString().Remove(6) + "€"; 
             }

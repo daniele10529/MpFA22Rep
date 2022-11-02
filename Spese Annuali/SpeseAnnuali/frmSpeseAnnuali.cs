@@ -19,9 +19,9 @@ namespace SpeseAnnuali
         //tabella contenente i dati
         private DataTable table;
         //percorso file xml con errori
-        private const string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+        private const string pathxml = Routes.XMLErrors;
         //Percorso file XML con definizione path processi
-        private const string runPath = @"C:\MpFA22\RunPath\RunPath.xml";
+        private const string runPath = Routes.RUNPATH;
         //verifica sul comportamento utente
         private bool isLoad;
         private bool isSaved;
@@ -217,13 +217,14 @@ namespace SpeseAnnuali
             tip.SetToolTip(btnSetting, "Modifica Setup");
             tip.SetToolTip(btnSaveData, "Salva le modifiche");
             tip.SetToolTip(txtSearchVoice, "Ricarca nel DataGridView");
-            tip.SetToolTip(txtContability, "Click per aggiornare contabilità");
+            tip.SetToolTip(txtContability, "Visualizza lo stato della contabilità mensile");
             tip.SetToolTip(btnSetOftenValue, "Seleziona causale frequente");
             tip.SetToolTip(btnSpeseAnnuali, "Avvia modulo Spese Annuali");
             tip.SetToolTip(btnContoCorrente, "Avvia modulo Conto Corrente");
             tip.SetToolTip(btnLibretto, "Avvia modulo Libretto e PostPay");
             tip.SetToolTip(btnMantenimento, "Avvia modulo Mantenimento");
             tip.SetToolTip(btnPDFCreator, "Genera File PDF");
+            tip.SetToolTip(btnCountability, "Calcola la contabilità mensile");
         }
 
         /// <summary>
@@ -231,7 +232,7 @@ namespace SpeseAnnuali
         /// </summary>
         private void loadImage()
         {
-            string pathIco = @"C:\MpFA22\Icons\";
+            string pathIco = Routes.ICONS;
             ImageList list = new ImageList();
 
             try
@@ -304,7 +305,7 @@ namespace SpeseAnnuali
             DataGridViewImageColumn button = new DataGridViewImageColumn();
             button.Width = (grdMonthSpends.Width * 7) / 100;
             button.HeaderText = "Long Description";
-            button.ToolTipText = "Inserisci la Long Description facende click sull'icona";
+            button.ToolTipText = "Inserisci la Long Description facendo click sull'icona";
             button.ImageLayout = DataGridViewImageCellLayout.Normal;
             //Ricava l'immagine dalla cartella Resources
             button.Image = global::SpeseAnnuali.Properties.Resources.pencil_piccola;
@@ -517,9 +518,9 @@ namespace SpeseAnnuali
 
             //carico il saldo Libretto e PostPay
             //sfrutto l'ereditarietà della classe ModelDataPP
-            ModelDataPP modLibPP = new ModelDataPP();
+            ModelDataPostPay modLibPP = new ModelDataPostPay();
             txtSaldoLibretto.Text = modLibPP.loadBalanceLib(year_manage).ToString();
-            txtSaldoPP.Text = modLibPP.loadBalanceLib(year_manage, true).ToString();
+            txtSaldoPP.Text = modLibPP.getBalanceYear(year_manage).ToString();
 
             //tronca le textbox saldo cc,pp,lib
             Checker check = new Checker();
@@ -816,6 +817,28 @@ namespace SpeseAnnuali
             
         }
 
+        //Calcola la contabilità mensile
+        private void btnCountability_Click(object sender, EventArgs e)
+        {
+            string father = "ListError";
+            string feature = "ErrorTitle";
+            if (year_manage == 0 || month_manage == 0)
+            {
+                ReadErrorXml erxml = new ReadErrorXml();
+                erxml.manageError(12, pathxml, father, feature);
+                return;
+            }
+            //istanza alla classe contabilità, da cui c'è la query su DB
+            Contabilita contabilita = new Contabilita(year_manage, month_manage);
+            double risparmiati = Double.Parse(txtMoneyKeep.Text);
+            double totCC = Double.Parse(txtSaldoCC.Text);
+            double totLib = Double.Parse(txtSaldoLibretto.Text);
+            double totPP = Double.Parse(txtSaldoPP.Text);
+            double contanti = Double.Parse(txtMoney.Text);
+
+            txtContability.Texts = contabilita.conteggio(risparmiati, contanti, totCC, totLib, totPP, txtContability);
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Dispose();
@@ -988,33 +1011,6 @@ namespace SpeseAnnuali
             isSaved = false;
             statusPanel();
         }
-
-        /// <summary>
-        /// esegue il conteggio di contabilità
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void txtContability_Click(object sender, EventArgs e)
-        {
-            string father = "ListError";
-            string feature = "ErrorTitle";
-            if (year_manage == 0 || month_manage == 0)
-            {
-                ReadErrorXml erxml = new ReadErrorXml();
-                erxml.manageError(12, pathxml, father, feature);
-                return;
-            }
-            //istanza alla classe contabilità, da cui c'è la query su DB
-            Contabilita contabilita = new Contabilita(year_manage, month_manage);
-            double risparmiati = Double.Parse(txtMoneyKeep.Text);
-            double totCC = Double.Parse(txtSaldoCC.Text);
-            double totLib = Double.Parse(txtSaldoLibretto.Text);
-            double totPP = Double.Parse(txtSaldoPP.Text);
-            double contanti = Double.Parse(txtMoney.Text);
-
-            txtContability.Text = contabilita.conteggio(risparmiati,contanti,totCC,totLib,totPP,txtContability);
-
-        }     
 
         private void txtPlusEntry_TextChanged(object sender, EventArgs e)
         {

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -73,7 +72,7 @@ namespace PostPay
         {
             int page;
 
-            //aggiorno il datagridview
+            //Reinizializza le tabelle paginazione e completa per count e PDF
             isSaved = true;
             table.Rows.Clear();
             tableSaveCount.Rows.Clear();
@@ -504,7 +503,7 @@ namespace PostPay
                     {
                         //Acquisisce i dati dai controls
                         record.causale = txtCause.Texts;
-                        record.importo = Double.Parse(txtImport.Texts);
+                        record.importo = Double.Parse(txtImport.Texts.Replace('.',','));
                         //Preleva il numero del mese dal nome e lo assegna al record 
                         record.id_mese = selmonth(cmbMonths.SelectedItem.ToString());
                         //L'anno è già acquisito in fase di caricamento
@@ -797,17 +796,6 @@ namespace PostPay
             txtImport.BorderColor = Color.DimGray;
             txtImport.BackColor = Color.White;
         }
-
-
-        private void txtImport_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Se viene premuto il punto mette la virgola.
-            //il carattere viene poi modificato dalla funzione di 
-            //salvataggio della classe model
-            if (e.KeyChar == '.') e.KeyChar = ',';
-
-        }
-
 
         #endregion
 

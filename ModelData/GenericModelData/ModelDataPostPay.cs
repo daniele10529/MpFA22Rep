@@ -376,6 +376,52 @@ namespace GenericModelData
             return balancePre;
         }
 
+       /// <summary>
+       /// Metodo per ottenere il saldo annuale di postpay
+       /// </summary>
+       /// <param name="year">Anno di cui ottenere il saldo</param>
+       /// <returns>Ritorna il saldo anno selezionato</returns>
+        public double getBalanceYear(int year)
+        {
+
+            ReaderXML readerxml;
+            double balance = 0;
+            //se il primo anno 2019, imposta il valore di partenza
+            if (year == 2019)
+            {
+                readerxml = new ReaderXML(pathSetIni, fatherIni);
+                balance = Double.Parse(readerxml.readNode("tot_pp"));
+            }
+            else
+            {
+                ReadErrorXml xml = new ReadErrorXml();
+
+                try
+                {
+                    readerxml = new ReaderXML(pathconn, "string");
+                    stringConnection = readerxml.readNode("strconnect");
+                    Connecting connecting = new Connecting(stringConnection);
+                    var connection = connecting.connection();
+                    var command = connecting.command(connection);
+                    string query = $"SELECT * FROM totale_postpay WHERE anno={year};";
+                    var reader = connecting.reader(command, query);
+                    //non è necessario il ciclo dato che estrae una sola riga, ma è necessario
+                    //invocare il metodo read()
+                    if (reader.Read()) balance = reader.GetDouble(1);
+
+                    reader.Dispose();
+                    command.Dispose();
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    xml.manageError(9, path, father, featur);
+                }
+            }
+            //ritorna il valore di saldo anno precedente
+            return balance;
+        }
+
         /// <summary>
         ///  Metodo per il salvataggio del saldo annuale di PP
         /// </summary>
@@ -504,7 +550,7 @@ namespace GenericModelData
 
                 string import = record.importo.ToString().Replace(',', '.');
 
-                command.CommandText = $"UPDATE libretto_postale SET causale='{record.causale}', importo = {import},id_mese = {record.id_mese} WHERE id_postpay = {record.id_postpay} AND anno = {record.anno}";
+                command.CommandText = $"UPDATE postpay SET causale='{record.causale}', importo = {import},id_mese = {record.id_mese} WHERE id_postpay = {record.id_postpay} AND anno = {record.anno}";
 
                 if (command.ExecuteNonQuery() > 0) execute = true;
 

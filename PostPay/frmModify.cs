@@ -127,7 +127,7 @@ namespace PostPay
                         id = Int32.Parse(txtId.Texts);
                         month = txtMonth.Texts;
                         cause = txtCause.Texts;
-                        import = txtImport.Texts;
+                        import = txtImport.Texts.Replace('.',',');
 
                         //Definisce il numero del mese dal nome
                         id_month = selmonth(month);
@@ -143,9 +143,8 @@ namespace PostPay
                         verify = model.modifyRow(record);
 
                         if (verify == true)
-                        {
-                            MessageBox.Show("Inserimento avvenuto con successo");
-                        }
+                            MessageBox.Show("Inserimento avvenuto con successo","INFO",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
                         //scarica appena fatto.
                         Dispose();
                     }
