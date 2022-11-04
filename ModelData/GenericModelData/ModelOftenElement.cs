@@ -13,7 +13,11 @@ namespace GenericModelData
         /// <summary>
         /// Costruttore della classe di tipo void
         /// </summary>
-        public ModelOftenElement() { }
+        public ModelOftenElement()
+        {
+            if (testEnvironment) node_connect = "strconnect_test";
+            else node_connect = "strconnect";
+        }
 
         /// <summary>
         /// Metodo per leggere le causali frequenti e aggiungerle a una ListBox
@@ -26,7 +30,7 @@ namespace GenericModelData
             try
             {   //connessione + mapping
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -64,7 +68,7 @@ namespace GenericModelData
             try
             {   //connessione
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -108,7 +112,7 @@ namespace GenericModelData
             try
             {   //connessione
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);

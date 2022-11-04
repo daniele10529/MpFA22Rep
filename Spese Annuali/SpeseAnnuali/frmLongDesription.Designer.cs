@@ -1,4 +1,4 @@
-﻿namespace SpeseAnnuali
+﻿namespace MpFA20
 {
     partial class frmLongDesription
     {
@@ -91,7 +91,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnClose.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.btnClose.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Exit;
+            this.btnClose.BackgroundImage = global::MpFA20.Properties.Resources.Exit;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClose.BorderColor = System.Drawing.Color.Turquoise;
             this.btnClose.BorderRadius = 10;

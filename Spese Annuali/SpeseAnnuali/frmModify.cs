@@ -5,7 +5,7 @@ using GenericModelData;
 using Checking;
 
 
-namespace SpeseAnnuali
+namespace MpFA20
 {
     public partial class frmModify : Form
     {
@@ -186,7 +186,7 @@ namespace SpeseAnnuali
             //se viene premuto +, keychar = 43 codice ascii tasto +
             if (e.KeyChar == 43)
             { 
-                string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+                string pathxml = Routes.XMLERRORS;
 
                 //istanza alla classe checker per il controllo del valore numerico
                 Checker check = new Checker(pathxml);

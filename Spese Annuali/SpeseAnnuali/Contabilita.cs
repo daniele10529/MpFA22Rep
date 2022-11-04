@@ -5,14 +5,14 @@ using ReadXML;
 using System;
 using RoundendControlCollections;
 
-namespace SpeseAnnuali
+namespace MpFA20
 {
     /// <summary>
     /// Classe per la verifica della contabilità mensile
     /// </summary>
     class Contabilita
     {
-        private const string pathSetIni = @"C:\MpFA22\SetIni\SetIni.xml";
+        private const string pathSetIni = Routes.XMLSETINI;
         private const string fatherIni = "setIni";
         private int manage_year;
         private int manage_month;

@@ -16,7 +16,11 @@ namespace GenericModelData
         /// <summary>
         /// Classe per la gestione dati verso il DB di Mantenimento, eredita ModelDataSY
         /// </summary>
-        public ModelDataMan() { }
+        public ModelDataMan()
+        {
+            if (testEnvironment) node_connect = "strconnect_test";
+            else node_connect = "strconnect";
+        }
 
         /// <summary>
         /// Struttura dati Mantenimento
@@ -40,7 +44,7 @@ namespace GenericModelData
             ReadErrorXml xml = new ReadErrorXml();
             ReaderXML readxml = new ReaderXML(pathconn, "string");
             //connessione al DB
-            stringConnection = readxml.readNode("strconnect");
+            stringConnection = readxml.readNode(node_connect);
             Connecting connect = new Connecting(stringConnection);
             //gestione immagini albero
             ImageList imageList = new ImageList();
@@ -106,7 +110,7 @@ namespace GenericModelData
                 }
                 //Connessione e genero in ogni tabella il valore dell'anno e del mese creato
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
 
                 var connection = connecting.connection();
@@ -147,7 +151,7 @@ namespace GenericModelData
             {
                 //carico i dati da DB in base all'anno selezionato e li assegno alla lista
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -197,7 +201,7 @@ namespace GenericModelData
             try
             {//connessione al DB + mapping dati già presenti
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
 
                 var connection = connecting.connection();
@@ -310,7 +314,7 @@ namespace GenericModelData
             try
             {   //connessione + mapping
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -346,7 +350,7 @@ namespace GenericModelData
             try
             {//aggiorno il valore del saldo finale già generato alla creazione dell'anno
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -390,7 +394,7 @@ namespace GenericModelData
             try
             {   //mapping su tabella DB passata come metodo
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);

@@ -41,7 +41,7 @@ namespace PostPay
             modelPP = new ModelDataPostPay();
             record = new ModelDataPostPay.RecordPostPay();
 
-            pathxml = Routes.XMLErrors;
+            pathxml = Routes.XMLERRORS;
             isLoad = false;
             isSaved = false;
             isChanged = false;

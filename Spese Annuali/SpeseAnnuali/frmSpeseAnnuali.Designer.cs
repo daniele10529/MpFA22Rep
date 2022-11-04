@@ -1,4 +1,4 @@
-﻿namespace SpeseAnnuali
+﻿namespace MpFA20
 {
     partial class frmSpeseAnnuali
     {
@@ -233,7 +233,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Exit;
+            this.btnExit.BackgroundImage = global::MpFA20.Properties.Resources.Exit;
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.Green;
@@ -291,7 +291,7 @@
             // 
             // btnPDFCreator
             // 
-            this.btnPDFCreator.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Oficina_PDF_35460_32;
+            this.btnPDFCreator.BackgroundImage = global::MpFA20.Properties.Resources.Oficina_PDF_35460_32;
             this.btnPDFCreator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPDFCreator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPDFCreator.ForeColor = System.Drawing.Color.Green;
@@ -305,7 +305,7 @@
             // 
             // btnNewYears
             // 
-            this.btnNewYears.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Nuovo;
+            this.btnNewYears.BackgroundImage = global::MpFA20.Properties.Resources.Nuovo;
             this.btnNewYears.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNewYears.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewYears.ForeColor = System.Drawing.Color.Green;
@@ -319,7 +319,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Salva;
+            this.btnSave.BackgroundImage = global::MpFA20.Properties.Resources.Salva;
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.Green;
@@ -333,7 +333,7 @@
             // 
             // btnLoadYears
             // 
-            this.btnLoadYears.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Aggiorna2;
+            this.btnLoadYears.BackgroundImage = global::MpFA20.Properties.Resources.Aggiorna2;
             this.btnLoadYears.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLoadYears.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadYears.ForeColor = System.Drawing.Color.Green;
@@ -360,7 +360,7 @@
             // 
             // btnSetting
             // 
-            this.btnSetting.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Impostazioni2;
+            this.btnSetting.BackgroundImage = global::MpFA20.Properties.Resources.Impostazioni2;
             this.btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetting.ForeColor = System.Drawing.Color.Green;
@@ -522,7 +522,7 @@
             // 
             // btnInsert
             // 
-            this.btnInsert.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Inserisci;
+            this.btnInsert.BackgroundImage = global::MpFA20.Properties.Resources.Inserisci;
             this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.ForeColor = System.Drawing.Color.Green;
@@ -554,7 +554,7 @@
             // 
             // btnSaveData
             // 
-            this.btnSaveData.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Salva;
+            this.btnSaveData.BackgroundImage = global::MpFA20.Properties.Resources.Salva;
             this.btnSaveData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveData.ForeColor = System.Drawing.Color.Green;
@@ -645,7 +645,7 @@
             // 
             // btnDeleteRow
             // 
-            this.btnDeleteRow.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Delete;
+            this.btnDeleteRow.BackgroundImage = global::MpFA20.Properties.Resources.Delete;
             this.btnDeleteRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDeleteRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteRow.ForeColor = System.Drawing.Color.Green;
@@ -658,7 +658,7 @@
             // 
             // btnDown
             // 
-            this.btnDown.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Carica2;
+            this.btnDown.BackgroundImage = global::MpFA20.Properties.Resources.Carica2;
             this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown.ForeColor = System.Drawing.Color.Green;
@@ -671,7 +671,7 @@
             // 
             // btnModifyRow
             // 
-            this.btnModifyRow.BackgroundImage = global::SpeseAnnuali.Properties.Resources.pencil_179251;
+            this.btnModifyRow.BackgroundImage = global::MpFA20.Properties.Resources.pencil_179251;
             this.btnModifyRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnModifyRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModifyRow.ForeColor = System.Drawing.Color.Green;
@@ -684,7 +684,7 @@
             // 
             // btnUp
             // 
-            this.btnUp.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Su1;
+            this.btnUp.BackgroundImage = global::MpFA20.Properties.Resources.Su1;
             this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUp.ForeColor = System.Drawing.Color.Green;
@@ -738,7 +738,7 @@
             // 
             // btnSaveThree
             // 
-            this.btnSaveThree.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Salva;
+            this.btnSaveThree.BackgroundImage = global::MpFA20.Properties.Resources.Salva;
             this.btnSaveThree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveThree.ForeColor = System.Drawing.Color.Green;
@@ -831,7 +831,7 @@
             // 
             // btnRunningReports
             // 
-            this.btnRunningReports.BackgroundImage = global::SpeseAnnuali.Properties.Resources.imagesRep2;
+            this.btnRunningReports.BackgroundImage = global::MpFA20.Properties.Resources.imagesRep2;
             this.btnRunningReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRunningReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunningReports.ForeColor = System.Drawing.Color.Green;
@@ -844,7 +844,7 @@
             // 
             // btnPostPay
             // 
-            this.btnPostPay.BackgroundImage = global::SpeseAnnuali.Properties.Resources.images;
+            this.btnPostPay.BackgroundImage = global::MpFA20.Properties.Resources.images;
             this.btnPostPay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPostPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPostPay.ForeColor = System.Drawing.Color.Green;
@@ -857,7 +857,7 @@
             // 
             // btnMantenimento
             // 
-            this.btnMantenimento.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Mantenimento;
+            this.btnMantenimento.BackgroundImage = global::MpFA20.Properties.Resources.Mantenimento;
             this.btnMantenimento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMantenimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMantenimento.ForeColor = System.Drawing.Color.Green;
@@ -870,7 +870,7 @@
             // 
             // btnLibretto
             // 
-            this.btnLibretto.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Start_setting2;
+            this.btnLibretto.BackgroundImage = global::MpFA20.Properties.Resources.Start_setting2;
             this.btnLibretto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLibretto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLibretto.ForeColor = System.Drawing.Color.Green;
@@ -883,7 +883,7 @@
             // 
             // btnContoCorrente
             // 
-            this.btnContoCorrente.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Conto_Corrente;
+            this.btnContoCorrente.BackgroundImage = global::MpFA20.Properties.Resources.Conto_Corrente;
             this.btnContoCorrente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnContoCorrente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContoCorrente.ForeColor = System.Drawing.Color.Green;
@@ -896,7 +896,7 @@
             // 
             // btnSpeseAnnuali
             // 
-            this.btnSpeseAnnuali.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Spese_Annuali;
+            this.btnSpeseAnnuali.BackgroundImage = global::MpFA20.Properties.Resources.Spese_Annuali;
             this.btnSpeseAnnuali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSpeseAnnuali.Enabled = false;
             this.btnSpeseAnnuali.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -937,7 +937,7 @@
             // btnLoadYear
             // 
             this.btnLoadYear.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnLoadYear.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Aggiorna;
+            this.btnLoadYear.BackgroundImage = global::MpFA20.Properties.Resources.Aggiorna;
             this.btnLoadYear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLoadYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadYear.ForeColor = System.Drawing.Color.Black;
@@ -951,7 +951,7 @@
             // btnNewYear
             // 
             this.btnNewYear.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnNewYear.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Nuovo;
+            this.btnNewYear.BackgroundImage = global::MpFA20.Properties.Resources.Nuovo;
             this.btnNewYear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNewYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewYear.Location = new System.Drawing.Point(104, 41);
@@ -1035,7 +1035,7 @@
             // 
             this.btnCountability.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnCountability.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.btnCountability.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Countability;
+            this.btnCountability.BackgroundImage = global::MpFA20.Properties.Resources.Countability;
             this.btnCountability.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCountability.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnCountability.BorderRadius = 10;

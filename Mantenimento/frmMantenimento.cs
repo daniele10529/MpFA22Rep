@@ -16,7 +16,7 @@ namespace Mantenimento
         //tabella contenente i dati
         private DataTable table;
         //percorso file xml con errori
-        private const string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+        private const string pathxml = Routes.XMLERRORS;
         //verifica sul comportamento utente
         private bool isLoad;
         private bool isSaved;
@@ -96,7 +96,7 @@ namespace Mantenimento
         /// </summary>
         private void loadImage()
         {
-            string pathIco = @"C:\MpFA22\Icons\";
+            string pathIco = Routes.ICONS;
             ImageList list = new ImageList();
 
             try

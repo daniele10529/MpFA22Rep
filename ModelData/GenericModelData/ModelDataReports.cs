@@ -50,7 +50,11 @@ namespace GenericModelData
         /// <summary>
         /// Costruttore di default
         /// </summary>
-        public ModelDataReports() { }
+        public ModelDataReports()
+        {
+            if (testEnvironment) node_connect = "strconnect_test";
+            else node_connect = "strconnect";
+        }
 
         /// <summary>
         /// Metodo per il caricamento degli anni presenti nel DB
@@ -68,7 +72,7 @@ namespace GenericModelData
 
                 //Carica gli anni prenseti nel DB
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 //Query di mapping sulla tabella anni
@@ -107,7 +111,7 @@ namespace GenericModelData
             {
                 //Ottiene i valori di totale ricavi, spese e risparmio di ogni mese dell'anno selezionato
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -168,7 +172,7 @@ namespace GenericModelData
             {
                 //Ottiene tutte le causali frequenti
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -215,7 +219,7 @@ namespace GenericModelData
             {
                 //Ricava tutte le spese della voce e anno selezionati
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);

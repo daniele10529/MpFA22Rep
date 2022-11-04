@@ -14,7 +14,11 @@ namespace GenericModelData
         /// <summary>
         /// Classe per la gestione dati verso il DB ContoCorrente, eredita ModelDataSY
         /// </summary>
-        public ModelDataCC() { }
+        public ModelDataCC()
+        {
+            if (testEnvironment) node_connect = "strconnect_test";
+            else node_connect = "strconnect";
+        }
 
         /// <summary>
         /// Struttura dati per CC
@@ -43,7 +47,7 @@ namespace GenericModelData
             try
             {
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -90,7 +94,7 @@ namespace GenericModelData
             try
             {
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
 
                 var connection = connecting.connection();
@@ -217,7 +221,7 @@ namespace GenericModelData
                 try
                 {
                     readerxml = new ReaderXML(pathconn, "string");
-                    stringConnection = readerxml.readNode("strconnect");
+                    stringConnection = readerxml.readNode(node_connect);
                     Connecting connecting = new Connecting(stringConnection);
                     var connection = connecting.connection();
                     var command = connecting.command(connection);
@@ -255,7 +259,7 @@ namespace GenericModelData
             try
             {//aggiorno il valore del saldo finale già generato alla creazione dell'anno
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -292,7 +296,7 @@ namespace GenericModelData
             try
             {
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -334,7 +338,7 @@ namespace GenericModelData
             try
             {
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);

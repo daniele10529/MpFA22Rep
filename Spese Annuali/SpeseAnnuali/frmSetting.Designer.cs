@@ -1,4 +1,4 @@
-﻿namespace SpeseAnnuali
+﻿namespace MpFA20
 {
     partial class frmSetting
     {
@@ -154,7 +154,7 @@
             // 
             this.btnExit.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnExit.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.btnExit.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Exit;
+            this.btnExit.BackgroundImage = global::MpFA20.Properties.Resources.Exit;
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExit.BorderColor = System.Drawing.Color.Turquoise;
             this.btnExit.BorderRadius = 10;
@@ -176,7 +176,7 @@
             // 
             this.btnChange.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnChange.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.btnChange.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Salva;
+            this.btnChange.BackgroundImage = global::MpFA20.Properties.Resources.Salva;
             this.btnChange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnChange.BorderColor = System.Drawing.Color.Turquoise;
             this.btnChange.BorderRadius = 10;
@@ -207,7 +207,7 @@
             this.btnDump.ForeColor = System.Drawing.Color.White;
             this.btnDump.GradientAngle = 90F;
             this.btnDump.GrdtBottom = System.Drawing.Color.Empty;
-            this.btnDump.Image = global::SpeseAnnuali.Properties.Resources.dump1;
+            this.btnDump.Image = global::MpFA20.Properties.Resources.dump1;
             this.btnDump.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDump.Location = new System.Drawing.Point(177, 242);
             this.btnDump.Name = "btnDump";
@@ -232,7 +232,7 @@
             this.brnSetPuthDump.ForeColor = System.Drawing.Color.White;
             this.brnSetPuthDump.GradientAngle = 90F;
             this.brnSetPuthDump.GrdtBottom = System.Drawing.Color.Empty;
-            this.brnSetPuthDump.Image = global::SpeseAnnuali.Properties.Resources.pencil_17925;
+            this.brnSetPuthDump.Image = global::MpFA20.Properties.Resources.pencil_17925;
             this.brnSetPuthDump.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.brnSetPuthDump.Location = new System.Drawing.Point(20, 242);
             this.brnSetPuthDump.Name = "brnSetPuthDump";
@@ -257,7 +257,7 @@
             this.btnSetStart.ForeColor = System.Drawing.Color.White;
             this.btnSetStart.GradientAngle = 90F;
             this.btnSetStart.GrdtBottom = System.Drawing.Color.Empty;
-            this.btnSetStart.Image = global::SpeseAnnuali.Properties.Resources.Impostazioni21;
+            this.btnSetStart.Image = global::MpFA20.Properties.Resources.Impostazioni21;
             this.btnSetStart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetStart.Location = new System.Drawing.Point(20, 116);
             this.btnSetStart.Name = "btnSetStart";

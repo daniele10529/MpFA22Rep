@@ -12,7 +12,7 @@ namespace RunningReports
         //Tabella dati
         DataTable table;
         //percorso file xml con errori
-        private const string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+        private const string pathxml = Routes.XMLERRORS;
         //Istanza ModelData RunReports
         ModelDataReports modelReports;
 

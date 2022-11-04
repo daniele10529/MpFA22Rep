@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SpeseAnnuali.Properties {
+namespace MpFA20.Properties {
     using System;
     
     

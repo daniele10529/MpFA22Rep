@@ -6,12 +6,12 @@ using System.Diagnostics;
 using GenericModelData;
 using System.Xml;
 
-namespace SpeseAnnuali
+namespace MpFA20
 {
     public partial class frmSetting : Form
     {
         //percorso del file xml con il path per il dump
-        private string pathXML = @"C:\MpFA22\PathDump\PathDump.xml";
+        private string pathXML = Routes.XMLDUMP;
         
         public frmSetting()
         {
@@ -121,7 +121,7 @@ namespace SpeseAnnuali
             {   //nessun evento alla chiusura del processo
                 process.EnableRaisingEvents = false;
                 //set del percorso del processo da avviare
-                process.StartInfo.FileName = @"C:\MpFA22\Dumper\DumpExec.exe";
+                process.StartInfo.FileName = Routes.DUMPEXE;
                 //avvia il processo
                 process.Start();
             }

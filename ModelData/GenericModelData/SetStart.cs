@@ -1,5 +1,4 @@
 ﻿using Connection;
-using System.Windows.Forms;
 using System;
 using ReadXML;
 
@@ -9,20 +8,23 @@ namespace GenericModelData
     /// <summary>
     /// Classe per la gestione di start DB, set iniziale valori
     /// </summary>
-    public class SetStart
+    public class SetStart : ModelDataSY
     {
-        protected string stringConnection;
-        protected const string pathconn = @"C:\MpFA22\StrConnect\strConnect.xml";
-        protected const string path = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
-        protected const string pathIco = @"C:\MpFA22\Icons\";
-        protected const string father = "ListError";
-        protected const string featur = "ErrorTitle";
-        private const string pathSetIni = @"C:\MpFA22\SetIni\SetIni.xml";
+        //Attributi privati
+        private const string pathconn = Routes.XMLCONNECTION;
+        private const string path = Routes.XMLERRORS;
+        private const string father = "ListError";
+        private const string featur = "ErrorTitle";
+        private const string pathSetIni = Routes.XMLSETINI;
 
         /// <summary>
         ///Costruttore void 
         /// </summary>
-        public SetStart() { }
+        public SetStart()
+        {
+            if (testEnvironment) node_connect = "strconnect_test";
+            else node_connect = "strconnect";
+        }
 
         /// <summary>
         /// Metodo di inizializzazione dei valori di CC,Lib,PP
@@ -32,7 +34,7 @@ namespace GenericModelData
         {
             ReadErrorXml xml = new ReadErrorXml();
             ReaderXML readerxml = new ReaderXML(pathconn, "string");
-            stringConnection = readerxml.readNode("strconnect");
+            string stringConnection = readerxml.readNode(node_connect);
             //Istanza classe connessione 
             Connecting connecting = new Connecting(stringConnection);
             bool starting = false;

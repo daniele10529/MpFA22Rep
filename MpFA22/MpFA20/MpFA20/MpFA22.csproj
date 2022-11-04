@@ -36,6 +36,9 @@
     <ApplicationIcon>MpFA5.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GenericModelData">
+      <HintPath>..\..\..\Lib\GenericModelData.dll</HintPath>
+    </Reference>
     <Reference Include="LeaderProcess">
       <HintPath>..\..\..\Lib\LeaderProcess.dll</HintPath>
     </Reference>
@@ -46,6 +49,9 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="ReadXML">
       <HintPath>..\..\..\Lib\ReadXML.dll</HintPath>
+    </Reference>
+    <Reference Include="RoundendControlCollections">
+      <HintPath>..\..\..\..\..\RoundendControlCollections\RoundendControlCollections\bin\Debug\RoundendControlCollections.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,10 +76,19 @@
     <Compile Include="frmMpFA22.Designer.cs">
       <DependentUpon>frmMpFA22.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetting.designer.cs">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMpFA22.resx">
       <DependentUpon>frmMpFA22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetting.resx">
+      <DependentUpon>frmSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -116,6 +131,15 @@
     <None Include="Resources\images.jpg" />
     <None Include="Resources\MpFA5.png" />
     <Content Include="MpFA5.ico" />
+    <None Include="Resources\Impostazioni2.png" />
+    <None Include="Resources\pencil_piccola.png" />
+    <None Include="Resources\dump.png" />
+    <None Include="Resources\Impostazioni21.png" />
+    <None Include="Resources\Impostazioni.png" />
+    <None Include="Resources\Ambiente di test.png" />
+    <None Include="Resources\Ambiente di test1.png" />
+    <Content Include="Resources\Salva.png" />
+    <None Include="Resources\Salva1.png" />
     <Content Include="RunPath.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

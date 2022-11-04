@@ -2,14 +2,14 @@
 namespace GenericModelData
 {
     /// <summary>
-    /// Classe per la gestione dei Paths
+    /// Struttura dati per la gestione dei Paths
     /// </summary>
-    public static class Routes
+    public struct Routes
     {
         /// <summary>
         /// Percorso file xml con errori
         /// </summary>
-        public const string XMLErrors = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+        public const string XMLERRORS = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
         /// <summary>
         /// Percorso cartella con le icone
         /// </summary>
@@ -26,7 +26,15 @@ namespace GenericModelData
         /// Percorso per il file xml con i path di avvio dei processi
         /// </summary>
         public const string RUNPATH = @"C:\MpFA22\RunPath\RunPath.xml";
-
+        /// <summary>
+        /// Percorso per il file xml con il path per il dump del DB
+        /// </summary>
+        public const string XMLDUMP = @"C:\MpFA22\PathDump\PathDump.xml";
+        /// <summary>
+        /// Percorso del processo di esecuzione del dump sul DB
+        /// </summary>
+        public const string DUMPEXE = @"C:\MpFA22\Dumper\DumpExec.exe";
 
     }
+
 }

@@ -23,7 +23,11 @@ namespace GenericModelData
         /// <summary>
         /// Classe per la gestione dati verso il DB di PostPay eredita da ModelDataLibNom
         /// </summary>
-        public ModelDataPostPay() { }
+        public ModelDataPostPay()
+        {
+            if (testEnvironment) node_connect = "strconnect_test";
+            else node_connect = "strconnect";
+        }
 
         //Attributi
         public const int MAXROW = 20;
@@ -124,7 +128,7 @@ namespace GenericModelData
             try
             {
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 string query = $"SELECT * FROM postpay WHERE anno={record.anno}";
@@ -175,7 +179,7 @@ namespace GenericModelData
             try
             {
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -231,7 +235,7 @@ namespace GenericModelData
             try
             {
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -290,7 +294,7 @@ namespace GenericModelData
             try
             {
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -353,7 +357,7 @@ namespace GenericModelData
                 try
                 {
                     readerxml = new ReaderXML(pathconn, "string");
-                    stringConnection = readerxml.readNode("strconnect");
+                    stringConnection = readerxml.readNode(node_connect);
                     Connecting connecting = new Connecting(stringConnection);
                     var connection = connecting.connection();
                     var command = connecting.command(connection);
@@ -399,7 +403,7 @@ namespace GenericModelData
                 try
                 {
                     readerxml = new ReaderXML(pathconn, "string");
-                    stringConnection = readerxml.readNode("strconnect");
+                    stringConnection = readerxml.readNode(node_connect);
                     Connecting connecting = new Connecting(stringConnection);
                     var connection = connecting.connection();
                     var command = connecting.command(connection);
@@ -435,7 +439,7 @@ namespace GenericModelData
             try
             {//aggiorno il valore del saldo finale già generato alla creazione dell'anno
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -470,7 +474,7 @@ namespace GenericModelData
             try
             {//aggiorno il valore del saldo finale già generato alla creazione dell'anno
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -506,7 +510,7 @@ namespace GenericModelData
             {
                 //Inserisce il record nella tabella postpay
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -543,7 +547,7 @@ namespace GenericModelData
             try
             {
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
@@ -580,7 +584,7 @@ namespace GenericModelData
             {
                 //Inserisce il record nella tabella postpay
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
-                stringConnection = readerxml.readNode("strconnect");
+                stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
                 var connection = connecting.connection();
                 var command = connecting.command(connection);

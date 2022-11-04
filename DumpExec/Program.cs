@@ -4,6 +4,7 @@ using System.IO;
 using Connection;
 using ReadXML;
 using MySql.Data.MySqlClient;
+using GenericModelData;
 
 namespace DumpExec
 {
@@ -12,7 +13,7 @@ namespace DumpExec
         static void Main(string[] args)
         {
             //percorso del file xml per il dump
-            string pathXML = @"C:\MpFA22\PathDump\PathDump.xml";
+            string pathXML = Routes.XMLDUMP;
             string pathDump = "";
             string finalPath = "";
             string namefile = "";
@@ -63,7 +64,7 @@ namespace DumpExec
                 }
 
                 //connessione al DB essenziale per il dump attraverso la classe  MySqlBackup
-                ReaderXML readerxml = new ReaderXML(@"C:\MpFA22\StrConnect\strConnect.xml", "string");
+                ReaderXML readerxml = new ReaderXML(Routes.XMLCONNECTION, "string");
                 stringConnection = readerxml.readNode("strconnect");
                 Connecting connecting = new Connecting(stringConnection);
                

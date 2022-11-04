@@ -107,7 +107,7 @@ namespace PostPay
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            string pathxml = Routes.XMLErrors;
+            string pathxml = Routes.XMLERRORS;
             string cause, import, month;
             int id = 0, id_month = 0;
 
@@ -199,7 +199,7 @@ namespace PostPay
             //se viene premuto +, keychar = 43 codice ascii tasto +
             if (e.KeyChar == 43)
             {
-                string pathxml = Routes.XMLErrors;
+                string pathxml = Routes.XMLERRORS;
 
                 //istanza alla classe checker per il controllo del valore numerico
                 Checker check = new Checker(pathxml);

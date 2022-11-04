@@ -1,4 +1,4 @@
-﻿namespace SpeseAnnuali
+﻿namespace MpFA20
 {
     partial class frmModify
     {
@@ -76,7 +76,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnClose.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.btnClose.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Exit;
+            this.btnClose.BackgroundImage = global::MpFA20.Properties.Resources.Exit;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClose.BorderColor = System.Drawing.Color.Turquoise;
             this.btnClose.BorderRadius = 10;
@@ -107,7 +107,7 @@
             this.btnModify.ForeColor = System.Drawing.Color.White;
             this.btnModify.GradientAngle = 90F;
             this.btnModify.GrdtBottom = System.Drawing.Color.Empty;
-            this.btnModify.Image = global::SpeseAnnuali.Properties.Resources.pencil_17925;
+            this.btnModify.Image = global::MpFA20.Properties.Resources.pencil_17925;
             this.btnModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModify.Location = new System.Drawing.Point(216, 446);
             this.btnModify.Name = "btnModify";

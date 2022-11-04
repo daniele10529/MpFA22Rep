@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using LeaderProcess;
+using GenericModelData;
 
 namespace MpFA20
 {
@@ -17,10 +18,10 @@ namespace MpFA20
             InitializeComponent();
             //Inizializzazione per la lettura file XML contenente percorsi degli errori e dei processi
             processRunning = new ProcessRunning();
-            processRunning.path = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+            processRunning.path = Routes.XMLERRORS;
             processRunning.father = "ListError";
             processRunning.featur = "ErrorTitle";
-            processRunning.XMlpathConteinerFile = @"C:\MpFA22\RunPath\RunPath.xml";
+            processRunning.XMlpathConteinerFile = Routes.RUNPATH;
         }
 
         public void btnSpeseAnnuali_Click(object sender, EventArgs e)
@@ -71,5 +72,13 @@ namespace MpFA20
             Dispose();
         }
 
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            //Visualizza il form di setting
+            frmSetting frm = new frmSetting();
+            //Visualiza il form
+            frm.Show();
+
+        }
     }
 }

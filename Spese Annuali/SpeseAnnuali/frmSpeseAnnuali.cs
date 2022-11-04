@@ -12,14 +12,14 @@ using LeaderProcess;
 using Checking;
 using PDFCreator;
 
-namespace SpeseAnnuali
+namespace MpFA20
 {
     public partial class frmSpeseAnnuali : Form
     {
         //tabella contenente i dati
         private DataTable table;
         //percorso file xml con errori
-        private const string pathxml = Routes.XMLErrors;
+        private const string pathxml = Routes.XMLERRORS;
         //Percorso file XML con definizione path processi
         private const string runPath = Routes.RUNPATH;
         //verifica sul comportamento utente
@@ -308,7 +308,7 @@ namespace SpeseAnnuali
             button.ToolTipText = "Inserisci la Long Description facendo click sull'icona";
             button.ImageLayout = DataGridViewImageCellLayout.Normal;
             //Ricava l'immagine dalla cartella Resources
-            button.Image = global::SpeseAnnuali.Properties.Resources.pencil_piccola;
+            button.Image = global::MpFA20.Properties.Resources.pencil_piccola;
             //Aggiunge la colonna al DatagridView
             grdMonthSpends.Columns.Add(button);
             

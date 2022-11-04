@@ -18,9 +18,9 @@ namespace ContoCorrente
         //tabella contenente i dati
         private DataTable table;
         //percorso file xml con errori
-        private const string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+        private const string pathxml = Routes.XMLERRORS;
         //Percorso file XML con definizione path processi
-        private const string runPath = @"C:\MpFA22\RunPath\RunPath.xml";
+        private const string runPath = Routes.RUNPATH;
         //verifica sul comportamento utente
         private bool isLoad;
         private bool isSaved;
@@ -43,7 +43,7 @@ namespace ContoCorrente
             model = new ModelDataCC();
         }    
 
-        #region FUNZIONI
+        #region Metodi Privati
 
         /// <summary>
         /// Genera una list(ModelDataSY.PaymentSY) per l'inserimento nel DB
@@ -104,7 +104,7 @@ namespace ContoCorrente
         /// </summary>
         private void loadImage()
         {
-            string pathIco = @"C:\MpFA22\Icons\";
+            string pathIco = Routes.ICONS;
             ImageList list = new ImageList();
 
             try

@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSetting = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPP = new System.Windows.Forms.Button();
@@ -62,6 +63,17 @@
             this.panel1.Size = new System.Drawing.Size(603, 5);
             this.panel1.TabIndex = 7;
             // 
+            // btnSetting
+            // 
+            this.btnSetting.BackgroundImage = global::MpFA20.Properties.Resources.Impostazioni;
+            this.btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSetting.Location = new System.Drawing.Point(462, 731);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(59, 58);
+            this.btnSetting.TabIndex = 11;
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            // 
             // btnReports
             // 
             this.btnReports.BackColor = System.Drawing.Color.DarkSeaGreen;
@@ -79,9 +91,9 @@
             // panel2
             // 
             this.panel2.BackgroundImage = global::MpFA20.Properties.Resources.DaamDev2;
-            this.panel2.Location = new System.Drawing.Point(12, 627);
+            this.panel2.Location = new System.Drawing.Point(12, 626);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(191, 162);
+            this.panel2.Size = new System.Drawing.Size(191, 163);
             this.panel2.TabIndex = 9;
             // 
             // btnPP
@@ -118,9 +130,9 @@
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnExit.Location = new System.Drawing.Point(523, 731);
+            this.btnExit.Location = new System.Drawing.Point(552, 759);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(59, 58);
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
             this.btnExit.TabIndex = 4;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -187,6 +199,7 @@
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(608, 806);
             this.ControlBox = false;
+            this.Controls.Add(this.btnSetting);
             this.Controls.Add(this.btnReports);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnPP);
@@ -224,6 +237,7 @@
         private System.Windows.Forms.Button btnPP;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnReports;
+        private System.Windows.Forms.Button btnSetting;
     }
 }
 

@@ -42,7 +42,7 @@ namespace Mantenimento
         {
             string father = "ListError";
             string feature = "ErrorTitle";
-            string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+            string pathxml = Routes.XMLERRORS;
             string cause, import, month;
             string[] months = { "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre" };
             bool[] verifyValues = new bool[5];

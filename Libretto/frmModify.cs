@@ -106,7 +106,7 @@ namespace Libretto
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+            string pathxml = Routes.XMLERRORS;
             string cause, import, month;
             int id = 0, id_month = 0;
 

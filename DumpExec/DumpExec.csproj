@@ -44,7 +44,7 @@
       <HintPath>..\Lib\Connection.dll</HintPath>
     </Reference>
     <Reference Include="GenericModelData">
-      <HintPath>..\ModelData\GenericModelData\bin\Debug\GenericModelData.dll</HintPath>
+      <HintPath>..\Lib\GenericModelData.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\MpFA20\MpFA20\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>

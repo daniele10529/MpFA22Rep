@@ -11,6 +11,10 @@ namespace LeaderProcess
     /// </summary>
     public class ProcessRunning
     {
+
+        //Attributo privato
+        private static bool isInRunning;
+
         /// <summary>
         /// Percorso file XML con il percorso dei processi da avviare
         /// </summary>
@@ -27,6 +31,11 @@ namespace LeaderProcess
         /// Nome dell'attributo
         /// </summary>
         public string featur { get; set; }
+        /// <summary>
+        /// Stato del processo
+        /// </summary>
+        public static bool IsInRunning { get => isInRunning; }
+
 
         //istanza alla classe ReaderXML per la lettura dei percorsi dove avviare i moduli
         private ReaderXML reader;
@@ -65,7 +74,9 @@ namespace LeaderProcess
                     //Setta il path del processo da avviare
                     process.StartInfo.FileName = pathProcess;
                     //Avvia il processo
-                    process.Start(); 
+                    process.Start();
+                    //Setta lo stato di processo avviato
+                    isInRunning = true;
                 }
             }
             catch(IOException exc)
@@ -97,7 +108,8 @@ namespace LeaderProcess
                     current[0].CloseMainWindow();
                     //Chiusura del processo
                     current[0].Close();
-
+                    //Setta lo stato di processo concluso
+                    isInRunning = false;
                 }
 
             }
