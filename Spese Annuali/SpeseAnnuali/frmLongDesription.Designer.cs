@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLongDesription));
             this.pnlMain = new RoundendControlCollections.RoundedPanel();
             this.btnClose = new RoundendControlCollections.RoundedButton();
             this.txtLongDesription = new RoundendControlCollections.RoundedTextBox();
@@ -51,14 +52,14 @@
             this.pnlMain.GrdtTop = System.Drawing.Color.AntiqueWhite;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(242, 187);
+            this.pnlMain.Size = new System.Drawing.Size(263, 187);
             this.pnlMain.TabIndex = 0;
             // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnClose.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.btnClose.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Exit;
+            this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClose.BorderColor = System.Drawing.Color.Turquoise;
             this.btnClose.BorderRadius = 10;
@@ -68,7 +69,7 @@
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.GradientAngle = 90F;
             this.btnClose.GrdtBottom = System.Drawing.Color.Empty;
-            this.btnClose.Location = new System.Drawing.Point(200, 146);
+            this.btnClose.Location = new System.Drawing.Point(228, 149);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.TabIndex = 25;
@@ -84,7 +85,7 @@
             this.txtLongDesription.BorderRadius = 10;
             this.txtLongDesription.BorderSize = 1;
             this.txtLongDesription.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLongDesription.Location = new System.Drawing.Point(6, 39);
+            this.txtLongDesription.Location = new System.Drawing.Point(4, 39);
             this.txtLongDesription.Multiline = true;
             this.txtLongDesription.Name = "txtLongDesription";
             this.txtLongDesription.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -92,7 +93,7 @@
             this.txtLongDesription.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtLongDesription.PlaceholderText = "";
             this.txtLongDesription.ReadOnly = false;
-            this.txtLongDesription.Size = new System.Drawing.Size(230, 101);
+            this.txtLongDesription.Size = new System.Drawing.Size(254, 101);
             this.txtLongDesription.TabIndex = 24;
             this.txtLongDesription.Texts = "";
             this.txtLongDesription.UnderlinedStyle = false;
@@ -114,7 +115,7 @@
             this.AcceptButton = this.btnClose;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(242, 187);
+            this.ClientSize = new System.Drawing.Size(263, 187);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLongDesription";
