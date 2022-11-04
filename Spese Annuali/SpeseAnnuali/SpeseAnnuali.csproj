@@ -107,12 +107,6 @@
     <Compile Include="frmModify.Designer.cs">
       <DependentUpon>frmModify.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSetting.Designer.cs">
-      <DependentUpon>frmSetting.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmLongDesription.resx">
@@ -124,23 +118,20 @@
     <EmbeddedResource Include="frmModify.resx">
       <DependentUpon>frmModify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSetting.resx">
-      <DependentUpon>frmSetting.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -151,90 +142,26 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Nuovo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Elimina.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Carica.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Elimina1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Salva.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Exit.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Aggiorna.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Su.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Carica1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Su1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Carica2.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Resources\Nuovo.png" />
+    <None Include="Resources\Salva.png" />
+    <None Include="Resources\Oficina_PDF_35460_32.png" />
+    <None Include="Resources\Exit.png" />
     <None Include="Resources\Inserisci.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Aggiorna1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Aggiorna2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Impostazioni.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Impostazioni2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Start setting.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\settings2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\delete-option.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dump.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\pencil_17925.png" />
+    <None Include="Resources\Su.png" />
+    <None Include="Resources\Carica.png" />
     <None Include="Resources\Spese Annuali.png" />
     <None Include="Resources\Conto Corrente.png" />
-    <None Include="Resources\PPLibretto.png" />
-    <None Include="Resources\Mantenimento.png" />
     <None Include="Resources\Start setting2.png" />
-    <None Include="Resources\Postpay2.png" />
-    <None Include="Resources\icons8-pdf-64.png" />
-    <None Include="Resources\Oficina_PDF_35460_32.png" />
-    <None Include="Resources\Exit1.png" />
-    <None Include="Resources\dump1.png" />
-    <None Include="Resources\pencil_17925.png" />
-    <None Include="Resources\Impostazioni21.png" />
     <None Include="Resources\images.jpg" />
+    <None Include="Resources\Mantenimento.png" />
     <None Include="Resources\imagesRep2.png" />
-    <None Include="Resources\pencil_piccola.png" />
-    <None Include="Resources\pencil_179251.png" />
     <None Include="Resources\Countability.png" />
+    <None Include="Resources\pencil_piccola.png" />
     <Content Include="Spese-Annuali.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

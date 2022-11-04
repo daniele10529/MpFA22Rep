@@ -94,4 +94,3 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\Spe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\MpFA20.frmLongDesription.resources
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\MpFA20.frmSpeseAnnuali.resources
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\MpFA20.frmModify.resources
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\MpFA20.frmSetting.resources

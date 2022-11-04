@@ -308,7 +308,7 @@ namespace MpFA20
             button.ToolTipText = "Inserisci la Long Description facendo click sull'icona";
             button.ImageLayout = DataGridViewImageCellLayout.Normal;
             //Ricava l'immagine dalla cartella Resources
-            button.Image = global::MpFA20.Properties.Resources.pencil_piccola;
+            button.Image = global::SpeseAnnuali.Properties.Resources.pencil_piccola;
             //Aggiunge la colonna al DatagridView
             grdMonthSpends.Columns.Add(button);
             
@@ -723,24 +723,6 @@ namespace MpFA20
 
         }
 
-        //Visualizza form impostazioni
-        private void btnSetting_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //istanzio la classe
-                frmSetting frmsetting = new frmSetting();
-
-                //mostro la finestra impostazioni
-                frmsetting.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
         //Visualizza il form per le voci frequenti
         private void btnSetOftenValue_Click(object sender, EventArgs e)
         {
@@ -908,7 +890,6 @@ namespace MpFA20
                 frm.LongDescription = note;
                 //Mostra il form
                 frm.Location = new Point(mouse.X,mouse.Y);
-                //frm.Location = new Point((grdMonthSpends.Location.X + grdMonthSpends.Width), (grdMonthSpends.Location.Y+grdMonthSpends.Height));
                 frm.Show();
                 //Alla chiusura del form aggiorna il valore della cella note
                 frm.Deactivate += new EventHandler((obj, args) =>

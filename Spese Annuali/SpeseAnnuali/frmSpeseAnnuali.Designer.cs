@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("ANNI");
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("ANNI");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.pageHome = new System.Windows.Forms.TabPage();
             this.roundedPanel3 = new RoundendControlCollections.RoundedPanel();
@@ -233,7 +233,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackgroundImage = global::MpFA20.Properties.Resources.Exit;
+            this.btnExit.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Exit;
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.Green;
@@ -291,7 +291,7 @@
             // 
             // btnPDFCreator
             // 
-            this.btnPDFCreator.BackgroundImage = global::MpFA20.Properties.Resources.Oficina_PDF_35460_32;
+            this.btnPDFCreator.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Oficina_PDF_35460_32;
             this.btnPDFCreator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPDFCreator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPDFCreator.ForeColor = System.Drawing.Color.Green;
@@ -305,7 +305,7 @@
             // 
             // btnNewYears
             // 
-            this.btnNewYears.BackgroundImage = global::MpFA20.Properties.Resources.Nuovo;
+            this.btnNewYears.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Nuovo;
             this.btnNewYears.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNewYears.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewYears.ForeColor = System.Drawing.Color.Green;
@@ -319,7 +319,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackgroundImage = global::MpFA20.Properties.Resources.Salva;
+            this.btnSave.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Salva;
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.Green;
@@ -333,7 +333,7 @@
             // 
             // btnLoadYears
             // 
-            this.btnLoadYears.BackgroundImage = global::MpFA20.Properties.Resources.Aggiorna2;
+            this.btnLoadYears.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Aggiorna;
             this.btnLoadYears.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLoadYears.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadYears.ForeColor = System.Drawing.Color.Green;
@@ -360,17 +360,10 @@
             // 
             // btnSetting
             // 
-            this.btnSetting.BackgroundImage = global::MpFA20.Properties.Resources.Impostazioni2;
-            this.btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetting.ForeColor = System.Drawing.Color.Green;
-            this.btnSetting.Location = new System.Drawing.Point(37, 24);
-            this.btnSetting.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSetting.Location = new System.Drawing.Point(0, 0);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(30, 30);
-            this.btnSetting.TabIndex = 34;
-            this.btnSetting.UseVisualStyleBackColor = true;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            this.btnSetting.Size = new System.Drawing.Size(75, 23);
+            this.btnSetting.TabIndex = 0;
             // 
             // pageInsert
             // 
@@ -522,7 +515,7 @@
             // 
             // btnInsert
             // 
-            this.btnInsert.BackgroundImage = global::MpFA20.Properties.Resources.Inserisci;
+            this.btnInsert.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Inserisci;
             this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.ForeColor = System.Drawing.Color.Green;
@@ -554,7 +547,7 @@
             // 
             // btnSaveData
             // 
-            this.btnSaveData.BackgroundImage = global::MpFA20.Properties.Resources.Salva;
+            this.btnSaveData.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Salva;
             this.btnSaveData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveData.ForeColor = System.Drawing.Color.Green;
@@ -645,7 +638,7 @@
             // 
             // btnDeleteRow
             // 
-            this.btnDeleteRow.BackgroundImage = global::MpFA20.Properties.Resources.Delete;
+            this.btnDeleteRow.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Delete;
             this.btnDeleteRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDeleteRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteRow.ForeColor = System.Drawing.Color.Green;
@@ -658,7 +651,7 @@
             // 
             // btnDown
             // 
-            this.btnDown.BackgroundImage = global::MpFA20.Properties.Resources.Carica2;
+            this.btnDown.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Carica;
             this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown.ForeColor = System.Drawing.Color.Green;
@@ -671,7 +664,7 @@
             // 
             // btnModifyRow
             // 
-            this.btnModifyRow.BackgroundImage = global::MpFA20.Properties.Resources.pencil_179251;
+            this.btnModifyRow.BackgroundImage = global::SpeseAnnuali.Properties.Resources.pencil_17925;
             this.btnModifyRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnModifyRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModifyRow.ForeColor = System.Drawing.Color.Green;
@@ -684,7 +677,7 @@
             // 
             // btnUp
             // 
-            this.btnUp.BackgroundImage = global::MpFA20.Properties.Resources.Su1;
+            this.btnUp.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Su;
             this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUp.ForeColor = System.Drawing.Color.Green;
@@ -738,7 +731,7 @@
             // 
             // btnSaveThree
             // 
-            this.btnSaveThree.BackgroundImage = global::MpFA20.Properties.Resources.Salva;
+            this.btnSaveThree.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Salva;
             this.btnSaveThree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveThree.ForeColor = System.Drawing.Color.Green;
@@ -831,7 +824,7 @@
             // 
             // btnRunningReports
             // 
-            this.btnRunningReports.BackgroundImage = global::MpFA20.Properties.Resources.imagesRep2;
+            this.btnRunningReports.BackgroundImage = global::SpeseAnnuali.Properties.Resources.imagesRep2;
             this.btnRunningReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRunningReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunningReports.ForeColor = System.Drawing.Color.Green;
@@ -844,7 +837,7 @@
             // 
             // btnPostPay
             // 
-            this.btnPostPay.BackgroundImage = global::MpFA20.Properties.Resources.images;
+            this.btnPostPay.BackgroundImage = global::SpeseAnnuali.Properties.Resources.images;
             this.btnPostPay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPostPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPostPay.ForeColor = System.Drawing.Color.Green;
@@ -857,7 +850,7 @@
             // 
             // btnMantenimento
             // 
-            this.btnMantenimento.BackgroundImage = global::MpFA20.Properties.Resources.Mantenimento;
+            this.btnMantenimento.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Mantenimento;
             this.btnMantenimento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMantenimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMantenimento.ForeColor = System.Drawing.Color.Green;
@@ -870,7 +863,7 @@
             // 
             // btnLibretto
             // 
-            this.btnLibretto.BackgroundImage = global::MpFA20.Properties.Resources.Start_setting2;
+            this.btnLibretto.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Start_setting2;
             this.btnLibretto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLibretto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLibretto.ForeColor = System.Drawing.Color.Green;
@@ -883,7 +876,7 @@
             // 
             // btnContoCorrente
             // 
-            this.btnContoCorrente.BackgroundImage = global::MpFA20.Properties.Resources.Conto_Corrente;
+            this.btnContoCorrente.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Conto_Corrente;
             this.btnContoCorrente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnContoCorrente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContoCorrente.ForeColor = System.Drawing.Color.Green;
@@ -896,7 +889,7 @@
             // 
             // btnSpeseAnnuali
             // 
-            this.btnSpeseAnnuali.BackgroundImage = global::MpFA20.Properties.Resources.Spese_Annuali;
+            this.btnSpeseAnnuali.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Spese_Annuali;
             this.btnSpeseAnnuali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSpeseAnnuali.Enabled = false;
             this.btnSpeseAnnuali.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -937,7 +930,7 @@
             // btnLoadYear
             // 
             this.btnLoadYear.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnLoadYear.BackgroundImage = global::MpFA20.Properties.Resources.Aggiorna;
+            this.btnLoadYear.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Aggiorna;
             this.btnLoadYear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLoadYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadYear.ForeColor = System.Drawing.Color.Black;
@@ -951,7 +944,7 @@
             // btnNewYear
             // 
             this.btnNewYear.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnNewYear.BackgroundImage = global::MpFA20.Properties.Resources.Nuovo;
+            this.btnNewYear.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Nuovo;
             this.btnNewYear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNewYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewYear.Location = new System.Drawing.Point(104, 41);
@@ -972,13 +965,13 @@
             this.treeYears.LineColor = System.Drawing.Color.LightSteelBlue;
             this.treeYears.Location = new System.Drawing.Point(1, 83);
             this.treeYears.Name = "treeYears";
-            treeNode4.BackColor = System.Drawing.Color.AntiqueWhite;
-            treeNode4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode4.Name = "nodeYears";
-            treeNode4.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode4.Text = "ANNI";
+            treeNode19.BackColor = System.Drawing.Color.AntiqueWhite;
+            treeNode19.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode19.Name = "nodeYears";
+            treeNode19.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode19.Text = "ANNI";
             this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4});
+            treeNode19});
             this.treeYears.ShowLines = false;
             this.treeYears.ShowNodeToolTips = true;
             this.treeYears.Size = new System.Drawing.Size(177, 645);
@@ -1035,7 +1028,7 @@
             // 
             this.btnCountability.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnCountability.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.btnCountability.BackgroundImage = global::MpFA20.Properties.Resources.Countability;
+            this.btnCountability.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Countability;
             this.btnCountability.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCountability.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnCountability.BorderRadius = 10;
@@ -1398,24 +1391,24 @@
             this.grdMonthSpends.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grdMonthSpends.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdMonthSpends.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMonthSpends.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle55.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle55.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle55.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMonthSpends.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle55;
             this.grdMonthSpends.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdMonthSpends.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle56.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle56.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle56.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle56.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdMonthSpends.DefaultCellStyle = dataGridViewCellStyle56;
             this.grdMonthSpends.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdMonthSpends.EnableHeadersVisualStyles = false;
             this.grdMonthSpends.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -1424,14 +1417,14 @@
             this.grdMonthSpends.MultiSelect = false;
             this.grdMonthSpends.Name = "grdMonthSpends";
             this.grdMonthSpends.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMonthSpends.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle57.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle57.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMonthSpends.RowHeadersDefaultCellStyle = dataGridViewCellStyle57;
             this.grdMonthSpends.RowHeadersVisible = false;
             this.grdMonthSpends.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdMonthSpends.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkSlateGray;

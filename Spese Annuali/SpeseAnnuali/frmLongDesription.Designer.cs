@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlMain = new RoundendControlCollections.RoundedPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtLongDesription = new RoundendControlCollections.RoundedTextBox();
             this.btnClose = new RoundendControlCollections.RoundedButton();
+            this.txtLongDesription = new RoundendControlCollections.RoundedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,17 +54,27 @@
             this.pnlMain.Size = new System.Drawing.Size(242, 187);
             this.pnlMain.TabIndex = 0;
             // 
-            // label5
+            // btnClose
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(40, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 18);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "LONG DESCRIPTION";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnClose.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnClose.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.btnClose.BackgroundImage = global::SpeseAnnuali.Properties.Resources.Exit;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.BorderColor = System.Drawing.Color.Turquoise;
+            this.btnClose.BorderRadius = 10;
+            this.btnClose.BorderSize = 1;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.GradientAngle = 90F;
+            this.btnClose.GrdtBottom = System.Drawing.Color.Empty;
+            this.btnClose.Location = new System.Drawing.Point(200, 146);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 30);
+            this.btnClose.TabIndex = 25;
+            this.btnClose.TextColor = System.Drawing.Color.White;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtLongDesription
             // 
@@ -87,27 +97,17 @@
             this.txtLongDesription.Texts = "";
             this.txtLongDesription.UnderlinedStyle = false;
             // 
-            // btnClose
+            // label5
             // 
-            this.btnClose.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnClose.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.btnClose.BackgroundImage = global::MpFA20.Properties.Resources.Exit;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClose.BorderColor = System.Drawing.Color.Turquoise;
-            this.btnClose.BorderRadius = 10;
-            this.btnClose.BorderSize = 1;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.GradientAngle = 90F;
-            this.btnClose.GrdtBottom = System.Drawing.Color.Empty;
-            this.btnClose.Location = new System.Drawing.Point(200, 146);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.TabIndex = 25;
-            this.btnClose.TextColor = System.Drawing.Color.White;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(40, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(162, 18);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "LONG DESCRIPTION";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmLongDesription
             // 

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MpFA20.Properties {
+namespace SpeseAnnuali.Properties {
     using System;
     
     
@@ -73,49 +73,9 @@ namespace MpFA20.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Aggiorna1 {
-            get {
-                object obj = ResourceManager.GetObject("Aggiorna1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Aggiorna2 {
-            get {
-                object obj = ResourceManager.GetObject("Aggiorna2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Carica {
             get {
                 object obj = ResourceManager.GetObject("Carica", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Carica1 {
-            get {
-                object obj = ResourceManager.GetObject("Carica1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Carica2 {
-            get {
-                object obj = ResourceManager.GetObject("Carica2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,79 +113,9 @@ namespace MpFA20.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap delete_option {
-            get {
-                object obj = ResourceManager.GetObject("delete-option", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap dump {
-            get {
-                object obj = ResourceManager.GetObject("dump", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap dump1 {
-            get {
-                object obj = ResourceManager.GetObject("dump1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Elimina {
-            get {
-                object obj = ResourceManager.GetObject("Elimina", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Elimina1 {
-            get {
-                object obj = ResourceManager.GetObject("Elimina1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Exit {
             get {
                 object obj = ResourceManager.GetObject("Exit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Exit1 {
-            get {
-                object obj = ResourceManager.GetObject("Exit1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_pdf_64 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-pdf-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,36 +136,6 @@ namespace MpFA20.Properties {
         internal static System.Drawing.Bitmap imagesRep2 {
             get {
                 object obj = ResourceManager.GetObject("imagesRep2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Impostazioni {
-            get {
-                object obj = ResourceManager.GetObject("Impostazioni", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Impostazioni2 {
-            get {
-                object obj = ResourceManager.GetObject("Impostazioni2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Impostazioni21 {
-            get {
-                object obj = ResourceManager.GetObject("Impostazioni21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,39 +193,9 @@ namespace MpFA20.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pencil_179251 {
-            get {
-                object obj = ResourceManager.GetObject("pencil_179251", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap pencil_piccola {
             get {
                 object obj = ResourceManager.GetObject("pencil_piccola", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Postpay2 {
-            get {
-                object obj = ResourceManager.GetObject("Postpay2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PPLibretto {
-            get {
-                object obj = ResourceManager.GetObject("PPLibretto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,39 +213,9 @@ namespace MpFA20.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap settings {
-            get {
-                object obj = ResourceManager.GetObject("settings", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap settings2 {
-            get {
-                object obj = ResourceManager.GetObject("settings2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Spese_Annuali {
             get {
                 object obj = ResourceManager.GetObject("Spese Annuali", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Start_setting {
-            get {
-                object obj = ResourceManager.GetObject("Start setting", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -436,16 +236,6 @@ namespace MpFA20.Properties {
         internal static System.Drawing.Bitmap Su {
             get {
                 object obj = ResourceManager.GetObject("Su", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Su1 {
-            get {
-                object obj = ResourceManager.GetObject("Su1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
