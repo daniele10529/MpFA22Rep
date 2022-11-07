@@ -70,3 +70,5 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\obj\
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\obj\Debug\Mantenimento.csproj.GenerateResource.Cache
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\obj\Debug\Mantenimento.exe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\obj\Debug\Mantenimento.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\RoundendControlCollections.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\RoundendControlCollections.pdb

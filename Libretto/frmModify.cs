@@ -20,7 +20,8 @@ namespace Libretto
         //Istanza alla classe tooltip, visualizza istruzioni
         ToolTip tip = new ToolTip();
 
-        #region getter and setter
+        #region Getter and Setter
+
         public string setId { get; set; }
         public string setCause { get; set; }
         public string setImport { get; set; }
@@ -135,7 +136,7 @@ namespace Libretto
 
                         if (verify == true)
                         {
-                            MessageBox.Show("Inserimento avvenuto con successo");
+                            MessageBox.Show("Inserimento avvenuto con successo", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         //scarica appena fatto.
                         Dispose();
@@ -190,7 +191,7 @@ namespace Libretto
             //se viene premuto +, keychar = 43 codice ascii tasto +
             if (e.KeyChar == 43)
             {
-                string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+                string pathxml = Routes.XMLERRORS;
 
                 //istanza alla classe checker per il controllo del valore numerico
                 Checker check = new Checker(pathxml);

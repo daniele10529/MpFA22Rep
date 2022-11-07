@@ -48,7 +48,7 @@ namespace GenericModelData
             Connecting connect = new Connecting(stringConnection);
             //gestione immagini albero
             ImageList imageList = new ImageList();
-            string icons = "Spese Annuali.png";
+            string icons = "Ordina_dx.png";
 
             try
             {   //aggiungo le immagini all'albero

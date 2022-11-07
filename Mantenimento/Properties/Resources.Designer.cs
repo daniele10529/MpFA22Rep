@@ -163,6 +163,16 @@ namespace Mantenimento.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pencil_piccola {
+            get {
+                object obj = ResourceManager.GetObject("pencil_piccola", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Salva {
             get {
                 object obj = ResourceManager.GetObject("Salva", resourceCulture);

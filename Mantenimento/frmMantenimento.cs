@@ -37,7 +37,7 @@ namespace Mantenimento
         }
 
 
-#region FUNZIONI
+        #region Metodi Privati
 
         //crea la lista rispettando la struttura definita in ModelDataMan
         private List<ModelDataMan.Payment> createListStruct()
@@ -58,8 +58,7 @@ namespace Mantenimento
             }
             return lista;
 
-        }
-       
+        }   
 
         /// <summary>
         /// Genera i tooltip sui pulsanti
@@ -150,14 +149,16 @@ namespace Mantenimento
             else if (isSaved == false && isChanged == true) pnlStatus.BackColor = Color.FromArgb(255, 0, 0);
             else if (isLoad == true) pnlStatus.BackColor = Color.FromArgb(255, 255, 255);
         }
+
         #endregion
 
         #region EVENTI DEGLI OGGETTI
 
-#region Form
+        #region Form
+
         private void frmMantenimento_Load(object sender, EventArgs e)
         {
-            //mesi per combobox
+            //Mesi per combobox
             string[] mesi = { "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre" };
 
             Clipboard.Clear();
@@ -173,13 +174,13 @@ namespace Mantenimento
             table.Columns.Add("CAUSALE DEL MOVIMENTO");
             table.Columns.Add("IMPORTO");
             table.Columns.Add("MESE");
-            grdKeepingVoices.Columns[0].Width = 100;
-            grdKeepingVoices.Columns[1].Width = 595;
-            grdKeepingVoices.Columns[2].Width = 100;
-            grdKeepingVoices.Columns[3].Width = 75;
+            grdKeepingVoices.Columns[0].Width = (grdKeepingVoices.Width * 5) / 100;
+            grdKeepingVoices.Columns[1].Width = (grdKeepingVoices.Width * 70) / 100;
+            grdKeepingVoices.Columns[2].Width = (grdKeepingVoices.Width * 15) / 100;
+            grdKeepingVoices.Columns[3].Width = (grdKeepingVoices.Width * 10) / 100;
             grdKeepingVoices.Columns[0].ReadOnly = true;
 
-            //set valori comboBox mesi
+            //Set valori comboBox mesi
             cmbMonths.Items.AddRange(mesi);
             //Set textbox YearMonth
             txtYearMonth.Text = "Gestione Mantenimento.....";
@@ -199,9 +200,88 @@ namespace Mantenimento
                 }
             }
         }
+
         #endregion
 
-#region Button
+        #region Button
+
+        /// <summary>
+        /// Metodo per caricare i dati su DatagridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnLoadYears_Click(object sender, EventArgs e)
+        {
+            PopulateGrid populate = new PopulateGrid(grdKeepingVoices, table);
+            //istanza alla lista basata su struct
+            List<ModelDataMan.Payment> listdata = new List<ModelDataMan.Payment>();
+            List<string> listinsert = new List<string>();
+            string selezione, anno;
+            int year, i;
+
+            table.Rows.Clear();
+
+            if (isChanged == true && isSaved == false)
+            {
+                if (MessageBox.Show("Sicuro di voler caricare un nuovo mese i dati non sono salvati ?", "ATTENZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+                {
+                    return;
+                }
+            }
+
+            //controllo sulla selezione del nodo anno\mese dall'albero
+            if (treeYears.SelectedNode == null) return;
+
+            selezione = treeYears.SelectedNode.Text;
+            if (selezione == "ANNI") return;
+            else
+            {
+                //assegna il valore di anno\mese in base al nodo selezionato
+                anno = treeYears.SelectedNode.Text;
+
+                if (anno == "ANNI") return;
+                else
+                {
+                    year = Int32.Parse(anno);
+                    //assegna il valore alle variabili globali per la gestione con DB
+                    year_manage = year;
+                    //carica i dati da DB e li assegna alla lista
+                    listdata = model.loadDataMan(year);
+
+                    //utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
+                    //ogni elemento della lista struct è una tupla del DB
+                    i = 0;
+                    while (i < listdata.Count)
+                    {
+                        listinsert.Add(listdata[i].id_mantenimento.ToString());
+                        listinsert.Add(listdata[i].causale);
+                        listinsert.Add(listdata[i].importo.ToString());
+                        listinsert.Add(listdata[i].mese);
+                        populate.inserisci(4, listinsert);
+                        listinsert.Clear();
+                        i++;
+                    }
+                    txtYearMonth.Text = "Anno caricato : ".ToUpper() + anno.ToUpper();
+                }
+            }
+
+            isChanged = false;
+            isLoad = true;
+            //deseleziona l'albero 
+            treeYears.SelectedNode = null;
+            //Carica il valore di saldo del mese
+            txtBalance.Text = model.loadBalanceYear(year_manage).ToString();
+            //Conteggia il saldo finale
+            counter();
+            //tronca il bilancio iniziale
+            if (txtBalance.Text.Length > 1)
+            {
+                Checker check = new Checker();
+                check.truncate(txtBalance, 2);
+            }
+
+            
+        }
 
         /// <summary>
         /// Inserisce un nuovo anno nel DB relativo a mantenimento
@@ -210,40 +290,40 @@ namespace Mantenimento
         /// <param name="e"></param>
         private void btnNewYear_Click(object sender, EventArgs e)
         {
-            string father = "ListError";
-            string feature = "ErrorTitle";
-            Checker check = new Checker(pathxml, father, feature);
+
+            Checker check = new Checker(pathxml);
             int year = 0;
             
             //chiede conferma di inserimento
             if(MessageBox.Show("Stai per inserire un nuovo anno, sei sicuro ?","Attenzione",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                //verifica ci sia un anno inserito nella casella di testo nel formato corretto, oppure sia a 0
-                //come di default
-                if (txtYearInsert.Text.Length != 4 && !(txtYearInsert.Text.Equals("0")))
+
+                try
                 {
-                    MessageBox.Show("Il valore dell'anno non è corretto, ammesso 0 oppure anno in formato yyyy", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }//verifica il valore inserito sia numerico
-                else if (check.isnumeric(txtYearInsert) == false) return;
-                else
+
+                    if (check.isNumeric(txtYearInsert.Texts))
+                    {
+                        if(txtYearInsert.Texts.Length == 4 || txtYearInsert.Texts.Equals("0"))
+                        {
+                            //Inserisce il nuovo valore, se year=0 e ci sono già anni incrementa di 1,
+                            //se primo anno parte da 2018
+                            year = Int32.Parse(txtYearInsert.Texts);
+                            model.insertYear(treeYears, year);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Il valore dell'anno non è corretto, ammesso 0 oppure anno in formato yyyy", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
+                }catch(FormatException ex)
                 {
-                    //inserisce il nuovo valore, se year=0 e ci sono già anni incrementa di 1,
-                    //se primo anno parte da 2018
-                    year = Int32.Parse(txtYearInsert.Text);
-                    model.insertYear(treeYears, year);
+                    MessageBox.Show(ex.Message, "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
             }
-
-        }
-        private void btnNewYear2_Click(object sender, EventArgs e)
-        {
-            btnNewYear_Click(sender, e);
-        }
-        private void btnLoadYears2_Click(object sender, EventArgs e)
-        {
-            btnLoadYears_Click(sender, e);
+            
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -255,72 +335,76 @@ namespace Mantenimento
             PopulateGrid populate = new PopulateGrid(grdKeepingVoices, table);
             Checker check;
             List<string> list = new List<string>();
-            bool[] isempty = new bool[2];
-            bool isNumeric = false;
-            bool isSelected = false;
             int id = 0;
             string father = "ListError";
             string feature = "ErrorTitle";
-            int idDB = 0, idgrid = 0;
+            int idgrid = 0, idDB = 0;
             //verifica sulla presenza di tutti i campi dalla classe checker
             //e che sia stato caricato un anno\mese
             if (isLoad == false) return;
             populate.path = pathxml;
             populate.father = father;
             populate.feature = feature;
-            check = new Checker(pathxml, father, feature);
-            isempty[0] = check.isEmpty(txtImport);
-            isempty[1] = check.isEmpty(txtCause);
-            isNumeric = check.isnumeric(txtImport);
-            isSelected = check.isSelected(cmbMonths);
+            check = new Checker(pathxml);
 
-            //esci dalla funzione se controlli ko
-            if (isNumeric == false || isSelected == false) return;
-
-            //acquisisco il valore di PK da DataGridView se c'è almeno una riga
-            if (!(table.Rows.Count == 0))
+            try
             {
-                int i = table.Rows.Count - 1;
-                DataRow lastrow = table.NewRow();
-                lastrow.ItemArray = table.Rows[i].ItemArray;
-                idgrid = Int16.Parse(lastrow[0].ToString());
+
+                if (check.isSelected(cmbMonths) && !(check.isEmpty(txtCause.Texts)) && !(check.isEmpty(txtImport.Texts)))
+                {
+                    if (check.isNumeric(txtImport.Texts))
+                    {
+                        //Acquisisce il valore di PK da DataGridView
+                        if (!(table.Rows.Count == 0))
+                        {
+                            int i = table.Rows.Count - 1;
+                            DataRow lastrow = table.NewRow();
+                            lastrow.ItemArray = table.Rows[i].ItemArray;
+                            idgrid = Int16.Parse(lastrow[0].ToString());
+                        }
+
+                        //Acquidisce il valore di primary key da DB
+                        idDB = model.primaryKey("versamenti_mantenimento", "id_mantenimento");
+
+                        //Se la chiave è maggiore quella della griglia incrementala di 1
+                        //valori inseriti e non ancora salvati
+                        if (idgrid >= idDB) id = idgrid + 1;
+                        //altrimenti incrementa di 1 la chiave prelevata da DB
+                        else id = idDB + 1;
+
+                        list.Add(id.ToString());
+                        list.Add(txtCause.Texts);
+                        list.Add(txtImport.Texts.Replace('.', ','));
+                        list.Add(cmbMonths.SelectedItem.ToString());
+
+                        //Popola la griglia attraverso la lista
+                        populate.inserisci(4, list);
+
+                        //Resetta i valori
+                        txtCause.Texts = "";
+                        txtImport.Texts = "";
+                        cmbMonths.SelectedItem = null;
+                        cmbMonths.Focus();
+                        counter();
+
+                    }
+                }
+
+            }
+            catch (FormatException ex)//Eccezione generata dai metodi della classe check
+            {
+                MessageBox.Show(ex.Message, "ERRORE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
-            //acquidisco il valore di primary key da DB
-            idDB = model.primaryKey("versamenti_mantenimento", "id_mantenimento");
-            
-            //Se la chiave è maggiore quella della griglia incrementala di 1
-            //valori inseriti e non ancora salvati
-            if (idgrid >= idDB) id = idgrid + 1;
-            //altrimenti incrementa di 1 la chiave prelevata da DB
-            else id = idDB + 1;
-            
-            //inserisce nella lista i valori inseriti da textbox
-            if (!(isempty[0] == true || isempty[1] == true))
-            {
-                list.Add(id.ToString());
-                list.Add(txtCause.Text);
-                list.Add(txtImport.Text.Replace('.', ','));
-                list.Add(cmbMonths.SelectedItem.ToString());
-            }
-            else return;
-            //popola la griglia attraverso la lista
-            populate.inserisci(4, list);
-
-            txtCause.Clear();
-            txtImport.Clear();
-            cmbMonths.SelectedItem = null;
-            cmbMonths.Focus();
-            //aggiorna saldo annuale
-            counter();
         }
+
         private void btnSaveData_Click(object sender, EventArgs e)
         {
-            btnSave_Click(sender, e);
+           // btnSave_Click(sender, e);
         }
         private void btnSaveThree_Click(object sender, EventArgs e)
         {
-            btnSave_Click(sender, e);
+           // btnSave_Click(sender, e);
         }
 
         private void btnModifyRow_Click(object sender, EventArgs e)
@@ -434,7 +518,7 @@ namespace Mantenimento
             CreateFormOftenCause form = new CreateFormOftenCause();
             //imposta nel setter la textbox che deve acquisire il valoe dalla 
             //lista delle causali frequenti
-            form.oftenCause = txtCause;
+            form.OftenCause = txtCause;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -443,7 +527,7 @@ namespace Mantenimento
         }
         #endregion
 
-#region DataGridView
+        #region DataGridView
 
         private void grdKeepingVoices_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -480,9 +564,11 @@ namespace Mantenimento
             //mostra il menu
             creatMenu.showContextMenu(e);
         }
+
+       
         #endregion
 
-#region Textbox
+        #region Textbox
 
         private void txtSearchVoice_TextChanged(object sender, EventArgs e)
         {
@@ -490,7 +576,60 @@ namespace Mantenimento
             Searching search = new Searching(grdKeepingVoices, table, txtSearchVoice);
             search.searchingRow(1);
         }
-#endregion
+
+        //Setta i colori delle TextBox all'inserimento 
+        private void txtYearInsert_Enter(object sender, EventArgs e)
+        {
+            txtYearInsert.BorderColor = Color.FromArgb(161, 223, 239);
+            txtYearInsert.BackColor = Color.FromArgb(210, 228, 242);
+        }
+
+        private void txtYearInsert_Leave(object sender, EventArgs e)
+        {
+            txtYearInsert.BorderColor = Color.DimGray;
+            txtYearInsert.BackColor = Color.White;
+        }
+
+        private void txtCause_Enter(object sender, EventArgs e)
+        {
+            txtCause.BorderColor = Color.FromArgb(161, 223, 239);
+            txtCause.BackColor = Color.FromArgb(210, 228, 242);
+        }
+
+        private void txtCause_Leave(object sender, EventArgs e)
+        {
+            txtCause.BorderColor = Color.DimGray;
+            txtCause.BackColor = Color.White;
+        }
+
+        private void txtImport_Enter(object sender, EventArgs e)
+        {
+            txtImport.BorderColor = Color.FromArgb(161, 223, 239);
+            txtImport.BackColor = Color.FromArgb(210, 228, 242);
+        }
+
+        private void txtImport_Leave(object sender, EventArgs e)
+        {
+            txtImport.BorderColor = Color.DimGray;
+            txtImport.BackColor = Color.White;
+        }
+
+
+        #endregion
+
+        #region ComboBox
+        //Setta i colori di inserimento
+        private void cmbMonths_Enter(object sender, EventArgs e)
+        {
+            cmbMonths.BackColor = Color.FromArgb(210, 228, 242);
+        }
+
+        private void cmbMonths_Leave(object sender, EventArgs e)
+        {
+            cmbMonths.BackColor = Color.White;
+        }
+
+        #endregion
 
         #endregion
     }

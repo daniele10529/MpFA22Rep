@@ -28,70 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("ANNI   ");
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("ANNI   ");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.pgHome = new System.Windows.Forms.TabPage();
-            this.pgInsert = new System.Windows.Forms.TabPage();
-            this.pgModify = new System.Windows.Forms.TabPage();
-            this.pgSearch = new System.Windows.Forms.TabPage();
-            this.pnlTree = new System.Windows.Forms.Panel();
-            this.pnlResume = new System.Windows.Forms.Panel();
-            this.pnlStatus = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtBalance = new System.Windows.Forms.TextBox();
-            this.lblSaldoFine = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.roundedPanel1 = new RoundendControlCollections.RoundedPanel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lblGrAnni = new System.Windows.Forms.Label();
-            this.txtYearInsert = new RoundendControlCollections.RoundedTextBox();
             this.roundedPanel3 = new RoundendControlCollections.RoundedPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.roundedPanel1 = new RoundendControlCollections.RoundedPanel();
+            this.txtYearInsert = new RoundendControlCollections.RoundedTextBox();
+            this.btnNewYears = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnLoadYears = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblGrAnni = new System.Windows.Forms.Label();
+            this.pgInsert = new System.Windows.Forms.TabPage();
+            this.roundedPanel4 = new RoundendControlCollections.RoundedPanel();
+            this.btnSaveData = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.roundedPanel5 = new RoundendControlCollections.RoundedPanel();
             this.btnSetOftenValue = new RoundendControlCollections.RoundedButton();
             this.txtImport = new RoundendControlCollections.RoundedTextBox();
             this.cmbMonths = new System.Windows.Forms.ComboBox();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.txtCause = new RoundendControlCollections.RoundedTextBox();
             this.lblMese = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.roundedPanel4 = new RoundendControlCollections.RoundedPanel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.roundedPanel7 = new RoundendControlCollections.RoundedPanel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnDown = new System.Windows.Forms.Button();
-            this.btnUp = new System.Windows.Forms.Button();
+            this.pgModify = new System.Windows.Forms.TabPage();
             this.roundedPanel6 = new RoundendControlCollections.RoundedPanel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSaveThree = new System.Windows.Forms.Button();
-            this.btnNewYear2 = new System.Windows.Forms.Button();
-            this.btnLoadYears2 = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnNewYears = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnLoadYears = new System.Windows.Forms.Button();
-            this.btnSaveData = new System.Windows.Forms.Button();
-            this.btnInsert = new System.Windows.Forms.Button();
+            this.roundedPanel7 = new RoundendControlCollections.RoundedPanel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnDeleteRow = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
             this.btnModifyRow = new System.Windows.Forms.Button();
-            this.txtSearchVoice = new System.Windows.Forms.TextBox();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.pgSearch = new System.Windows.Forms.TabPage();
             this.roundedPanel8 = new RoundendControlCollections.RoundedPanel();
+            this.txtSearchVoice = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.pnlTree = new System.Windows.Forms.Panel();
             this.treeYears = new System.Windows.Forms.TreeView();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnNewYear2 = new System.Windows.Forms.Button();
+            this.btnLoadYears2 = new System.Windows.Forms.Button();
+            this.pnlResume = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pnlStatus = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBalance = new System.Windows.Forms.TextBox();
+            this.lblSaldoFine = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.txtYearMonth = new System.Windows.Forms.TextBox();
             this.pnlFooter = new RoundendControlCollections.RoundedPanel();
             this.pnlGrid = new RoundendControlCollections.RoundedPanel();
@@ -99,25 +99,25 @@
             this.pnlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.pgHome.SuspendLayout();
-            this.pgInsert.SuspendLayout();
-            this.pgModify.SuspendLayout();
-            this.pgSearch.SuspendLayout();
-            this.pnlTree.SuspendLayout();
-            this.pnlResume.SuspendLayout();
-            this.roundedPanel1.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.roundedPanel3.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.roundedPanel5.SuspendLayout();
-            this.panel8.SuspendLayout();
+            this.roundedPanel1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.pgInsert.SuspendLayout();
             this.roundedPanel4.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.roundedPanel7.SuspendLayout();
-            this.panel10.SuspendLayout();
+            this.roundedPanel5.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.pgModify.SuspendLayout();
             this.roundedPanel6.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.roundedPanel7.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.pgSearch.SuspendLayout();
             this.roundedPanel8.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.pnlTree.SuspendLayout();
+            this.pnlResume.SuspendLayout();
             this.pnlFooter.SuspendLayout();
             this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdKeepingVoices)).BeginInit();
@@ -163,192 +163,6 @@
             this.pgHome.TabIndex = 0;
             this.pgHome.Text = "Home";
             // 
-            // pgInsert
-            // 
-            this.pgInsert.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.pgInsert.Controls.Add(this.roundedPanel4);
-            this.pgInsert.Controls.Add(this.roundedPanel5);
-            this.pgInsert.Location = new System.Drawing.Point(4, 25);
-            this.pgInsert.Name = "pgInsert";
-            this.pgInsert.Padding = new System.Windows.Forms.Padding(3);
-            this.pgInsert.Size = new System.Drawing.Size(1351, 86);
-            this.pgInsert.TabIndex = 1;
-            this.pgInsert.Text = "Inserisci";
-            // 
-            // pgModify
-            // 
-            this.pgModify.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.pgModify.Controls.Add(this.roundedPanel6);
-            this.pgModify.Controls.Add(this.roundedPanel7);
-            this.pgModify.Location = new System.Drawing.Point(4, 25);
-            this.pgModify.Name = "pgModify";
-            this.pgModify.Size = new System.Drawing.Size(1351, 86);
-            this.pgModify.TabIndex = 2;
-            this.pgModify.Text = "Modifica";
-            // 
-            // pgSearch
-            // 
-            this.pgSearch.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.pgSearch.Controls.Add(this.roundedPanel8);
-            this.pgSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.pgSearch.Location = new System.Drawing.Point(4, 25);
-            this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(1351, 86);
-            this.pgSearch.TabIndex = 3;
-            this.pgSearch.Text = "Cerca";
-            // 
-            // pnlTree
-            // 
-            this.pnlTree.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnlTree.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlTree.Controls.Add(this.treeYears);
-            this.pnlTree.Controls.Add(this.label15);
-            this.pnlTree.Controls.Add(this.btnNewYear2);
-            this.pnlTree.Controls.Add(this.btnLoadYears2);
-            this.pnlTree.Location = new System.Drawing.Point(1, 124);
-            this.pnlTree.Name = "pnlTree";
-            this.pnlTree.Size = new System.Drawing.Size(182, 730);
-            this.pnlTree.TabIndex = 30;
-            // 
-            // pnlResume
-            // 
-            this.pnlResume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlResume.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnlResume.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlResume.Controls.Add(this.label16);
-            this.pnlResume.Controls.Add(this.pnlStatus);
-            this.pnlResume.Controls.Add(this.panel2);
-            this.pnlResume.Controls.Add(this.textBox2);
-            this.pnlResume.Controls.Add(this.txtBalance);
-            this.pnlResume.Controls.Add(this.lblSaldoFine);
-            this.pnlResume.Controls.Add(this.panel1);
-            this.pnlResume.Location = new System.Drawing.Point(1175, 122);
-            this.pnlResume.Name = "pnlResume";
-            this.pnlResume.Size = new System.Drawing.Size(190, 730);
-            this.pnlResume.TabIndex = 34;
-            // 
-            // pnlStatus
-            // 
-            this.pnlStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlStatus.Location = new System.Drawing.Point(3, 634);
-            this.pnlStatus.Name = "pnlStatus";
-            this.pnlStatus.Size = new System.Drawing.Size(181, 23);
-            this.pnlStatus.TabIndex = 41;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Location = new System.Drawing.Point(5, 174);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(177, 10);
-            this.panel2.TabIndex = 40;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(152, 120);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(27, 23);
-            this.textBox2.TabIndex = 38;
-            this.textBox2.TabStop = false;
-            this.textBox2.Text = "€";
-            // 
-            // txtBalance
-            // 
-            this.txtBalance.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtBalance.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBalance.Location = new System.Drawing.Point(8, 120);
-            this.txtBalance.Name = "txtBalance";
-            this.txtBalance.Size = new System.Drawing.Size(146, 23);
-            this.txtBalance.TabIndex = 37;
-            // 
-            // lblSaldoFine
-            // 
-            this.lblSaldoFine.AutoSize = true;
-            this.lblSaldoFine.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaldoFine.Location = new System.Drawing.Point(5, 99);
-            this.lblSaldoFine.Name = "lblSaldoFine";
-            this.lblSaldoFine.Size = new System.Drawing.Size(101, 16);
-            this.lblSaldoFine.TabIndex = 50;
-            this.lblSaldoFine.Text = "Saldo Annuale";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(5, 72);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(177, 10);
-            this.panel1.TabIndex = 39;
-            // 
-            // roundedPanel1
-            // 
-            this.roundedPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedPanel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.roundedPanel1.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.roundedPanel1.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.roundedPanel1.BorderRadius = 2;
-            this.roundedPanel1.BorderSize = 2;
-            this.roundedPanel1.Controls.Add(this.txtYearInsert);
-            this.roundedPanel1.Controls.Add(this.btnNewYears);
-            this.roundedPanel1.Controls.Add(this.btnSave);
-            this.roundedPanel1.Controls.Add(this.btnLoadYears);
-            this.roundedPanel1.Controls.Add(this.panel5);
-            this.roundedPanel1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedPanel1.GradientAngle = 90F;
-            this.roundedPanel1.GrdtBottom = System.Drawing.Color.Empty;
-            this.roundedPanel1.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel1.Location = new System.Drawing.Point(180, 6);
-            this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Padding = new System.Windows.Forms.Padding(3);
-            this.roundedPanel1.Size = new System.Drawing.Size(984, 75);
-            this.roundedPanel1.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.lblGrAnni);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(978, 23);
-            this.panel5.TabIndex = 1;
-            // 
-            // lblGrAnni
-            // 
-            this.lblGrAnni.AutoSize = true;
-            this.lblGrAnni.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrAnni.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.lblGrAnni.Location = new System.Drawing.Point(14, 3);
-            this.lblGrAnni.Name = "lblGrAnni";
-            this.lblGrAnni.Size = new System.Drawing.Size(30, 16);
-            this.lblGrAnni.TabIndex = 0;
-            this.lblGrAnni.Text = "File";
-            // 
-            // txtYearInsert
-            // 
-            this.txtYearInsert.BackColor = System.Drawing.Color.White;
-            this.txtYearInsert.BorderColor = System.Drawing.Color.SteelBlue;
-            this.txtYearInsert.BorderFocusColor = System.Drawing.Color.LightSteelBlue;
-            this.txtYearInsert.BorderRadius = 10;
-            this.txtYearInsert.BorderSize = 1;
-            this.txtYearInsert.Location = new System.Drawing.Point(63, 34);
-            this.txtYearInsert.Multiline = false;
-            this.txtYearInsert.Name = "txtYearInsert";
-            this.txtYearInsert.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtYearInsert.PasswordChar = false;
-            this.txtYearInsert.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtYearInsert.PlaceholderText = "";
-            this.txtYearInsert.ReadOnly = false;
-            this.txtYearInsert.Size = new System.Drawing.Size(79, 31);
-            this.txtYearInsert.TabIndex = 12;
-            this.txtYearInsert.Texts = "";
-            this.txtYearInsert.UnderlinedStyle = false;
-            // 
             // roundedPanel3
             // 
             this.roundedPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -389,6 +203,195 @@
             this.label14.Size = new System.Drawing.Size(34, 16);
             this.label14.TabIndex = 0;
             this.label14.Text = "Esci";
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImage = global::Mantenimento.Properties.Resources.Exit;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.Green;
+            this.btnExit.Location = new System.Drawing.Point(21, 35);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
+            this.btnExit.TabIndex = 26;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // roundedPanel1
+            // 
+            this.roundedPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedPanel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.roundedPanel1.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.roundedPanel1.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.roundedPanel1.BorderRadius = 2;
+            this.roundedPanel1.BorderSize = 2;
+            this.roundedPanel1.Controls.Add(this.txtYearInsert);
+            this.roundedPanel1.Controls.Add(this.btnNewYears);
+            this.roundedPanel1.Controls.Add(this.btnSave);
+            this.roundedPanel1.Controls.Add(this.btnLoadYears);
+            this.roundedPanel1.Controls.Add(this.panel5);
+            this.roundedPanel1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedPanel1.GradientAngle = 90F;
+            this.roundedPanel1.GrdtBottom = System.Drawing.Color.Empty;
+            this.roundedPanel1.GrdtTop = System.Drawing.Color.Empty;
+            this.roundedPanel1.Location = new System.Drawing.Point(180, 6);
+            this.roundedPanel1.Name = "roundedPanel1";
+            this.roundedPanel1.Padding = new System.Windows.Forms.Padding(3);
+            this.roundedPanel1.Size = new System.Drawing.Size(984, 75);
+            this.roundedPanel1.TabIndex = 0;
+            // 
+            // txtYearInsert
+            // 
+            this.txtYearInsert.BackColor = System.Drawing.Color.White;
+            this.txtYearInsert.BorderColor = System.Drawing.Color.DimGray;
+            this.txtYearInsert.BorderFocusColor = System.Drawing.Color.LightSteelBlue;
+            this.txtYearInsert.BorderRadius = 10;
+            this.txtYearInsert.BorderSize = 1;
+            this.txtYearInsert.Location = new System.Drawing.Point(63, 34);
+            this.txtYearInsert.Multiline = false;
+            this.txtYearInsert.Name = "txtYearInsert";
+            this.txtYearInsert.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtYearInsert.PasswordChar = false;
+            this.txtYearInsert.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtYearInsert.PlaceholderText = "";
+            this.txtYearInsert.ReadOnly = false;
+            this.txtYearInsert.Size = new System.Drawing.Size(79, 31);
+            this.txtYearInsert.TabIndex = 12;
+            this.txtYearInsert.Texts = "";
+            this.txtYearInsert.UnderlinedStyle = false;
+            this.txtYearInsert.Enter += new System.EventHandler(this.txtYearInsert_Enter);
+            this.txtYearInsert.Leave += new System.EventHandler(this.txtYearInsert_Leave);
+            // 
+            // btnNewYears
+            // 
+            this.btnNewYears.BackgroundImage = global::Mantenimento.Properties.Resources.Nuovo;
+            this.btnNewYears.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNewYears.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewYears.ForeColor = System.Drawing.Color.Green;
+            this.btnNewYears.Location = new System.Drawing.Point(18, 35);
+            this.btnNewYears.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNewYears.Name = "btnNewYears";
+            this.btnNewYears.Size = new System.Drawing.Size(30, 30);
+            this.btnNewYears.TabIndex = 9;
+            this.btnNewYears.UseVisualStyleBackColor = true;
+            this.btnNewYears.Click += new System.EventHandler(this.btnNewYear_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackgroundImage = global::Mantenimento.Properties.Resources.Salva;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.ForeColor = System.Drawing.Color.Green;
+            this.btnSave.Location = new System.Drawing.Point(202, 35);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(30, 30);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSaveData_Click);
+            // 
+            // btnLoadYears
+            // 
+            this.btnLoadYears.BackgroundImage = global::Mantenimento.Properties.Resources.Aggiorna;
+            this.btnLoadYears.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLoadYears.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadYears.ForeColor = System.Drawing.Color.Green;
+            this.btnLoadYears.Location = new System.Drawing.Point(158, 35);
+            this.btnLoadYears.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLoadYears.Name = "btnLoadYears";
+            this.btnLoadYears.Size = new System.Drawing.Size(30, 30);
+            this.btnLoadYears.TabIndex = 10;
+            this.btnLoadYears.UseVisualStyleBackColor = true;
+            this.btnLoadYears.Click += new System.EventHandler(this.btnLoadYears_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.lblGrAnni);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(978, 23);
+            this.panel5.TabIndex = 1;
+            // 
+            // lblGrAnni
+            // 
+            this.lblGrAnni.AutoSize = true;
+            this.lblGrAnni.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrAnni.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.lblGrAnni.Location = new System.Drawing.Point(14, 3);
+            this.lblGrAnni.Name = "lblGrAnni";
+            this.lblGrAnni.Size = new System.Drawing.Size(30, 16);
+            this.lblGrAnni.TabIndex = 0;
+            this.lblGrAnni.Text = "File";
+            // 
+            // pgInsert
+            // 
+            this.pgInsert.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pgInsert.Controls.Add(this.roundedPanel4);
+            this.pgInsert.Controls.Add(this.roundedPanel5);
+            this.pgInsert.Location = new System.Drawing.Point(4, 25);
+            this.pgInsert.Name = "pgInsert";
+            this.pgInsert.Padding = new System.Windows.Forms.Padding(3);
+            this.pgInsert.Size = new System.Drawing.Size(1351, 86);
+            this.pgInsert.TabIndex = 1;
+            this.pgInsert.Text = "Inserisci";
+            // 
+            // roundedPanel4
+            // 
+            this.roundedPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedPanel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.roundedPanel4.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.roundedPanel4.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.roundedPanel4.BorderRadius = 2;
+            this.roundedPanel4.BorderSize = 2;
+            this.roundedPanel4.Controls.Add(this.btnSaveData);
+            this.roundedPanel4.Controls.Add(this.panel7);
+            this.roundedPanel4.GradientAngle = 90F;
+            this.roundedPanel4.GrdtBottom = System.Drawing.Color.Empty;
+            this.roundedPanel4.GrdtTop = System.Drawing.Color.Empty;
+            this.roundedPanel4.Location = new System.Drawing.Point(1172, 3);
+            this.roundedPanel4.Name = "roundedPanel4";
+            this.roundedPanel4.Padding = new System.Windows.Forms.Padding(3);
+            this.roundedPanel4.Size = new System.Drawing.Size(70, 80);
+            this.roundedPanel4.TabIndex = 57;
+            // 
+            // btnSaveData
+            // 
+            this.btnSaveData.BackgroundImage = global::Mantenimento.Properties.Resources.Salva;
+            this.btnSaveData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveData.ForeColor = System.Drawing.Color.Green;
+            this.btnSaveData.Location = new System.Drawing.Point(20, 35);
+            this.btnSaveData.Name = "btnSaveData";
+            this.btnSaveData.Size = new System.Drawing.Size(30, 30);
+            this.btnSaveData.TabIndex = 23;
+            this.btnSaveData.UseVisualStyleBackColor = true;
+            this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.label6);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(3, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(64, 23);
+            this.panel7.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label6.Location = new System.Drawing.Point(9, 2);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 16);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Salva";
             // 
             // roundedPanel5
             // 
@@ -457,6 +460,8 @@
             this.txtImport.TabIndex = 52;
             this.txtImport.Texts = "";
             this.txtImport.UnderlinedStyle = false;
+            this.txtImport.Enter += new System.EventHandler(this.txtImport_Enter);
+            this.txtImport.Leave += new System.EventHandler(this.txtImport_Leave);
             // 
             // cmbMonths
             // 
@@ -468,6 +473,21 @@
             this.cmbMonths.Name = "cmbMonths";
             this.cmbMonths.Size = new System.Drawing.Size(121, 24);
             this.cmbMonths.TabIndex = 50;
+            this.cmbMonths.Enter += new System.EventHandler(this.cmbMonths_Enter);
+            this.cmbMonths.Leave += new System.EventHandler(this.cmbMonths_Leave);
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.BackgroundImage = global::Mantenimento.Properties.Resources.Inserisci;
+            this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.ForeColor = System.Drawing.Color.Green;
+            this.btnInsert.Location = new System.Drawing.Point(946, 42);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(30, 30);
+            this.btnInsert.TabIndex = 54;
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // txtCause
             // 
@@ -489,6 +509,8 @@
             this.txtCause.TabIndex = 51;
             this.txtCause.Texts = "";
             this.txtCause.UnderlinedStyle = false;
+            this.txtCause.Enter += new System.EventHandler(this.txtCause_Enter);
+            this.txtCause.Leave += new System.EventHandler(this.txtCause_Leave);
             // 
             // lblMese
             // 
@@ -545,114 +567,16 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Inserisci";
             // 
-            // roundedPanel4
+            // pgModify
             // 
-            this.roundedPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedPanel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.roundedPanel4.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.roundedPanel4.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.roundedPanel4.BorderRadius = 2;
-            this.roundedPanel4.BorderSize = 2;
-            this.roundedPanel4.Controls.Add(this.btnSaveData);
-            this.roundedPanel4.Controls.Add(this.panel7);
-            this.roundedPanel4.GradientAngle = 90F;
-            this.roundedPanel4.GrdtBottom = System.Drawing.Color.Empty;
-            this.roundedPanel4.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel4.Location = new System.Drawing.Point(1172, 3);
-            this.roundedPanel4.Name = "roundedPanel4";
-            this.roundedPanel4.Padding = new System.Windows.Forms.Padding(3);
-            this.roundedPanel4.Size = new System.Drawing.Size(70, 80);
-            this.roundedPanel4.TabIndex = 57;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.label6);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(3, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(64, 23);
-            this.panel7.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label6.Location = new System.Drawing.Point(9, 2);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 16);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Salva";
-            // 
-            // roundedPanel7
-            // 
-            this.roundedPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedPanel7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.roundedPanel7.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.roundedPanel7.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.roundedPanel7.BorderRadius = 2;
-            this.roundedPanel7.BorderSize = 2;
-            this.roundedPanel7.Controls.Add(this.panel10);
-            this.roundedPanel7.Controls.Add(this.btnDeleteRow);
-            this.roundedPanel7.Controls.Add(this.btnDown);
-            this.roundedPanel7.Controls.Add(this.btnModifyRow);
-            this.roundedPanel7.Controls.Add(this.btnUp);
-            this.roundedPanel7.GradientAngle = 90F;
-            this.roundedPanel7.GrdtBottom = System.Drawing.Color.Empty;
-            this.roundedPanel7.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel7.Location = new System.Drawing.Point(180, 6);
-            this.roundedPanel7.Name = "roundedPanel7";
-            this.roundedPanel7.Padding = new System.Windows.Forms.Padding(3);
-            this.roundedPanel7.Size = new System.Drawing.Size(914, 75);
-            this.roundedPanel7.TabIndex = 45;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.label7);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(3, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(908, 23);
-            this.panel10.TabIndex = 0;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label7.Location = new System.Drawing.Point(9, 2);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 16);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Opzioni di modifica";
-            // 
-            // btnDown
-            // 
-            this.btnDown.BackgroundImage = global::Mantenimento.Properties.Resources.Carica;
-            this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDown.ForeColor = System.Drawing.Color.Green;
-            this.btnDown.Location = new System.Drawing.Point(202, 34);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(30, 30);
-            this.btnDown.TabIndex = 28;
-            this.btnDown.UseVisualStyleBackColor = true;
-            // 
-            // btnUp
-            // 
-            this.btnUp.BackgroundImage = global::Mantenimento.Properties.Resources.Su;
-            this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUp.ForeColor = System.Drawing.Color.Green;
-            this.btnUp.Location = new System.Drawing.Point(140, 34);
-            this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(30, 30);
-            this.btnUp.TabIndex = 27;
-            this.btnUp.UseVisualStyleBackColor = true;
+            this.pgModify.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pgModify.Controls.Add(this.roundedPanel6);
+            this.pgModify.Controls.Add(this.roundedPanel7);
+            this.pgModify.Location = new System.Drawing.Point(4, 25);
+            this.pgModify.Name = "pgModify";
+            this.pgModify.Size = new System.Drawing.Size(1351, 86);
+            this.pgModify.TabIndex = 2;
+            this.pgModify.Text = "Modifica";
             // 
             // roundedPanel6
             // 
@@ -706,110 +630,51 @@
             this.btnSaveThree.Size = new System.Drawing.Size(30, 30);
             this.btnSaveThree.TabIndex = 23;
             this.btnSaveThree.UseVisualStyleBackColor = true;
+            this.btnSaveThree.Click += new System.EventHandler(this.btnSaveData_Click);
             // 
-            // btnNewYear2
+            // roundedPanel7
             // 
-            this.btnNewYear2.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnNewYear2.BackgroundImage = global::Mantenimento.Properties.Resources.Nuovo;
-            this.btnNewYear2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNewYear2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewYear2.ForeColor = System.Drawing.Color.Green;
-            this.btnNewYear2.Location = new System.Drawing.Point(104, 41);
-            this.btnNewYear2.Name = "btnNewYear2";
-            this.btnNewYear2.Size = new System.Drawing.Size(30, 30);
-            this.btnNewYear2.TabIndex = 32;
-            this.btnNewYear2.UseVisualStyleBackColor = false;
-            this.btnNewYear2.Click += new System.EventHandler(this.btnNewYear2_Click);
+            this.roundedPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedPanel7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.roundedPanel7.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.roundedPanel7.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.roundedPanel7.BorderRadius = 2;
+            this.roundedPanel7.BorderSize = 2;
+            this.roundedPanel7.Controls.Add(this.panel10);
+            this.roundedPanel7.Controls.Add(this.btnDeleteRow);
+            this.roundedPanel7.Controls.Add(this.btnDown);
+            this.roundedPanel7.Controls.Add(this.btnModifyRow);
+            this.roundedPanel7.Controls.Add(this.btnUp);
+            this.roundedPanel7.GradientAngle = 90F;
+            this.roundedPanel7.GrdtBottom = System.Drawing.Color.Empty;
+            this.roundedPanel7.GrdtTop = System.Drawing.Color.Empty;
+            this.roundedPanel7.Location = new System.Drawing.Point(180, 6);
+            this.roundedPanel7.Name = "roundedPanel7";
+            this.roundedPanel7.Padding = new System.Windows.Forms.Padding(3);
+            this.roundedPanel7.Size = new System.Drawing.Size(914, 75);
+            this.roundedPanel7.TabIndex = 45;
             // 
-            // btnLoadYears2
+            // panel10
             // 
-            this.btnLoadYears2.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnLoadYears2.BackgroundImage = global::Mantenimento.Properties.Resources.Aggiorna;
-            this.btnLoadYears2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLoadYears2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadYears2.ForeColor = System.Drawing.Color.Green;
-            this.btnLoadYears2.Location = new System.Drawing.Point(144, 41);
-            this.btnLoadYears2.Name = "btnLoadYears2";
-            this.btnLoadYears2.Size = new System.Drawing.Size(30, 30);
-            this.btnLoadYears2.TabIndex = 31;
-            this.btnLoadYears2.UseVisualStyleBackColor = false;
-            this.btnLoadYears2.Click += new System.EventHandler(this.btnLoadYears2_Click);
+            this.panel10.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.label7);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(3, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(908, 23);
+            this.panel10.TabIndex = 0;
             // 
-            // btnExit
+            // label7
             // 
-            this.btnExit.BackgroundImage = global::Mantenimento.Properties.Resources.Exit;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.Green;
-            this.btnExit.Location = new System.Drawing.Point(21, 35);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(30, 30);
-            this.btnExit.TabIndex = 26;
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
-            // btnNewYears
-            // 
-            this.btnNewYears.BackgroundImage = global::Mantenimento.Properties.Resources.Nuovo;
-            this.btnNewYears.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNewYears.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewYears.ForeColor = System.Drawing.Color.Green;
-            this.btnNewYears.Location = new System.Drawing.Point(18, 35);
-            this.btnNewYears.Margin = new System.Windows.Forms.Padding(0);
-            this.btnNewYears.Name = "btnNewYears";
-            this.btnNewYears.Size = new System.Drawing.Size(30, 30);
-            this.btnNewYears.TabIndex = 9;
-            this.btnNewYears.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackgroundImage = global::Mantenimento.Properties.Resources.Salva;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.Green;
-            this.btnSave.Location = new System.Drawing.Point(202, 35);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(30, 30);
-            this.btnSave.TabIndex = 11;
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnLoadYears
-            // 
-            this.btnLoadYears.BackgroundImage = global::Mantenimento.Properties.Resources.Aggiorna;
-            this.btnLoadYears.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLoadYears.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadYears.ForeColor = System.Drawing.Color.Green;
-            this.btnLoadYears.Location = new System.Drawing.Point(158, 35);
-            this.btnLoadYears.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLoadYears.Name = "btnLoadYears";
-            this.btnLoadYears.Size = new System.Drawing.Size(30, 30);
-            this.btnLoadYears.TabIndex = 10;
-            this.btnLoadYears.UseVisualStyleBackColor = true;
-            // 
-            // btnSaveData
-            // 
-            this.btnSaveData.BackgroundImage = global::Mantenimento.Properties.Resources.Salva;
-            this.btnSaveData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveData.ForeColor = System.Drawing.Color.Green;
-            this.btnSaveData.Location = new System.Drawing.Point(20, 35);
-            this.btnSaveData.Name = "btnSaveData";
-            this.btnSaveData.Size = new System.Drawing.Size(30, 30);
-            this.btnSaveData.TabIndex = 23;
-            this.btnSaveData.UseVisualStyleBackColor = true;
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.BackgroundImage = global::Mantenimento.Properties.Resources.Inserisci;
-            this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.ForeColor = System.Drawing.Color.Green;
-            this.btnInsert.Location = new System.Drawing.Point(946, 42);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(30, 30);
-            this.btnInsert.TabIndex = 54;
-            this.btnInsert.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label7.Location = new System.Drawing.Point(9, 2);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(130, 16);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Opzioni di modifica";
             // 
             // btnDeleteRow
             // 
@@ -822,6 +687,20 @@
             this.btnDeleteRow.Size = new System.Drawing.Size(30, 30);
             this.btnDeleteRow.TabIndex = 25;
             this.btnDeleteRow.UseVisualStyleBackColor = true;
+            this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
+            // 
+            // btnDown
+            // 
+            this.btnDown.BackgroundImage = global::Mantenimento.Properties.Resources.Carica;
+            this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.ForeColor = System.Drawing.Color.Green;
+            this.btnDown.Location = new System.Drawing.Point(202, 34);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(30, 30);
+            this.btnDown.TabIndex = 28;
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // btnModifyRow
             // 
@@ -834,15 +713,31 @@
             this.btnModifyRow.Size = new System.Drawing.Size(30, 30);
             this.btnModifyRow.TabIndex = 30;
             this.btnModifyRow.UseVisualStyleBackColor = true;
+            this.btnModifyRow.Click += new System.EventHandler(this.btnModifyRow_Click);
             // 
-            // txtSearchVoice
+            // btnUp
             // 
-            this.txtSearchVoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchVoice.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchVoice.Location = new System.Drawing.Point(6, 36);
-            this.txtSearchVoice.Name = "txtSearchVoice";
-            this.txtSearchVoice.Size = new System.Drawing.Size(982, 23);
-            this.txtSearchVoice.TabIndex = 32;
+            this.btnUp.BackgroundImage = global::Mantenimento.Properties.Resources.Su;
+            this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUp.ForeColor = System.Drawing.Color.Green;
+            this.btnUp.Location = new System.Drawing.Point(140, 34);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(30, 30);
+            this.btnUp.TabIndex = 27;
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
+            // pgSearch
+            // 
+            this.pgSearch.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pgSearch.Controls.Add(this.roundedPanel8);
+            this.pgSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pgSearch.Location = new System.Drawing.Point(4, 25);
+            this.pgSearch.Name = "pgSearch";
+            this.pgSearch.Size = new System.Drawing.Size(1351, 86);
+            this.pgSearch.TabIndex = 3;
+            this.pgSearch.Text = "Cerca";
             // 
             // roundedPanel8
             // 
@@ -862,6 +757,16 @@
             this.roundedPanel8.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel8.Size = new System.Drawing.Size(994, 75);
             this.roundedPanel8.TabIndex = 45;
+            // 
+            // txtSearchVoice
+            // 
+            this.txtSearchVoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchVoice.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchVoice.Location = new System.Drawing.Point(6, 36);
+            this.txtSearchVoice.Name = "txtSearchVoice";
+            this.txtSearchVoice.Size = new System.Drawing.Size(982, 23);
+            this.txtSearchVoice.TabIndex = 32;
+            this.txtSearchVoice.TextChanged += new System.EventHandler(this.txtSearchVoice_TextChanged);
             // 
             // panel11
             // 
@@ -885,18 +790,40 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Cerca";
             // 
-            // label16
+            // pnlTree
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label16.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(22, 14);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(142, 20);
-            this.label16.TabIndex = 58;
-            this.label16.Text = "DATI CONTABILI";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pnlTree.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlTree.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlTree.Controls.Add(this.treeYears);
+            this.pnlTree.Controls.Add(this.label15);
+            this.pnlTree.Controls.Add(this.btnNewYear2);
+            this.pnlTree.Controls.Add(this.btnLoadYears2);
+            this.pnlTree.Location = new System.Drawing.Point(1, 124);
+            this.pnlTree.Name = "pnlTree";
+            this.pnlTree.Size = new System.Drawing.Size(182, 730);
+            this.pnlTree.TabIndex = 30;
+            // 
+            // treeYears
+            // 
+            this.treeYears.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.treeYears.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeYears.ForeColor = System.Drawing.Color.Indigo;
+            this.treeYears.FullRowSelect = true;
+            this.treeYears.ItemHeight = 20;
+            this.treeYears.LineColor = System.Drawing.Color.LightSteelBlue;
+            this.treeYears.Location = new System.Drawing.Point(1, 83);
+            this.treeYears.Name = "treeYears";
+            treeNode10.BackColor = System.Drawing.Color.AntiqueWhite;
+            treeNode10.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode10.Name = "nodeYears";
+            treeNode10.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode10.Text = "ANNI   ";
+            this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode10});
+            this.treeYears.ShowLines = false;
+            this.treeYears.ShowNodeToolTips = true;
+            this.treeYears.Size = new System.Drawing.Size(177, 645);
+            this.treeYears.TabIndex = 38;
             // 
             // label15
             // 
@@ -912,27 +839,120 @@
             this.label15.Text = "GESTIONE ANNUALE";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // treeYears
+            // btnNewYear2
             // 
-            this.treeYears.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.treeYears.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeYears.ForeColor = System.Drawing.Color.Indigo;
-            this.treeYears.FullRowSelect = true;
-            this.treeYears.ItemHeight = 20;
-            this.treeYears.LineColor = System.Drawing.Color.LightSteelBlue;
-            this.treeYears.Location = new System.Drawing.Point(1, 83);
-            this.treeYears.Name = "treeYears";
-            treeNode1.BackColor = System.Drawing.Color.AntiqueWhite;
-            treeNode1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode1.Name = "nodeYears";
-            treeNode1.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode1.Text = "ANNI   ";
-            this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.treeYears.ShowLines = false;
-            this.treeYears.ShowNodeToolTips = true;
-            this.treeYears.Size = new System.Drawing.Size(177, 645);
-            this.treeYears.TabIndex = 38;
+            this.btnNewYear2.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnNewYear2.BackgroundImage = global::Mantenimento.Properties.Resources.Nuovo;
+            this.btnNewYear2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNewYear2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewYear2.ForeColor = System.Drawing.Color.Green;
+            this.btnNewYear2.Location = new System.Drawing.Point(104, 41);
+            this.btnNewYear2.Name = "btnNewYear2";
+            this.btnNewYear2.Size = new System.Drawing.Size(30, 30);
+            this.btnNewYear2.TabIndex = 32;
+            this.btnNewYear2.UseVisualStyleBackColor = false;
+            this.btnNewYear2.Click += new System.EventHandler(this.btnNewYear_Click);
+            // 
+            // btnLoadYears2
+            // 
+            this.btnLoadYears2.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnLoadYears2.BackgroundImage = global::Mantenimento.Properties.Resources.Aggiorna;
+            this.btnLoadYears2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLoadYears2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadYears2.ForeColor = System.Drawing.Color.Green;
+            this.btnLoadYears2.Location = new System.Drawing.Point(144, 41);
+            this.btnLoadYears2.Name = "btnLoadYears2";
+            this.btnLoadYears2.Size = new System.Drawing.Size(30, 30);
+            this.btnLoadYears2.TabIndex = 31;
+            this.btnLoadYears2.UseVisualStyleBackColor = false;
+            this.btnLoadYears2.Click += new System.EventHandler(this.btnLoadYears_Click);
+            // 
+            // pnlResume
+            // 
+            this.pnlResume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlResume.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlResume.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlResume.Controls.Add(this.label16);
+            this.pnlResume.Controls.Add(this.pnlStatus);
+            this.pnlResume.Controls.Add(this.panel2);
+            this.pnlResume.Controls.Add(this.textBox2);
+            this.pnlResume.Controls.Add(this.txtBalance);
+            this.pnlResume.Controls.Add(this.lblSaldoFine);
+            this.pnlResume.Controls.Add(this.panel1);
+            this.pnlResume.Location = new System.Drawing.Point(1175, 122);
+            this.pnlResume.Name = "pnlResume";
+            this.pnlResume.Size = new System.Drawing.Size(190, 730);
+            this.pnlResume.TabIndex = 34;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label16.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(22, 14);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(142, 20);
+            this.label16.TabIndex = 58;
+            this.label16.Text = "DATI CONTABILI";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlStatus
+            // 
+            this.pnlStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlStatus.Location = new System.Drawing.Point(3, 634);
+            this.pnlStatus.Name = "pnlStatus";
+            this.pnlStatus.Size = new System.Drawing.Size(181, 23);
+            this.pnlStatus.TabIndex = 41;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Location = new System.Drawing.Point(5, 174);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(177, 10);
+            this.panel2.TabIndex = 40;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(152, 120);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(27, 23);
+            this.textBox2.TabIndex = 38;
+            this.textBox2.TabStop = false;
+            this.textBox2.Text = "€";
+            // 
+            // txtBalance
+            // 
+            this.txtBalance.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtBalance.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBalance.Location = new System.Drawing.Point(8, 120);
+            this.txtBalance.Name = "txtBalance";
+            this.txtBalance.Size = new System.Drawing.Size(146, 23);
+            this.txtBalance.TabIndex = 37;
+            // 
+            // lblSaldoFine
+            // 
+            this.lblSaldoFine.AutoSize = true;
+            this.lblSaldoFine.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoFine.Location = new System.Drawing.Point(5, 99);
+            this.lblSaldoFine.Name = "lblSaldoFine";
+            this.lblSaldoFine.Size = new System.Drawing.Size(101, 16);
+            this.lblSaldoFine.TabIndex = 50;
+            this.lblSaldoFine.Text = "Saldo Annuale";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Location = new System.Drawing.Point(5, 72);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(177, 10);
+            this.panel1.TabIndex = 39;
             // 
             // txtYearMonth
             // 
@@ -996,24 +1016,24 @@
             this.grdKeepingVoices.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grdKeepingVoices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdKeepingVoices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdKeepingVoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdKeepingVoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.grdKeepingVoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdKeepingVoices.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdKeepingVoices.DefaultCellStyle = dataGridViewCellStyle29;
             this.grdKeepingVoices.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdKeepingVoices.EnableHeadersVisualStyles = false;
             this.grdKeepingVoices.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -1022,14 +1042,14 @@
             this.grdKeepingVoices.MultiSelect = false;
             this.grdKeepingVoices.Name = "grdKeepingVoices";
             this.grdKeepingVoices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdKeepingVoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdKeepingVoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
             this.grdKeepingVoices.RowHeadersVisible = false;
             this.grdKeepingVoices.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdKeepingVoices.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -1044,6 +1064,7 @@
             // 
             // frmMantenimento
             // 
+            this.AcceptButton = this.btnInsert;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
@@ -1064,36 +1085,36 @@
             this.pnlMenu.ResumeLayout(false);
             this.tabMenu.ResumeLayout(false);
             this.pgHome.ResumeLayout(false);
-            this.pgInsert.ResumeLayout(false);
-            this.pgModify.ResumeLayout(false);
-            this.pgSearch.ResumeLayout(false);
-            this.pnlTree.ResumeLayout(false);
-            this.pnlTree.PerformLayout();
-            this.pnlResume.ResumeLayout(false);
-            this.pnlResume.PerformLayout();
-            this.roundedPanel1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.roundedPanel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.roundedPanel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.pgInsert.ResumeLayout(false);
+            this.roundedPanel4.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.roundedPanel5.ResumeLayout(false);
             this.roundedPanel5.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.roundedPanel4.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.roundedPanel7.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
+            this.pgModify.ResumeLayout(false);
             this.roundedPanel6.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.roundedPanel7.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.pgSearch.ResumeLayout(false);
             this.roundedPanel8.ResumeLayout(false);
             this.roundedPanel8.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            this.pnlTree.ResumeLayout(false);
+            this.pnlTree.PerformLayout();
+            this.pnlResume.ResumeLayout(false);
+            this.pnlResume.PerformLayout();
             this.pnlFooter.ResumeLayout(false);
             this.pnlFooter.PerformLayout();
             this.pnlGrid.ResumeLayout(false);

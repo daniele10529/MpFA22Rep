@@ -286,7 +286,7 @@ namespace Libretto
 
         #region EVENTI DEGLI OGGETTI
 
-        #region form
+        #region Form
 
         private void frmLibretto_Load(object sender, EventArgs e)
         {
@@ -329,6 +329,7 @@ namespace Libretto
                 }
             }
         }
+
         #endregion
 
         #region Button
@@ -621,8 +622,6 @@ namespace Libretto
 
         private void btnModifyRow_Click(object sender, EventArgs e)
         {
-            //istanza alla classe ModelDataPP
-            ModelDataPP modelpp = new ModelDataPP();
             //istanza per form modifica e per aggiornare il datagridview
             frmModify frmMod = new frmModify();
             PopulateGrid populate = new PopulateGrid(grdMovLibVoices, table);
