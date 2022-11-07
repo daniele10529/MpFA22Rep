@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using ReadXML;
 using System.Drawing;
 using System.IO;
+using System.Data;
 
 namespace GenericModelData
 {
@@ -31,6 +32,22 @@ namespace GenericModelData
             public string causale;//causale movimento
             public double importo;//importo versato
             public string mese;//mese in formato stringa
+        }
+
+        /// <summary>
+        /// Metodo pe popolare la tabella
+        /// </summary>
+        /// <param name="r">ADT</param>
+        /// <param name="t">Tabella</param>
+        public void populate(Payment r, DataTable t)
+        {
+            DataRow row = t.NewRow();
+            row["ID"] = r.id_mantenimento;
+            row["CAUSALE DEL MOVIMENTO"] = r.causale;
+            row["IMPORTO"] = r.importo;
+            row["MESE"] = r.mese;
+            t.Rows.Add(row);
+            t.AcceptChanges();
         }
 
         /// <summary>
@@ -135,21 +152,17 @@ namespace GenericModelData
         }
 
         /// <summary>
-        /// Metodo per il caricamento dei dati da DB
+        /// Metodo per popolare un DataTable con mapping da Db
         /// </summary>
-        /// <param name="year">Anno per il mapping</param>
-        /// <returns>Ritorna list(payment) di dati da DB</returns>
-        public List<Payment> loadDataMan(int year)
+        /// <param name="year">Anno selezionato</param>
+        /// <param name="table">Tabella da popolare</param>
+        public void getAll(int year, DataTable table)
         {
-            //lista per il caricamento di tipo struct
-            List<Payment> listdata = new List<Payment>();
             ReadErrorXml xml = new ReadErrorXml();
-            //istanza alla struttura
-            Payment payment;
+            Payment record = new Payment();
 
             try
             {
-                //carico i dati da DB in base all'anno selezionato e li assegno alla lista
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
                 stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
@@ -157,18 +170,16 @@ namespace GenericModelData
                 var command = connecting.command(connection);
                 string query = $"SELECT * FROM versamenti_mantenimento WHERE anno={year};";
                 var reader = connecting.reader(command, query);
-                //utilizzo la struttura per caricare la lista
-                //ogni elemento della lista è una tupla del DB
+
                 while (reader.Read())
                 {
-                    payment.id_mantenimento = reader.GetInt32(0);
-                    payment.causale = reader.GetString(1);
-                    payment.importo = reader.GetDouble(2);
-                    payment.mese = reader.GetString(3);
-                    listdata.Add(payment);
+                    record.id_mantenimento = reader.GetInt32("id_mantenimento");
+                    record.causale = reader.GetString("causale");
+                    record.importo = reader.GetDouble("importo");
+                    record.mese = reader.GetString("mese");
+                    populate(record, table);
                 }
-                //scarico gli oggetti
-                reader.Dispose();
+
                 command.Dispose();
                 connection.Close();
             }
@@ -176,129 +187,82 @@ namespace GenericModelData
             {
                 xml.manageError(9, path, father, featur);
             }
-            //ritorna la lista
-            return listdata;
 
         }
 
         /// <summary>
-        /// Metodo per il salvataggio dei dati nel DB
+        /// Metodo per l'inserimento di un record nella tabella Mantenimento
         /// </summary>
-        /// <param name="year">Anno per il mapping</param>
-        /// <param name="data">list(payment) di dati da inserire</param>
-        /// <returns>Ritorna true se salvataggio ok</returns>
-        public bool saveDataMan(int year, List<Payment> data)
+        /// <param name="year">Anno selezionato</param>
+        /// <param name="record">Record da inserire</param>
+        /// <returns></returns>
+        public bool insert(int year, Payment record)
         {
-            ReadErrorXml xml = new ReadErrorXml();
-            //lista di tipo struct per l'insert nel DB
-            List<Payment> listdata = new List<Payment>();
-            //istanza alla struttura
-            Payment payment;
-            bool execute = false;
-            int i;
-            string import;
+            bool insert = false;
 
+            ReadErrorXml xml = new ReadErrorXml();
             try
-            {//connessione al DB + mapping dati già presenti
+            {
+                //Inserisce il record nella tabella postpay
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
                 stringConnection = readerxml.readNode(node_connect);
                 Connecting connecting = new Connecting(stringConnection);
-
                 var connection = connecting.connection();
                 var command = connecting.command(connection);
-                string query = $"SELECT * FROM versamenti_mantenimento WHERE anno={year};";
-                var reader = connecting.reader(command, query);
-                //Leggo i dati presenti su DB, genero la lista di tipo Payment da DB
-                while (reader.Read())
-                {
-                    payment.id_mantenimento = reader.GetInt32(0);
-                    payment.causale = reader.GetString(1);
-                    payment.importo = reader.GetDouble(2);
-                    payment.mese = reader.GetString(3);
-                    listdata.Add(payment);
-                }
-                reader.Dispose();
-                //Algoritmo di confronto tra i dati manipolati in datagridview e i dati presenti nel DB
-                //Se la lista da datagridview è piu lunga
-                if (data.Count >= listdata.Count)
-                {//inserisci tutti i nuovi dati
-                    for (i = 0; i < data.Count; i++)
-                    {//inserisci solo le nuove righe aggiunte
-                        if (i >= listdata.Count)
-                        {
-                            for (i = listdata.Count; i < data.Count; i++)
-                            {//ogni elemento della lista è una tupla del DB
-                                import = data[i].importo.ToString().Replace(",", ".");
-                                command.CommandText = $"INSERT INTO versamenti_mantenimento(id_mantenimento,causale,importo,mese,anno) VALUES({data[i].id_mantenimento},'{data[i].causale}',{import},'{data[i].mese}',{year});";
-                                command.ExecuteNonQuery();
-                            }
-                            break;
-                        }//se sono state modificate le righe, aggiorna i valori
-                        else if (!(listdata[i].causale == data[i].causale) || !(listdata[i].importo == data[i].importo) || !(listdata[i].mese == data[i].mese))
-                        {
-                            import = data[i].importo.ToString().Replace(',', '.');
-                            command.CommandText = $"UPDATE versamenti_mantenimento SET causale='{data[i].causale}',importo={import},mese='{data[i].mese}' WHERE id_mantenimento={data[i].id_mantenimento}";
-                            command.ExecuteNonQuery();
-                            command.Dispose();
-                            //se non ci sono piu valori da aggiornare esci
-                            if (i == (data.Count - 1) && data.Count == listdata.Count)
-                            {
-                                connection.Close();
-                                execute = true;
-                                return execute;
-                            }
-                        }
-                    }
-                }
-                else //se i dati del datagridview sono meno sono state eliminate righe
-                {//cicla tutti i dati del datagridview
-                    for (i = 0; i < data.Count; i++)
-                    {//se i dati non chiave primaria sono diversi
-                        if (!(listdata[i].causale == data[i].causale) || !(listdata[i].importo == data[i].importo) || !(listdata[i].mese == data[i].mese))
-                        {//preleva le chiavi primarie da ambo le liste
+                string import = record.importo.ToString().Replace(',', '.');
+                string query = $"INSERT INTO versamenti_mantenimento(id_mantenimento,causale,importo,mese,anno) " +
+                    $"VALUES({record.id_mantenimento},'{record.causale}',{import},'{record.mese}',{year});";
+                command.CommandText = query;
 
-                            if (listdata[i].id_mantenimento < data[i].id_mantenimento)//se la chiave primaria del DB è inferiore a quella datagridview
-                            {//allora è stata eliminata una riga, quindi eliminala dal DB
-                                command.CommandText = $"DELETE FROM versamenti_mantenimento WHERE id_mantenimento={listdata[i].id_mantenimento}";
-                                command.ExecuteNonQuery();
-                                command.Dispose();
-                                listdata.RemoveAt(i);//rimuovila anche dalla lista
+                //Verifica ci sia stato l'inserimento e restituisce true
+                if (command.ExecuteNonQuery() > 0) insert = true;
 
-                            }
-                            else
-                            {//altrimenti aggiorna la voce modificata
-                                import = data[i].importo.ToString().Replace(',', '.');
-                                command.CommandText = $"UPDATE versamenti_mantenimento SET causale='{data[i].causale}',importo={import},mese='{data[i].mese}' WHERE id_mantenimento={data[i].id_mantenimento}";
-                                command.ExecuteNonQuery();
-                                command.Dispose();
-                            }
-
-                        }
-                    }
-                    //cicla ed elimina da DB le voci eliminate da DataGridView
-                    for (i = data.Count; i < listdata.Count; i++)
-                    {
-                        command.CommandText = $"DELETE FROM versamenti_mantenimento WHERE id_mantenimento={listdata[i].id_mantenimento}";
-                        command.ExecuteNonQuery();
-                        command.Dispose();
-                    }
-                    connection.Close();
-                    execute = true;
-                    return execute;
-                }
-                //scarica gli oggetti e imposta a true il valore di ritorno
                 command.Dispose();
                 connection.Close();
-                execute = true;
-
             }
             catch (Exception ex)
             {
                 xml.manageError(9, path, father, featur);
             }
-            //restituisco true se non genero alcuna eccezione
-            return execute;
+            //Ritorna il risultato dell'inserimento
+            return insert;
+        }
 
+        /// <summary>
+        /// Metodo per eliminare un record del DB
+        /// </summary>
+        /// <param name="year">Anno selezionato</param>
+        /// <param name="record">Record da eliminare</param>
+        /// <returns>Ritorna true se delete corretto</returns>
+        public bool deleteRow(int year, Payment record)
+        {
+            bool delete = false;
+
+            ReadErrorXml xml = new ReadErrorXml();
+            try
+            {
+                //Inserisce il record nella tabella postpay
+                ReaderXML readerxml = new ReaderXML(pathconn, "string");
+                stringConnection = readerxml.readNode(node_connect);
+                Connecting connecting = new Connecting(stringConnection);
+                var connection = connecting.connection();
+                var command = connecting.command(connection);
+                string import = record.importo.ToString().Replace(',', '.');
+                string query = $"DELETE FROM versamenti_mantenimento WHERE id_mantenimento={record.id_mantenimento} AND anno={year};";
+                command.CommandText = query;
+
+                //Verifica ci sia stato l'inserimento e restituisce true
+                if (command.ExecuteNonQuery() > 0) delete = true;
+
+                command.Dispose();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                xml.manageError(9, path, father, featur);
+            }
+            //Ritorna il risultato dell'eliminazione
+            return delete;
         }
 
         /// <summary>

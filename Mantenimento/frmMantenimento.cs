@@ -13,17 +13,17 @@ namespace Mantenimento
 {
     public partial class frmMantenimento : Form
     {
-        //tabella contenente i dati
+        //Tabella contenente i dati
         private DataTable table;
-        //percorso file xml con errori
+        //Percorso file xml con errori
         private const string pathxml = Routes.XMLERRORS;
-        //verifica sul comportamento utente
+        //Verifica sul comportamento utente
         private bool isLoad;
         private bool isSaved;
         private bool isChanged;
-        //istanza alla classe di gestione con DB
+        //Istanza alla classe di gestione con DB
         ModelDataMan model;
-        //numero dell'anno e mese caricato
+        //Numero dell'anno e mese caricato
         public int year_manage, month_manage;
 
         public frmMantenimento()
@@ -36,29 +36,7 @@ namespace Mantenimento
             model = new ModelDataMan();
         }
 
-
         #region Metodi Privati
-
-        //crea la lista rispettando la struttura definita in ModelDataMan
-        private List<ModelDataMan.Payment> createListStruct()
-        {
-            ModelDataMan.Payment payment;
-            List<ModelDataMan.Payment> lista = new List<ModelDataMan.Payment>();
-            //cicla tutta la tabella e aggiunge gli elementi alla lista
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                DataRow lastrow = table.NewRow();
-                lastrow.ItemArray = table.Rows[i].ItemArray;
-                payment.id_mantenimento = Int32.Parse(lastrow[0].ToString());
-                payment.causale = lastrow[1].ToString();
-                payment.importo = Double.Parse(lastrow[2].ToString());
-                payment.mese = lastrow[3].ToString();
-                lista.Add(payment);
-
-            }
-            return lista;
-
-        }   
 
         /// <summary>
         /// Genera i tooltip sui pulsanti
@@ -75,7 +53,6 @@ namespace Mantenimento
             tip.SetToolTip(btnNewYears, "Genera un nuovo anno");
             tip.SetToolTip(btnNewYear2, "Genera un nuovo anno");
             tip.SetToolTip(btnExit, "Chiudi Spese Annuali");
-            tip.SetToolTip(btnSave, "Salva le modifiche");
             tip.SetToolTip(txtCause, "Inserisci una causale di spesa");
             tip.SetToolTip(txtImport, "Inserisci un importo");
             tip.SetToolTip(btnInsert, "Inserisci i valori in tabella");
@@ -84,7 +61,6 @@ namespace Mantenimento
             tip.SetToolTip(btnDown, "Sposta in basso la riga");
             tip.SetToolTip(btnModifyRow, "Modifica una riga");
             tip.SetToolTip(treeYears, "Seleziona il mese da caricare");
-            tip.SetToolTip(btnSaveData, "Salva le modifiche");
             tip.SetToolTip(txtSearchVoice, "Ricarca nel DataGridView");
             tip.SetToolTip(cmbMonths, "Seleziona il mese per l'inserimento");
 
@@ -100,7 +76,7 @@ namespace Mantenimento
 
             try
             {
-                //si può assegnare l'icona alle pagine solo tramite una lista di immagini
+                //Si può assegnare l'icona alle pagine solo tramite una lista di immagini
                 list.Images.Add(Image.FromFile(pathIco + "Insert.png"));
                 list.Images.Add(Image.FromFile(pathIco + "Home.png"));
                 list.Images.Add(Image.FromFile(pathIco + "Modify.png"));
@@ -121,9 +97,9 @@ namespace Mantenimento
         }
 
         /// <summary>
-        /// Esegue il conteggio del saldo annuale
+        /// Esegue il conteggio del saldo annuale e lo salva
         /// </summary>
-        private void counter()
+        private void counter(bool save = true)
         {
             int i;
             double total = 0;
@@ -137,6 +113,17 @@ namespace Mantenimento
             }
             //textbox saldo annuale
             txtBalance.Text = total.ToString();
+
+            //Salva il saldo annuale, opzionale al carico dei dati non salva
+            if (save)
+            {
+                //Salva il saldo annuale
+                double balance = Double.Parse(txtBalance.Text);
+                if (model.saveBalanceYear(balance, year_manage, "totale_annuo_mantenimento") == false)
+                {
+                    MessageBox.Show("Non è stato salvato il saldo annuale!!", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
 
         }
 
@@ -164,11 +151,11 @@ namespace Mantenimento
             Clipboard.Clear();
             toolTip();
             loadImage();
-            //carico l'albero, polimorfismo del metodo di ModelDataSY con nome tabella
+            //Carico l'albero, polimorfismo del metodo di ModelDataSY con nome tabella
             model.loadTree(treeYears, "anni_mantenimento");
             pnlStatus.BackColor = Color.FromArgb(255, 255, 255);
 
-            //impostazioni di tabella e datagridview
+            //Impostazioni di tabella e datagridview
             grdKeepingVoices.DataSource = table;
             table.Columns.Add("ID");
             table.Columns.Add("CAUSALE DEL MOVIMENTO");
@@ -212,12 +199,9 @@ namespace Mantenimento
         /// <param name="e"></param>
         private void btnLoadYears_Click(object sender, EventArgs e)
         {
-            PopulateGrid populate = new PopulateGrid(grdKeepingVoices, table);
-            //istanza alla lista basata su struct
-            List<ModelDataMan.Payment> listdata = new List<ModelDataMan.Payment>();
-            List<string> listinsert = new List<string>();
+      
             string selezione, anno;
-            int year, i;
+            int year;
 
             table.Rows.Clear();
 
@@ -245,22 +229,11 @@ namespace Mantenimento
                     year = Int32.Parse(anno);
                     //assegna il valore alle variabili globali per la gestione con DB
                     year_manage = year;
-                    //carica i dati da DB e li assegna alla lista
-                    listdata = model.loadDataMan(year);
 
-                    //utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
-                    //ogni elemento della lista struct è una tupla del DB
-                    i = 0;
-                    while (i < listdata.Count)
-                    {
-                        listinsert.Add(listdata[i].id_mantenimento.ToString());
-                        listinsert.Add(listdata[i].causale);
-                        listinsert.Add(listdata[i].importo.ToString());
-                        listinsert.Add(listdata[i].mese);
-                        populate.inserisci(4, listinsert);
-                        listinsert.Clear();
-                        i++;
-                    }
+                    //Popola la tabelle
+                    model.getAll(year, table);
+
+                    //Visualizza anno caricato
                     txtYearMonth.Text = "Anno caricato : ".ToUpper() + anno.ToUpper();
                 }
             }
@@ -271,9 +244,9 @@ namespace Mantenimento
             treeYears.SelectedNode = null;
             //Carica il valore di saldo del mese
             txtBalance.Text = model.loadBalanceYear(year_manage).ToString();
-            //Conteggia il saldo finale
-            counter();
-            //tronca il bilancio iniziale
+            //Conteggia il saldo finale senza salvare
+            counter(false);
+            //Tronca il bilancio iniziale
             if (txtBalance.Text.Length > 1)
             {
                 Checker check = new Checker();
@@ -294,10 +267,10 @@ namespace Mantenimento
             Checker check = new Checker(pathxml);
             int year = 0;
             
-            //chiede conferma di inserimento
+            //Chiede conferma di inserimento
             if(MessageBox.Show("Stai per inserire un nuovo anno, sei sicuro ?","Attenzione",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
-
+                //Verifica il dato inserito
                 try
                 {
 
@@ -326,26 +299,24 @@ namespace Mantenimento
             
         }
 
+        /// <summary>
+        /// Inserisce un record nel DB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInsert_Click(object sender, EventArgs e)
         {
             isSaved = false;
             isChanged = true;
             statusPanel();
 
-            PopulateGrid populate = new PopulateGrid(grdKeepingVoices, table);
-            Checker check;
-            List<string> list = new List<string>();
-            int id = 0;
-            string father = "ListError";
-            string feature = "ErrorTitle";
+            ModelDataMan.Payment record = new ModelDataMan.Payment();
+            Checker check = new Checker(pathxml);
             int idgrid = 0, idDB = 0;
-            //verifica sulla presenza di tutti i campi dalla classe checker
+
+            //Verifica sulla presenza di tutti i campi dalla classe checker
             //e che sia stato caricato un anno\mese
             if (isLoad == false) return;
-            populate.path = pathxml;
-            populate.father = father;
-            populate.feature = feature;
-            check = new Checker(pathxml);
 
             try
             {
@@ -368,26 +339,37 @@ namespace Mantenimento
 
                         //Se la chiave è maggiore quella della griglia incrementala di 1
                         //valori inseriti e non ancora salvati
-                        if (idgrid >= idDB) id = idgrid + 1;
+                        if (idgrid >= idDB) record.id_mantenimento = idgrid + 1;
                         //altrimenti incrementa di 1 la chiave prelevata da DB
-                        else id = idDB + 1;
+                        else record.id_mantenimento = idDB + 1;
 
-                        list.Add(id.ToString());
-                        list.Add(txtCause.Texts);
-                        list.Add(txtImport.Texts.Replace('.', ','));
-                        list.Add(cmbMonths.SelectedItem.ToString());
-
-                        //Popola la griglia attraverso la lista
-                        populate.inserisci(4, list);
+                        //Setta il record da inserire
+                        record.causale = txtCause.Texts;
+                        record.importo = Double.Parse(txtImport.Texts.Replace('.', ','));
+                        record.mese = cmbMonths.SelectedItem.ToString();
+                        
+                        //Verifica il corretto inserimento del record
+                        //Popola la griglia e salva il saldo annuale
+                        if (model.insert(year_manage, record))
+                        {
+                            //Popola la griglia
+                            model.populate(record, table);
+                            //Calcola il saldo annuale e lo salva
+                            counter();
+                            //Aggiorna lo stato d'ambiente
+                            isChanged = false;
+                            isSaved = true;
+                            statusPanel();
+                        }
 
                         //Resetta i valori
                         txtCause.Texts = "";
                         txtImport.Texts = "";
                         cmbMonths.SelectedItem = null;
-                        cmbMonths.Focus();
-                        counter();
+                        cmbMonths.Focus();            
 
                     }
+
                 }
 
             }
@@ -398,26 +380,17 @@ namespace Mantenimento
             
         }
 
-        private void btnSaveData_Click(object sender, EventArgs e)
-        {
-           // btnSave_Click(sender, e);
-        }
-        private void btnSaveThree_Click(object sender, EventArgs e)
-        {
-           // btnSave_Click(sender, e);
-        }
-
+        /// <summary>
+        /// Modifica il record selezionato
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifyRow_Click(object sender, EventArgs e)
         {
 
-            //istanza per form modifica e per aggiornare il datagridview
+            //Istanza per form modifica 
             frmModify frmMod = new frmModify();
-            PopulateGrid populate = new PopulateGrid(grdKeepingVoices, table);
             string id, cause, import, month;
-            //liste per l'inserimento
-            List<ModelDataMan.Payment> listdata = new List<ModelDataMan.Payment>();
-            List<string> listinsert = new List<string>();
-            int i;
             
             //variabile di avvenuta modifica
             bool modifyRow = false;
@@ -441,52 +414,68 @@ namespace Mantenimento
                 //ricevo tru dal getter se alvataggio avvenuto con successo
                 modifyRow = frmMod.verify;
                 if (modifyRow == true)
-                {//aggiorno il datagridview
+                {
+                    //Aggiorna lo stato d'ambiente
                     isSaved = true;
-                    table.Rows.Clear();
-                    //carica i dati da DB e li assegna alla lista
-                    listdata = model.loadDataMan(year_manage);
+                    isChanged = false;
+                    statusPanel();
 
-                    //utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
-                    //rispettando la struct
-                    i = 0;
-                    while (i < listdata.Count)
-                    {
-                        listinsert.Add(listdata[i].id_mantenimento.ToString());
-                        listinsert.Add(listdata[i].causale);
-                        listinsert.Add(listdata[i].importo.ToString());
-                        listinsert.Add(listdata[i].mese);
-                        populate.inserisci(4, listinsert);
-                        listinsert.Clear();
-                        i++;
-                    }
-                
+                    //Popola la tabella
+                    table.Rows.Clear();
+                    model.getAll(year_manage, table);
+
+                    //Calcola il saldo annuale e lo salva
+                    counter();
                 }
-                statusPanel();
-                counter();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Nessuna riga selezionata per la modifica, selezionare una riga" + ex.Message, "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
+        /// <summary>
+        /// Elimina la riga selezionata
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteRow_Click(object sender, EventArgs e)
         {
             isSaved = false;
             isChanged = true;
             statusPanel();
-            //preleva l'indice dalla riga selezionata, se non selezionata non fa nulla
+
+            //Istanza all'oggetto record
+            ModelDataMan.Payment record = new ModelDataMan.Payment();
+
+            //Preleva l'indice dalla riga selezionata, se non selezionata non fa nulla
             int index = grdKeepingVoices.Rows.IndexOf(grdKeepingVoices.CurrentRow);
             if (index < 0) return;
 
-            PopulateGrid populate = new PopulateGrid(grdKeepingVoices, table);
+            //Preleva i dati dalla riga selezionata del DataGridview
+            var val = grdKeepingVoices.CurrentRow.Cells;
+            record.id_mantenimento = Int32.Parse(val[0].Value.ToString());
+
             //se confermato elimina la riga
             if (MessageBox.Show("Sicuro di voler eliminare la riga ?", "ATTENZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                populate.deleterow();
+                if(model.deleteRow(year_manage, record))
+                {
+                    //Aggiorna lo stato d'ambiente
+                    isSaved = true;
+                    isChanged = false;
+                    statusPanel();
+                    //Aggiorna la tabella
+                    table.Rows.Clear();
+                    //Popola la tabella
+                    model.getAll(year_manage, table);
+                    //Calcola il saldo annuale e lo salva
+                    counter();
+                }
             }
-            counter();
+            
         }
 
         private void btnUp_Click(object sender, EventArgs e)
@@ -525,29 +514,10 @@ namespace Mantenimento
         {
             Dispose();
         }
+
         #endregion
 
         #region DataGridView
-
-        private void grdKeepingVoices_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            //imposta parametri al cambiamento diretto di una cella
-            isChanged = true;
-            isSaved = false;
-            statusPanel();
-            counter();
-        }
-
-        private void grdKeepingVoices_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            //modifica il . in una , per il corretto cast double
-            if (grdKeepingVoices.CurrentCell.ColumnIndex == 3)
-            {
-                var val = grdKeepingVoices.CurrentCell.Value;
-                string valore = val.ToString().Replace('.', ',');
-                grdKeepingVoices.CurrentCell.Value = valore;
-            }
-        }
 
         private void grdKeepingVoices_MouseClick(object sender, MouseEventArgs e)
         {
@@ -565,7 +535,11 @@ namespace Mantenimento
             creatMenu.showContextMenu(e);
         }
 
-       
+        private void grdKeepingVoices_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("Modifica permessa solo attraverso la funzione modifica", "Attenzione!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
         #endregion
 
         #region Textbox

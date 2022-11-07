@@ -532,6 +532,7 @@ namespace Libretto
             {
                 statusPanel();
             }
+
         }
 
         //update del saldo annuo per l'anno successivo, in modo che al primo caricamento in spese annuali

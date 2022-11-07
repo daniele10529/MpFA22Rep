@@ -51,20 +51,6 @@ namespace PostPay
         #region Metodi Privati
 
         /// <summary>
-        /// Metodo per salvare il saldo annuo
-        /// </summary>
-        /// <returns></returns>
-        private bool saveBalance()
-        {
-            double balance = Double.Parse(txtBalanceOV.Text);
-            bool isSavedBalance = false;
-            //Esegue e verifica il corretto salvataggio del saldo annuale
-            if (modelPP.saveBalanceYear(balance, record)) isSavedBalance = true;
-            
-            return isSavedBalance;
-        }
-
-        /// <summary>
         /// Metodo per l'aggiornamento di visualizzazione della griglia
         /// </summary>
         /// <param name="modify">Stabilisce il chiamante per la pagina da visualizzare</param>
@@ -247,7 +233,7 @@ namespace PostPay
         /// <summary>
         /// Esegue il conteggio del saldo attuale
         /// </summary>
-        private void counter()
+        private void counter(bool save = true)
         {
             int i;
             double total = 0;
@@ -265,9 +251,22 @@ namespace PostPay
                 total += Double.Parse(row[2].ToString());
             }
             txtBalanceOV.Text = total.ToString();
-            //tronca la stringa dopo il calcolo
+            
+            //Tronca la stringa dopo il calcolo
             check = new Checker();
             check.truncate(txtBalanceOV, 2);
+
+            //Salva il saldo annuale, opzionale al carico dei dati non salva
+            if (save)
+            {
+                //Salva il saldo annuale
+                double balance = Double.Parse(txtBalanceOV.Text);
+                if (modelPP.saveBalanceYear(balance, record) == false)
+                {
+                    MessageBox.Show("Non è stato salvato il saldo annuale!!", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
         }
 
         /// <summary>
@@ -414,7 +413,7 @@ namespace PostPay
             //carica il valore di saldo del mese precedente e lo inserisce nella textbox
             txtBalanceST.Text = modelPP.getBalanceYearPrev(record).ToString();
             //Esegue il conteggio del saldo dalla tabella interamente valorizzata
-            counter();
+            counter(false);
             //tronca il bilancio iniziale
             if (txtBalanceST.Text.Length > 1)
             {
@@ -492,7 +491,6 @@ namespace PostPay
             statusPanel();
 
             Checker check = new Checker(pathxml);
-            bool isSavedBalance = false;
 
             try
             {
@@ -520,21 +518,13 @@ namespace PostPay
                         }
                         else
                         {
-                            //Se l'inserimento del record è ok 
-                            //Inserisce i dati del bilancio nel DB
-                            isSavedBalance = saveBalance();
-
-                            if (isSavedBalance == false)
-                            {
-                                MessageBox.Show("Errore di inserimento del bilancio annuale", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                            }
-
                             //Aggiorna la griglia e il pannello
                             updateGridView(false);
                             isSaved = true;
                             isChanged = false;
                             statusPanel();
+                            //Aggiorna e salva il saldo annuale
+                            counter();
                         }
 
                         //Resetta i valori
@@ -542,7 +532,7 @@ namespace PostPay
                         txtImport.Texts = "";
                         cmbMonths.SelectedItem = null;
                         cmbMonths.Focus();
-                        counter();
+                        
 
                     }
                 }
@@ -608,14 +598,17 @@ namespace PostPay
                 //Se le riga viene eliminata dal DB, viene eliminata dalla tabella totale
                 if (modelPP.delete(record))
                 {
-                    isSaved = true;
+                    //Aggiorna lo stato d'ambiente
                     isChanged = false;
+                    isSaved = true;
                     statusPanel();
+                    //Aggiorna il DataGridView
                     updateGridView(true);
+                    //Calcola e salva il saldo annuale
+                    counter();
                 } 
 
             }
-            counter();
 
         }
 
@@ -674,18 +667,12 @@ namespace PostPay
                 {
                     //Aggiorna il datagridview
                     updateGridView(true);
-                    //Calcola il saldo mensile
+                    //Calcola e salva il saldo mensile
                     counter();
-                    //Salva il saldo annuo e aggiorna lo stato di salvataggio
-                    bool isSavedBalance = saveBalance();
-                    if (isSavedBalance == false)
-                        MessageBox.Show("Errore di salvataggio dei dati", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else
-                    {
-                        isChanged = false;
-                        isSaved = true;
-                        statusPanel();
-                    }
+                    //Aggiorna lo stato d'ambiente
+                    isChanged = false;
+                    isSaved = true;
+                    statusPanel();
 
                 }
                 

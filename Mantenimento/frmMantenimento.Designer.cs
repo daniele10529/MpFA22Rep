@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("ANNI   ");
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("ANNI   ");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.pgHome = new System.Windows.Forms.TabPage();
@@ -42,15 +42,10 @@
             this.roundedPanel1 = new RoundendControlCollections.RoundedPanel();
             this.txtYearInsert = new RoundendControlCollections.RoundedTextBox();
             this.btnNewYears = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnLoadYears = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblGrAnni = new System.Windows.Forms.Label();
             this.pgInsert = new System.Windows.Forms.TabPage();
-            this.roundedPanel4 = new RoundendControlCollections.RoundedPanel();
-            this.btnSaveData = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.roundedPanel5 = new RoundendControlCollections.RoundedPanel();
             this.btnSetOftenValue = new RoundendControlCollections.RoundedButton();
             this.txtImport = new RoundendControlCollections.RoundedTextBox();
@@ -63,10 +58,6 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pgModify = new System.Windows.Forms.TabPage();
-            this.roundedPanel6 = new RoundendControlCollections.RoundedPanel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSaveThree = new System.Windows.Forms.Button();
             this.roundedPanel7 = new RoundendControlCollections.RoundedPanel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -104,13 +95,9 @@
             this.roundedPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pgInsert.SuspendLayout();
-            this.roundedPanel4.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.roundedPanel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.pgModify.SuspendLayout();
-            this.roundedPanel6.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.roundedPanel7.SuspendLayout();
             this.panel10.SuspendLayout();
             this.pgSearch.SuspendLayout();
@@ -228,7 +215,6 @@
             this.roundedPanel1.BorderSize = 2;
             this.roundedPanel1.Controls.Add(this.txtYearInsert);
             this.roundedPanel1.Controls.Add(this.btnNewYears);
-            this.roundedPanel1.Controls.Add(this.btnSave);
             this.roundedPanel1.Controls.Add(this.btnLoadYears);
             this.roundedPanel1.Controls.Add(this.panel5);
             this.roundedPanel1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -277,20 +263,6 @@
             this.btnNewYears.UseVisualStyleBackColor = true;
             this.btnNewYears.Click += new System.EventHandler(this.btnNewYear_Click);
             // 
-            // btnSave
-            // 
-            this.btnSave.BackgroundImage = global::Mantenimento.Properties.Resources.Salva;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.Green;
-            this.btnSave.Location = new System.Drawing.Point(202, 35);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(30, 30);
-            this.btnSave.TabIndex = 11;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSaveData_Click);
-            // 
             // btnLoadYears
             // 
             this.btnLoadYears.BackgroundImage = global::Mantenimento.Properties.Resources.Aggiorna;
@@ -330,7 +302,6 @@
             // pgInsert
             // 
             this.pgInsert.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.pgInsert.Controls.Add(this.roundedPanel4);
             this.pgInsert.Controls.Add(this.roundedPanel5);
             this.pgInsert.Location = new System.Drawing.Point(4, 25);
             this.pgInsert.Name = "pgInsert";
@@ -338,60 +309,6 @@
             this.pgInsert.Size = new System.Drawing.Size(1351, 86);
             this.pgInsert.TabIndex = 1;
             this.pgInsert.Text = "Inserisci";
-            // 
-            // roundedPanel4
-            // 
-            this.roundedPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedPanel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.roundedPanel4.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.roundedPanel4.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.roundedPanel4.BorderRadius = 2;
-            this.roundedPanel4.BorderSize = 2;
-            this.roundedPanel4.Controls.Add(this.btnSaveData);
-            this.roundedPanel4.Controls.Add(this.panel7);
-            this.roundedPanel4.GradientAngle = 90F;
-            this.roundedPanel4.GrdtBottom = System.Drawing.Color.Empty;
-            this.roundedPanel4.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel4.Location = new System.Drawing.Point(1172, 3);
-            this.roundedPanel4.Name = "roundedPanel4";
-            this.roundedPanel4.Padding = new System.Windows.Forms.Padding(3);
-            this.roundedPanel4.Size = new System.Drawing.Size(70, 80);
-            this.roundedPanel4.TabIndex = 57;
-            // 
-            // btnSaveData
-            // 
-            this.btnSaveData.BackgroundImage = global::Mantenimento.Properties.Resources.Salva;
-            this.btnSaveData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveData.ForeColor = System.Drawing.Color.Green;
-            this.btnSaveData.Location = new System.Drawing.Point(20, 35);
-            this.btnSaveData.Name = "btnSaveData";
-            this.btnSaveData.Size = new System.Drawing.Size(30, 30);
-            this.btnSaveData.TabIndex = 23;
-            this.btnSaveData.UseVisualStyleBackColor = true;
-            this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.label6);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(3, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(64, 23);
-            this.panel7.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label6.Location = new System.Drawing.Point(9, 2);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 16);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Salva";
             // 
             // roundedPanel5
             // 
@@ -439,6 +356,7 @@
             this.btnSetOftenValue.Text = "***";
             this.btnSetOftenValue.TextColor = System.Drawing.Color.White;
             this.btnSetOftenValue.UseVisualStyleBackColor = false;
+            this.btnSetOftenValue.Click += new System.EventHandler(this.btnSetOftenValue_Click);
             // 
             // txtImport
             // 
@@ -570,67 +488,12 @@
             // pgModify
             // 
             this.pgModify.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.pgModify.Controls.Add(this.roundedPanel6);
             this.pgModify.Controls.Add(this.roundedPanel7);
             this.pgModify.Location = new System.Drawing.Point(4, 25);
             this.pgModify.Name = "pgModify";
             this.pgModify.Size = new System.Drawing.Size(1351, 86);
             this.pgModify.TabIndex = 2;
             this.pgModify.Text = "Modifica";
-            // 
-            // roundedPanel6
-            // 
-            this.roundedPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedPanel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.roundedPanel6.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.roundedPanel6.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.roundedPanel6.BorderRadius = 2;
-            this.roundedPanel6.BorderSize = 2;
-            this.roundedPanel6.Controls.Add(this.panel9);
-            this.roundedPanel6.Controls.Add(this.btnSaveThree);
-            this.roundedPanel6.GradientAngle = 90F;
-            this.roundedPanel6.GrdtBottom = System.Drawing.Color.Empty;
-            this.roundedPanel6.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel6.Location = new System.Drawing.Point(1098, 6);
-            this.roundedPanel6.Name = "roundedPanel6";
-            this.roundedPanel6.Padding = new System.Windows.Forms.Padding(3);
-            this.roundedPanel6.Size = new System.Drawing.Size(70, 75);
-            this.roundedPanel6.TabIndex = 46;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Controls.Add(this.label1);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(3, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(64, 23);
-            this.panel9.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label1.Location = new System.Drawing.Point(9, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Salva";
-            // 
-            // btnSaveThree
-            // 
-            this.btnSaveThree.BackgroundImage = global::Mantenimento.Properties.Resources.Salva;
-            this.btnSaveThree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveThree.ForeColor = System.Drawing.Color.Green;
-            this.btnSaveThree.Location = new System.Drawing.Point(20, 34);
-            this.btnSaveThree.Name = "btnSaveThree";
-            this.btnSaveThree.Size = new System.Drawing.Size(30, 30);
-            this.btnSaveThree.TabIndex = 23;
-            this.btnSaveThree.UseVisualStyleBackColor = true;
-            this.btnSaveThree.Click += new System.EventHandler(this.btnSaveData_Click);
             // 
             // roundedPanel7
             // 
@@ -651,7 +514,7 @@
             this.roundedPanel7.Location = new System.Drawing.Point(180, 6);
             this.roundedPanel7.Name = "roundedPanel7";
             this.roundedPanel7.Padding = new System.Windows.Forms.Padding(3);
-            this.roundedPanel7.Size = new System.Drawing.Size(914, 75);
+            this.roundedPanel7.Size = new System.Drawing.Size(985, 75);
             this.roundedPanel7.TabIndex = 45;
             // 
             // panel10
@@ -662,7 +525,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(3, 3);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(908, 23);
+            this.panel10.Size = new System.Drawing.Size(979, 23);
             this.panel10.TabIndex = 0;
             // 
             // label7
@@ -813,13 +676,13 @@
             this.treeYears.LineColor = System.Drawing.Color.LightSteelBlue;
             this.treeYears.Location = new System.Drawing.Point(1, 83);
             this.treeYears.Name = "treeYears";
-            treeNode10.BackColor = System.Drawing.Color.AntiqueWhite;
-            treeNode10.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode10.Name = "nodeYears";
-            treeNode10.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode10.Text = "ANNI   ";
+            treeNode2.BackColor = System.Drawing.Color.AntiqueWhite;
+            treeNode2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode2.Name = "nodeYears";
+            treeNode2.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode2.Text = "ANNI   ";
             this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode10});
+            treeNode2});
             this.treeYears.ShowLines = false;
             this.treeYears.ShowNodeToolTips = true;
             this.treeYears.Size = new System.Drawing.Size(177, 645);
@@ -1016,24 +879,24 @@
             this.grdKeepingVoices.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grdKeepingVoices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdKeepingVoices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdKeepingVoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdKeepingVoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.grdKeepingVoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdKeepingVoices.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdKeepingVoices.DefaultCellStyle = dataGridViewCellStyle5;
             this.grdKeepingVoices.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdKeepingVoices.EnableHeadersVisualStyles = false;
             this.grdKeepingVoices.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -1041,15 +904,16 @@
             this.grdKeepingVoices.Margin = new System.Windows.Forms.Padding(5);
             this.grdKeepingVoices.MultiSelect = false;
             this.grdKeepingVoices.Name = "grdKeepingVoices";
+            this.grdKeepingVoices.ReadOnly = true;
             this.grdKeepingVoices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdKeepingVoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdKeepingVoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grdKeepingVoices.RowHeadersVisible = false;
             this.grdKeepingVoices.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdKeepingVoices.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -1061,6 +925,8 @@
             this.grdKeepingVoices.ShowEditingIcon = false;
             this.grdKeepingVoices.Size = new System.Drawing.Size(984, 720);
             this.grdKeepingVoices.TabIndex = 21;
+            this.grdKeepingVoices.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.grdKeepingVoices_KeyPress);
+            this.grdKeepingVoices.MouseClick += new System.Windows.Forms.MouseEventHandler(this.grdKeepingVoices_MouseClick);
             // 
             // frmMantenimento
             // 
@@ -1092,17 +958,11 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.pgInsert.ResumeLayout(false);
-            this.roundedPanel4.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.roundedPanel5.ResumeLayout(false);
             this.roundedPanel5.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.pgModify.ResumeLayout(false);
-            this.roundedPanel6.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.roundedPanel7.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
@@ -1145,7 +1005,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lblGrAnni;
         private System.Windows.Forms.Button btnNewYears;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLoadYears;
         private RoundendControlCollections.RoundedTextBox txtYearInsert;
         private RoundendControlCollections.RoundedPanel roundedPanel3;
@@ -1163,10 +1022,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label5;
-        private RoundendControlCollections.RoundedPanel roundedPanel4;
-        private System.Windows.Forms.Button btnSaveData;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label6;
         private RoundendControlCollections.RoundedPanel roundedPanel7;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label7;
@@ -1174,10 +1029,6 @@
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnModifyRow;
         private System.Windows.Forms.Button btnUp;
-        private RoundendControlCollections.RoundedPanel roundedPanel6;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSaveThree;
         private RoundendControlCollections.RoundedPanel roundedPanel8;
         private System.Windows.Forms.TextBox txtSearchVoice;
         private System.Windows.Forms.Panel panel11;

@@ -99,7 +99,7 @@
             this.txtMonth.PlaceholderText = "";
             this.txtMonth.ReadOnly = false;
             this.txtMonth.Size = new System.Drawing.Size(101, 31);
-            this.txtMonth.TabIndex = 35;
+            this.txtMonth.TabIndex = 2;
             this.txtMonth.Texts = "";
             this.txtMonth.UnderlinedStyle = false;
             this.txtMonth.Enter += new System.EventHandler(this.txtMonth_Enter);
@@ -132,7 +132,7 @@
             this.btnClose.Location = new System.Drawing.Point(323, 441);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.TabIndex = 30;
+            this.btnClose.TabIndex = 7;
             this.btnClose.TextColor = System.Drawing.Color.White;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -155,7 +155,7 @@
             this.btnModify.Location = new System.Drawing.Point(216, 441);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(88, 30);
-            this.btnModify.TabIndex = 29;
+            this.btnModify.TabIndex = 6;
             this.btnModify.Text = "Modifica";
             this.btnModify.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModify.TextColor = System.Drawing.Color.White;
@@ -178,7 +178,7 @@
             this.btnPlus.Location = new System.Drawing.Point(274, 320);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(30, 30);
-            this.btnPlus.TabIndex = 28;
+            this.btnPlus.TabIndex = 5;
             this.btnPlus.Text = "+";
             this.btnPlus.TextColor = System.Drawing.Color.BlueViolet;
             this.btnPlus.UseVisualStyleBackColor = false;
@@ -201,7 +201,7 @@
             this.txtImport.PlaceholderText = "";
             this.txtImport.ReadOnly = false;
             this.txtImport.Size = new System.Drawing.Size(250, 31);
-            this.txtImport.TabIndex = 27;
+            this.txtImport.TabIndex = 4;
             this.txtImport.Texts = "";
             this.txtImport.UnderlinedStyle = false;
             this.txtImport.Enter += new System.EventHandler(this.txtImport_Enter);
@@ -224,7 +224,7 @@
             this.txtCause.PlaceholderText = "";
             this.txtCause.ReadOnly = false;
             this.txtCause.Size = new System.Drawing.Size(341, 31);
-            this.txtCause.TabIndex = 26;
+            this.txtCause.TabIndex = 3;
             this.txtCause.Texts = "";
             this.txtCause.UnderlinedStyle = false;
             this.txtCause.Enter += new System.EventHandler(this.txtCause_Enter);
@@ -248,7 +248,7 @@
             this.txtId.PlaceholderText = "";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(95, 31);
-            this.txtId.TabIndex = 34;
+            this.txtId.TabIndex = 1;
             this.txtId.TabStop = false;
             this.txtId.Texts = "";
             this.txtId.UnderlinedStyle = false;

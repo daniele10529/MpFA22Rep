@@ -76,6 +76,12 @@
             this.btnLoadYears2 = new System.Windows.Forms.Button();
             this.svdPDF = new System.Windows.Forms.SaveFileDialog();
             this.pnlFooter = new RoundendControlCollections.RoundedPanel();
+            this.roundedPanel1 = new RoundendControlCollections.RoundedPanel();
+            this.btnForward = new RoundendControlCollections.RoundedButton();
+            this.btnBack = new RoundendControlCollections.RoundedButton();
+            this.roundedPanel2 = new RoundendControlCollections.RoundedPanel();
+            this.lblPagination = new System.Windows.Forms.Label();
+            this.lblPages = new System.Windows.Forms.Label();
             this.txtYearMonth = new System.Windows.Forms.TextBox();
             this.lblSaldoIni = new System.Windows.Forms.Label();
             this.txtBalanceST = new System.Windows.Forms.TextBox();
@@ -85,15 +91,9 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlStatus = new System.Windows.Forms.Panel();
-            this.lblPages = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.pnlResume = new System.Windows.Forms.Panel();
-            this.roundedPanel1 = new RoundendControlCollections.RoundedPanel();
-            this.btnForward = new RoundendControlCollections.RoundedButton();
-            this.btnBack = new RoundendControlCollections.RoundedButton();
-            this.roundedPanel2 = new RoundendControlCollections.RoundedPanel();
-            this.lblPagination = new System.Windows.Forms.Label();
             this.btnCloseYear = new RoundendControlCollections.RoundedButton();
             this.pnlGrid = new RoundendControlCollections.RoundedPanel();
             this.grdMonthVoices = new System.Windows.Forms.DataGridView();
@@ -115,9 +115,9 @@
             this.panel11.SuspendLayout();
             this.pnlTree.SuspendLayout();
             this.pnlFooter.SuspendLayout();
-            this.pnlResume.SuspendLayout();
             this.roundedPanel1.SuspendLayout();
             this.roundedPanel2.SuspendLayout();
+            this.pnlResume.SuspendLayout();
             this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMonthVoices)).BeginInit();
             this.SuspendLayout();
@@ -726,6 +726,113 @@
             this.pnlFooter.Size = new System.Drawing.Size(1366, 156);
             this.pnlFooter.TabIndex = 38;
             // 
+            // roundedPanel1
+            // 
+            this.roundedPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedPanel1.BackColor = System.Drawing.Color.LightGray;
+            this.roundedPanel1.BackgroundColor = System.Drawing.Color.LightGray;
+            this.roundedPanel1.BorderColor = System.Drawing.Color.Cyan;
+            this.roundedPanel1.BorderRadius = 15;
+            this.roundedPanel1.BorderSize = 1;
+            this.roundedPanel1.Controls.Add(this.btnForward);
+            this.roundedPanel1.Controls.Add(this.btnBack);
+            this.roundedPanel1.Controls.Add(this.roundedPanel2);
+            this.roundedPanel1.Controls.Add(this.lblPages);
+            this.roundedPanel1.GradientAngle = 90F;
+            this.roundedPanel1.GrdtBottom = System.Drawing.Color.WhiteSmoke;
+            this.roundedPanel1.GrdtTop = System.Drawing.Color.AntiqueWhite;
+            this.roundedPanel1.Location = new System.Drawing.Point(187, 12);
+            this.roundedPanel1.Name = "roundedPanel1";
+            this.roundedPanel1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 0);
+            this.roundedPanel1.Size = new System.Drawing.Size(985, 79);
+            this.roundedPanel1.TabIndex = 69;
+            // 
+            // btnForward
+            // 
+            this.btnForward.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnForward.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnForward.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.btnForward.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnForward.BorderRadius = 20;
+            this.btnForward.BorderSize = 1;
+            this.btnForward.FlatAppearance.BorderSize = 0;
+            this.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnForward.ForeColor = System.Drawing.Color.White;
+            this.btnForward.GradientAngle = 90F;
+            this.btnForward.GrdtBottom = System.Drawing.Color.Empty;
+            this.btnForward.Image = global::PostPay.Properties.Resources.Forward;
+            this.btnForward.Location = new System.Drawing.Point(524, 36);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(57, 25);
+            this.btnForward.TabIndex = 65;
+            this.btnForward.TextColor = System.Drawing.Color.White;
+            this.btnForward.UseVisualStyleBackColor = false;
+            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBack.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnBack.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.btnBack.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnBack.BorderRadius = 20;
+            this.btnBack.BorderSize = 1;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.GradientAngle = 90F;
+            this.btnBack.GrdtBottom = System.Drawing.Color.Empty;
+            this.btnBack.Image = global::PostPay.Properties.Resources.Back;
+            this.btnBack.Location = new System.Drawing.Point(403, 36);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(57, 25);
+            this.btnBack.TabIndex = 64;
+            this.btnBack.TextColor = System.Drawing.Color.White;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // roundedPanel2
+            // 
+            this.roundedPanel2.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.roundedPanel2.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.roundedPanel2.BorderColor = System.Drawing.Color.LightSkyBlue;
+            this.roundedPanel2.BorderRadius = 10;
+            this.roundedPanel2.BorderSize = 1;
+            this.roundedPanel2.Controls.Add(this.lblPagination);
+            this.roundedPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.roundedPanel2.GradientAngle = 90F;
+            this.roundedPanel2.GrdtBottom = System.Drawing.Color.Empty;
+            this.roundedPanel2.GrdtTop = System.Drawing.Color.Empty;
+            this.roundedPanel2.Location = new System.Drawing.Point(2, 2);
+            this.roundedPanel2.Name = "roundedPanel2";
+            this.roundedPanel2.Size = new System.Drawing.Size(981, 28);
+            this.roundedPanel2.TabIndex = 0;
+            // 
+            // lblPagination
+            // 
+            this.lblPagination.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPagination.AutoSize = true;
+            this.lblPagination.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPagination.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblPagination.Location = new System.Drawing.Point(441, 6);
+            this.lblPagination.Name = "lblPagination";
+            this.lblPagination.Size = new System.Drawing.Size(98, 16);
+            this.lblPagination.TabIndex = 0;
+            this.lblPagination.Text = "PAGINAZIONE";
+            // 
+            // lblPages
+            // 
+            this.lblPages.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPages.AutoSize = true;
+            this.lblPages.BackColor = System.Drawing.Color.Transparent;
+            this.lblPages.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPages.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblPages.Location = new System.Drawing.Point(466, 38);
+            this.lblPages.Name = "lblPages";
+            this.lblPages.Size = new System.Drawing.Size(52, 16);
+            this.lblPages.TabIndex = 63;
+            this.lblPages.Text = "(0 / 0)";
+            // 
             // txtYearMonth
             // 
             this.txtYearMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -821,19 +928,6 @@
             this.pnlStatus.Size = new System.Drawing.Size(180, 23);
             this.pnlStatus.TabIndex = 42;
             // 
-            // lblPages
-            // 
-            this.lblPages.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblPages.AutoSize = true;
-            this.lblPages.BackColor = System.Drawing.Color.Transparent;
-            this.lblPages.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPages.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblPages.Location = new System.Drawing.Point(466, 38);
-            this.lblPages.Name = "lblPages";
-            this.lblPages.Size = new System.Drawing.Size(52, 16);
-            this.lblPages.TabIndex = 63;
-            this.lblPages.Text = "(0 / 0)";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -877,100 +971,6 @@
             this.pnlResume.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.pnlResume.Size = new System.Drawing.Size(190, 730);
             this.pnlResume.TabIndex = 2;
-            // 
-            // roundedPanel1
-            // 
-            this.roundedPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedPanel1.BackColor = System.Drawing.Color.LightGray;
-            this.roundedPanel1.BackgroundColor = System.Drawing.Color.LightGray;
-            this.roundedPanel1.BorderColor = System.Drawing.Color.Cyan;
-            this.roundedPanel1.BorderRadius = 15;
-            this.roundedPanel1.BorderSize = 1;
-            this.roundedPanel1.Controls.Add(this.btnForward);
-            this.roundedPanel1.Controls.Add(this.btnBack);
-            this.roundedPanel1.Controls.Add(this.roundedPanel2);
-            this.roundedPanel1.Controls.Add(this.lblPages);
-            this.roundedPanel1.GradientAngle = 90F;
-            this.roundedPanel1.GrdtBottom = System.Drawing.Color.WhiteSmoke;
-            this.roundedPanel1.GrdtTop = System.Drawing.Color.AntiqueWhite;
-            this.roundedPanel1.Location = new System.Drawing.Point(187, 12);
-            this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 0);
-            this.roundedPanel1.Size = new System.Drawing.Size(985, 79);
-            this.roundedPanel1.TabIndex = 69;
-            // 
-            // btnForward
-            // 
-            this.btnForward.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnForward.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnForward.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.btnForward.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnForward.BorderRadius = 20;
-            this.btnForward.BorderSize = 1;
-            this.btnForward.FlatAppearance.BorderSize = 0;
-            this.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnForward.ForeColor = System.Drawing.Color.White;
-            this.btnForward.GradientAngle = 90F;
-            this.btnForward.GrdtBottom = System.Drawing.Color.Empty;
-            this.btnForward.Image = global::PostPay.Properties.Resources.Forward;
-            this.btnForward.Location = new System.Drawing.Point(524, 36);
-            this.btnForward.Name = "btnForward";
-            this.btnForward.Size = new System.Drawing.Size(57, 25);
-            this.btnForward.TabIndex = 65;
-            this.btnForward.TextColor = System.Drawing.Color.White;
-            this.btnForward.UseVisualStyleBackColor = false;
-            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBack.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnBack.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.btnBack.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnBack.BorderRadius = 20;
-            this.btnBack.BorderSize = 1;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.GradientAngle = 90F;
-            this.btnBack.GrdtBottom = System.Drawing.Color.Empty;
-            this.btnBack.Image = global::PostPay.Properties.Resources.Back;
-            this.btnBack.Location = new System.Drawing.Point(403, 36);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(57, 25);
-            this.btnBack.TabIndex = 64;
-            this.btnBack.TextColor = System.Drawing.Color.White;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // roundedPanel2
-            // 
-            this.roundedPanel2.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.roundedPanel2.BackgroundColor = System.Drawing.Color.AntiqueWhite;
-            this.roundedPanel2.BorderColor = System.Drawing.Color.LightSkyBlue;
-            this.roundedPanel2.BorderRadius = 10;
-            this.roundedPanel2.BorderSize = 1;
-            this.roundedPanel2.Controls.Add(this.lblPagination);
-            this.roundedPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.roundedPanel2.GradientAngle = 90F;
-            this.roundedPanel2.GrdtBottom = System.Drawing.Color.Empty;
-            this.roundedPanel2.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel2.Location = new System.Drawing.Point(2, 2);
-            this.roundedPanel2.Name = "roundedPanel2";
-            this.roundedPanel2.Size = new System.Drawing.Size(981, 28);
-            this.roundedPanel2.TabIndex = 0;
-            // 
-            // lblPagination
-            // 
-            this.lblPagination.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblPagination.AutoSize = true;
-            this.lblPagination.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPagination.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblPagination.Location = new System.Drawing.Point(441, 6);
-            this.lblPagination.Name = "lblPagination";
-            this.lblPagination.Size = new System.Drawing.Size(98, 16);
-            this.lblPagination.TabIndex = 0;
-            this.lblPagination.Text = "PAGINAZIONE";
             // 
             // btnCloseYear
             // 
@@ -1070,6 +1070,7 @@
             this.grdMonthVoices.Size = new System.Drawing.Size(984, 720);
             this.grdMonthVoices.TabIndex = 21;
             this.grdMonthVoices.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.grdMonthVoices_KeyPress);
+            this.grdMonthVoices.MouseClick += new System.Windows.Forms.MouseEventHandler(this.grdMonthVoices_MouseClick);
             // 
             // frmPostPay
             // 
@@ -1117,12 +1118,12 @@
             this.pnlTree.PerformLayout();
             this.pnlFooter.ResumeLayout(false);
             this.pnlFooter.PerformLayout();
-            this.pnlResume.ResumeLayout(false);
-            this.pnlResume.PerformLayout();
             this.roundedPanel1.ResumeLayout(false);
             this.roundedPanel1.PerformLayout();
             this.roundedPanel2.ResumeLayout(false);
             this.roundedPanel2.PerformLayout();
+            this.pnlResume.ResumeLayout(false);
+            this.pnlResume.PerformLayout();
             this.pnlGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdMonthVoices)).EndInit();
             this.ResumeLayout(false);
