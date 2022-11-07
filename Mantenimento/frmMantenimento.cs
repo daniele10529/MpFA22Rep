@@ -73,7 +73,7 @@ namespace Mantenimento
             tip.ShowAlways = true;
             tip.SetToolTip(btnLoadYears2, "Carica i valori dal DB del mese selezionato");
             tip.SetToolTip(btnLoadYears, "Carica i valori dal DB del mese selezionato");
-            tip.SetToolTip(btnNewYear, "Genera un nuovo anno");
+            tip.SetToolTip(btnNewYears, "Genera un nuovo anno");
             tip.SetToolTip(btnNewYear2, "Genera un nuovo anno");
             tip.SetToolTip(btnExit, "Chiudi Spese Annuali");
             tip.SetToolTip(btnSave, "Salva le modifiche");
@@ -182,9 +182,9 @@ namespace Mantenimento
             //set valori comboBox mesi
             cmbMonths.Items.AddRange(mesi);
             //Set textbox YearMonth
-            txtYearResume.Text = "Gestione Mantenimento.....";
+            txtYearMonth.Text = "Gestione Mantenimento.....";
             //Set valore txtYearInsert
-            txtYearInsert.Text = "0";
+            txtYearInsert.Texts = "0";
         }
 
         //Intercetta la chusura del form
@@ -240,72 +240,6 @@ namespace Mantenimento
         private void btnNewYear2_Click(object sender, EventArgs e)
         {
             btnNewYear_Click(sender, e);
-        }
-
-        private void btnLoadYears_Click(object sender, EventArgs e)
-        {
-            //istanza delle classi 
-            PopulateGrid populate = new PopulateGrid(grdKeepingVoices, table);
-            //lista di tipo Payment prelevando la struct da ModelDataMan
-            List<ModelDataMan.Payment> listdata = new List<ModelDataMan.Payment>();
-            //lista di appoggio necessaria all'inserimento in DataGridView
-            List<string> listinsert = new List<string>();
-            string selezione, anno;
-            int year, i;
-            //reset tabella, DataTable
-            table.Rows.Clear();
-
-            if (isChanged == true && isSaved == false)
-            {
-                if (MessageBox.Show("Sicuro di voler caricare un nuovo mese i dati non sono salvati ?", "ATTENZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
-                {
-                    return;
-                }
-            }
-
-            //controllo sulla selezione del nodo anno\mese dall'albero
-            if (treeYears.SelectedNode == null) return;
-
-            selezione = treeYears.SelectedNode.Text;
-            if (selezione == "ANNI") return;
-            else
-            {
-                //assegna il valore di anno\mese in base al nodo selezionato
-                anno = treeYears.SelectedNode.Text;
-
-                if (anno == "ANNI") return;
-                else
-                {
-                    year = Int32.Parse(anno);
-                    //assegna il valore alle variabili globali per la gestione con DB
-                    year_manage = year;
-                    //carica i dati da DB e li assegna alla lista, formata dalla struct
-                    listdata = model.loadDataMan(year);
-
-                    //utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
-                    i = 0;
-                    while (i < listdata.Count)
-                    {
-                        listinsert.Add(listdata[i].id_mantenimento.ToString());
-                        listinsert.Add(listdata[i].causale);
-                        listinsert.Add(listdata[i].importo.ToString());
-                        listinsert.Add(listdata[i].mese);
-                        populate.inserisci(4, listinsert);
-                        listinsert.Clear();
-                        i++;
-                    }
-
-                    txtYearResume.Text = "Anno caricato : " + anno;
-                }
-            }
-            //tabella modificata e caricata
-            isChanged = false;
-            isLoad = true;
-            //deseleziona l'albero 
-            treeYears.SelectedNode = null;
-            //carica il valore di saldo del mese precedente e lo inserisce nella textbox
-            txtBalance.Text = model.loadBalanceYear(year).ToString();
-            
         }
         private void btnLoadYears2_Click(object sender, EventArgs e)
         {
@@ -379,31 +313,6 @@ namespace Mantenimento
             cmbMonths.Focus();
             //aggiorna saldo annuale
             counter();
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (isLoad == false || isSaved == true) return;
-            if (isChanged == false) return;
-
-            double balance = Double.Parse(txtBalance.Text);
-            bool isSavedBalance = false;
-
-            //genera la lista dalla tabella rispettando la struct, inserisce dati nel DB
-            //aggiorna il saldo annuale
-            List<ModelDataMan.Payment> lista = createListStruct();
-            isSaved = model.saveDataMan(year_manage, lista);
-            isSavedBalance = model.saveBalanceYear(balance, year_manage, "totale_annuo_mantenimento");
-            //verifica il corretto salvataggio dei dati
-            if (isSavedBalance == false || isSaved == false)
-            {
-                MessageBox.Show("Errore di salvataggio dei dati", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-            else
-            {
-                statusPanel();
-            }
         }
         private void btnSaveData_Click(object sender, EventArgs e)
         {
