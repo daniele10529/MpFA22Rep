@@ -598,10 +598,102 @@ namespace Mantenimento
             cmbMonths.BackColor = Color.FromArgb(210, 228, 242);
         }
 
+
         private void cmbMonths_Leave(object sender, EventArgs e)
         {
             cmbMonths.BackColor = Color.White;
         }
+
+        private void cmbMonths_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            //Affinché possa ridisegnare è necessario impostare l'attributo
+            //DrawMode su OwnerDrawFixed
+
+            //Antialias sul disegno del testo
+            e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            //Eredita dal controllo combobox
+            ComboBox cb = (ComboBox)sender;
+
+            //Disegna l'item selezionato
+            if ((e.State & DrawItemState.Selected) != 0)
+            {
+                //Ricava il rettangolo dell'Item selezionato
+                Rectangle rec = new Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height);
+                //Disegna il rettangolo di selezione con il colore personalizzato
+                e.Graphics.FillRectangle(Brushes.LightSteelBlue, rec);
+
+                //Disegna il testo dell'Item
+                e.Graphics.DrawString(cb.Items[e.Index].ToString(), cb.Font, Brushes.Black, Rectangle.Inflate(e.Bounds, -5, 0));
+            
+            }
+            else
+            {
+                ///Ricava il rettangolo dell'Item selezionato
+                Rectangle rec = new Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height);
+                //Disegna il rettangolo di selezione con il colore personalizzato
+                e.Graphics.FillRectangle(Brushes.White, rec);
+
+                //Disegna il testo dell'Item
+                e.Graphics.DrawString(cb.Items[e.Index].ToString(), cb.Font, Brushes.Black, Rectangle.Inflate(e.Bounds, -5, 0));
+
+            }
+        }
+
+        #endregion
+
+        #region Treeview
+
+        private void treeYears_DrawNode(object sender, DrawTreeNodeEventArgs e)
+        {
+            //Affinché possa ridisegnare è necessario impostare l'attributo
+            //DrawMode su OwnerDrawText
+
+            //Antialias sul disegno del testo
+            e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            //Se TreeView perde il focus disegna i nodi in modo standard
+            if (treeYears.Focused == false)
+            {
+                e.DrawDefault = true;
+                return;
+            }
+
+            //Disegna il colore di sfondo del nodo selezionato
+            if ((e.State & TreeNodeStates.Selected) != 0)
+            {
+                //Ricava il rettangolo con la larghezza del TreeView e punto di partenza in X
+                //Altezza e punto di partenza in y del nodo selezionato
+                Rectangle rec = new Rectangle(treeYears.Bounds.X, e.Node.Bounds.Y, treeYears.Width, e.Node.Bounds.Height);
+                //Disegna il rettangolo di selezione con il colore personalizzato
+                e.Graphics.FillRectangle(Brushes.LightSteelBlue, rec);
+
+                //Preleva il font del nodo, se non selezionato utilizza quello del TreeView
+                Font nodeFont = e.Node.NodeFont;
+                if (nodeFont == null) nodeFont = ((TreeView)sender).Font;
+
+                //Disegna il testo del nodo
+                e.Graphics.DrawString(e.Node.Text, nodeFont, Brushes.White, Rectangle.Inflate(e.Bounds, 2, 0));
+                //Disegna l'immagine al nodo selezionato
+                Image i = Image.FromFile(Routes.ICONS + "Ordina_dx.png");
+                e.Graphics.DrawImage(i, e.Node.Bounds.X - 30, e.Node.Bounds.Y, 20, 20);
+
+            }
+            else
+            {
+                //Se il nodo non è selezionato lo disegna in modo standard
+                e.DrawDefault = true;
+            }
+
+
+        }
+
+       
+
+        //Carica i dati al doppio click sul nodo prescelto
+        private void treeYears_DoubleClick(object sender, EventArgs e)
+        {
+            btnLoadYears_Click(sender, e);
+        }
+
 
         #endregion
 
