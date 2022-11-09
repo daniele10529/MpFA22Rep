@@ -198,7 +198,7 @@ namespace ContoCorrente
             //se viene premuto +, keychar = 43 codice ascii tasto +
             if (e.KeyChar == 43)
             {
-                string pathxml = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+                string pathxml = Routes.XMLERRORS;
 
                 //istanza alla classe checker per il controllo del valore numerico
                 Checker check = new Checker(pathxml);
@@ -236,7 +236,7 @@ namespace ContoCorrente
         private void txtDay_Enter(object sender, EventArgs e)
         {
             txtDay.BorderColor = Color.FromArgb(161, 223, 239);
-            txtDay.BackColor = Color.FromArgb(243, 221, 247);
+            txtDay.BackColor = Color.FromArgb(210, 228, 242);
         }
 
         private void txtDay_Leave(object sender, EventArgs e)
@@ -248,7 +248,7 @@ namespace ContoCorrente
         private void txtCause_Enter(object sender, EventArgs e)
         {
             txtCause.BorderColor = Color.FromArgb(161, 223, 239);
-            txtCause.BackColor = Color.FromArgb(243, 221, 247);
+            txtCause.BackColor = Color.FromArgb(210, 228, 242);
         }
 
         private void txtCause_Leave(object sender, EventArgs e)
@@ -260,7 +260,7 @@ namespace ContoCorrente
         private void txtImport_Enter(object sender, EventArgs e)
         {
             txtImport.BorderColor = Color.FromArgb(161, 223, 239);
-            txtImport.BackColor = Color.FromArgb(243, 221, 247);
+            txtImport.BackColor = Color.FromArgb(210, 228, 242);
         }
 
         private void txtImport_Leave(object sender, EventArgs e)

@@ -49,7 +49,6 @@
             this.roundedPanel5 = new RoundendControlCollections.RoundedPanel();
             this.btnSetOftenValue = new RoundendControlCollections.RoundedButton();
             this.txtImport = new RoundendControlCollections.RoundedTextBox();
-            this.cmbMonths = new System.Windows.Forms.ComboBox();
             this.btnInsert = new System.Windows.Forms.Button();
             this.txtCause = new RoundendControlCollections.RoundedTextBox();
             this.lblMese = new System.Windows.Forms.Label();
@@ -83,10 +82,11 @@
             this.txtBalance = new System.Windows.Forms.TextBox();
             this.lblSaldoFine = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtYearMonth = new System.Windows.Forms.TextBox();
-            this.pnlFooter = new RoundendControlCollections.RoundedPanel();
             this.pnlGrid = new RoundendControlCollections.RoundedPanel();
             this.grdKeepingVoices = new System.Windows.Forms.DataGridView();
+            this.pnlFooter = new RoundendControlCollections.RoundedPanel();
+            this.txtYearMonth = new System.Windows.Forms.TextBox();
+            this.cmbMonths = new RoundendControlCollections.CustomComboBox();
             this.pnlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.pgHome.SuspendLayout();
@@ -105,9 +105,9 @@
             this.panel11.SuspendLayout();
             this.pnlTree.SuspendLayout();
             this.pnlResume.SuspendLayout();
-            this.pnlFooter.SuspendLayout();
             this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdKeepingVoices)).BeginInit();
+            this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -318,9 +318,9 @@
             this.roundedPanel5.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.roundedPanel5.BorderRadius = 2;
             this.roundedPanel5.BorderSize = 2;
+            this.roundedPanel5.Controls.Add(this.cmbMonths);
             this.roundedPanel5.Controls.Add(this.btnSetOftenValue);
             this.roundedPanel5.Controls.Add(this.txtImport);
-            this.roundedPanel5.Controls.Add(this.cmbMonths);
             this.roundedPanel5.Controls.Add(this.btnInsert);
             this.roundedPanel5.Controls.Add(this.txtCause);
             this.roundedPanel5.Controls.Add(this.lblMese);
@@ -380,21 +380,6 @@
             this.txtImport.UnderlinedStyle = false;
             this.txtImport.Enter += new System.EventHandler(this.txtImport_Enter);
             this.txtImport.Leave += new System.EventHandler(this.txtImport_Leave);
-            // 
-            // cmbMonths
-            // 
-            this.cmbMonths.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cmbMonths.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbMonths.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbMonths.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMonths.FormattingEnabled = true;
-            this.cmbMonths.Location = new System.Drawing.Point(6, 46);
-            this.cmbMonths.Name = "cmbMonths";
-            this.cmbMonths.Size = new System.Drawing.Size(121, 24);
-            this.cmbMonths.TabIndex = 50;
-            this.cmbMonths.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cmbMonths_DrawItem);
-            this.cmbMonths.Enter += new System.EventHandler(this.cmbMonths_Enter);
-            this.cmbMonths.Leave += new System.EventHandler(this.cmbMonths_Leave);
             // 
             // btnInsert
             // 
@@ -821,40 +806,6 @@
             this.panel1.Size = new System.Drawing.Size(177, 10);
             this.panel1.TabIndex = 39;
             // 
-            // txtYearMonth
-            // 
-            this.txtYearMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtYearMonth.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtYearMonth.Enabled = false;
-            this.txtYearMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYearMonth.ForeColor = System.Drawing.Color.Black;
-            this.txtYearMonth.Location = new System.Drawing.Point(189, 31);
-            this.txtYearMonth.Name = "txtYearMonth";
-            this.txtYearMonth.ReadOnly = true;
-            this.txtYearMonth.Size = new System.Drawing.Size(985, 22);
-            this.txtYearMonth.TabIndex = 36;
-            this.txtYearMonth.TabStop = false;
-            // 
-            // pnlFooter
-            // 
-            this.pnlFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlFooter.BackColor = System.Drawing.Color.Transparent;
-            this.pnlFooter.BackgroundColor = System.Drawing.Color.Transparent;
-            this.pnlFooter.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlFooter.BorderRadius = 10;
-            this.pnlFooter.BorderSize = 3;
-            this.pnlFooter.Controls.Add(this.txtYearMonth);
-            this.pnlFooter.GradientAngle = 90F;
-            this.pnlFooter.GrdtBottom = System.Drawing.Color.WhiteSmoke;
-            this.pnlFooter.GrdtTop = System.Drawing.Color.AntiqueWhite;
-            this.pnlFooter.Location = new System.Drawing.Point(1, 858);
-            this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new System.Drawing.Size(1366, 156);
-            this.pnlFooter.TabIndex = 39;
-            // 
             // pnlGrid
             // 
             this.pnlGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -932,6 +883,51 @@
             this.grdKeepingVoices.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.grdKeepingVoices_KeyPress);
             this.grdKeepingVoices.MouseClick += new System.Windows.Forms.MouseEventHandler(this.grdKeepingVoices_MouseClick);
             // 
+            // pnlFooter
+            // 
+            this.pnlFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFooter.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFooter.BackgroundColor = System.Drawing.Color.Transparent;
+            this.pnlFooter.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlFooter.BorderRadius = 10;
+            this.pnlFooter.BorderSize = 3;
+            this.pnlFooter.Controls.Add(this.txtYearMonth);
+            this.pnlFooter.GradientAngle = 90F;
+            this.pnlFooter.GrdtBottom = System.Drawing.Color.WhiteSmoke;
+            this.pnlFooter.GrdtTop = System.Drawing.Color.AntiqueWhite;
+            this.pnlFooter.Location = new System.Drawing.Point(1, 858);
+            this.pnlFooter.Name = "pnlFooter";
+            this.pnlFooter.Size = new System.Drawing.Size(1366, 156);
+            this.pnlFooter.TabIndex = 39;
+            // 
+            // txtYearMonth
+            // 
+            this.txtYearMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtYearMonth.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtYearMonth.Enabled = false;
+            this.txtYearMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtYearMonth.ForeColor = System.Drawing.Color.Black;
+            this.txtYearMonth.Location = new System.Drawing.Point(189, 31);
+            this.txtYearMonth.Name = "txtYearMonth";
+            this.txtYearMonth.ReadOnly = true;
+            this.txtYearMonth.Size = new System.Drawing.Size(985, 22);
+            this.txtYearMonth.TabIndex = 36;
+            this.txtYearMonth.TabStop = false;
+            // 
+            // cmbMonths
+            // 
+            this.cmbMonths.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbMonths.FormattingEnabled = true;
+            this.cmbMonths.Location = new System.Drawing.Point(13, 46);
+            this.cmbMonths.Name = "cmbMonths";
+            this.cmbMonths.Size = new System.Drawing.Size(121, 24);
+            this.cmbMonths.TabIndex = 50;
+            this.cmbMonths.Enter += new System.EventHandler(this.cmbMonths_Enter);
+            this.cmbMonths.Leave += new System.EventHandler(this.cmbMonths_Leave);
+            // 
             // frmMantenimento
             // 
             this.AcceptButton = this.btnInsert;
@@ -979,10 +975,10 @@
             this.pnlTree.PerformLayout();
             this.pnlResume.ResumeLayout(false);
             this.pnlResume.PerformLayout();
-            this.pnlFooter.ResumeLayout(false);
-            this.pnlFooter.PerformLayout();
             this.pnlGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdKeepingVoices)).EndInit();
+            this.pnlFooter.ResumeLayout(false);
+            this.pnlFooter.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1018,7 +1014,6 @@
         private RoundendControlCollections.RoundedPanel roundedPanel5;
         private RoundendControlCollections.RoundedButton btnSetOftenValue;
         private RoundendControlCollections.RoundedTextBox txtImport;
-        private System.Windows.Forms.ComboBox cmbMonths;
         private System.Windows.Forms.Button btnInsert;
         private RoundendControlCollections.RoundedTextBox txtCause;
         private System.Windows.Forms.Label lblMese;
@@ -1044,6 +1039,7 @@
         private RoundendControlCollections.RoundedPanel pnlFooter;
         private RoundendControlCollections.RoundedPanel pnlGrid;
         private System.Windows.Forms.DataGridView grdKeepingVoices;
+        private RoundendControlCollections.CustomComboBox cmbMonths;
     }
 }
 

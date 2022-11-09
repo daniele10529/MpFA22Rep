@@ -47,9 +47,9 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.pgInsert = new System.Windows.Forms.TabPage();
             this.roundedPanel5 = new RoundendControlCollections.RoundedPanel();
+            this.cmbMonths = new RoundendControlCollections.CustomComboBox();
             this.btnSetOftenValue = new RoundendControlCollections.RoundedButton();
             this.txtImport = new RoundendControlCollections.RoundedTextBox();
-            this.cmbMonths = new System.Windows.Forms.ComboBox();
             this.btnInsert = new System.Windows.Forms.Button();
             this.txtCause = new RoundendControlCollections.RoundedTextBox();
             this.lblMese = new System.Windows.Forms.Label();
@@ -229,7 +229,7 @@
             this.grpRoundAnni.GradientAngle = 90F;
             this.grpRoundAnni.GrdtBottom = System.Drawing.Color.Empty;
             this.grpRoundAnni.GrdtTop = System.Drawing.Color.Empty;
-            this.grpRoundAnni.Location = new System.Drawing.Point(182, 6);
+            this.grpRoundAnni.Location = new System.Drawing.Point(180, 6);
             this.grpRoundAnni.Name = "grpRoundAnni";
             this.grpRoundAnni.Padding = new System.Windows.Forms.Padding(3);
             this.grpRoundAnni.Size = new System.Drawing.Size(984, 75);
@@ -310,9 +310,9 @@
             this.roundedPanel5.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.roundedPanel5.BorderRadius = 2;
             this.roundedPanel5.BorderSize = 2;
+            this.roundedPanel5.Controls.Add(this.cmbMonths);
             this.roundedPanel5.Controls.Add(this.btnSetOftenValue);
             this.roundedPanel5.Controls.Add(this.txtImport);
-            this.roundedPanel5.Controls.Add(this.cmbMonths);
             this.roundedPanel5.Controls.Add(this.btnInsert);
             this.roundedPanel5.Controls.Add(this.txtCause);
             this.roundedPanel5.Controls.Add(this.lblMese);
@@ -322,11 +322,23 @@
             this.roundedPanel5.GradientAngle = 90F;
             this.roundedPanel5.GrdtBottom = System.Drawing.Color.Empty;
             this.roundedPanel5.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel5.Location = new System.Drawing.Point(177, 3);
+            this.roundedPanel5.Location = new System.Drawing.Point(180, 3);
             this.roundedPanel5.Name = "roundedPanel5";
             this.roundedPanel5.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel5.Size = new System.Drawing.Size(991, 80);
             this.roundedPanel5.TabIndex = 57;
+            // 
+            // cmbMonths
+            // 
+            this.cmbMonths.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbMonths.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMonths.FormattingEnabled = true;
+            this.cmbMonths.Location = new System.Drawing.Point(13, 46);
+            this.cmbMonths.Name = "cmbMonths";
+            this.cmbMonths.Size = new System.Drawing.Size(121, 24);
+            this.cmbMonths.TabIndex = 50;
+            this.cmbMonths.Enter += new System.EventHandler(this.cmbMonths_Enter);
+            this.cmbMonths.Leave += new System.EventHandler(this.cmbMonths_Leave);
             // 
             // btnSetOftenValue
             // 
@@ -372,19 +384,6 @@
             this.txtImport.UnderlinedStyle = false;
             this.txtImport.Enter += new System.EventHandler(this.txtImport_Enter);
             this.txtImport.Leave += new System.EventHandler(this.txtImport_Leave);
-            // 
-            // cmbMonths
-            // 
-            this.cmbMonths.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cmbMonths.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbMonths.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMonths.FormattingEnabled = true;
-            this.cmbMonths.Location = new System.Drawing.Point(6, 46);
-            this.cmbMonths.Name = "cmbMonths";
-            this.cmbMonths.Size = new System.Drawing.Size(121, 24);
-            this.cmbMonths.TabIndex = 50;
-            this.cmbMonths.Enter += new System.EventHandler(this.cmbMonths_Enter);
-            this.cmbMonths.Leave += new System.EventHandler(this.cmbMonths_Leave);
             // 
             // btnInsert
             // 
@@ -503,7 +502,7 @@
             this.roundedPanel7.GradientAngle = 90F;
             this.roundedPanel7.GrdtBottom = System.Drawing.Color.Empty;
             this.roundedPanel7.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel7.Location = new System.Drawing.Point(182, 6);
+            this.roundedPanel7.Location = new System.Drawing.Point(180, 6);
             this.roundedPanel7.Name = "roundedPanel7";
             this.roundedPanel7.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel7.Size = new System.Drawing.Size(986, 75);
@@ -607,7 +606,7 @@
             this.roundedPanel8.GradientAngle = 90F;
             this.roundedPanel8.GrdtBottom = System.Drawing.Color.Empty;
             this.roundedPanel8.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel8.Location = new System.Drawing.Point(177, 6);
+            this.roundedPanel8.Location = new System.Drawing.Point(180, 6);
             this.roundedPanel8.Name = "roundedPanel8";
             this.roundedPanel8.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel8.Size = new System.Drawing.Size(994, 75);
@@ -673,9 +672,9 @@
             // treeYears
             // 
             this.treeYears.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.treeYears.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
             this.treeYears.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeYears.ForeColor = System.Drawing.Color.Indigo;
-            this.treeYears.FullRowSelect = true;
             this.treeYears.ItemHeight = 20;
             this.treeYears.LineColor = System.Drawing.Color.LightSteelBlue;
             this.treeYears.Location = new System.Drawing.Point(1, 83);
@@ -691,6 +690,7 @@
             this.treeYears.ShowNodeToolTips = true;
             this.treeYears.Size = new System.Drawing.Size(177, 645);
             this.treeYears.TabIndex = 36;
+            this.treeYears.DrawNode += new System.Windows.Forms.DrawTreeNodeEventHandler(this.treeYears_DrawNode);
             this.treeYears.DoubleClick += new System.EventHandler(this.treeYears_DoubleClick);
             // 
             // btnLoadYears2
@@ -862,20 +862,20 @@
             // txtBalanceST
             // 
             this.txtBalanceST.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtBalanceST.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBalanceST.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBalanceST.Location = new System.Drawing.Point(3, 118);
             this.txtBalanceST.Name = "txtBalanceST";
-            this.txtBalanceST.Size = new System.Drawing.Size(146, 22);
+            this.txtBalanceST.Size = new System.Drawing.Size(146, 23);
             this.txtBalanceST.TabIndex = 37;
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(147, 118);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(27, 22);
+            this.textBox1.Size = new System.Drawing.Size(27, 23);
             this.textBox1.TabIndex = 38;
             this.textBox1.TabStop = false;
             this.textBox1.Text = "€";
@@ -893,20 +893,20 @@
             // txtBalanceOV
             // 
             this.txtBalanceOV.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtBalanceOV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBalanceOV.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBalanceOV.Location = new System.Drawing.Point(5, 210);
             this.txtBalanceOV.Name = "txtBalanceOV";
-            this.txtBalanceOV.Size = new System.Drawing.Size(146, 22);
+            this.txtBalanceOV.Size = new System.Drawing.Size(146, 23);
             this.txtBalanceOV.TabIndex = 39;
             // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(149, 210);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(27, 22);
+            this.textBox2.Size = new System.Drawing.Size(27, 23);
             this.textBox2.TabIndex = 40;
             this.textBox2.TabStop = false;
             this.textBox2.Text = "€";
@@ -1176,7 +1176,6 @@
         private RoundendControlCollections.RoundedPanel roundedPanel5;
         private RoundendControlCollections.RoundedButton btnSetOftenValue;
         private RoundendControlCollections.RoundedTextBox txtImport;
-        private System.Windows.Forms.ComboBox cmbMonths;
         private System.Windows.Forms.Button btnInsert;
         private RoundendControlCollections.RoundedTextBox txtCause;
         private System.Windows.Forms.Label lblMese;
@@ -1197,6 +1196,7 @@
         private System.Windows.Forms.Label label8;
         private RoundendControlCollections.RoundedPanel pnlGrid;
         private System.Windows.Forms.DataGridView grdMonthVoices;
+        private RoundendControlCollections.CustomComboBox cmbMonths;
     }
 }
 

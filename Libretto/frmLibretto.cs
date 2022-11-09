@@ -816,42 +816,7 @@ namespace Libretto
             cmbMonths.BackColor = Color.White;
         }
 
-        private void cmbMonths_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            //Affinché possa ridisegnare è necessario impostare l'attributo
-            //DrawMode su OwnerDrawFixed
-
-            //Antialias sul disegno del testo
-            e.Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
-
-            //Eredita dal controllo combobox
-            ComboBox cb = (ComboBox)sender;
-
-            //Disegna l'item selezionato
-            if ((e.State & DrawItemState.Selected) != 0)
-            {
-                //Ricava il rettangolo dell'Item selezionato
-                Rectangle rec = new Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height);
-                //Disegna il rettangolo di selezione con il colore personalizzato
-                e.Graphics.FillRectangle(Brushes.LightSteelBlue, rec);
-
-                //Disegna il testo dell'Item
-                e.Graphics.DrawString(cb.Items[e.Index].ToString(), cb.Font, Brushes.Black, Rectangle.Inflate(e.Bounds, -5, 0));
-
-            }
-            else
-            {
-                ///Ricava il rettangolo dell'Item selezionato
-                Rectangle rec = new Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height);
-                //Disegna il rettangolo di selezione con il colore personalizzato
-                e.Graphics.FillRectangle(Brushes.White, rec);
-
-                //Disegna il testo dell'Item
-                e.Graphics.DrawString(cb.Items[e.Index].ToString(), cb.Font, Brushes.Black, Rectangle.Inflate(e.Bounds, -5, 0));
-
-            }
-        }
-
+       
         #endregion
 
         #region TreeView

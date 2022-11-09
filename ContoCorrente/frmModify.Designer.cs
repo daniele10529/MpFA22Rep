@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlMain = new RoundendControlCollections.RoundedPanel();
+            this.txtDay = new RoundendControlCollections.RoundedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnClose = new RoundendControlCollections.RoundedButton();
             this.btnModify = new RoundendControlCollections.RoundedButton();
             this.btnPlus = new RoundendControlCollections.RoundedButton();
@@ -39,8 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
-            this.txtDay = new RoundendControlCollections.RoundedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,39 @@
             this.pnlMain.Size = new System.Drawing.Size(365, 488);
             this.pnlMain.TabIndex = 1;
             // 
+            // txtDay
+            // 
+            this.txtDay.BackColor = System.Drawing.Color.White;
+            this.txtDay.BorderColor = System.Drawing.Color.DimGray;
+            this.txtDay.BorderFocusColor = System.Drawing.Color.LightSteelBlue;
+            this.txtDay.BorderRadius = 5;
+            this.txtDay.BorderSize = 1;
+            this.txtDay.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDay.Location = new System.Drawing.Point(12, 161);
+            this.txtDay.Multiline = false;
+            this.txtDay.Name = "txtDay";
+            this.txtDay.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtDay.PasswordChar = false;
+            this.txtDay.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtDay.PlaceholderText = "";
+            this.txtDay.ReadOnly = false;
+            this.txtDay.Size = new System.Drawing.Size(101, 31);
+            this.txtDay.TabIndex = 2;
+            this.txtDay.Texts = "";
+            this.txtDay.UnderlinedStyle = false;
+            this.txtDay.Enter += new System.EventHandler(this.txtDay_Enter);
+            this.txtDay.Leave += new System.EventHandler(this.txtDay_Leave);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(17, 138);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 15);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "GIORNO";
+            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -89,7 +122,7 @@
             this.btnClose.Location = new System.Drawing.Point(323, 446);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.TabIndex = 6;
+            this.btnClose.TabIndex = 7;
             this.btnClose.TextColor = System.Drawing.Color.White;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -112,7 +145,7 @@
             this.btnModify.Location = new System.Drawing.Point(216, 446);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(88, 30);
-            this.btnModify.TabIndex = 5;
+            this.btnModify.TabIndex = 6;
             this.btnModify.Text = "Modifica";
             this.btnModify.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModify.TextColor = System.Drawing.Color.White;
@@ -135,7 +168,7 @@
             this.btnPlus.Location = new System.Drawing.Point(274, 325);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(30, 30);
-            this.btnPlus.TabIndex = 4;
+            this.btnPlus.TabIndex = 5;
             this.btnPlus.Text = "+";
             this.btnPlus.TextColor = System.Drawing.Color.BlueViolet;
             this.btnPlus.UseVisualStyleBackColor = false;
@@ -158,7 +191,7 @@
             this.txtImport.PlaceholderText = "";
             this.txtImport.ReadOnly = false;
             this.txtImport.Size = new System.Drawing.Size(250, 31);
-            this.txtImport.TabIndex = 3;
+            this.txtImport.TabIndex = 4;
             this.txtImport.Texts = "";
             this.txtImport.UnderlinedStyle = false;
             this.txtImport.Enter += new System.EventHandler(this.txtImport_Enter);
@@ -181,7 +214,7 @@
             this.txtCause.PlaceholderText = "";
             this.txtCause.ReadOnly = false;
             this.txtCause.Size = new System.Drawing.Size(341, 31);
-            this.txtCause.TabIndex = 1;
+            this.txtCause.TabIndex = 3;
             this.txtCause.Texts = "";
             this.txtCause.UnderlinedStyle = false;
             this.txtCause.Enter += new System.EventHandler(this.txtCause_Enter);
@@ -205,7 +238,7 @@
             this.txtId.PlaceholderText = "";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(95, 31);
-            this.txtId.TabIndex = 23;
+            this.txtId.TabIndex = 1;
             this.txtId.TabStop = false;
             this.txtId.Texts = "";
             this.txtId.UnderlinedStyle = false;
@@ -250,39 +283,6 @@
             this.Label1.Size = new System.Drawing.Size(21, 15);
             this.Label1.TabIndex = 11;
             this.Label1.Text = "ID";
-            // 
-            // txtDay
-            // 
-            this.txtDay.BackColor = System.Drawing.Color.White;
-            this.txtDay.BorderColor = System.Drawing.Color.DimGray;
-            this.txtDay.BorderFocusColor = System.Drawing.Color.LightSteelBlue;
-            this.txtDay.BorderRadius = 5;
-            this.txtDay.BorderSize = 1;
-            this.txtDay.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDay.Location = new System.Drawing.Point(12, 161);
-            this.txtDay.Multiline = false;
-            this.txtDay.Name = "txtDay";
-            this.txtDay.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtDay.PasswordChar = false;
-            this.txtDay.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtDay.PlaceholderText = "";
-            this.txtDay.ReadOnly = false;
-            this.txtDay.Size = new System.Drawing.Size(101, 31);
-            this.txtDay.TabIndex = 24;
-            this.txtDay.Texts = "";
-            this.txtDay.UnderlinedStyle = false;
-            this.txtDay.Enter += new System.EventHandler(this.txtDay_Enter);
-            this.txtDay.Leave += new System.EventHandler(this.txtDay_Leave);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 138);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 15);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "GIORNO";
             // 
             // frmModify
             // 

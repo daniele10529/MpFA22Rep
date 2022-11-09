@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("ANNI");
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("ANNI");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.pgHome = new System.Windows.Forms.TabPage();
@@ -244,7 +244,7 @@
             this.grpRoundAnni.GradientAngle = 90F;
             this.grpRoundAnni.GrdtBottom = System.Drawing.Color.Empty;
             this.grpRoundAnni.GrdtTop = System.Drawing.Color.Empty;
-            this.grpRoundAnni.Location = new System.Drawing.Point(182, 6);
+            this.grpRoundAnni.Location = new System.Drawing.Point(180, 6);
             this.grpRoundAnni.Name = "grpRoundAnni";
             this.grpRoundAnni.Padding = new System.Windows.Forms.Padding(3);
             this.grpRoundAnni.Size = new System.Drawing.Size(984, 75);
@@ -344,7 +344,7 @@
             this.roundedPanel5.GradientAngle = 90F;
             this.roundedPanel5.GrdtBottom = System.Drawing.Color.Empty;
             this.roundedPanel5.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel5.Location = new System.Drawing.Point(177, 3);
+            this.roundedPanel5.Location = new System.Drawing.Point(180, 3);
             this.roundedPanel5.Name = "roundedPanel5";
             this.roundedPanel5.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel5.Size = new System.Drawing.Size(991, 80);
@@ -521,7 +521,7 @@
             this.roundedPanel4.GradientAngle = 90F;
             this.roundedPanel4.GrdtBottom = System.Drawing.Color.Empty;
             this.roundedPanel4.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel4.Location = new System.Drawing.Point(1169, 3);
+            this.roundedPanel4.Location = new System.Drawing.Point(1172, 3);
             this.roundedPanel4.Name = "roundedPanel4";
             this.roundedPanel4.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel4.Size = new System.Drawing.Size(70, 80);
@@ -589,7 +589,7 @@
             this.roundedPanel7.GradientAngle = 90F;
             this.roundedPanel7.GrdtBottom = System.Drawing.Color.Empty;
             this.roundedPanel7.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel7.Location = new System.Drawing.Point(183, 6);
+            this.roundedPanel7.Location = new System.Drawing.Point(180, 6);
             this.roundedPanel7.Name = "roundedPanel7";
             this.roundedPanel7.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel7.Size = new System.Drawing.Size(914, 75);
@@ -682,7 +682,7 @@
             this.roundedPanel6.GradientAngle = 90F;
             this.roundedPanel6.GrdtBottom = System.Drawing.Color.Empty;
             this.roundedPanel6.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel6.Location = new System.Drawing.Point(1098, 6);
+            this.roundedPanel6.Location = new System.Drawing.Point(1095, 6);
             this.roundedPanel6.Name = "roundedPanel6";
             this.roundedPanel6.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel6.Size = new System.Drawing.Size(70, 75);
@@ -747,7 +747,7 @@
             this.roundedPanel8.GradientAngle = 90F;
             this.roundedPanel8.GrdtBottom = System.Drawing.Color.Empty;
             this.roundedPanel8.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel8.Location = new System.Drawing.Point(177, 6);
+            this.roundedPanel8.Location = new System.Drawing.Point(180, 6);
             this.roundedPanel8.Name = "roundedPanel8";
             this.roundedPanel8.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel8.Size = new System.Drawing.Size(994, 75);
@@ -921,24 +921,25 @@
             // treeYears
             // 
             this.treeYears.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.treeYears.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
             this.treeYears.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeYears.ForeColor = System.Drawing.Color.Indigo;
-            this.treeYears.FullRowSelect = true;
             this.treeYears.ItemHeight = 20;
             this.treeYears.LineColor = System.Drawing.Color.LightSteelBlue;
             this.treeYears.Location = new System.Drawing.Point(1, 83);
             this.treeYears.Name = "treeYears";
-            treeNode2.BackColor = System.Drawing.Color.AntiqueWhite;
-            treeNode2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode2.Name = "nodeYears";
-            treeNode2.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode2.Text = "ANNI";
+            treeNode1.BackColor = System.Drawing.Color.AntiqueWhite;
+            treeNode1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode1.Name = "nodeYears";
+            treeNode1.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode1.Text = "ANNI";
             this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode1});
             this.treeYears.ShowLines = false;
             this.treeYears.ShowNodeToolTips = true;
             this.treeYears.Size = new System.Drawing.Size(177, 645);
             this.treeYears.TabIndex = 33;
+            this.treeYears.DrawNode += new System.Windows.Forms.DrawTreeNodeEventHandler(this.treeYears_DrawNode);
             this.treeYears.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeYears_NodeMouseClick);
             this.treeYears.DoubleClick += new System.EventHandler(this.treeYears_DoubleClick);
             // 
@@ -1022,21 +1023,21 @@
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(152, 210);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(27, 22);
+            this.textBox2.Size = new System.Drawing.Size(27, 23);
             this.textBox2.TabIndex = 52;
             this.textBox2.Text = "€";
             // 
             // txtBalanceOV
             // 
             this.txtBalanceOV.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtBalanceOV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBalanceOV.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBalanceOV.Location = new System.Drawing.Point(8, 210);
             this.txtBalanceOV.Name = "txtBalanceOV";
-            this.txtBalanceOV.Size = new System.Drawing.Size(146, 22);
+            this.txtBalanceOV.Size = new System.Drawing.Size(146, 23);
             this.txtBalanceOV.TabIndex = 39;
             // 
             // lblSaldoFine
@@ -1061,21 +1062,21 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(150, 118);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(27, 22);
+            this.textBox1.Size = new System.Drawing.Size(27, 23);
             this.textBox1.TabIndex = 48;
             this.textBox1.Text = "€";
             // 
             // txtBalanceST
             // 
             this.txtBalanceST.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtBalanceST.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBalanceST.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBalanceST.Location = new System.Drawing.Point(6, 118);
             this.txtBalanceST.Name = "txtBalanceST";
-            this.txtBalanceST.Size = new System.Drawing.Size(146, 22);
+            this.txtBalanceST.Size = new System.Drawing.Size(146, 23);
             this.txtBalanceST.TabIndex = 38;
             // 
             // lblSaldoIni
@@ -1150,24 +1151,24 @@
             this.grdMonthVoices.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grdMonthVoices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdMonthVoices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMonthVoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMonthVoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdMonthVoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdMonthVoices.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdMonthVoices.DefaultCellStyle = dataGridViewCellStyle2;
             this.grdMonthVoices.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdMonthVoices.EnableHeadersVisualStyles = false;
             this.grdMonthVoices.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -1176,14 +1177,14 @@
             this.grdMonthVoices.MultiSelect = false;
             this.grdMonthVoices.Name = "grdMonthVoices";
             this.grdMonthVoices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMonthVoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMonthVoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grdMonthVoices.RowHeadersVisible = false;
             this.grdMonthVoices.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdMonthVoices.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkSlateGray;

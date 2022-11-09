@@ -237,7 +237,7 @@ namespace PostPay
         private void txtMonth_Enter(object sender, EventArgs e)
         {
             txtMonth.BorderColor = Color.FromArgb(161, 223, 239);
-            txtMonth.BackColor = Color.FromArgb(243, 221, 247);
+            txtMonth.BackColor = Color.FromArgb(210, 228, 242);
         }
 
         private void txtMonth_Leave(object sender, EventArgs e)
@@ -249,7 +249,7 @@ namespace PostPay
         private void txtCause_Enter(object sender, EventArgs e)
         {
             txtCause.BorderColor = Color.FromArgb(161, 223, 239);
-            txtCause.BackColor = Color.FromArgb(243, 221, 247);
+            txtCause.BackColor = Color.FromArgb(210, 228, 242);
         }
 
         private void txtCause_Leave(object sender, EventArgs e)
@@ -261,7 +261,7 @@ namespace PostPay
         private void txtImport_Enter(object sender, EventArgs e)
         {
             txtImport.BorderColor = Color.FromArgb(161, 223, 239);
-            txtImport.BackColor = Color.FromArgb(243, 221, 247);
+            txtImport.BackColor = Color.FromArgb(210, 228, 242);
         }
 
         private void txtImport_Leave(object sender, EventArgs e)
