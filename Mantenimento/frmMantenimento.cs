@@ -8,6 +8,8 @@ using GenericModelData;
 using Checking;
 using MenuGenerator;
 using CreateForm;
+using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 
 namespace Mantenimento
 {
@@ -611,6 +613,7 @@ namespace Mantenimento
 
             //Antialias sul disegno del testo
             e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+
             //Eredita dal controllo combobox
             ComboBox cb = (ComboBox)sender;
 
@@ -649,10 +652,13 @@ namespace Mantenimento
             //DrawMode su OwnerDrawText
 
             //Antialias sul disegno del testo
-            e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            e.Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
+
             //Se TreeView perde il focus disegna i nodi in modo standard
             if (treeYears.Focused == false)
             {
+                //Evita il sovrapporsi del disegno del nodo
+                treeYears.FullRowSelect = true;
                 e.DrawDefault = true;
                 return;
             }
@@ -660,6 +666,8 @@ namespace Mantenimento
             //Disegna il colore di sfondo del nodo selezionato
             if ((e.State & TreeNodeStates.Selected) != 0)
             {
+                //Evita il sovrapporsi del disegno del nodo
+                treeYears.FullRowSelect = false;
                 //Ricava il rettangolo con la larghezza del TreeView e punto di partenza in X
                 //Altezza e punto di partenza in y del nodo selezionato
                 Rectangle rec = new Rectangle(treeYears.Bounds.X, e.Node.Bounds.Y, treeYears.Width, e.Node.Bounds.Height);
@@ -675,18 +683,16 @@ namespace Mantenimento
                 //Disegna l'immagine al nodo selezionato
                 Image i = Image.FromFile(Routes.ICONS + "Ordina_dx.png");
                 e.Graphics.DrawImage(i, e.Node.Bounds.X - 30, e.Node.Bounds.Y, 20, 20);
-
+                
             }
             else
             {
                 //Se il nodo non è selezionato lo disegna in modo standard
                 e.DrawDefault = true;
+
             }
 
-
         }
-
-       
 
         //Carica i dati al doppio click sul nodo prescelto
         private void treeYears_DoubleClick(object sender, EventArgs e)
