@@ -873,7 +873,9 @@ namespace ContoCorrente
         //Ritorna i limiti del nodo selezionato incluso il testo
         private Rectangle NodeBounds(TreeNode node)
         {
+            //Definisce il font del nodo
             Font tagFont = new Font("MS Reference Sans Serif", 10, FontStyle.Regular);
+            //Definisce i limiti del nodo
             Rectangle bounds = new Rectangle(0, node.Bounds.Y, treeYears.Width, node.Bounds.Height);
             // Set the return value to the normal node bounds.
             //Rectangle bounds = node.Bounds;
