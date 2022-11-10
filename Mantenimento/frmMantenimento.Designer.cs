@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("ANNI   ");
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("ANNI   ");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.pgHome = new System.Windows.Forms.TabPage();
@@ -47,6 +47,7 @@
             this.lblGrAnni = new System.Windows.Forms.Label();
             this.pgInsert = new System.Windows.Forms.TabPage();
             this.roundedPanel5 = new RoundendControlCollections.RoundedPanel();
+            this.cmbMonths = new RoundendControlCollections.CustomComboBox();
             this.btnSetOftenValue = new RoundendControlCollections.RoundedButton();
             this.txtImport = new RoundendControlCollections.RoundedTextBox();
             this.btnInsert = new System.Windows.Forms.Button();
@@ -86,7 +87,6 @@
             this.grdKeepingVoices = new System.Windows.Forms.DataGridView();
             this.pnlFooter = new RoundendControlCollections.RoundedPanel();
             this.txtYearMonth = new System.Windows.Forms.TextBox();
-            this.cmbMonths = new RoundendControlCollections.CustomComboBox();
             this.pnlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.pgHome.SuspendLayout();
@@ -335,6 +335,17 @@
             this.roundedPanel5.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel5.Size = new System.Drawing.Size(991, 80);
             this.roundedPanel5.TabIndex = 56;
+            // 
+            // cmbMonths
+            // 
+            this.cmbMonths.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbMonths.FormattingEnabled = true;
+            this.cmbMonths.Location = new System.Drawing.Point(13, 46);
+            this.cmbMonths.Name = "cmbMonths";
+            this.cmbMonths.Size = new System.Drawing.Size(121, 24);
+            this.cmbMonths.TabIndex = 50;
+            this.cmbMonths.Enter += new System.EventHandler(this.cmbMonths_Enter);
+            this.cmbMonths.Leave += new System.EventHandler(this.cmbMonths_Leave);
             // 
             // btnSetOftenValue
             // 
@@ -663,19 +674,20 @@
             this.treeYears.LineColor = System.Drawing.Color.LightSteelBlue;
             this.treeYears.Location = new System.Drawing.Point(1, 83);
             this.treeYears.Name = "treeYears";
-            treeNode3.BackColor = System.Drawing.Color.AntiqueWhite;
-            treeNode3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode3.Name = "nodeYears";
-            treeNode3.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode3.Text = "ANNI   ";
+            treeNode1.BackColor = System.Drawing.Color.AntiqueWhite;
+            treeNode1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            treeNode1.Name = "nodeYears";
+            treeNode1.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode1.Text = "ANNI   ";
             this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            treeNode1});
             this.treeYears.ShowLines = false;
             this.treeYears.ShowNodeToolTips = true;
             this.treeYears.Size = new System.Drawing.Size(177, 645);
             this.treeYears.TabIndex = 38;
             this.treeYears.DrawNode += new System.Windows.Forms.DrawTreeNodeEventHandler(this.treeYears_DrawNode);
             this.treeYears.DoubleClick += new System.EventHandler(this.treeYears_DoubleClick);
+            this.treeYears.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeYears_MouseDown);
             // 
             // label15
             // 
@@ -834,24 +846,24 @@
             this.grdKeepingVoices.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grdKeepingVoices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdKeepingVoices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdKeepingVoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdKeepingVoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdKeepingVoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdKeepingVoices.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdKeepingVoices.DefaultCellStyle = dataGridViewCellStyle2;
             this.grdKeepingVoices.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdKeepingVoices.EnableHeadersVisualStyles = false;
             this.grdKeepingVoices.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -861,14 +873,14 @@
             this.grdKeepingVoices.Name = "grdKeepingVoices";
             this.grdKeepingVoices.ReadOnly = true;
             this.grdKeepingVoices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdKeepingVoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdKeepingVoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grdKeepingVoices.RowHeadersVisible = false;
             this.grdKeepingVoices.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdKeepingVoices.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -916,17 +928,6 @@
             this.txtYearMonth.Size = new System.Drawing.Size(985, 22);
             this.txtYearMonth.TabIndex = 36;
             this.txtYearMonth.TabStop = false;
-            // 
-            // cmbMonths
-            // 
-            this.cmbMonths.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbMonths.FormattingEnabled = true;
-            this.cmbMonths.Location = new System.Drawing.Point(13, 46);
-            this.cmbMonths.Name = "cmbMonths";
-            this.cmbMonths.Size = new System.Drawing.Size(121, 24);
-            this.cmbMonths.TabIndex = 50;
-            this.cmbMonths.Enter += new System.EventHandler(this.cmbMonths_Enter);
-            this.cmbMonths.Leave += new System.EventHandler(this.cmbMonths_Leave);
             // 
             // frmMantenimento
             // 

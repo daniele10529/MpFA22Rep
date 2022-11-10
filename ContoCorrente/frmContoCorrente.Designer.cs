@@ -942,6 +942,7 @@
             this.treeYears.DrawNode += new System.Windows.Forms.DrawTreeNodeEventHandler(this.treeYears_DrawNode);
             this.treeYears.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeYears_NodeMouseClick);
             this.treeYears.DoubleClick += new System.EventHandler(this.treeYears_DoubleClick);
+            this.treeYears.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeYears_MouseDown);
             // 
             // pnlResume
             // 

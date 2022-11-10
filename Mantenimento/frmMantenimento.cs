@@ -634,7 +634,7 @@ namespace Mantenimento
                 treeYears.FullRowSelect = false;
                 //Ricava il rettangolo con la larghezza del TreeView e punto di partenza in X
                 //Altezza e punto di partenza in y del nodo selezionato
-                Rectangle rec = new Rectangle(treeYears.Bounds.X, e.Node.Bounds.Y, treeYears.Width, e.Node.Bounds.Height);
+                Rectangle rec = new Rectangle(0, e.Node.Bounds.Y, treeYears.Width, e.Node.Bounds.Height);
                 //Disegna il rettangolo di selezione con il colore personalizzato
                 e.Graphics.FillRectangle(Brushes.LightSteelBlue, rec);
 
@@ -656,6 +656,39 @@ namespace Mantenimento
 
             }
 
+        }
+
+        private void treeYears_MouseDown(object sender, MouseEventArgs e)
+        {
+            //Cliccando sul + seleziona il nodo
+            TreeNode clickedNode = treeYears.GetNodeAt(e.X, e.Y);
+            if (NodeBounds(clickedNode).Contains(e.X, e.Y))
+            {
+                treeYears.SelectedNode = clickedNode;
+            }
+        }
+
+        //Ritorna i limiti del nodo selezionato incluso il testo
+        private Rectangle NodeBounds(TreeNode node)
+        {
+            Font tagFont = new Font("MS Reference Sans Serif", 10, FontStyle.Regular);
+            Rectangle bounds = new Rectangle(0, node.Bounds.Y, treeYears.Width, node.Bounds.Height);
+            // Set the return value to the normal node bounds.
+            //Rectangle bounds = node.Bounds;
+            if (node.Tag != null)
+            {
+                // Retrieve a Graphics object from the TreeView handle
+                // and use it to calculate the display width of the tag.
+                Graphics g = treeYears.CreateGraphics();
+                int tagWidth = (int)g.MeasureString(node.Tag.ToString(), tagFont).Width + 6;
+
+                // Adjust the node bounds using the calculated value.
+                bounds.Offset(tagWidth / 2, 0);
+                bounds = Rectangle.Inflate(bounds, tagWidth / 2, 0);
+                g.Dispose();
+            }
+
+            return bounds;
         }
 
         //Carica i dati al doppio click sul nodo prescelto
