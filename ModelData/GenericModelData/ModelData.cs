@@ -697,11 +697,9 @@ namespace GenericModelData
         /// <returns>Restituisce il totale mese precedente</returns>
         public double countMonthPre(int year, int month)
         {
+             
             ReadErrorXml xml = new ReadErrorXml();
-            ReaderXML xmlValIni = new ReaderXML(@"C:\MpFA20\SetIni\SetIni.xml", "setIni");
-            double totLib = 0, totCC = 0, totPP = 0, contanti = 0, totMesePre = 0;
-            double inipp = Double.Parse(xmlValIni.readNode("tot_pp"));
-            double inilib = Double.Parse(xmlValIni.readNode("tot_lib"));
+            double totLib = 0, totCC = 0, totPP = 0, contanti = 0, totMesePre = 0;          
 
             if (month == 1)
             {
@@ -715,6 +713,10 @@ namespace GenericModelData
 
             try
             {
+                ReaderXML xmlValIni = new ReaderXML(Routes.XMLSETINI, "setIni");
+                double inipp = Double.Parse(xmlValIni.readNode("tot_pp"));
+                double inilib = Double.Parse(xmlValIni.readNode("tot_lib"));
+
                 ReaderXML readerxml = new ReaderXML(pathconn, "string");
                 stringConnection = readerxml.readNode(node_connect);
                 Connecting connetting = new Connecting(stringConnection);

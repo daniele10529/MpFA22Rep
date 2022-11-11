@@ -33,3 +33,4 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\MpFA22\MpFA20\MpF
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\MpFA22\MpFA20\MpFA20\obj\Debug\MpFA5.csproj.GenerateResource.Cache
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\MpFA22\MpFA20\MpFA20\obj\Debug\MpFA5.exe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\MpFA22\MpFA20\MpFA20\obj\Debug\MpFA5.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\MpFA22\MpFA20\MpFA20\obj\Debug\MpFA5.csprojResolveAssemblyReference.cache
