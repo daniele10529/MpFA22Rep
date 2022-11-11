@@ -1055,20 +1055,22 @@
             // textBox8
             // 
             this.textBox8.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox8.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox8.Location = new System.Drawing.Point(143, 536);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(27, 22);
+            this.textBox8.Size = new System.Drawing.Size(27, 23);
             this.textBox8.TabIndex = 52;
             this.textBox8.Text = "€";
             // 
             // textBox7
             // 
             this.textBox7.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox7.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.Location = new System.Drawing.Point(143, 483);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(27, 22);
+            this.textBox7.Size = new System.Drawing.Size(27, 23);
             this.textBox7.TabIndex = 51;
             this.textBox7.Text = "€";
             // 
@@ -1077,7 +1079,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Location = new System.Drawing.Point(-1, 296);
+            this.panel2.Location = new System.Drawing.Point(4, 296);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(177, 10);
             this.panel2.TabIndex = 39;
@@ -1085,60 +1087,66 @@
             // textBox6
             // 
             this.textBox6.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox6.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(143, 430);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(27, 22);
+            this.textBox6.Size = new System.Drawing.Size(27, 23);
             this.textBox6.TabIndex = 50;
             this.textBox6.Text = "€";
             // 
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox5.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(140, 335);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(27, 22);
+            this.textBox5.Size = new System.Drawing.Size(27, 23);
             this.textBox5.TabIndex = 49;
             this.textBox5.Text = "€";
             // 
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox4.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(140, 260);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(27, 22);
+            this.textBox4.Size = new System.Drawing.Size(27, 23);
             this.textBox4.TabIndex = 48;
             this.textBox4.Text = "€";
             // 
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox3.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(140, 207);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(27, 22);
+            this.textBox3.Size = new System.Drawing.Size(27, 23);
             this.textBox3.TabIndex = 47;
             this.textBox3.Text = "€";
             // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(135, 126);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(27, 22);
+            this.textBox2.Size = new System.Drawing.Size(27, 23);
             this.textBox2.TabIndex = 46;
             this.textBox2.Text = "€";
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(135, 71);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(27, 22);
+            this.textBox1.Size = new System.Drawing.Size(27, 23);
             this.textBox1.TabIndex = 45;
             this.textBox1.Text = "€";
             // 
@@ -1155,7 +1163,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Location = new System.Drawing.Point(11, 386);
+            this.panel4.Location = new System.Drawing.Point(4, 386);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(177, 10);
             this.panel4.TabIndex = 43;
@@ -1164,7 +1172,7 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Location = new System.Drawing.Point(7, 578);
+            this.panel3.Location = new System.Drawing.Point(4, 578);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(177, 10);
             this.panel3.TabIndex = 40;
@@ -1173,7 +1181,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(8, 166);
+            this.panel1.Location = new System.Drawing.Point(4, 166);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(177, 10);
             this.panel1.TabIndex = 38;
@@ -1182,10 +1190,11 @@
             // 
             this.txtSaldoLibretto.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtSaldoLibretto.Enabled = false;
+            this.txtSaldoLibretto.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSaldoLibretto.Location = new System.Drawing.Point(11, 536);
             this.txtSaldoLibretto.Name = "txtSaldoLibretto";
             this.txtSaldoLibretto.ReadOnly = true;
-            this.txtSaldoLibretto.Size = new System.Drawing.Size(134, 22);
+            this.txtSaldoLibretto.Size = new System.Drawing.Size(134, 23);
             this.txtSaldoLibretto.TabIndex = 19;
             // 
             // label9
@@ -1202,10 +1211,11 @@
             // 
             this.txtSaldoPP.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtSaldoPP.Enabled = false;
+            this.txtSaldoPP.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSaldoPP.Location = new System.Drawing.Point(11, 483);
             this.txtSaldoPP.Name = "txtSaldoPP";
             this.txtSaldoPP.ReadOnly = true;
-            this.txtSaldoPP.Size = new System.Drawing.Size(132, 22);
+            this.txtSaldoPP.Size = new System.Drawing.Size(132, 23);
             this.txtSaldoPP.TabIndex = 18;
             // 
             // label8
@@ -1222,10 +1232,11 @@
             // 
             this.txtSaldoCC.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtSaldoCC.Enabled = false;
+            this.txtSaldoCC.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSaldoCC.Location = new System.Drawing.Point(11, 430);
             this.txtSaldoCC.Name = "txtSaldoCC";
             this.txtSaldoCC.ReadOnly = true;
-            this.txtSaldoCC.Size = new System.Drawing.Size(134, 22);
+            this.txtSaldoCC.Size = new System.Drawing.Size(134, 23);
             this.txtSaldoCC.TabIndex = 17;
             // 
             // label7
@@ -1251,9 +1262,10 @@
             // txtMoney
             // 
             this.txtMoney.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtMoney.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMoney.Location = new System.Drawing.Point(8, 335);
             this.txtMoney.Name = "txtMoney";
-            this.txtMoney.Size = new System.Drawing.Size(134, 22);
+            this.txtMoney.Size = new System.Drawing.Size(134, 23);
             this.txtMoney.TabIndex = 16;
             this.txtMoney.TextChanged += new System.EventHandler(this.txtMoney_TextChanged);
             this.txtMoney.Enter += new System.EventHandler(this.txtMoney_Enter);
@@ -1273,10 +1285,11 @@
             // txtMoneyKeep
             // 
             this.txtMoneyKeep.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtMoneyKeep.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMoneyKeep.Location = new System.Drawing.Point(8, 260);
             this.txtMoneyKeep.Name = "txtMoneyKeep";
             this.txtMoneyKeep.ReadOnly = true;
-            this.txtMoneyKeep.Size = new System.Drawing.Size(134, 22);
+            this.txtMoneyKeep.Size = new System.Drawing.Size(134, 23);
             this.txtMoneyKeep.TabIndex = 15;
             this.txtMoneyKeep.TabStop = false;
             // 
@@ -1293,9 +1306,10 @@
             // txtPlusEntry
             // 
             this.txtPlusEntry.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtPlusEntry.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlusEntry.Location = new System.Drawing.Point(8, 126);
             this.txtPlusEntry.Name = "txtPlusEntry";
-            this.txtPlusEntry.Size = new System.Drawing.Size(134, 22);
+            this.txtPlusEntry.Size = new System.Drawing.Size(134, 23);
             this.txtPlusEntry.TabIndex = 13;
             this.txtPlusEntry.TextChanged += new System.EventHandler(this.txtPlusEntry_TextChanged);
             this.txtPlusEntry.Enter += new System.EventHandler(this.txtPlusEntry_Enter);
@@ -1315,11 +1329,12 @@
             // txtTotSpends
             // 
             this.txtTotSpends.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtTotSpends.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotSpends.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.txtTotSpends.Location = new System.Drawing.Point(8, 207);
             this.txtTotSpends.Name = "txtTotSpends";
             this.txtTotSpends.ReadOnly = true;
-            this.txtTotSpends.Size = new System.Drawing.Size(134, 22);
+            this.txtTotSpends.Size = new System.Drawing.Size(134, 23);
             this.txtTotSpends.TabIndex = 14;
             this.txtTotSpends.TabStop = false;
             // 
@@ -1336,9 +1351,10 @@
             // txtPay
             // 
             this.txtPay.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtPay.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPay.Location = new System.Drawing.Point(7, 71);
             this.txtPay.Name = "txtPay";
-            this.txtPay.Size = new System.Drawing.Size(134, 22);
+            this.txtPay.Size = new System.Drawing.Size(134, 23);
             this.txtPay.TabIndex = 12;
             this.txtPay.TextChanged += new System.EventHandler(this.txtPay_TextChanged);
             this.txtPay.Enter += new System.EventHandler(this.txtPay_Enter);
