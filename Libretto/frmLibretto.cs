@@ -317,6 +317,10 @@ namespace Libretto
 
             //Set textbox YearMonth
             txtYearMonth.Text = "Gestione Libretto nominale.....";
+
+            //Seleziona il colore di sfondo del nodo selezionato
+            treeYears.CustomForeColor = Brushes.WhiteSmoke;
+
         }
 
         //Intercetta la chusura del form

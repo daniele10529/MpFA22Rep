@@ -319,6 +319,9 @@ namespace MpFA20
 
             txtYearMonth.Text = "Spese.....";
 
+            //Seleziona il colore di sfondo del nodo selezionato
+            treeYears.CustomForeColor = Brushes.WhiteSmoke;
+
             model.loadTree(treeYears);
             
         }
@@ -939,35 +942,6 @@ namespace MpFA20
         #endregion
 
         #region TreeView
-        /// <summary>
-        /// Modifica l'icona alla selezione del nodo
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void treeYears_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-            //Se il nodo selezionato è ANNI esce dal metodo
-            if (e.Node.Text == "ANNI")
-            {
-                //Scambia l'icona al click sul nodo anni
-                if (e.Node.ImageIndex == 0) e.Node.ImageIndex = 1;
-                else if (e.Node.ImageIndex == 1) e.Node.ImageIndex = 0;
-                //Al primo click l'index ha valore -1 e deve essere settato.
-                else if (e.Node.ImageIndex < 0) e.Node.ImageIndex = 1;
-                return;
-            }
-            
-            //Se viene aperto il nodo di un anno inserisce icona freccia in giù
-            if (e.Node.Parent.Text == "ANNI" && e.Node.ImageIndex == 0)
-            {
-                e.Node.ImageIndex = 1;
-            }
-            else
-            {   //se il nodo di un anno viene chiuso ripristina l'icona freccia a dx
-                e.Node.ImageIndex = 0;
-            }    
-
-        }
 
         //Carica i dati al doppio click sul nodo prescelto
         private void treeYears_DoubleClick(object sender, EventArgs e)

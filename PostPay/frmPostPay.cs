@@ -325,6 +325,9 @@ namespace PostPay
             btnForward.Enabled = false;
             btnBack.Enabled = false;
 
+            //Seleziona il colore di sfondo del nodo selezionato
+            treeYears.CustomForeColor = Brushes.WhiteSmoke;
+
         }
 
 

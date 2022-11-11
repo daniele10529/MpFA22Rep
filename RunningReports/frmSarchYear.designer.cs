@@ -34,17 +34,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSelectYear = new RoundendControlCollections.RoundedButton();
             this.label16 = new System.Windows.Forms.Label();
+            this.pnlGrid = new RoundendControlCollections.RoundedPanel();
             this.grdYear = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdYear)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.pnlGrid);
             this.panel1.Controls.Add(this.btnSelectYear);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.grdYear);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -92,45 +94,79 @@
             this.label16.Text = "Seleziona Anno";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnlGrid
+            // 
+            this.pnlGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlGrid.BackColor = System.Drawing.Color.LightGray;
+            this.pnlGrid.BackgroundColor = System.Drawing.Color.LightGray;
+            this.pnlGrid.BorderColor = System.Drawing.Color.MediumTurquoise;
+            this.pnlGrid.BorderRadius = 10;
+            this.pnlGrid.BorderSize = 2;
+            this.pnlGrid.Controls.Add(this.grdYear);
+            this.pnlGrid.GradientAngle = 90F;
+            this.pnlGrid.GrdtBottom = System.Drawing.Color.WhiteSmoke;
+            this.pnlGrid.GrdtTop = System.Drawing.Color.Gainsboro;
+            this.pnlGrid.Location = new System.Drawing.Point(15, 39);
+            this.pnlGrid.Name = "pnlGrid";
+            this.pnlGrid.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlGrid.Size = new System.Drawing.Size(257, 173);
+            this.pnlGrid.TabIndex = 115;
+            // 
             // grdYear
             // 
             this.grdYear.AllowUserToAddRows = false;
-            this.grdYear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grdYear.BackgroundColor = System.Drawing.Color.White;
+            this.grdYear.AllowUserToResizeRows = false;
+            this.grdYear.BackgroundColor = System.Drawing.SystemColors.Control;
             this.grdYear.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grdYear.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdYear.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grdYear.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdYear.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grdYear.DefaultCellStyle = dataGridViewCellStyle2;
-            this.grdYear.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grdYear.Location = new System.Drawing.Point(3, 49);
+            this.grdYear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdYear.EnableHeadersVisualStyles = false;
+            this.grdYear.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.grdYear.Location = new System.Drawing.Point(5, 5);
+            this.grdYear.Margin = new System.Windows.Forms.Padding(5);
+            this.grdYear.MultiSelect = false;
             this.grdYear.Name = "grdYear";
+            this.grdYear.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grdYear.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.grdYear.Size = new System.Drawing.Size(278, 140);
-            this.grdYear.TabIndex = 0;
+            this.grdYear.RowHeadersVisible = false;
+            this.grdYear.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdYear.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.grdYear.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.grdYear.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.grdYear.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            this.grdYear.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdYear.RowTemplate.DividerHeight = 1;
+            this.grdYear.ShowEditingIcon = false;
+            this.grdYear.Size = new System.Drawing.Size(247, 163);
+            this.grdYear.TabIndex = 21;
             // 
             // frmSarchYear
             // 
@@ -146,6 +182,7 @@
             this.Load += new System.EventHandler(this.frmSarchYear_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnlGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdYear)).EndInit();
             this.ResumeLayout(false);
 
@@ -154,8 +191,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView grdYear;
         private System.Windows.Forms.Label label16;
         private RoundendControlCollections.RoundedButton btnSelectYear;
+        private RoundendControlCollections.RoundedPanel pnlGrid;
+        private System.Windows.Forms.DataGridView grdYear;
     }
 }

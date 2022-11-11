@@ -41,7 +41,6 @@
             this.label55 = new System.Windows.Forms.Label();
             this.txtTotEntryYear = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.label51 = new System.Windows.Forms.Label();
             this.txtDecSafe = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
@@ -130,10 +129,8 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtGennuary = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.btnListYears = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -169,6 +166,9 @@
             this.lblSelAnno = new System.Windows.Forms.Label();
             this.pnlLine1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.roundedPanel2 = new RoundendControlCollections.RoundedPanel();
+            this.roundedPanel1 = new RoundendControlCollections.RoundedPanel();
+            this.roundedPanel3 = new RoundendControlCollections.RoundedPanel();
             this.pnlmain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -231,6 +231,9 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Controls.Add(this.roundedPanel3);
+            this.panel4.Controls.Add(this.roundedPanel1);
+            this.panel4.Controls.Add(this.roundedPanel2);
             this.panel4.Controls.Add(this.lnkSpendElements);
             this.panel4.Controls.Add(this.btnRunningReport);
             this.panel4.Controls.Add(this.txtSelectYear);
@@ -241,7 +244,6 @@
             this.panel4.Controls.Add(this.label55);
             this.panel4.Controls.Add(this.txtTotEntryYear);
             this.panel4.Controls.Add(this.label54);
-            this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.label51);
             this.panel4.Controls.Add(this.txtDecSafe);
             this.panel4.Controls.Add(this.label52);
@@ -330,10 +332,8 @@
             this.panel4.Controls.Add(this.label17);
             this.panel4.Controls.Add(this.txtGennuary);
             this.panel4.Controls.Add(this.label18);
-            this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.btnListYears);
             this.panel4.Controls.Add(this.label19);
-            this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.label20);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
@@ -380,7 +380,7 @@
             // 
             // txtSelectYear
             // 
-            this.txtSelectYear.BorderColor = System.Drawing.Color.Empty;
+            this.txtSelectYear.BorderColor = System.Drawing.Color.DimGray;
             this.txtSelectYear.BorderFocusColor = System.Drawing.Color.LightSteelBlue;
             this.txtSelectYear.BorderRadius = 10;
             this.txtSelectYear.BorderSize = 1;
@@ -482,15 +482,6 @@
             this.label54.Size = new System.Drawing.Size(144, 18);
             this.label54.TabIndex = 105;
             this.label54.Text = "TOT Entrate Annue:";
-            // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.BackColor = System.Drawing.Color.DimGray;
-            this.panel7.Location = new System.Drawing.Point(22, 674);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(600, 5);
-            this.panel7.TabIndex = 104;
             // 
             // label51
             // 
@@ -1383,15 +1374,6 @@
             this.label18.TabIndex = 8;
             this.label18.Text = "Gennaio";
             // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.DimGray;
-            this.panel5.Location = new System.Drawing.Point(22, 177);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(600, 5);
-            this.panel5.TabIndex = 7;
-            // 
             // btnListYears
             // 
             this.btnListYears.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -1414,15 +1396,6 @@
             this.label19.Size = new System.Drawing.Size(105, 18);
             this.label19.TabIndex = 3;
             this.label19.Text = "Seleziona anno";
-            // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.DimGray;
-            this.panel6.Location = new System.Drawing.Point(22, 74);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(600, 5);
-            this.panel6.TabIndex = 2;
             // 
             // label20
             // 
@@ -1811,6 +1784,51 @@
             this.lblTitle.Text = "REPORT ANNUALE";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // roundedPanel2
+            // 
+            this.roundedPanel2.BackColor = System.Drawing.Color.DimGray;
+            this.roundedPanel2.BackgroundColor = System.Drawing.Color.DimGray;
+            this.roundedPanel2.BorderColor = System.Drawing.Color.LightGray;
+            this.roundedPanel2.BorderRadius = 5;
+            this.roundedPanel2.BorderSize = 1;
+            this.roundedPanel2.GradientAngle = 90F;
+            this.roundedPanel2.GrdtBottom = System.Drawing.Color.DimGray;
+            this.roundedPanel2.GrdtTop = System.Drawing.Color.DimGray;
+            this.roundedPanel2.Location = new System.Drawing.Point(22, 74);
+            this.roundedPanel2.Name = "roundedPanel2";
+            this.roundedPanel2.Size = new System.Drawing.Size(600, 6);
+            this.roundedPanel2.TabIndex = 131;
+            // 
+            // roundedPanel1
+            // 
+            this.roundedPanel1.BackColor = System.Drawing.Color.DimGray;
+            this.roundedPanel1.BackgroundColor = System.Drawing.Color.DimGray;
+            this.roundedPanel1.BorderColor = System.Drawing.Color.LightGray;
+            this.roundedPanel1.BorderRadius = 5;
+            this.roundedPanel1.BorderSize = 1;
+            this.roundedPanel1.GradientAngle = 90F;
+            this.roundedPanel1.GrdtBottom = System.Drawing.Color.DimGray;
+            this.roundedPanel1.GrdtTop = System.Drawing.Color.DimGray;
+            this.roundedPanel1.Location = new System.Drawing.Point(22, 177);
+            this.roundedPanel1.Name = "roundedPanel1";
+            this.roundedPanel1.Size = new System.Drawing.Size(600, 6);
+            this.roundedPanel1.TabIndex = 132;
+            // 
+            // roundedPanel3
+            // 
+            this.roundedPanel3.BackColor = System.Drawing.Color.DimGray;
+            this.roundedPanel3.BackgroundColor = System.Drawing.Color.DimGray;
+            this.roundedPanel3.BorderColor = System.Drawing.Color.LightGray;
+            this.roundedPanel3.BorderRadius = 5;
+            this.roundedPanel3.BorderSize = 1;
+            this.roundedPanel3.GradientAngle = 90F;
+            this.roundedPanel3.GrdtBottom = System.Drawing.Color.DimGray;
+            this.roundedPanel3.GrdtTop = System.Drawing.Color.DimGray;
+            this.roundedPanel3.Location = new System.Drawing.Point(22, 674);
+            this.roundedPanel3.Name = "roundedPanel3";
+            this.roundedPanel3.Size = new System.Drawing.Size(600, 6);
+            this.roundedPanel3.TabIndex = 133;
+            // 
             // frmRunReports
             // 
             this.AcceptButton = this.btnRunningReport;
@@ -1912,10 +1930,8 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtGennuary;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnListYears;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TextBox txtAugSafe;
@@ -1946,7 +1962,6 @@
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.TextBox txtTotEntryYear;
         private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.TextBox txtDecSafe;
         private System.Windows.Forms.Label label52;
@@ -1976,6 +1991,9 @@
         private RoundendControlCollections.RoundedTextBox txtSelectYear;
         private RoundendControlCollections.RoundedButton btnRunningReport;
         private System.Windows.Forms.LinkLabel lnkSpendElements;
+        private RoundendControlCollections.RoundedPanel roundedPanel3;
+        private RoundendControlCollections.RoundedPanel roundedPanel1;
+        private RoundendControlCollections.RoundedPanel roundedPanel2;
     }
 }
 

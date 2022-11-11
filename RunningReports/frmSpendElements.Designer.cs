@@ -29,45 +29,55 @@
         private void InitializeComponent()
         {
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.cmbSelOftenSpends = new RoundendControlCollections.CustomComboBox();
             this.btnPDFCreator = new System.Windows.Forms.Button();
             this.lnkYearReport = new System.Windows.Forms.LinkLabel();
             this.btnRunReports = new RoundendControlCollections.RoundedButton();
             this.txtReportsSpends = new RoundendControlCollections.RoundedTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cmbSelOftenSpends = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSelectYear = new RoundendControlCollections.RoundedTextBox();
             this.btnListYears = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
+            this.roundedPanel1 = new RoundendControlCollections.RoundedPanel();
+            this.roundedPanel2 = new RoundendControlCollections.RoundedPanel();
             this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlMain.Controls.Add(this.roundedPanel2);
+            this.pnlMain.Controls.Add(this.roundedPanel1);
+            this.pnlMain.Controls.Add(this.cmbSelOftenSpends);
             this.pnlMain.Controls.Add(this.btnPDFCreator);
             this.pnlMain.Controls.Add(this.lnkYearReport);
             this.pnlMain.Controls.Add(this.btnRunReports);
             this.pnlMain.Controls.Add(this.txtReportsSpends);
             this.pnlMain.Controls.Add(this.label2);
-            this.pnlMain.Controls.Add(this.panel1);
-            this.pnlMain.Controls.Add(this.cmbSelOftenSpends);
             this.pnlMain.Controls.Add(this.label1);
             this.pnlMain.Controls.Add(this.txtSelectYear);
             this.pnlMain.Controls.Add(this.btnListYears);
             this.pnlMain.Controls.Add(this.label19);
             this.pnlMain.Controls.Add(this.btnExit);
-            this.pnlMain.Controls.Add(this.panel6);
             this.pnlMain.Controls.Add(this.label20);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(644, 761);
             this.pnlMain.TabIndex = 0;
+            // 
+            // cmbSelOftenSpends
+            // 
+            this.cmbSelOftenSpends.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbSelOftenSpends.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSelOftenSpends.FormattingEnabled = true;
+            this.cmbSelOftenSpends.Location = new System.Drawing.Point(239, 129);
+            this.cmbSelOftenSpends.Name = "cmbSelOftenSpends";
+            this.cmbSelOftenSpends.Size = new System.Drawing.Size(283, 24);
+            this.cmbSelOftenSpends.TabIndex = 128;
             // 
             // btnPDFCreator
             // 
@@ -156,26 +166,6 @@
             this.label2.Text = "REPORT ESEGUITO";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.Location = new System.Drawing.Point(22, 206);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 5);
-            this.panel1.TabIndex = 119;
-            // 
-            // cmbSelOftenSpends
-            // 
-            this.cmbSelOftenSpends.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cmbSelOftenSpends.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cmbSelOftenSpends.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSelOftenSpends.FormattingEnabled = true;
-            this.cmbSelOftenSpends.Location = new System.Drawing.Point(239, 129);
-            this.cmbSelOftenSpends.Name = "cmbSelOftenSpends";
-            this.cmbSelOftenSpends.Size = new System.Drawing.Size(383, 25);
-            this.cmbSelOftenSpends.TabIndex = 118;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -188,7 +178,7 @@
             // 
             // txtSelectYear
             // 
-            this.txtSelectYear.BorderColor = System.Drawing.Color.Empty;
+            this.txtSelectYear.BorderColor = System.Drawing.Color.DimGray;
             this.txtSelectYear.BorderFocusColor = System.Drawing.Color.LightSteelBlue;
             this.txtSelectYear.BorderRadius = 10;
             this.txtSelectYear.BorderSize = 1;
@@ -244,15 +234,6 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.DimGray;
-            this.panel6.Location = new System.Drawing.Point(22, 74);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(600, 5);
-            this.panel6.TabIndex = 112;
-            // 
             // label20
             // 
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -267,6 +248,36 @@
             this.label20.TabIndex = 111;
             this.label20.Text = "REPORT SPESE ";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // roundedPanel1
+            // 
+            this.roundedPanel1.BackColor = System.Drawing.Color.DimGray;
+            this.roundedPanel1.BackgroundColor = System.Drawing.Color.DimGray;
+            this.roundedPanel1.BorderColor = System.Drawing.Color.LightGray;
+            this.roundedPanel1.BorderRadius = 5;
+            this.roundedPanel1.BorderSize = 1;
+            this.roundedPanel1.GradientAngle = 90F;
+            this.roundedPanel1.GrdtBottom = System.Drawing.Color.DimGray;
+            this.roundedPanel1.GrdtTop = System.Drawing.Color.DimGray;
+            this.roundedPanel1.Location = new System.Drawing.Point(22, 74);
+            this.roundedPanel1.Name = "roundedPanel1";
+            this.roundedPanel1.Size = new System.Drawing.Size(600, 6);
+            this.roundedPanel1.TabIndex = 129;
+            // 
+            // roundedPanel2
+            // 
+            this.roundedPanel2.BackColor = System.Drawing.Color.DimGray;
+            this.roundedPanel2.BackgroundColor = System.Drawing.Color.DimGray;
+            this.roundedPanel2.BorderColor = System.Drawing.Color.LightGray;
+            this.roundedPanel2.BorderRadius = 5;
+            this.roundedPanel2.BorderSize = 1;
+            this.roundedPanel2.GradientAngle = 90F;
+            this.roundedPanel2.GrdtBottom = System.Drawing.Color.DimGray;
+            this.roundedPanel2.GrdtTop = System.Drawing.Color.DimGray;
+            this.roundedPanel2.Location = new System.Drawing.Point(22, 206);
+            this.roundedPanel2.Name = "roundedPanel2";
+            this.roundedPanel2.Size = new System.Drawing.Size(600, 6);
+            this.roundedPanel2.TabIndex = 130;
             // 
             // frmSpendElements
             // 
@@ -291,10 +302,7 @@
 
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cmbSelOftenSpends;
         private System.Windows.Forms.Label label1;
         private RoundendControlCollections.RoundedTextBox txtSelectYear;
         private System.Windows.Forms.Button btnListYears;
@@ -304,5 +312,8 @@
         private RoundendControlCollections.RoundedButton btnRunReports;
         private System.Windows.Forms.LinkLabel lnkYearReport;
         private System.Windows.Forms.Button btnPDFCreator;
+        private RoundendControlCollections.CustomComboBox cmbSelOftenSpends;
+        private RoundendControlCollections.RoundedPanel roundedPanel2;
+        private RoundendControlCollections.RoundedPanel roundedPanel1;
     }
 }

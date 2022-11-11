@@ -268,6 +268,9 @@ namespace ContoCorrente
 
             txtYearMonth.Text = "Gestione Conto Corrente.....";
 
+            //Seleziona il colore di sfondo del nodo selezionato
+            treeYears.CustomForeColor = Brushes.WhiteSmoke;
+
         }
 
         //Intercetta la chusura del form
@@ -768,132 +771,6 @@ namespace ContoCorrente
         #endregion
 
         #region TreeView
-
-        private void treeYears_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-            //Verifica sia chiccato un nodo esistente
-            if (e.Node == null) return;
-            //Se il nodo è espandibile modifica l'immagine
-            if (e.Node.IsExpanded) e.Node.ImageIndex = 1;
-            else e.Node.ImageIndex = 0;
-
-        }
-
-        private void treeYears_DrawNode(object sender, DrawTreeNodeEventArgs e)
-        {
-            //Affinché possa ridisegnare è necessario impostare l'attributo
-            //DrawMode su OwnerDrawText
-
-            Image image;
-
-            //Antialias sul disegno del testo
-            e.Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
-
-            //Se TreeView perde il focus disegna i nodi in modo standard
-            if (treeYears.Focused == false)
-            {
-                //Evita il sovrapporsi del disegno del nodo
-                treeYears.FullRowSelect = true;
-                e.DrawDefault = true;
-                return;
-            }
-
-            // Draw the background and node text for a selected node.
-            if ((e.State & TreeNodeStates.Selected) != 0)
-            {
-                // Draw the background of the selected node. The NodeBounds
-                // method makes the highlight rectangle large enough to
-                // include the text of a node tag, if one is present.
-                e.Graphics.FillRectangle(Brushes.LightSteelBlue, NodeBounds(e.Node));
-
-                //Evita il sovrapporsi del disegno del nodo
-                treeYears.FullRowSelect = false;
-
-                // Retrieve the node font. If the node font has not been set,
-                // use the TreeView font.
-                Font nodeFont = e.Node.NodeFont;
-                if (nodeFont == null) nodeFont = ((TreeView)sender).Font;
-
-                // Draw the node text.
-                e.Graphics.DrawString(e.Node.Text, nodeFont, Brushes.Black,
-                    Rectangle.Inflate(e.Bounds, 2, 0));
-                
-                //Verifica se il nodo è espanso e imposta l'icona
-                if (e.Node.IsExpanded)
-                {
-                    //Disegna l'immagine al nodo selezionato
-                    image = Image.FromFile(Routes.ICONS + "Ordina_giu.png");
-                    e.Graphics.DrawImage(image, e.Node.Bounds.X - 30, e.Node.Bounds.Y, 20, 20);
-                }
-                else
-                {
-                    //Se il nodo non ha nodi genitori, imposta l'icona
-                    if (e.Node.Parent == null)
-                    {
-                        //Disegna l'immagine al nodo selezionato
-                        image = Image.FromFile(Routes.ICONS + "Ordina_dx.png");
-                        e.Graphics.DrawImage(image, e.Node.Bounds.X - 30, e.Node.Bounds.Y, 20, 20);
-                        return;
-                    }
-                    //Se ha nodi genitori in posta l'icona in base allo stao
-                    if (e.Node.IsExpanded)
-                    {
-                        //Disegna l'immagine al nodo selezionato
-                        image = Image.FromFile(Routes.ICONS + "Ordina_giu.png");
-                        e.Graphics.DrawImage(image, e.Node.Bounds.X - 30, e.Node.Bounds.Y, 20, 20);
-                    }
-                    else
-                    {
-                        //Disegna l'immagine al nodo selezionato
-                        image = Image.FromFile(Routes.ICONS + "Ordina_dx.png");
-                        e.Graphics.DrawImage(image, e.Node.Bounds.X - 30, e.Node.Bounds.Y, 20, 20);
-                    }
-
-                }
-                
-            }
-            else
-            {
-                //Se il nodo non è selezionato lo disegna in modo standard
-                e.DrawDefault = true;
-            }
-
-        }
-
-        private void treeYears_MouseDown(object sender, MouseEventArgs e)
-        {
-            //Cliccando sul + seleziona il nodo
-            TreeNode clickedNode = treeYears.GetNodeAt(e.X, e.Y);
-            if (NodeBounds(clickedNode).Contains(e.X, e.Y))
-            {
-                treeYears.SelectedNode = clickedNode;
-            }
-        }
-
-        //Ritorna i limiti del nodo selezionato incluso il testo
-        private Rectangle NodeBounds(TreeNode node)
-        {
-            //Definisce il font del nodo
-            Font tagFont = new Font("MS Reference Sans Serif", 10, FontStyle.Regular);
-            //Definisce i limiti del nodo
-            Rectangle bounds = new Rectangle(0, node.Bounds.Y, treeYears.Width, node.Bounds.Height);
-            // Set the return value to the normal node bounds.
-            //Rectangle bounds = node.Bounds;
-            if (node.Tag != null)
-            {
-                // Retrieve a Graphics object from the TreeView handle
-                // and use it to calculate the display width of the tag.
-                Graphics g = treeYears.CreateGraphics();
-                int tagWidth = (int)g.MeasureString(node.Tag.ToString(), tagFont).Width + 6;
-
-                // Adjust the node bounds using the calculated value.
-                bounds.Offset(tagWidth / 2, 0);
-                bounds = Rectangle.Inflate(bounds, tagWidth / 2, 0);
-                g.Dispose();
-            }
-
-            return bounds;
-        }
 
         //Carica i dati al doppio click sul nodo prescelto
         private void treeYears_DoubleClick(object sender, EventArgs e)

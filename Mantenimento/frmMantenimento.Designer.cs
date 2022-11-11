@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("ANNI   ");
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("ANNI");
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.pgHome = new System.Windows.Forms.TabPage();
@@ -71,7 +72,6 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.pnlTree = new System.Windows.Forms.Panel();
-            this.treeYears = new System.Windows.Forms.TreeView();
             this.label15 = new System.Windows.Forms.Label();
             this.btnNewYear2 = new System.Windows.Forms.Button();
             this.btnLoadYears2 = new System.Windows.Forms.Button();
@@ -87,6 +87,7 @@
             this.grdKeepingVoices = new System.Windows.Forms.DataGridView();
             this.pnlFooter = new RoundendControlCollections.RoundedPanel();
             this.txtYearMonth = new System.Windows.Forms.TextBox();
+            this.treeYears = new RoundendControlCollections.CustomTreeView();
             this.pnlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.pgHome.SuspendLayout();
@@ -664,31 +665,6 @@
             this.pnlTree.Size = new System.Drawing.Size(182, 730);
             this.pnlTree.TabIndex = 30;
             // 
-            // treeYears
-            // 
-            this.treeYears.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.treeYears.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
-            this.treeYears.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeYears.ForeColor = System.Drawing.Color.Indigo;
-            this.treeYears.ItemHeight = 20;
-            this.treeYears.LineColor = System.Drawing.Color.LightSteelBlue;
-            this.treeYears.Location = new System.Drawing.Point(1, 83);
-            this.treeYears.Name = "treeYears";
-            treeNode1.BackColor = System.Drawing.Color.AntiqueWhite;
-            treeNode1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            treeNode1.Name = "nodeYears";
-            treeNode1.NodeFont = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode1.Text = "ANNI   ";
-            this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.treeYears.ShowLines = false;
-            this.treeYears.ShowNodeToolTips = true;
-            this.treeYears.Size = new System.Drawing.Size(177, 645);
-            this.treeYears.TabIndex = 38;
-            this.treeYears.DrawNode += new System.Windows.Forms.DrawTreeNodeEventHandler(this.treeYears_DrawNode);
-            this.treeYears.DoubleClick += new System.EventHandler(this.treeYears_DoubleClick);
-            this.treeYears.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeYears_MouseDown);
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -929,6 +905,26 @@
             this.txtYearMonth.TabIndex = 36;
             this.txtYearMonth.TabStop = false;
             // 
+            // treeYears
+            // 
+            this.treeYears.BorderSelectedNodeColor = System.Drawing.Color.SteelBlue;
+            this.treeYears.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
+            this.treeYears.FullRowSelect = true;
+            this.treeYears.ImageIndex = 0;
+            this.treeYears.Location = new System.Drawing.Point(1, 83);
+            this.treeYears.Name = "treeYears";
+            treeNode1.BackColor = System.Drawing.Color.AntiqueWhite;
+            treeNode1.ForeColor = System.Drawing.Color.SteelBlue;
+            treeNode1.Name = "ndAnni";
+            treeNode1.Text = "ANNI";
+            this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            this.treeYears.SelectedImageIndex = 0;
+            this.treeYears.ShowLines = false;
+            this.treeYears.Size = new System.Drawing.Size(177, 645);
+            this.treeYears.TabIndex = 38;
+            this.treeYears.DoubleClick += new System.EventHandler(this.treeYears_DoubleClick);
+            // 
             // frmMantenimento
             // 
             this.AcceptButton = this.btnInsert;
@@ -1035,12 +1031,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TreeView treeYears;
         private System.Windows.Forms.TextBox txtYearMonth;
         private RoundendControlCollections.RoundedPanel pnlFooter;
         private RoundendControlCollections.RoundedPanel pnlGrid;
         private System.Windows.Forms.DataGridView grdKeepingVoices;
         private RoundendControlCollections.CustomComboBox cmbMonths;
+        private RoundendControlCollections.CustomTreeView treeYears;
     }
 }
 

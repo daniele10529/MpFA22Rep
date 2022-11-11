@@ -51,7 +51,7 @@ namespace RunningReports
             //Set della tabella, ricva il nome della colonna dalla struttura dati
             table.Columns.Add(ModelDataReports.RunReports.columnYear);
             //Set griglia
-            grdYear.Columns[0].Width = 230;
+            grdYear.Columns[0].Width = (grdYear.Width * 98) / 100;
             grdYear.Columns[0].ReadOnly = true;
             
             //Aggiunge i dati in tabella
