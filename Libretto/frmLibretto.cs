@@ -14,23 +14,25 @@ using System.Drawing.Text;
 
 namespace Libretto
 {
-    //modulo per la gestione del Libretto e della PostPay
+    //Modulo per la gestione del Libretto e della PostPay
     //utilizza una classe specifica per la gestione PP
     public partial class frmLibretto : Form
     {
-        //tabella contenente i dati
+        //Tabella contenente i dati
         private DataTable table;
-        //percorso file xml con errori
+        //Percorso file xml con errori
         private const string pathxml = Routes.XMLERRORS;
-        //verifica sul comportamento utente
+        //Verifica sul comportamento utente
         private bool isLoad;
         private bool isSaved;
         private bool isChanged;
-        //istanza alla classe di gestione con DB
+        //Istanza alla classe di gestione con DB
         ModelDataLibNom model;
+        //Istanza classi
+        DefineMonth defineMonth;
         //Istanza alla classe checker
         protected Checker check;
-        //numero dell'anno e mese caricato
+        //Numero dell'anno e mese caricato
         public int year_manage, month_manage;
 
         public frmLibretto()
@@ -41,10 +43,12 @@ namespace Libretto
             isSaved = false;
             isChanged = false;
             model = new ModelDataLibNom();
+            defineMonth = new DefineMonth();
         }
 
         #region Metodi Privati
-        //genera la lista dati basata sulla struct
+        
+        //Genera la lista dati basata sulla struct
         private List<ModelDataLibNom.PaymentLibNom> createListStruct()
         {
             //istanza di struttura e lista
@@ -60,7 +64,7 @@ namespace Libretto
                 payment.causale = lastrow[1].ToString();
                 payment.importo = Double.Parse(lastrow[2].ToString());
                 //Ricava il numero del mese per il salvataggio nel DB
-                payment.id_mese = selmonth(lastrow[3].ToString());
+                payment.id_mese = defineMonth.getIndexFromNameMonth(lastrow[3].ToString());
                 lista.Add(payment);
 
             }
@@ -97,7 +101,7 @@ namespace Libretto
         }
 
         /// <summary>
-        /// carica immagini per le pagine del tabcontrol
+        /// Carica le immagini per le pagine del tabcontrol
         /// </summary>
         private void loadImage()
         {
@@ -124,107 +128,6 @@ namespace Libretto
                 MessageBox.Show(ex.Message);
             }
 
-        }
-
-        /// <summary>
-        /// Restituisce il numero del mese selezionato
-        /// </summary>
-        /// <param name="m"></param>
-        /// <returns></returns>
-        private int selmonth(string m)
-        {
-            int n = 0;
-            switch (m)
-            {
-                case "gennaio":
-                    n = 1;
-                    break;
-                case "febbraio":
-                    n = 2;
-                    break;
-                case "marzo":
-                    n = 3;
-                    break;
-                case "aprile":
-                    n = 4;
-                    break;
-                case "maggio":
-                    n = 5;
-                    break;
-                case "giugno":
-                    n = 6;
-                    break;
-                case "luglio":
-                    n = 7;
-                    break;
-                case "agosto":
-                    n = 8;
-                    break;
-                case "settembre":
-                    n = 9;
-                    break;
-                case "ottobre":
-                    n = 10;
-                    break;
-                case "novembre":
-                    n = 11;
-                    break;
-                case "dicembre":
-                    n = 12;
-                    break;
-            }
-            return n;
-        }
-
-        /// <summary>
-        /// Restituisce il mese in stringa in base al suo numero
-        /// necessario al salvataggio nel DB.
-        /// </summary>
-        /// <param name="m"></param>
-        /// <returns></returns>
-        private string selmonth(int m)
-        {
-            string n = "";
-            switch (m)
-            {
-                case 1:
-                    n = "gennaio";
-                    break;
-                case 2:
-                    n = "febbraio";
-                    break;
-                case 3:
-                    n = "marzo";
-                    break;
-                case 4:
-                    n = "aprile";
-                    break;
-                case 5:
-                    n = "maggio";
-                    break;
-                case 6:
-                    n = "giugno";
-                    break;
-                case 7:
-                    n = "luglio";
-                    break;
-                case 8:
-                    n = "agosto";
-                    break;
-                case 9:
-                    n = "settembre";
-                    break;
-                case 10:
-                    n = "ottobre";
-                    break;
-                case 11:
-                    n = "novembre";
-                    break;
-                case 12:
-                    n = "dicembre";
-                    break;
-            }
-            return n;
         }
 
         /// <summary>
@@ -284,6 +187,7 @@ namespace Libretto
             else if (isSaved == false && isChanged == true) pnlStatus.BackColor = Color.FromArgb(255, 0, 0);
             else if (isLoad == true) pnlStatus.BackColor = Color.FromArgb(255, 255, 255);
         }
+
         #endregion
 
         #region EVENTI DEGLI OGGETTI
@@ -300,7 +204,7 @@ namespace Libretto
             model.loadTree(treeYears, true);
             pnlStatus.BackColor = Color.FromArgb(255, 255, 255);
 
-            //impostazioni di tabella e datagridview
+            //Setting di tabella e DataGridView
             grdMovLibVoices.DataSource = table;
             table.Columns.Add("ID");
             table.Columns.Add("CAUSALE DEL MOVIMENTO");
@@ -312,10 +216,10 @@ namespace Libretto
             grdMovLibVoices.Columns[3].Width = (grdMovLibVoices.Width * 10) / 100;
             grdMovLibVoices.Columns[0].ReadOnly = true;
 
-            //set valori comboBox mesi
+            //Setting valori comboBox mesi
             cmbMonths.Items.AddRange(mesi);
 
-            //Set textbox YearMonth
+            //Setting TextBox YearMonth
             txtYearMonth.Text = "Gestione Libretto nominale.....";
 
             //Seleziona il colore di sfondo del nodo selezionato
@@ -326,11 +230,12 @@ namespace Libretto
         //Intercetta la chusura del form
         private void frmLibretto_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //se i dati non sono salvati chiede conferma
+            //Se i dati non sono salvati chiede conferma
             if (isChanged == true && isSaved == false)
             {
                 if (MessageBox.Show("Sicuro di voler chiudere l'App, i dati non salvati andranno persi ?", "ATTENZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
-                {//se non si conferma la chiusura annulla l'evento
+                {
+                    //Se non si conferma la chiusura annulla l'evento
                     e.Cancel = true;
                 }
             }
@@ -342,9 +247,8 @@ namespace Libretto
 
         private void btnLoadYears_Click(object sender, EventArgs e)
         {
-
             PopulateGrid populate = new PopulateGrid(grdMovLibVoices, table);
-            //istanza alla lista basata su struct
+            //Istanza alla lista basata su struct
             List<ModelDataLibNom.PaymentLibNom> listdata = new List<ModelDataLibNom.PaymentLibNom>();
             List<string> listinsert = new List<string>();
             string selezione, anno;
@@ -361,26 +265,26 @@ namespace Libretto
                 }
             }
 
-            //controllo sulla selezione del nodo anno\mese dall'albero
+            //Controllo sulla selezione del nodo anno\mese dall'albero
             if (treeYears.SelectedNode == null) return;
 
             selezione = treeYears.SelectedNode.Text;
             if (selezione == "ANNI") return;
             else
             {
-                //assegna il valore di anno\mese in base al nodo selezionato
+                //Assegna il valore di anno\mese in base al nodo selezionato
                 anno = treeYears.SelectedNode.Text;
 
                 if (anno == "ANNI") return;
                 else
                 {
                     year = Int32.Parse(anno);
-                    //assegna il valore alle variabili globali per la gestione con DB
+                    //Assegna il valore alle variabili globali per la gestione con DB
                     year_manage = year;
-                    //carica i dati da DB e li assegna alla lista
+                    //Carica i dati da DB e li assegna alla lista
                     listdata = model.loadDataLib(year);
 
-                    //utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
+                    //Utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
                     //ogni elemento della lista struct è una tupla del DB
                     i = 0;
                     while (i < listdata.Count)
@@ -388,7 +292,7 @@ namespace Libretto
                         listinsert.Add(listdata[i].id_libretto.ToString());
                         listinsert.Add(listdata[i].causale);
                         listinsert.Add(listdata[i].importo.ToString());
-                        listinsert.Add(selmonth(listdata[i].id_mese));
+                        listinsert.Add(defineMonth.getMonthFromIndex(listdata[i].id_mese));
                         populate.inserisci(4, listinsert);
                         listinsert.Clear();
                         i++;
@@ -399,13 +303,13 @@ namespace Libretto
 
             isChanged = false;
             isLoad = true;
-            //deseleziona l'albero 
+            //Deseleziona l'albero 
             treeYears.SelectedNode = null;
-            //carica il valore di saldo del mese precedente e lo inserisce nella textbox
+            //Carica il valore di saldo del mese precedente e lo inserisce nella textbox
             txtBalanceST.Text = model.balanceYearPre(year_manage).ToString();
-            //conteggia il saldo finale
+            //Conteggia il saldo finale
             counter();
-            //tronca il bilancio iniziale
+            //Tronca il bilancio iniziale
             if (txtBalanceST.Text.Length > 1)
             {
                 check = new Checker();
@@ -438,11 +342,6 @@ namespace Libretto
 
         }
 
-        private void btnLoadYears2_Click(object sender, EventArgs e)
-        {
-            btnLoadYears_Click(sender, e);
-        }
-
         private void btnInsert_Click(object sender, EventArgs e)
         {
             isSaved = false;
@@ -456,7 +355,7 @@ namespace Libretto
             string father = "ListError";
             string feature = "ErrorTitle";
             int idgrid = 0, idDB = 0;
-            //verifica sulla presenza di tutti i campi dalla classe checker
+            //Verifica sulla presenza di tutti i campi dalla classe checker
             //e che sia stato caricato un anno\mese
             if (isLoad == false) return;
             populate.path = pathxml;
@@ -524,11 +423,11 @@ namespace Libretto
             double balance = Double.Parse(txtBalanceOV.Text);
             bool isSavedBalance = false;
 
-            //genera la lista dalla tabella e salva i dati nel DB attraverso la classe modeldata
+            //Genera la lista dalla tabella e salva i dati nel DB attraverso la classe modeldata
             List<ModelDataLibNom.PaymentLibNom> lista = createListStruct();
             isSaved = model.saveDataLib(year_manage, lista);
             isSavedBalance = model.saveBalanceYear(balance, year_manage);
-            //verifica il corretto salvataggio dei dati
+            //Verifica il corretto salvataggio dei dati
             if (isSavedBalance == false || isSaved == false)
             {
                 MessageBox.Show("Errore di salvataggio dei dati", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -541,7 +440,7 @@ namespace Libretto
 
         }
 
-        //update del saldo annuo per l'anno successivo, in modo che al primo caricamento in spese annuali
+        //Update del saldo annuo per l'anno successivo, in modo che al primo caricamento in spese annuali
         //non ci sia saldo 0
         private void btnCloseYear_Click(object sender, EventArgs e)
         {
@@ -575,27 +474,22 @@ namespace Libretto
             
         }
 
-        private void btnSaveData_Click(object sender, EventArgs e)
-        {
-            btnSave_Click(sender, e);
-        }
-
-        private void btnSaveThree_Click(object sender, EventArgs e)
-        {
-            btnSave_Click(sender, e);
-        }
-
+        /// <summary>
+        /// Elimina un record
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteRow_Click(object sender, EventArgs e)
         {
             isSaved = false;
             isChanged = true;
             statusPanel();
-            //preleva l'indice dalla riga selezionata, se non selezionata non fa nulla
+            //Preleva l'indice dalla riga selezionata, se non selezionata non fa nulla
             int index = grdMovLibVoices.Rows.IndexOf(grdMovLibVoices.CurrentRow);
             if (index < 0) return;
 
             PopulateGrid populate = new PopulateGrid(grdMovLibVoices, table);
-            //se confermato elimina la riga
+            //Se confermato elimina la riga
             if (MessageBox.Show("Sicuro di voler eliminare la riga ?", "ATTENZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 populate.deleterow();
@@ -606,7 +500,7 @@ namespace Libretto
 
         private void btnUp_Click(object sender, EventArgs e)
         {
-            //preleva l'indice della riga selezionata, se non selezionata esce
+            //Preleva l'indice della riga selezionata, se non selezionata esce
             int index = grdMovLibVoices.Rows.IndexOf(grdMovLibVoices.CurrentRow);
             if (index < 0) return;
 
@@ -617,7 +511,7 @@ namespace Libretto
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            //preleva l'indice della riga selezionata, se non selezionata esce
+            //Preleva l'indice della riga selezionata, se non selezionata esce
             int index = grdMovLibVoices.Rows.IndexOf(grdMovLibVoices.CurrentRow);
             if (index < 0) return;
 
@@ -629,7 +523,7 @@ namespace Libretto
 
         private void btnModifyRow_Click(object sender, EventArgs e)
         {
-            //istanza per form modifica e per aggiornare il datagridview
+            //Istanza per form modifica e per aggiornare il datagridview
             frmModify frmMod = new frmModify();
             PopulateGrid populate = new PopulateGrid(grdMovLibVoices, table);
             string id, cause, import, id_month;
@@ -637,43 +531,44 @@ namespace Libretto
             List<string> listinsert = new List<string>();
             int i;
 
-            //variabile di avvenuta modifica
+            //Variabile di avvenuta modifica
             bool modifyRow = false;
             try
             {
-                //prelevo i dati dal datagridview
+                //Preleva i dati dal DataGridView
                 var val = grdMovLibVoices.CurrentRow.Cells;
                 id = val[0].Value.ToString();
                 cause = val[1].Value.ToString();
                 import = val[2].Value.ToString();
                 id_month = val[3].Value.ToString();
-                //passo i dati ai setter di frmModify
+                //Passa i dati ai setter di frmModify
                 frmMod.setId = id;
                 frmMod.setCause = cause;
                 frmMod.setImport = import;
                 frmMod.setMonth = id_month;
-                //setto l'anno selezionato
+                //Setta l'anno selezionato
                 frmMod.setYear = year_manage;
-                //visualizzo il form
+                //Visualizza il form
                 frmMod.ShowDialog();
-                //ricevo tru dal getter se alvataggio avvenuto con successo
+                //Riceve true dal getter se alvataggio avvenuto con successo
                 modifyRow = frmMod.verify;
                 if (modifyRow == true)
-                {//aggiorno il datagridview
+                {
+                    //Aggiorno il DataGridView
                     isSaved = true;
                     table.Rows.Clear();
 
-                    //carica i dati da DB e li assegna alla lista
+                    //Carica i dati da DB e li assegna alla lista
                     listdata = model.loadDataLib(year_manage);
 
-                    //utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
+                    //Utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
                     i = 0;
                     while (i < listdata.Count)
                     {
                         listinsert.Add(listdata[i].id_libretto.ToString());
                         listinsert.Add(listdata[i].causale);
                         listinsert.Add(listdata[i].importo.ToString());
-                        listinsert.Add(selmonth(listdata[i].id_mese));
+                        listinsert.Add(defineMonth.getMonthFromIndex(listdata[i].id_mese));
                         populate.inserisci(4, listinsert);
                         listinsert.Clear();
                         i++;
@@ -692,9 +587,9 @@ namespace Libretto
         //Visualizza il form per le voci frequenti
         private void btnSetOftenValue_Click(object sender, EventArgs e)
         {
-            //istanzia la classe
+            //Istanzia la classe
             CreateFormOftenCause form = new CreateFormOftenCause();
-            //imposta nel setter la textbox che deve acquisire il valoe dalla 
+            //Imposta nel setter la textbox che deve acquisire il valoe dalla 
             //lista delle causali frequenti
             form.OftenCause = txtCause;
         }
@@ -733,32 +628,11 @@ namespace Libretto
 
         #region DatagridView
 
-        private void grdMovLibVoices_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            //imposta parametri al cambiamento diretto di una cella
-            isChanged = true;
-            isSaved = false;
-            statusPanel();
-            counter();
-        }
-
-        private void grdMovLibVoices_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            //modifica il . in una , per il corretto cast double
-            if (grdMovLibVoices.CurrentCell.ColumnIndex == 3)
-            {
-                var val = grdMovLibVoices.CurrentCell.Value;
-                string valore = val.ToString().Replace('.', ',');
-                grdMovLibVoices.CurrentCell.Value = valore;
-            }
-
-        }
-
         private void grdMovLibVoices_MouseClick(object sender, MouseEventArgs e)
         {
-            //se viene premuto il tasto SX, esci dalla funzione
+            //Se viene premuto il tasto SX, esci dalla funzione
             if (e.Button == MouseButtons.Left) return;
-            //istanza alla classe di creazione del ContextMenu
+            //Istanza alla classe di creazione del ContextMenu
             CreateContexMenu creatMenu = new CreateContexMenu(grdMovLibVoices);
             //setting degli eventi da richiamare con i pulsanti
             creatMenu.setEvents("delete", btnDeleteRow_Click);
@@ -766,7 +640,7 @@ namespace Libretto
             // creatMenu.setEvents("oftenVal", btnOftenVal_Click);
             creatMenu.setEvents("moveUp", btnUp_Click);
             creatMenu.setEvents("moveDown", btnDown_Click);
-            //mostra il menu
+            //Mostra il menu
             creatMenu.showContextMenu(e);
         }
 
@@ -776,7 +650,7 @@ namespace Libretto
 
         private void txtSearchVoice_TextChanged(object sender, EventArgs e)
         {
-            //cerco all'interno del datagridview passando la colonna in cui cercare
+            //Cerca all'interno del datagridview passando la colonna in cui cercare
             Searching search = new Searching(grdMovLibVoices, table, txtSearchVoice);
             search.searchingRow(1);
         }
@@ -824,54 +698,6 @@ namespace Libretto
         #endregion
 
         #region TreeView
-
-        private void treeYears_DrawNode(object sender, DrawTreeNodeEventArgs e)
-        {
-            //Affinché possa ridisegnare è necessario impostare l'attributo
-            //DrawMode su OwnerDrawText
-
-            //Antialias sul disegno del testo
-            e.Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
-
-            //Se TreeView perde il focus disegna i nodi in modo standard
-            if (treeYears.Focused == false)
-            {
-                //Evita il sovrapporsi del disegno del nodo
-                treeYears.FullRowSelect = true;
-                e.DrawDefault = true;
-                return;
-            }
-
-            //Disegna il colore di sfondo del nodo selezionato
-            if ((e.State & TreeNodeStates.Selected) != 0)
-            {
-                //Evita il sovrapporsi del disegno del nodo
-                treeYears.FullRowSelect = false;
-                //Ricava il rettangolo con la larghezza del TreeView e punto di partenza in X
-                //Altezza e punto di partenza in y del nodo selezionato
-                Rectangle rec = new Rectangle(treeYears.Bounds.X, e.Node.Bounds.Y, treeYears.Width, e.Node.Bounds.Height);
-                //Disegna il rettangolo di selezione con il colore personalizzato
-                e.Graphics.FillRectangle(Brushes.LightSteelBlue, rec);
-
-                //Preleva il font del nodo, se non selezionato utilizza quello del TreeView
-                Font nodeFont = e.Node.NodeFont;
-                if (nodeFont == null) nodeFont = ((TreeView)sender).Font;
-
-                //Disegna il testo del nodo
-                e.Graphics.DrawString(e.Node.Text, nodeFont, Brushes.White, Rectangle.Inflate(e.Bounds, 2, 0));
-                //Disegna l'immagine al nodo selezionato
-                Image i = Image.FromFile(Routes.ICONS + "Ordina_dx.png");
-                e.Graphics.DrawImage(i, e.Node.Bounds.X - 30, e.Node.Bounds.Y, 20, 20);
-
-            }
-            else
-            {
-                //Se il nodo non è selezionato lo disegna in modo standard
-                e.DrawDefault = true;
-
-            }
-
-        }
 
         //Carica i dati al doppio click sul nodo prescelto
         private void treeYears_DoubleClick(object sender, EventArgs e)

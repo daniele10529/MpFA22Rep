@@ -42,6 +42,7 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\GenericModelData.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\ManageGrid.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\MenuGenerator.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\RoundendControlCollections.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\Connection.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\MySql.Data.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\Google.Protobuf.dll
@@ -60,6 +61,7 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\ManageGrid.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\ManageGrid.xml
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\MenuGenerator.pdb
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\RoundendControlCollections.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\Connection.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\Connection.xml
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\MySql.Data.xml
@@ -70,5 +72,3 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\obj\
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\obj\Debug\Mantenimento.csproj.GenerateResource.Cache
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\obj\Debug\Mantenimento.exe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\obj\Debug\Mantenimento.pdb
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\RoundendControlCollections.dll
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Mantenimento\bin\Debug\RoundendControlCollections.pdb

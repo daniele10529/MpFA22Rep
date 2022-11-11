@@ -48,6 +48,32 @@ namespace RunningReports
           
         }
 
+        #region Metodi privati
+        /// <summary>
+        /// Aggiorna il valore della textbox con l'anno selezionato
+        /// </summary>
+        /// <param name="sender">Object</param>
+        /// <param name="e">Args</param>
+        private void refreshText(object sender, EventArgs e)
+        {
+            //Aggiorno la textbox
+            txtSelectYear.Texts = ModelDataReports.RunReports.year.ToString();
+        }
+
+        /// <summary>
+        /// Metodo per visualizzare il form principale alla chiesura di questo form
+        /// oppure utilizzando il link
+        /// </summary>
+        private void showMainForm()
+        {
+            //Mostra il form principale e scarica il form di reportSpese.
+            frmRunReports frmRunReports = new frmRunReports();
+            frmRunReports.Show();
+            this.Dispose();
+        }
+
+        #endregion
+
         #region Form
         private void frmSpendElements_Load(object sender, EventArgs e)
         {
@@ -188,31 +214,7 @@ namespace RunningReports
 
         #endregion
 
-        #region Metodi privati
-        /// <summary>
-        /// Aggiorna il valore della textbox con l'anno selezionato
-        /// </summary>
-        /// <param name="sender">Object</param>
-        /// <param name="e">Args</param>
-        private void refreshText(object sender, EventArgs e)
-        {
-            //Aggiorno la textbox
-            txtSelectYear.Texts = ModelDataReports.RunReports.year.ToString();
-        }
-
-        /// <summary>
-        /// Metodo per visualizzare il form principale alla chiesura di questo form
-        /// oppure utilizzando il link
-        /// </summary>
-        private void showMainForm()
-        {
-            //Mostra il form principale e scarica il form di reportSpese.
-            frmRunReports frmRunReports = new frmRunReports();
-            frmRunReports.Show();
-            this.Dispose();
-        }
-
-        #endregion
+        
 
     }
 }

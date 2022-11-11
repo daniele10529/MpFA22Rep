@@ -47,10 +47,10 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\ManageGrid.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\MenuGenerator.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\ReadXML.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\RoundendControlCollections.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\itextsharp.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\Connection.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\MySql.Data.dll
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\BouncyCastle.Crypto.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\Google.Protobuf.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\Zstandard.Net.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\K4os.Compression.LZ4.Streams.dll
@@ -69,6 +69,7 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\MenuGenerator.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\ReadXML.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\ReadXML.xml
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\RoundendControlCollections.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\itextsharp.xml
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\Connection.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\Connection.xml
@@ -81,5 +82,3 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\obj\Debug
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\obj\Debug\PostPay.csproj.GenerateResource.Cache
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\obj\Debug\PostPay.exe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\obj\Debug\PostPay.pdb
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\RoundendControlCollections.dll
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\PostPay\bin\Debug\RoundendControlCollections.pdb

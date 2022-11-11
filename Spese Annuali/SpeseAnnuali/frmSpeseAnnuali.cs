@@ -16,24 +16,21 @@ namespace MpFA20
 {
     public partial class frmSpeseAnnuali : Form
     {
-        //tabella contenente i dati
+        //Tabella contenente i dati
         private DataTable table;
-        //percorso file xml con errori
+        //Percorso file xml con errori
         private const string pathxml = Routes.XMLERRORS;
         //Percorso file XML con definizione path processi
         private const string runPath = Routes.RUNPATH;
-        //verifica sul comportamento utente
+        //Verifica sul comportamento utente
         private bool isLoad;
         private bool isSaved;
         private bool isChanged;
-        //istanza alla classe di gestione con DB
+        //Istanza alla classe di gestione con DB
         private ModelDataSY model;
-        //Istanza alla classe checker
-        
-        //numero dell'anno e mese caricato
+        //Numero dell'anno e mese caricati
         public int year_manage, month_manage;
         private string manage_mese;
-
         //Evento mouse click nel DataGridView
         private MouseEventArgs mouse;
         //Attributo privato per inserire le note in griglia
@@ -105,67 +102,17 @@ namespace MpFA20
 
             txtMoneyKeep.ResetText();
 
-            //sostiuisce il punto con la virgola per evitare errore di cast con la variabile double
+            //Sostiuisce il punto con la virgola per evitare errore di cast con la variabile double
             if (txtPay.Text.Length > 0) pay = Double.Parse(txtPay.Text.Replace('.', ','));
             if (txtPlusEntry.Text.Length > 0) payadd = Double.Parse(txtPlusEntry.Text.Replace('.', ','));
             if (txtTotSpends.Text.Length > 0) totalspend = Double.Parse(txtTotSpends.Text.Replace('.', ','));
-            //esegue il conteggio
+            //Esegue il conteggio
             moneyKeep = (pay + payadd) - totalspend;
             txtMoneyKeep.Text = moneyKeep.ToString();
-            //va in rosso se inferiore a 0
+            //Va in rosso se inferiore a 0
             if (moneyKeep > 0) txtMoneyKeep.ForeColor = Color.FromArgb(0, 128, 0);
             else txtMoneyKeep.ForeColor = Color.FromArgb(161, 31, 18);
 
-        }
-
-        /// <summary>
-        /// resituisce il numero del mese in base a quello selezionato dall'albero
-        /// </summary>
-        /// <param name="m"></param>
-        /// <returns></returns>
-        private int selmonth(string m)
-        {
-            int n = 0;
-            switch (m)
-            {
-                case "gennaio":
-                    n = 1;
-                    break;
-                case "febbraio":
-                    n = 2;
-                    break;
-                case "marzo":
-                    n = 3;
-                    break;
-                case "aprile":
-                    n = 4;
-                    break;
-                case "maggio":
-                    n = 5;
-                    break;
-                case "giugno":
-                    n = 6;
-                    break;
-                case "luglio":
-                    n = 7;
-                    break;
-                case "agosto":
-                    n = 8;
-                    break;
-                case "settembre":
-                    n = 9;
-                    break;
-                case "ottobre":
-                    n = 10;
-                    break;
-                case "novembre":
-                    n = 11;
-                    break;
-                case "dicembre":
-                    n = 12;
-                    break;
-            }
-            return n;
         }
 
         /// <summary>
@@ -214,7 +161,6 @@ namespace MpFA20
             tip.SetToolTip(btnDown, "Sposta in basso la riga");
             tip.SetToolTip(btnModifyRow, "Modifica una riga");
             tip.SetToolTip(treeYears, "Seleziona il mese da caricare");
-            tip.SetToolTip(btnSetting, "Modifica Setup");
             tip.SetToolTip(btnSaveData, "Salva le modifiche");
             tip.SetToolTip(txtSearchVoice, "Ricarca nel DataGridView");
             tip.SetToolTip(txtContability, "Visualizza lo stato della contabilità mensile");
@@ -228,7 +174,7 @@ namespace MpFA20
         }
 
         /// <summary>
-        /// carica immagini per le pagine del tabcontrol
+        /// Carica le immagini per le pagine del tabcontrol
         /// </summary>
         private void loadImage()
         {
@@ -260,7 +206,7 @@ namespace MpFA20
         }
 
         /// <summary>
-        /// modifica il colore del pannello colorato in base al comportamento utente
+        /// Modifica il colore del pannello colorato in base al comportamento utente
         /// </summary>
         private void statusPanel()
         {
@@ -272,7 +218,7 @@ namespace MpFA20
 
         #region EVENTI DEGLI OGGETTI :
 
-        #region form
+        #region Form
 
         private void frmSpeseAnnuali_Load(object sender, EventArgs e)
         {
@@ -285,15 +231,15 @@ namespace MpFA20
             loadImage();
             toolTip();
 
-            //associa i dati della griglia alla tabella
+            //Binding dati della griglia alla tabella
             grdMonthSpends.DataSource = table;
-            //imposta il nome delle colonne
+            //Setta il nome delle colonne
             table.Columns.Add("ID");
             table.Columns.Add("CAUSALE DI SPESA");
             table.Columns.Add("NOTE");
             table.Columns.Add("IMPORTO");
             
-            //imposta la dimensione delle colonne
+            //Setta la dimensione delle colonne
             grdMonthSpends.Columns[0].Width = (grdMonthSpends.Width * 5) / 100;
             grdMonthSpends.Columns[1].Width = (grdMonthSpends.Width * 76) / 100;
             //Omessa, è invisibile solo di appoggio per il dato
@@ -312,7 +258,7 @@ namespace MpFA20
             //Aggiunge la colonna al DatagridView
             grdMonthSpends.Columns.Add(button);
             
-            //la PK è di sola lettura
+            //La PK è di sola lettura
             grdMonthSpends.Columns[0].ReadOnly = true;
             //La colonna note è invisibile, utilizzata come appoggio
             grdMonthSpends.Columns[2].Visible = false;
@@ -321,18 +267,20 @@ namespace MpFA20
 
             //Seleziona il colore di sfondo del nodo selezionato
             treeYears.CustomForeColor = Brushes.WhiteSmoke;
-
+            //Binding dati TreeView
             model.loadTree(treeYears);
             
         }
 
         //Intercetta la chusura del form
         private void frmSpeseAnnuali_FormClosing(object sender, FormClosingEventArgs e)
-        {//se i dati non sono salvati chiede conferma
+        {
+            //Se i dati non sono salvati chiede conferma
             if (isChanged == true && isSaved == false)
             {
                 if (MessageBox.Show("Sicuro di voler chiudere l'App, i dati non salvati andranno persi ?", "ATTENZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
-                {//se non si conferma la chiusura annulla l'evento
+                {
+                    //Se non si conferma la chiusura annulla l'evento
                     e.Cancel = true;
                 }
             }
@@ -355,7 +303,7 @@ namespace MpFA20
             string father = "ListError";
             string feature = "ErrorTitle";
      
-            //verifica sulla presenza di tutti i campi dalla classe checker
+            //Verifica sulla presenza di tutti i campi dalla classe checker
             //e che sia stato caricato un anno\mese
             if (isLoad == false) return;
             populate.path = pathxml;
@@ -417,7 +365,7 @@ namespace MpFA20
 
         private void btnUp_Click(object sender, EventArgs e)
         {
-            //preleva l'indice della riga selezionata, se non selezionata esce
+            //Preleva l'indice della riga selezionata, se non selezionata esce
             int index = grdMonthSpends.Rows.IndexOf(grdMonthSpends.CurrentRow);
             if (index < 0) return;
 
@@ -428,7 +376,7 @@ namespace MpFA20
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            //preleva l'indice della riga selezionata, se non selezionata esce
+            //Preleva l'indice della riga selezionata, se non selezionata esce
             int index = grdMonthSpends.Rows.IndexOf(grdMonthSpends.CurrentRow);
             if (index < 0) return;
 
@@ -442,6 +390,7 @@ namespace MpFA20
         {
             PopulateGrid populate = new PopulateGrid(grdMonthSpends, table);
             List<ModelDataSY.PaymentSY> listdata = new List<ModelDataSY.PaymentSY>();
+            DefineMonth defineMonth = new DefineMonth();
             List<string> listinsert = new List<string>();
             string selezione, anno, mese;
             int year, month, i;
@@ -459,14 +408,14 @@ namespace MpFA20
                 }
             }
 
-            //controllo sulla selezione del nodo anno\mese dall'albero
+            //Controllo sulla selezione del nodo anno\mese dall'albero
             if (treeYears.SelectedNode == null) return;
 
             selezione = treeYears.SelectedNode.Text;
             if (selezione == "ANNI") return;
             else
             {
-                //assegna il valore di anno\mese in base al nodo selezionato
+                //Assegna il valore di anno\mese in base al nodo selezionato
                 anno = treeYears.SelectedNode.Parent.Text;
                 mese = treeYears.SelectedNode.Text.ToLower();
                 manage_mese = mese;
@@ -475,14 +424,15 @@ namespace MpFA20
                 else
                 {
                     year = Int32.Parse(anno);
-                    month = selmonth(mese);
-                    //assegna il valore alle variabili globali per la gestione con DB
+                    //Ottiene l'indice del mese dal nome del mese selezionato
+                    month = defineMonth.getIndexFromNameMonth(mese);
+                    //Assegna il valore alle variabili globali per la gestione con DB
                     year_manage = year;
                     month_manage = month;
-                    //carica i dati da DB e li assegna alla lista
+                    //Carica i dati da DB e li assegna alla lista
                     listdata = model.loadDataSY(mese, year);
 
-                    //utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
+                    //Utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
                     i = 0;
                     while (i < listdata.Count)
                     {
@@ -500,32 +450,32 @@ namespace MpFA20
 
             isChanged = false;
             isLoad = true;
-            //deseleziona l'albero e conteggia il totale spese
+            //Deseleziona l'albero e conteggia il totale spese
             treeYears.SelectedNode = null;
             counter();
 
-            //Carico lo stipendio le entrate extra e i contanti da DB
+            //Carica lo stipendio le entrate extra e i contanti da DB
             pay = model.loadPay(year_manage, month_manage);
             txtPay.Text = pay.ToString();
             payAdd = model.loadPayAdd(year_manage, month_manage);
             txtPlusEntry.Text = payAdd.ToString();
             money = model.loadMoney(year_manage, month_manage);
             txtMoney.Text = money.ToString();
-            //modifico i soldi risparmiati solo dopo aver caricato lo stipendio
+            //Modifica i soldi risparmiati solo dopo aver caricato lo stipendio
             totKeepMoney();
-            //carico il totale entrate annuali e totale spese annuali
+            //Carica il totale entrate annuali e totale spese annuali
             model.loadTotRichSpendYear(year_manage, txtTotSpendyear, txtTotRestyear);
-            //carico il saldo conto corrente
+            //Carica il saldo conto corrente
             ModelDataCC modelCC = new ModelDataCC();
             txtSaldoCC.Text = modelCC.loadBalanceCC(year_manage, month_manage).ToString();
 
-            //carico il saldo Libretto e PostPay
-            //sfrutto l'ereditarietà della classe ModelDataPP
+            //Carica il saldo Libretto e PostPay
+            //sfrutta l'ereditarietà della classe ModelDataPP
             ModelDataPostPay modLibPP = new ModelDataPostPay();
             txtSaldoLibretto.Text = modLibPP.loadBalanceLib(year_manage).ToString();
             txtSaldoPP.Text = modLibPP.getBalanceYear(year_manage).ToString();
 
-            //tronca le textbox saldo cc,pp,lib
+            //Tronca le textbox saldo cc,pp,lib
             Checker check = new Checker();
             if (txtSaldoPP.Text.Length > 1)
             {
@@ -571,13 +521,9 @@ namespace MpFA20
             }
 
         }
-        private void btnLoadYears_Click(object sender, EventArgs e)
-        {
-            btnLoadYear_Click(sender, e);
-        }
 
         /// <summary>
-        /// elimina una riga e aggiorna il conteggio totale spese
+        /// Elimina una riga e aggiorna il conteggio totale spese
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -586,7 +532,7 @@ namespace MpFA20
             isSaved = false;
             isChanged = true;
             statusPanel();
-            //preleva l'indice della riga selezionata, se non selezionata esce
+            //Preleva l'indice della riga selezionata, se non selezionata esce
             int index = grdMonthSpends.Rows.IndexOf(grdMonthSpends.CurrentRow);
             if (index < 0) return;
 
@@ -613,49 +559,35 @@ namespace MpFA20
             }
         }
 
-        private void btnNewYears_Click(object sender, EventArgs e)
-        {
-            btnNewYear_Click(sender, e);
-        }
-
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (isLoad == false || isSaved == true) return;
             if (isChanged == false) return;
             
-            //salva lo stipendio e le entrate extra
+            //Salva lo stipendio e le entrate extra
             double pay = Double.Parse(txtPay.Text);
             double payadd = Double.Parse(txtPlusEntry.Text);
             model.savePay(pay, payadd, year_manage, month_manage);
-            //salva i contanti
+            //Salva i contanti
             double money = Double.Parse(txtMoney.Text);
             model.saveMoney(money, year_manage, month_manage);
-            //salva il totale spese mese
+            //Salva il totale spese mese
             double total = Double.Parse(txtTotSpends.Text);
             model.updateTotSpend(year_manage, month_manage, total);
            
-            //genera la lista dalla tabella e salva i dati nel DB attraverso la classe modeldata
+            //Genera la lista dalla tabella e salva i dati nel DB attraverso la classe modeldata
             List<ModelDataSY.PaymentSY> lista = createListStruct();
             isSaved = model.saveDataSY(manage_mese.ToLower(), year_manage, lista);
 
-            //aggiorna le spese annuali, la posizione è obbligata della riga
+            //Aggiorna le spese annuali, la posizione è obbligata della riga
             //perche il DBMS deve prima fare l'update corretto delle spese mensili, altrimenti 
             //non si aggiorna
             model.updateTotYears(year_manage);
-            //carica il totale spese annuali da DB
+            //Carica il totale spese annuali da DB
             model.loadTotRichSpendYear(year_manage, txtTotSpendyear, txtTotRestyear);
             statusPanel();
         }
-        private void btnSaveData_Click(object sender, EventArgs e)
-        {
-            btnSave_Click(sender, e);
-        }
-        private void btnSaveThree_Click(object sender, EventArgs e)
-        {
-            btnSave_Click(sender, e);
-        }
-
+      
         /// <summary>
         /// Istanza alla form di modifica di una riga, non c'è aggiornamento fresh
         /// è necessario ricaricare i dati
@@ -664,7 +596,7 @@ namespace MpFA20
         /// <param name="e"></param>
         private void btnModifyRow_Click(object sender, EventArgs e)
         {
-            //istanza per form modifica e per aggiornare il datagridview
+            //Istanza per form modifica e per aggiornare il datagridview
             frmModify frmMod = new frmModify();
             PopulateGrid populate = new PopulateGrid(grdMonthSpends, table);
             string id, cause, note, import;
@@ -672,39 +604,40 @@ namespace MpFA20
             List<string> listinsert = new List<string>();
             int i;
             string mese;
-            //variabile di avvenuta modifica
+            //Variabile di avvenuta modifica
             bool modifyRow = false;
 
             try
             {
-                //prelevo i dati dal datagridview
+                //Preleva i dati dal datagridview
                 var val = grdMonthSpends.CurrentRow.Cells;
                 id = val[0].Value.ToString();
                 cause = val[1].Value.ToString();
                 note = val[2].Value.ToString();
                 import = val[3].Value.ToString();
-                //passo i dati ai setter di frmModify
+                //Passa i dati ai Setter di frmModify
                 frmMod.setId = id;
                 frmMod.setCause = cause;
                 frmMod.setNote = note;
                 frmMod.setImport = import;
-                //setto l'anno e il mese selezionato
+                //Setta l'anno e il mese selezionato
                 frmMod.setYear = year_manage;
                 frmMod.setId_month = month_manage;
-                //visualizzo il form
+                //Visualizza il form
                 frmMod.ShowDialog();
-                //ricevo tru dal getter se alvataggio avvenuto con successo
+                //Ricevo True dal getter se alvataggio avvenuto con successo
                 modifyRow = frmMod.verify;
                 if (modifyRow == true)
-                {//aggiorno il datagridview
+                {
+                    //Aggiorna il datagridview
                     isSaved = true;
                     table.Rows.Clear();
-                    //prelevo il valore del mese dal getter di frmModify
+                    //Preleva il valore del mese dal getter di frmModify
                     mese = frmMod.setMonth;
-                    //carica i dati da DB e li assegna alla lista
+                    //Carica i dati da DB e li assegna alla lista
                     listdata = model.loadDataSY(mese, year_manage);
 
-                    //utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
+                    //Utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
                     i = 0;
                     while (i < listdata.Count)
                     {
@@ -729,7 +662,7 @@ namespace MpFA20
         //Visualizza il form per le voci frequenti
         private void btnSetOftenValue_Click(object sender, EventArgs e)
         {
-            //istanzia la classe
+            //Istanzia la classe
             CreateFormOftenCause form = new CreateFormOftenCause();
             //Imposta nel setter la textbox che deve acquisire il valore dalla 
             //lista delle causali frequenti
@@ -813,7 +746,7 @@ namespace MpFA20
                 erxml.manageError(12, pathxml, father, feature);
                 return;
             }
-            //istanza alla classe contabilità, da cui c'è la query su DB
+            //Istanza alla classe contabilità, da cui c'è la query su DB
             Contabilita contabilita = new Contabilita(year_manage, month_manage);
             double risparmiati = Double.Parse(txtMoneyKeep.Text);
             double totCC = Double.Parse(txtSaldoCC.Text);
@@ -831,10 +764,10 @@ namespace MpFA20
 
         #endregion
 
-        #region gridview
+        #region DataGridView
 
         /// <summary>
-        /// gestisce la modifica diretta della griglia
+        /// Gestisce la modifica diretta della griglia
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -849,7 +782,7 @@ namespace MpFA20
 
         private void grdMonthSpends_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            //modifica il . in una , per il corretto cast double
+            //Modifica il . in una , per il corretto cast double
             if(grdMonthSpends.CurrentCell.ColumnIndex == 3)
             {
                 var val = grdMonthSpends.CurrentCell.Value;
@@ -859,7 +792,7 @@ namespace MpFA20
             
         }
         
-        //intercetta il click del mouse nel DataGridView
+        //Intercetta il click del mouse nel DataGridView
         private void grdMonthSpends_MouseClick(object sender, MouseEventArgs e)
         {
             //se viene premuto il tasto SX, esci dalla funzione
@@ -868,14 +801,14 @@ namespace MpFA20
                 mouse = e;
                 return;
             }
-            //istanza alla classe di creazione del ContextMenu
+            //Istanza alla classe di creazione del ContextMenu
             CreateContexMenu creatMenu = new CreateContexMenu(grdMonthSpends);
-            //setting degli eventi da richiamare con i pulsanti
+            //Setting degli eventi da richiamare con i pulsanti
             creatMenu.setEvents("delete", btnDeleteRow_Click);
             creatMenu.setEvents("modifyIt", btnModifyRow_Click);
             creatMenu.setEvents("moveUp", btnUp_Click);
             creatMenu.setEvents("moveDown", btnDown_Click);
-            //mostra il menu
+            //Mostra il menu
             creatMenu.showContextMenu(e);
         }
 
@@ -946,12 +879,12 @@ namespace MpFA20
         //Carica i dati al doppio click sul nodo prescelto
         private void treeYears_DoubleClick(object sender, EventArgs e)
         {
-            btnLoadYears_Click(sender, e);
+            btnLoadYear_Click(sender, e);
         }
 
         #endregion
 
-        #region textbox
+        #region TextBox
 
         private void txtPay_TextChanged(object sender, EventArgs e)
         {
@@ -976,7 +909,7 @@ namespace MpFA20
 
         private void txtPay_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //se viene premuto il punto metto la virgola.
+            //Se viene premuto il punto metto la virgola.
             //il carattere viene poi modificato dalla funzione di 
             //salvataggio della classe model
             if (e.KeyChar == '.') e.KeyChar = ',';
@@ -984,7 +917,7 @@ namespace MpFA20
 
         private void txtPlusEntry_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //se viene premuto il punto metto la virgola.
+            //Se viene premuto il punto metto la virgola.
             //il carattere viene poi modificato dalla funzione di 
             //salvataggio della classe model
             if (e.KeyChar == '.') e.KeyChar = ',';
@@ -992,7 +925,7 @@ namespace MpFA20
 
         private void txtMoney_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //se viene premuto il punto metto la virgola.
+            //Se viene premuto il punto metto la virgola.
             //il carattere viene poi modificato dalla funzione di 
             //salvataggio della classe model
             if (e.KeyChar == '.') e.KeyChar = ',';

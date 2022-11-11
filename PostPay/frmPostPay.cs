@@ -15,13 +15,13 @@ namespace PostPay
     public partial class frmPostPay : Form
     {
 
-        //tabella contenente i dati utilizzata in sola lettura per la paginazione Datagridview
+        //Tabella contenente i dati utilizzata in sola lettura per la paginazione Datagridview
         private DataTable table;
         //Tabella integrale per il salvataggio dei dati e il calcolo del saldo
         private DataTable tableSaveCount;
-        //percorso file xml con errori
+        //Percorso file xml con errori
         private string pathxml;
-        //verifica sul comportamento utente
+        //Verifica sul comportamento utente
         private bool isLoad;
         private bool isSaved;
         private bool isChanged;
@@ -157,56 +157,6 @@ namespace PostPay
                 MessageBox.Show(ex.Message);
             }
 
-        }
-
-        /// <summary>
-        /// Restituisce il numero del mese selezionato
-        /// </summary>
-        /// <param name="m"></param>
-        /// <returns></returns>
-        private int selmonth(string m)
-        {
-            int n = 0;
-            switch (m)
-            {
-                case "gennaio":
-                    n = 1;
-                    break;
-                case "febbraio":
-                    n = 2;
-                    break;
-                case "marzo":
-                    n = 3;
-                    break;
-                case "aprile":
-                    n = 4;
-                    break;
-                case "maggio":
-                    n = 5;
-                    break;
-                case "giugno":
-                    n = 6;
-                    break;
-                case "luglio":
-                    n = 7;
-                    break;
-                case "agosto":
-                    n = 8;
-                    break;
-                case "settembre":
-                    n = 9;
-                    break;
-                case "ottobre":
-                    n = 10;
-                    break;
-                case "novembre":
-                    n = 11;
-                    break;
-                case "dicembre":
-                    n = 12;
-                    break;
-            }
-            return n;
         }
 
         /// <summary>
@@ -493,8 +443,9 @@ namespace PostPay
             isSaved = false;
             isChanged = true;
             statusPanel();
-
+            //Istanza alle classi
             Checker check = new Checker(pathxml);
+            DefineMonth defineMonth = new DefineMonth();
 
             try
             {
@@ -507,7 +458,7 @@ namespace PostPay
                         record.causale = txtCause.Texts;
                         record.importo = Double.Parse(txtImport.Texts.Replace('.',','));
                         //Preleva il numero del mese dal nome e lo assegna al record 
-                        record.id_mese = selmonth(cmbMonths.SelectedItem.ToString());
+                        record.id_mese = defineMonth.getIndexFromNameMonth(cmbMonths.SelectedItem.ToString());
                         //L'anno è già acquisito in fase di caricamento
 
                         //Inserisco i dati del record nel DB
@@ -549,6 +500,11 @@ namespace PostPay
 
         }
 
+        /// <summary>
+        /// Chiude il saldo dell'anno corrente e passa il valore all'anno successivo.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCloseYear_Click(object sender, EventArgs e)
         {
             if (isLoad == false || isSaved == true) return;
@@ -581,6 +537,11 @@ namespace PostPay
 
         }
 
+        /// <summary>
+        /// Elimina un record
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteRow_Click(object sender, EventArgs e)
         {
             
@@ -588,11 +549,11 @@ namespace PostPay
             isChanged = true;
             statusPanel();
 
-            //preleva l'indice dalla riga selezionata, se non selezionata non fa nulla
+            //Preleva l'indice dalla riga selezionata, se non selezionata non fa nulla
             int index = grdMonthVoices.Rows.IndexOf(grdMonthVoices.CurrentRow);
             if (index < 0) return;
 
-            //Preleve i dati dalla riga selezionata del DataGridview
+            //Preleva i dati dalla riga selezionata del DataGridview
             var val = grdMonthVoices.CurrentRow.Cells;
             record.id_postpay = Int32.Parse(val[0].Value.ToString());
 
@@ -618,7 +579,7 @@ namespace PostPay
 
         private void btnUp_Click(object sender, EventArgs e)
         {
-            //preleva l'indice della riga selezionata, se non selezionata esce
+            //Preleva l'indice della riga selezionata, se non selezionata esce
             int index = grdMonthVoices.Rows.IndexOf(grdMonthVoices.CurrentRow);
             if (index < 0) return;
 
@@ -629,7 +590,7 @@ namespace PostPay
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            //preleva l'indice della riga selezionata, se non selezionata esce
+            //Preleva l'indice della riga selezionata, se non selezionata esce
             int index = grdMonthVoices.Rows.IndexOf(grdMonthVoices.CurrentRow);
             if (index < 0) return;
 
@@ -638,6 +599,11 @@ namespace PostPay
             grdMonthVoices.CurrentRow.Selected = true;
         }
 
+        /// <summary>
+        /// Modifica un record
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifyRow_Click(object sender, EventArgs e)
         {
            
@@ -690,9 +656,9 @@ namespace PostPay
 
         private void btnSetOftenValue_Click(object sender, EventArgs e)
         {
-            //istanzia la classe
+            //Istanzia la classe
             CreateFormOftenCause form = new CreateFormOftenCause();
-            //imposta nel setter la textbox che deve acquisire il valoe dalla 
+            //Imposta nel setter la textbox che deve acquisire il valoe dalla 
             //lista delle causali frequenti
             form.OftenCause = txtCause;
         }
@@ -712,11 +678,11 @@ namespace PostPay
             //Se premuto ok nel SaveDialog
             if (svdPDF.ShowDialog() == DialogResult.OK)
             {
-                //istanza alla classe
+                //Istanza alla classe
                 DataGridViewToPDF dataPDF = new DataGridViewToPDF(tableSaveCount);
-                //imposta il setter per il percorso del file da salvare
+                //Imposta il setter per il percorso del file da salvare
                 dataPDF.pathFile = svdPDF.FileName;
-                //crea il pdf
+                //Crea il pdf
                 dataPDF.CreatePDF();
             }
 
@@ -735,15 +701,15 @@ namespace PostPay
         {
             //se viene premuto il tasto SX, esci dalla funzione
             if (e.Button == MouseButtons.Left) return;
-            //istanza alla classe di creazione del ContextMenu
+            //Istanza alla classe di creazione del ContextMenu
             CreateContexMenu creatMenu = new CreateContexMenu(grdMonthVoices);
-            //setting degli eventi da richiamare con i pulsanti
+            //Setting degli eventi da richiamare con i pulsanti
             creatMenu.setEvents("delete", btnDeleteRow_Click);
             creatMenu.setEvents("modifyIt", btnModifyRow_Click);
-            // creatMenu.setEvents("oftenVal", btnOftenVal_Click);
+            //creatMenu.setEvents("oftenVal", btnOftenVal_Click);
             creatMenu.setEvents("moveUp", btnUp_Click);
             creatMenu.setEvents("moveDown", btnDown_Click);
-            //mostra il menu
+            //Mostra il menu
             creatMenu.showContextMenu(e);
         }
 
@@ -758,7 +724,7 @@ namespace PostPay
 
         private void txtSearchVoice_TextChanged(object sender, EventArgs e)
         {
-            //cerco all'interno del datagridview passando la colonna in cui cercare
+            //Cerca all'interno del datagridview passando la colonna in cui cercare
             Searching search = new Searching(grdMonthVoices, table, txtSearchVoice);
             search.searchingRow(1);
         }
@@ -805,54 +771,6 @@ namespace PostPay
         #endregion
 
         #region TreeView
-
-        private void treeYears_DrawNode(object sender, DrawTreeNodeEventArgs e)
-        {
-            //Affinché possa ridisegnare è necessario impostare l'attributo
-            //DrawMode su OwnerDrawText
-
-            //Antialias sul disegno del testo
-            e.Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
-
-            //Se TreeView perde il focus disegna i nodi in modo standard
-            if (treeYears.Focused == false)
-            {
-                //Evita il sovrapporsi del disegno del nodo
-                treeYears.FullRowSelect = true;
-                e.DrawDefault = true;
-                return;
-            }
-
-            //Disegna il colore di sfondo del nodo selezionato
-            if ((e.State & TreeNodeStates.Selected) != 0)
-            {
-                //Evita il sovrapporsi del disegno del nodo
-                treeYears.FullRowSelect = false;
-                //Ricava il rettangolo con la larghezza del TreeView e punto di partenza in X
-                //Altezza e punto di partenza in y del nodo selezionato
-                Rectangle rec = new Rectangle(treeYears.Bounds.X, e.Node.Bounds.Y, treeYears.Width, e.Node.Bounds.Height);
-                //Disegna il rettangolo di selezione con il colore personalizzato
-                e.Graphics.FillRectangle(Brushes.LightSteelBlue, rec);
-
-                //Preleva il font del nodo, se non selezionato utilizza quello del TreeView
-                Font nodeFont = e.Node.NodeFont;
-                if (nodeFont == null) nodeFont = ((TreeView)sender).Font;
-
-                //Disegna il testo del nodo
-                e.Graphics.DrawString(e.Node.Text, nodeFont, Brushes.White, Rectangle.Inflate(e.Bounds, 2, 0));
-                //Disegna l'immagine al nodo selezionato
-                Image i = Image.FromFile(Routes.ICONS + "Ordina_dx.png");
-                e.Graphics.DrawImage(i, e.Node.Bounds.X - 30, e.Node.Bounds.Y, 20, 20);
-
-            }
-            else
-            {
-                //Se il nodo non è selezionato lo disegna in modo standard
-                e.DrawDefault = true;
-
-            }
-
-        }
 
         //Carica i dati al doppio click sul nodo prescelto
         private void treeYears_DoubleClick(object sender, EventArgs e)

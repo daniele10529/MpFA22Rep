@@ -9,31 +9,31 @@ namespace GenericModelData
         /// <summary>
         /// Percorso file xml con errori
         /// </summary>
-        public const string XMLERRORS = @"C:\MpFA22\ErrorList\XMLErrorList.xml";
+        public const string XMLERRORS = @"C:\MpFA5\ErrorList\XMLErrorList.xml";
         /// <summary>
         /// Percorso cartella con le icone
         /// </summary>
-        public const string ICONS = @"C:\MpFA22\Icons\";
+        public const string ICONS = @"C:\MpFA5\Icons\";
         /// <summary>
         /// Percorso con il file della stringa di connessione
         /// </summary>
-        public const string XMLCONNECTION = @"C:\MpFA22\StrConnect\strConnect.xml";
+        public const string XMLCONNECTION = @"C:\MpFA5\StrConnect\strConnect.xml";
         /// <summary>
         /// Percorso con il file xml contenente i valori iniziali
         /// </summary>
-        public const string XMLSETINI = @"C:\MpFA22\SetIni\SetIni.xml";
+        public const string XMLSETINI = @"C:\MpFA5\SetIni\SetIni.xml";
         /// <summary>
         /// Percorso per il file xml con i path di avvio dei processi
         /// </summary>
-        public const string RUNPATH = @"C:\MpFA22\RunPath\RunPath.xml";
+        public const string RUNPATH = @"C:\MpFA5\RunPath\RunPath.xml";
         /// <summary>
         /// Percorso per il file xml con il path per il dump del DB
         /// </summary>
-        public const string XMLDUMP = @"C:\MpFA22\PathDump\PathDump.xml";
+        public const string XMLDUMP = @"C:\MpFA5\PathDump\PathDump.xml";
         /// <summary>
         /// Percorso del processo di esecuzione del dump sul DB
         /// </summary>
-        public const string DUMPEXE = @"C:\MpFA22\Dumper\DumpExec.exe";
+        public const string DUMPEXE = @"C:\MpFA5\Dumper\DumpExec.exe";
 
     }
 

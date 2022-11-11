@@ -71,6 +71,7 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\ManageGrid.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\MenuGenerator.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\ReadXML.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\RoundendControlCollections.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\itextsharp.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\Connection.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\MySql.Data.dll
@@ -93,6 +94,7 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\MenuGenerator.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\ReadXML.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\ReadXML.xml
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\RoundendControlCollections.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\itextsharp.xml
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\Connection.pdb
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\Connection.xml
@@ -105,6 +107,3 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\obj
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\obj\Debug\ContoCorrente.csproj.GenerateResource.Cache
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\obj\Debug\ContoCorrente.exe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\obj\Debug\ContoCorrente.pdb
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\RoundendControlCollections.dll
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\BouncyCastle.Crypto.dll
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\ContoCorrente\bin\Debug\RoundendControlCollections.pdb

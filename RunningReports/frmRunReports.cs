@@ -36,7 +36,7 @@ namespace RunningReports
 
         }
 
-        #region Functions
+        #region Metodi privati
 
         /// <summary>
         /// Metodo per l'acquisizione del parametro statico "year" della struttura dati

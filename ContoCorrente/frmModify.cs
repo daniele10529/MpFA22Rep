@@ -15,7 +15,7 @@ namespace ContoCorrente
            
         }
        
-        //istanza alla classe ContoCorrente
+        //Istanza alla classe ContoCorrente
         private frmContoCorrente fr = new frmContoCorrente();
         //Istanza alla textbox per la somma o sottrazione
         TextBox txtAdd = new TextBox();
@@ -35,57 +35,6 @@ namespace ContoCorrente
 
         #endregion
 
-        #region Metodi Privati
-
-        //assegna il mese in formato stringa dal numero di id_mese passato
-        private string selmonth(int m)
-        {
-            string n = "";
-            switch (m)
-            {
-                case 1:
-                    n = "gennaio";
-                    break;
-                case 2:
-                    n = "febbraio";
-                    break;
-                case 3:
-                    n = "marzo";
-                    break;
-                case 4:
-                    n = "aprile";
-                    break;
-                case 5:
-                    n = "maggio";
-                    break;
-                case 6:
-                    n = "giugno";
-                    break;
-                case 7:
-                    n = "luglio";
-                    break;
-                case 8:
-                    n = "agosto";
-                    break;
-                case 9:
-                    n = "settembre";
-                    break;
-                case 10:
-                    n = "ottobre";
-                    break;
-                case 11:
-                    n = "novembre";
-                    break;
-                case 12:
-                    n = "dicembre";
-                    break;
-            }
-            return n;
-        }
-
-        #endregion
-
-
         #region Form
         private void frmModify_Load(object sender, EventArgs e)
         {
@@ -104,20 +53,20 @@ namespace ContoCorrente
 
         #endregion
 
-
         #region Button
 
         private void btnModify_Click(object sender, EventArgs e)
         {
+            //istanze alle classi model e checker
+            DefineMonth defineMonth = new DefineMonth();
+            ModelDataCC model = new ModelDataCC();
             string pathxml = Routes.XMLERRORS;
+            Checker check = new Checker(pathxml);
+
             string cause, import;
-            string month = selmonth(setId_month);
+            string month = defineMonth.getMonthFromIndex(setId_month);
             int id = 0, day = 0;
             bool[] verifyValues = new bool[5];
-
-            //istanze alle classi model e checker
-            ModelDataCC model = new ModelDataCC();
-            Checker check = new Checker(pathxml);
 
             try
             {
@@ -126,7 +75,7 @@ namespace ContoCorrente
                 {
                     if (check.isNumeric(txtDay.Texts) && check.isNumeric(txtImport.Texts) && check.inRange(txtDay.Texts, 1, 31))
                     {
-                        //essegna al setter il valore recepito dalla funzione, necessario come getter per
+                        //Assegna al setter il valore recepito dalla funzione, necessario come getter per
                         //frmContoCorrente per l'aggiornamento del datagridview
                         setMonth = month;
                         //setta i parametri per l'inserimento

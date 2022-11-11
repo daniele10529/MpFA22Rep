@@ -31,60 +31,6 @@ namespace Libretto
 
         #endregion
 
-        #region Metodi Privati
-
-        /// <summary>
-        /// Restituisce il numero del mese selezionato
-        /// </summary>
-        /// <param name="m"></param>
-        /// <returns></returns>
-        private int selmonth(string m)
-        {
-            int n = 0;
-            switch (m)
-            {
-                case "gennaio":
-                    n = 1;
-                    break;
-                case "febbraio":
-                    n = 2;
-                    break;
-                case "marzo":
-                    n = 3;
-                    break;
-                case "aprile":
-                    n = 4;
-                    break;
-                case "maggio":
-                    n = 5;
-                    break;
-                case "giugno":
-                    n = 6;
-                    break;
-                case "luglio":
-                    n = 7;
-                    break;
-                case "agosto":
-                    n = 8;
-                    break;
-                case "settembre":
-                    n = 9;
-                    break;
-                case "ottobre":
-                    n = 10;
-                    break;
-                case "novembre":
-                    n = 11;
-                    break;
-                case "dicembre":
-                    n = 12;
-                    break;
-            }
-            return n;
-        }
-
-        #endregion
-
         #region Form
 
         private void frmModify_Load(object sender, EventArgs e)
@@ -111,9 +57,10 @@ namespace Libretto
             string cause, import, month;
             int id = 0, id_month = 0;
 
-            //istanze alle classi model e checker
+            //Istanze alle classi model e checker
             ModelDataLibNom model = new ModelDataLibNom();
             Checker check = new Checker(pathxml);
+            DefineMonth defineMonth = new DefineMonth();
 
             try
             {
@@ -129,7 +76,7 @@ namespace Libretto
                         import = txtImport.Texts.Replace(",", ".");
 
                         //Definisce il numero del mese dal nome
-                        id_month = selmonth(month);
+                        id_month = defineMonth.getIndexFromNameMonth(month);
 
                         //modifica il DB e riceve true se tutto ok
                         verify = model.modifyRow(id, setYear, cause, import, id_month);
@@ -185,10 +132,10 @@ namespace Libretto
 
         private void txtAdd_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //sostituisce il punto con la virgola per il corretto calcolo
+            //Sostituisce il punto con la virgola per il corretto calcolo
             if (e.KeyChar == '.') e.KeyChar = ',';
 
-            //se viene premuto +, keychar = 43 codice ascii tasto +
+            //Se viene premuto +, keychar = 43 codice ascii tasto +
             if (e.KeyChar == 43)
             {
                 string pathxml = Routes.XMLERRORS;

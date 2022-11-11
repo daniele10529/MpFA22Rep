@@ -20,7 +20,7 @@ namespace PostPay
         //Istanza alla classe tooltip, visualizza istruzioni
         ToolTip tip = new ToolTip();
 
-        #region getter and setter
+        #region Getter and Setter
 
         public string setId { get; set; }
         public string setCause { get; set; }
@@ -28,60 +28,6 @@ namespace PostPay
         public string setMonth { get; set; }
         public int setYear { get; set; }
         public bool verify { get; set; }
-
-        #endregion
-
-        #region Metodi Privati
-
-        /// <summary>
-        /// Restituisce il numero del mese selezionato
-        /// </summary>
-        /// <param name="m"></param>
-        /// <returns></returns>
-        private int selmonth(string m)
-        {
-            int n = 0;
-            switch (m)
-            {
-                case "gennaio":
-                    n = 1;
-                    break;
-                case "febbraio":
-                    n = 2;
-                    break;
-                case "marzo":
-                    n = 3;
-                    break;
-                case "aprile":
-                    n = 4;
-                    break;
-                case "maggio":
-                    n = 5;
-                    break;
-                case "giugno":
-                    n = 6;
-                    break;
-                case "luglio":
-                    n = 7;
-                    break;
-                case "agosto":
-                    n = 8;
-                    break;
-                case "settembre":
-                    n = 9;
-                    break;
-                case "ottobre":
-                    n = 10;
-                    break;
-                case "novembre":
-                    n = 11;
-                    break;
-                case "dicembre":
-                    n = 12;
-                    break;
-            }
-            return n;
-        }
 
         #endregion
 
@@ -115,6 +61,7 @@ namespace PostPay
             ModelDataPostPay model = new ModelDataPostPay();
             ModelDataPostPay.RecordPostPay record = new ModelDataPostPay.RecordPostPay();
             Checker check = new Checker(pathxml);
+            DefineMonth defineMonth = new DefineMonth();
 
             try
             {
@@ -130,7 +77,7 @@ namespace PostPay
                         import = txtImport.Texts.Replace('.',',');
 
                         //Definisce il numero del mese dal nome
-                        id_month = selmonth(month);
+                        id_month = defineMonth.getIndexFromNameMonth(month);
 
                         //Istanzia il record
                         record.id_postpay = id;

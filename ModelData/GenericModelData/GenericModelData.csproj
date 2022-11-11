@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DefineMonth.cs" />
     <Compile Include="ModelData.cs" />
     <Compile Include="ModelDataCC.cs" />
     <Compile Include="ModelDataLibNom.cs" />

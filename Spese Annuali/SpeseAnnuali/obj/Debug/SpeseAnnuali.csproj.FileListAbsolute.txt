@@ -63,7 +63,6 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\Spe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\Google.Protobuf.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\Zstandard.Net.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\K4os.Compression.LZ4.Streams.dll
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\BouncyCastle.Crypto.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\Ubiety.Dns.Core.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\Renci.SshNet.dll
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\System.Buffers.dll
@@ -87,10 +86,10 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\Spe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\bin\Debug\itextsharp.xml
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.csprojResolveAssemblyReference.cache
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.csproj.SpeseAnnuali.exe.config
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\MpFA20.frmLongDesription.resources
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\MpFA20.frmSpeseAnnuali.resources
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\MpFA20.frmModify.resources
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.Properties.Resources.resources
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.csproj.GenerateResource.Cache
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.exe
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\SpeseAnnuali.pdb
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\MpFA20.frmLongDesription.resources
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\MpFA20.frmSpeseAnnuali.resources
-D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\Spese Annuali\SpeseAnnuali\obj\Debug\MpFA20.frmModify.resources

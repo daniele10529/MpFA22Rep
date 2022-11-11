@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>PostPay.ico</ApplicationIcon>
+    <ApplicationIcon>images.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Checking">
@@ -215,6 +215,7 @@
     <None Include="Resources\LibrettoM.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images.ico" />
     <Content Include="PostPay.ico" />
     <None Include="Resources\Oficina_PDF_35460_64.png" />
     <None Include="Resources\Forward.png" />

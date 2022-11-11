@@ -34,56 +34,6 @@ namespace MpFA20
 
         #endregion
 
-        #region Metodi privati
-
-        //Seleziona il mese in formato stringa dal numero del mese
-        private string selmonth(int m)
-        {
-            string n = "";
-            switch (m)
-            {
-                case 1:
-                    n = "gennaio";
-                    break;
-                case 2:
-                    n = "febbraio";
-                    break;
-                case 3:
-                    n = "marzo";
-                    break;
-                case 4:
-                    n = "aprile";
-                    break;
-                case 5:
-                    n = "maggio";
-                    break;
-                case 6:
-                    n = "giugno";
-                    break;
-                case 7:
-                    n = "luglio";
-                    break;
-                case 8:
-                    n = "agosto";
-                    break;
-                case 9:
-                    n = "settembre";
-                    break;
-                case 10:
-                    n = "ottobre";
-                    break;
-                case 11:
-                    n = "novembre";
-                    break;
-                case 12:
-                    n = "dicembre";
-                    break;
-            }
-            return n;
-        }
-
-        #endregion
-
         #region Form
 
         private void frmModify_Load(object sender, EventArgs e)
@@ -107,7 +57,9 @@ namespace MpFA20
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            string month = selmonth(setId_month);
+            //Istanza alla classe DefineMonth
+            DefineMonth defineMonth = new DefineMonth();
+            string month = defineMonth.getMonthFromIndex(setId_month);
             string cause, note, import;
             int id = 0;
 

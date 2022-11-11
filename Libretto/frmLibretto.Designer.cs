@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("ANNI");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("ANNI");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.pgHome = new System.Windows.Forms.TabPage();
@@ -80,6 +80,7 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.pnlTree = new System.Windows.Forms.Panel();
+            this.treeYears = new RoundendControlCollections.CustomTreeView();
             this.label15 = new System.Windows.Forms.Label();
             this.btnLoadYears2 = new System.Windows.Forms.Button();
             this.pnlResume = new System.Windows.Forms.Panel();
@@ -99,7 +100,6 @@
             this.txtYearMonth = new System.Windows.Forms.TextBox();
             this.pnlGrid = new RoundendControlCollections.RoundedPanel();
             this.grdMovLibVoices = new System.Windows.Forms.DataGridView();
-            this.treeYears = new RoundendControlCollections.CustomTreeView();
             this.pnlMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.pgHome.SuspendLayout();
@@ -519,7 +519,7 @@
             this.btnSaveData.Size = new System.Drawing.Size(30, 30);
             this.btnSaveData.TabIndex = 23;
             this.btnSaveData.UseVisualStyleBackColor = true;
-            this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
+            this.btnSaveData.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panel7
             // 
@@ -702,7 +702,7 @@
             this.btnSaveThree.Size = new System.Drawing.Size(30, 30);
             this.btnSaveThree.TabIndex = 23;
             this.btnSaveThree.UseVisualStyleBackColor = true;
-            this.btnSaveThree.Click += new System.EventHandler(this.btnSaveThree_Click);
+            this.btnSaveThree.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pgSearch
             // 
@@ -742,6 +742,7 @@
             this.txtSearchVoice.Name = "txtSearchVoice";
             this.txtSearchVoice.Size = new System.Drawing.Size(982, 23);
             this.txtSearchVoice.TabIndex = 32;
+            this.txtSearchVoice.TextChanged += new System.EventHandler(this.txtSearchVoice_TextChanged);
             // 
             // panel11
             // 
@@ -777,6 +778,26 @@
             this.pnlTree.Size = new System.Drawing.Size(182, 730);
             this.pnlTree.TabIndex = 2;
             // 
+            // treeYears
+            // 
+            this.treeYears.BorderSelectedNodeColor = System.Drawing.Color.SteelBlue;
+            this.treeYears.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
+            this.treeYears.FullRowSelect = true;
+            this.treeYears.ImageIndex = 0;
+            this.treeYears.Location = new System.Drawing.Point(1, 83);
+            this.treeYears.Name = "treeYears";
+            treeNode2.BackColor = System.Drawing.Color.AntiqueWhite;
+            treeNode2.ForeColor = System.Drawing.Color.SteelBlue;
+            treeNode2.Name = "ndAnni";
+            treeNode2.Text = "ANNI";
+            this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            this.treeYears.SelectedImageIndex = 0;
+            this.treeYears.ShowLines = false;
+            this.treeYears.Size = new System.Drawing.Size(177, 645);
+            this.treeYears.TabIndex = 33;
+            this.treeYears.DoubleClick += new System.EventHandler(this.treeYears_DoubleClick);
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -803,7 +824,7 @@
             this.btnLoadYears2.Size = new System.Drawing.Size(30, 30);
             this.btnLoadYears2.TabIndex = 34;
             this.btnLoadYears2.UseVisualStyleBackColor = false;
-            this.btnLoadYears2.Click += new System.EventHandler(this.btnLoadYears2_Click);
+            this.btnLoadYears2.Click += new System.EventHandler(this.btnLoadYears_Click);
             // 
             // pnlResume
             // 
@@ -1011,24 +1032,24 @@
             this.grdMovLibVoices.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grdMovLibVoices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdMovLibVoices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMovLibVoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMovLibVoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.grdMovLibVoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdMovLibVoices.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdMovLibVoices.DefaultCellStyle = dataGridViewCellStyle5;
             this.grdMovLibVoices.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdMovLibVoices.EnableHeadersVisualStyles = false;
             this.grdMovLibVoices.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -1037,14 +1058,14 @@
             this.grdMovLibVoices.MultiSelect = false;
             this.grdMovLibVoices.Name = "grdMovLibVoices";
             this.grdMovLibVoices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMovLibVoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMovLibVoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grdMovLibVoices.RowHeadersVisible = false;
             this.grdMovLibVoices.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdMovLibVoices.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -1057,26 +1078,6 @@
             this.grdMovLibVoices.Size = new System.Drawing.Size(984, 720);
             this.grdMovLibVoices.TabIndex = 21;
             this.grdMovLibVoices.MouseClick += new System.Windows.Forms.MouseEventHandler(this.grdMovLibVoices_MouseClick);
-            // 
-            // treeYears
-            // 
-            this.treeYears.BorderSelectedNodeColor = System.Drawing.Color.SteelBlue;
-            this.treeYears.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
-            this.treeYears.FullRowSelect = true;
-            this.treeYears.ImageIndex = 0;
-            this.treeYears.Location = new System.Drawing.Point(1, 83);
-            this.treeYears.Name = "treeYears";
-            treeNode1.BackColor = System.Drawing.Color.AntiqueWhite;
-            treeNode1.ForeColor = System.Drawing.Color.SteelBlue;
-            treeNode1.Name = "ndAnni";
-            treeNode1.Text = "ANNI";
-            this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.treeYears.SelectedImageIndex = 0;
-            this.treeYears.ShowLines = false;
-            this.treeYears.Size = new System.Drawing.Size(177, 645);
-            this.treeYears.TabIndex = 33;
-            this.treeYears.DoubleClick += new System.EventHandler(this.treeYears_DoubleClick);
             // 
             // frmLibretto
             // 

@@ -226,14 +226,14 @@ namespace Mantenimento
             if (selezione == "ANNI") return;
             else
             {
-                //assegna il valore di anno\mese in base al nodo selezionato
+                //Assegna il valore di anno\mese in base al nodo selezionato
                 anno = treeYears.SelectedNode.Text;
 
                 if (anno == "ANNI") return;
                 else
                 {
                     year = Int32.Parse(anno);
-                    //assegna il valore alle variabili globali per la gestione con DB
+                    //Assegna il valore alle variabili globali per la gestione con DB
                     year_manage = year;
 
                     //Popola la tabelle
@@ -246,7 +246,7 @@ namespace Mantenimento
 
             isChanged = false;
             isLoad = true;
-            //deseleziona l'albero 
+            //Deseleziona l'albero 
             treeYears.SelectedNode = null;
             //Carica il valore di saldo del mese
             txtBalance.Text = model.loadBalanceYear(year_manage).ToString();
@@ -402,22 +402,22 @@ namespace Mantenimento
             bool modifyRow = false;
             try
             {
-                //prelevo i dati dal datagridview
+                //Preleva i dati dal DataGridView
                 var val = grdKeepingVoices.CurrentRow.Cells;
                 id = val[0].Value.ToString();
                 cause = val[1].Value.ToString();
                 import = val[2].Value.ToString();
                 month = val[3].Value.ToString();
-                //passo i dati ai setter di frmModify
+                //Passa i dati ai setter di frmModify
                 frmMod.setId = id;
                 frmMod.setCause = cause;
                 frmMod.setImport = import;
                 frmMod.setMonth = month;
-                //setto l'anno selezionato
+                //Setta l'anno selezionato
                 frmMod.setYear = year_manage;
-                //visualizzo il form
+                //Visualizza il form
                 frmMod.ShowDialog();
-                //ricevo tru dal getter se alvataggio avvenuto con successo
+                //Riceve True dal getter se salvataggio avvenuto con successo
                 modifyRow = frmMod.verify;
                 if (modifyRow == true)
                 {
@@ -464,7 +464,7 @@ namespace Mantenimento
             var val = grdKeepingVoices.CurrentRow.Cells;
             record.id_mantenimento = Int32.Parse(val[0].Value.ToString());
 
-            //se confermato elimina la riga
+            //Se confermato elimina la riga
             if (MessageBox.Show("Sicuro di voler eliminare la riga ?", "ATTENZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 if(model.deleteRow(year_manage, record))
@@ -509,7 +509,7 @@ namespace Mantenimento
         //Visualizza il form per le voci frequenti
         private void btnSetOftenValue_Click(object sender, EventArgs e)
         {
-            //istanzia la classe
+            //Istanzia la classe
             CreateFormOftenCause form = new CreateFormOftenCause();
             //imposta nel setter la textbox che deve acquisire il valoe dalla 
             //lista delle causali frequenti
@@ -527,17 +527,17 @@ namespace Mantenimento
 
         private void grdKeepingVoices_MouseClick(object sender, MouseEventArgs e)
         {
-            //se viene premuto il tasto SX, esci dalla funzione
+            //Se viene premuto il tasto SX, esci dalla funzione
             if (e.Button == MouseButtons.Left) return;
-            //istanza alla classe di creazione del ContextMenu
+            //Istanza alla classe di creazione del ContextMenu
             CreateContexMenu creatMenu = new CreateContexMenu(grdKeepingVoices);
-            //setting degli eventi da richiamare con i pulsanti
+            //Setting degli eventi da richiamare con i pulsanti
             creatMenu.setEvents("delete", btnDeleteRow_Click);
             creatMenu.setEvents("modifyIt", btnModifyRow_Click);
             // creatMenu.setEvents("oftenVal", btnOftenVal_Click);
             creatMenu.setEvents("moveUp", btnUp_Click);
             creatMenu.setEvents("moveDown", btnDown_Click);
-            //mostra il menu
+            //Mostra il menu
             creatMenu.showContextMenu(e);
         }
 
@@ -552,7 +552,7 @@ namespace Mantenimento
 
         private void txtSearchVoice_TextChanged(object sender, EventArgs e)
         {
-            //cerco all'interno del datagridview passando la colonna in cui cercare
+            //Cerca all'interno del datagridview passando la colonna in cui cercare
             Searching search = new Searching(grdKeepingVoices, table, txtSearchVoice);
             search.searchingRow(1);
         }
@@ -604,7 +604,6 @@ namespace Mantenimento
             cmbMonths.BackColor = Color.FromArgb(210, 228, 242);
         }
 
-
         private void cmbMonths_Leave(object sender, EventArgs e)
         {
             cmbMonths.BackColor = Color.White;
@@ -613,8 +612,7 @@ namespace Mantenimento
         #endregion
 
         #region Treeview
-
-        
+     
         //Carica i dati al doppio click sul nodo prescelto
         private void treeYears_DoubleClick(object sender, EventArgs e)
         {

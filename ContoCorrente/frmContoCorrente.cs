@@ -10,27 +10,26 @@ using MenuGenerator;
 using CreateForm;
 using LeaderProcess;
 using PDFCreator;
-using System.Drawing.Text;
 
 namespace ContoCorrente
 {
     public partial class frmContoCorrente : Form
     {
-        //tabella contenente i dati
+        //Tabella contenente i dati
         private DataTable table;
-        //percorso file xml con errori
+        //Percorso file xml con errori
         private const string pathxml = Routes.XMLERRORS;
         //Percorso file XML con definizione path processi
         private const string runPath = Routes.RUNPATH;
-        //verifica sul comportamento utente
+        //Verifica sul comportamento utente
         private bool isLoad;
         private bool isSaved;
         private bool isChanged;
-        //istanza alla classe di gestione con DB
+        //Istanza alla classe di gestione con DB
         private ModelDataCC model;
-        //istanza alla classe checker
+        //Istanza alla classe checker
         private Checker check;
-        //numero dell'anno e mese caricato
+        //Numero dell'anno e mese caricato
         public int year_manage, month_manage;
         private string manage_mese;
 
@@ -101,7 +100,7 @@ namespace ContoCorrente
 
 
         /// <summary>
-        /// carica immagini per le pagine del tabcontrol
+        /// Carica immagini per le pagine del tabcontrol
         /// </summary>
         private void loadImage()
         {
@@ -130,56 +129,6 @@ namespace ContoCorrente
                 MessageBox.Show(ex.Message);
             }
 
-        }
-
-        /// <summary>
-        /// Restituisce il numero del mese selezionato
-        /// </summary>
-        /// <param name="m"></param>
-        /// <returns></returns>
-        private int selmonth(string m)
-        {
-            int n = 0;
-            switch (m)
-            {
-                case "gennaio":
-                    n = 1;
-                    break;
-                case "febbraio":
-                    n = 2;
-                    break;
-                case "marzo":
-                    n = 3;
-                    break;
-                case "aprile":
-                    n = 4;
-                    break;
-                case "maggio":
-                    n = 5;
-                    break;
-                case "giugno":
-                    n = 6;
-                    break;
-                case "luglio":
-                    n = 7;
-                    break;
-                case "agosto":
-                    n = 8;
-                    break;
-                case "settembre":
-                    n = 9;
-                    break;
-                case "ottobre":
-                    n = 10;
-                    break;
-                case "novembre":
-                    n = 11;
-                    break;
-                case "dicembre":
-                    n = 12;
-                    break;
-            }
-            return n;
         }
 
         /// <summary>
@@ -244,7 +193,7 @@ namespace ContoCorrente
 
     #region EVENTI DEGLI OGGETTI
 
-         #region form
+         #region Form
 
         private void frmContoCorrente_Load(object sender, EventArgs e)
         {
@@ -254,7 +203,7 @@ namespace ContoCorrente
             model.loadTree(treeYears);
             pnlStatus.BackColor = Color.FromArgb(255, 255, 255);
 
-            //impostazioni di tabella e datagridview
+            //Setting di tabella e DataGridView
             grdMonthVoices.DataSource = table;
             table.Columns.Add("ID");
             table.Columns.Add("GIORNO");
@@ -276,11 +225,12 @@ namespace ContoCorrente
         //Intercetta la chusura del form
         private void frmContoCorrente_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //se i dati non sono salvati chiede conferma
+            //Se i dati non sono salvati chiede conferma
             if (isChanged == true && isSaved == false)
             {
                 if (MessageBox.Show("Sicuro di voler chiudere l'App, i dati non salvati andranno persi ?", "ATTENZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
-                {//se non si conferma la chiusura annulla l'evento
+                {
+                    //Se non si conferma la chiusura annulla l'evento
                     e.Cancel = true;
                 }
             }
@@ -293,6 +243,7 @@ namespace ContoCorrente
         public void btnLoadYears_Click(object sender, EventArgs e)
         {
             PopulateGrid populate = new PopulateGrid(grdMonthVoices, table);
+            DefineMonth defineMonth = new DefineMonth();
             List<ModelDataCC.PaymentCC> listdata = new List<ModelDataCC.PaymentCC>();
             List<string> listinsert = new List<string>();
             string selezione, anno, mese;
@@ -309,14 +260,14 @@ namespace ContoCorrente
                 }
             }
 
-            //controllo sulla selezione del nodo anno\mese dall'albero
+            //Controllo sulla selezione del nodo anno\mese dall'albero
             if (treeYears.SelectedNode == null) return;
 
             selezione = treeYears.SelectedNode.Text;
             if (selezione == "ANNI") return;
             else
             {
-                //assegna il valore di anno\mese in base al nodo selezionato
+                //Assegna il valore di anno\mese in base al nodo selezionato
                 anno = treeYears.SelectedNode.Parent.Text;
                 mese = treeYears.SelectedNode.Text.ToLower();
                 manage_mese = mese;
@@ -325,14 +276,14 @@ namespace ContoCorrente
                 else
                 {
                     year = Int32.Parse(anno);
-                    month = selmonth(mese);
-                    //assegna il valore alle variabili globali per la gestione con DB
+                    month = defineMonth.getIndexFromNameMonth(mese);
+                    //Assegna il valore alle variabili globali per la gestione con DB
                     year_manage = year;
                     month_manage = month;
-                    //carica i dati da DB e li assegna alla lista
+                    //Carica i dati da DB e li assegna alla lista
                     listdata = model.loadDataCC(mese, year);
 
-                    //utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
+                    //Utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
                     i = 0;
                     while (i < listdata.Count)
                     {
@@ -350,20 +301,20 @@ namespace ContoCorrente
 
             isChanged = false;
             isLoad = true;
-            //deseleziona l'albero 
+            //Deseleziona l'albero 
             treeYears.SelectedNode = null;
-            //carica il valore di saldo del mese precedente e lo inserisce nella textbox
+            //Carica il valore di saldo del mese precedente e lo inserisce nella textbox
             txtBalanceST.Text = model.balanceMonthPre(year, month).ToString();
-            //conteggia il saldo finale
+            //Conteggia il saldo finale
             counter();
-            //tronca il bilancio iniziale
+            //Tronca il bilancio iniziale
             if(txtBalanceST.Text.Length > 1)
             {
                 check = new Checker();
                 check.truncate(txtBalanceST, 2);
             }
             //Se non caricato l'ultimo anno il Datagridview è disabilitato
-            //Disabilito inserimento, modifiche, calcellazione e salvataggio
+            //Disabilita inserimento, modifiche, calcellazione e salvataggio
             lastyear = checkLastYear(year_manage);
             if (!lastyear)
             {
@@ -387,11 +338,7 @@ namespace ContoCorrente
             }
 
         }
-        private void btnLoadYears2_Click(object sender, EventArgs e)
-        {
-            btnLoadYears_Click(sender, e);
-        }
-
+       
         private void btnInsert_Click(object sender, EventArgs e)
         {
             isSaved = false;
@@ -405,7 +352,7 @@ namespace ContoCorrente
             string father = "ListError";
             string feature = "ErrorTitle";
 
-            //verifica sulla presenza di tutti i campi dalla classe checker
+            //Verifica sulla presenza di tutti i campi dalla classe checker
             //e che sia stato caricato un anno\mese
             if (isLoad == false) return;
 
@@ -473,11 +420,11 @@ namespace ContoCorrente
             double balance = Double.Parse(txtBalanceOV.Text);
             bool isSavedBalance = false;
 
-            //genera la lista(ModelDataCC.PaymentCC)da struct della tabella e salva i dati nel DB
+            //Genera la lista(ModelDataCC.PaymentCC)da struct della tabella e salva i dati nel DB
             List<ModelDataCC.PaymentCC> lista = createListStruct();
             isSaved = model.saveDataCC(manage_mese.ToLower(), year_manage, lista);
             isSavedBalance = model.saveBalanceMonth(balance, year_manage, month_manage);
-            //verifica il corretto salvataggio dei dati
+            //Verifica il corretto salvataggio dei dati
             if(isSavedBalance == false || isSaved == false)
             {
                 MessageBox.Show("Errore di salvataggio dei dati", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -489,6 +436,7 @@ namespace ContoCorrente
             }
 
         }
+
         //Inserisce il Saldo finale nel mese appena iniziato, altrimenti al
         //primo caricamento in spese annuali non è visibile il saldo del CC
         private void btnCloseMonth_Click(object sender, EventArgs e)
@@ -523,9 +471,9 @@ namespace ContoCorrente
                 yearClose = year_manage;
             }
 
-            //salva il bilancio finale del mese nel mese successivo
+            //Salva il bilancio finale del mese nel mese successivo
             isSavedBalance = model.saveBalanceMonth(balance, yearClose, nextMonthUpdate);
-            //verifica il corretto salvataggio dei dati
+            //Verifica il corretto salvataggio dei dati
             if (isSavedBalance == false)
             {
                 MessageBox.Show("Errore di salvataggio dei dati", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -537,26 +485,23 @@ namespace ContoCorrente
             }
 
         }
-        private void btnSaveData_Click(object sender, EventArgs e)
-        {
-            btnSave_Click(sender, e);
-        }
-        private void btnSaveThree_Click(object sender, EventArgs e)
-        {
-            btnSave_Click(sender, e);
-        }
-
+        
+        /// <summary>
+        /// Metodo per eliminare un record
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteRow_Click(object sender, EventArgs e)
         {
             isSaved = false;
             isChanged = true;
             statusPanel();
-            //preleva l'indice dalla riga selezionata, se non selezionata non fa nulla
+            //Preleva l'indice dalla riga selezionata, se non selezionata non fa nulla
             int index = grdMonthVoices.Rows.IndexOf(grdMonthVoices.CurrentRow);
             if (index < 0) return;
 
             PopulateGrid populate = new PopulateGrid(grdMonthVoices, table);
-            //se confermato elimina la riga
+            //Se confermato elimina la riga
             if (MessageBox.Show("Sicuro di voler eliminare la riga ?", "ATTENZIONE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 populate.deleterow();
@@ -565,9 +510,14 @@ namespace ContoCorrente
             
         }
         
+        /// <summary>
+        /// Metodo pe modificare un record
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifyRow_Click(object sender, EventArgs e)
         {
-            //istanza per form modifica e per aggiornare il datagridview
+            //Istanza per form modifica e per aggiornare il datagridview
             frmModify frmMod = new frmModify();
             PopulateGrid populate = new PopulateGrid(grdMonthVoices,table);
             string id, day, cause, import;
@@ -575,38 +525,39 @@ namespace ContoCorrente
             List<string> listinsert = new List<string>();
             int i;
             string mese;
-            //variabile di avvenuta modifica
+            //Variabile di avvenuta modifica
             bool modifyRow = false;
             try
             {
-                //prelevo i dati dal datagridview
+                //Preleva i dati dal DataGridView
                 var val = grdMonthVoices.CurrentRow.Cells;
                 id = val[0].Value.ToString();
                 day = val[1].Value.ToString();
                 cause = val[2].Value.ToString();
                 import = val[3].Value.ToString();
-                //passo i dati ai setter di frmModify
+                //Passa i dati ai setter di frmModify
                 frmMod.setId = id;
                 frmMod.setDay = day;
                 frmMod.setCause = cause;
                 frmMod.setImport = import;
-                //setto l'anno e il mese selezionato
+                //Setta l'anno e il mese selezionato
                 frmMod.setYear = year_manage;
                 frmMod.setId_month = month_manage;
-                //visualizzo il form
+                //Visualizza il form
                 frmMod.ShowDialog();
-                //ricevo tru dal getter se alvataggio avvenuto con successo
+                //Riceve true dal getter se alvataggio avvenuto con successo
                 modifyRow = frmMod.verify;
                 if(modifyRow == true)
-                {//aggiorno il datagridview
+                {
+                    //Aggiorna il DataGridView
                     isSaved = true;
                     table.Rows.Clear();
-                    //prelevo il valore del mese dal getter di frmModify
+                    //Preleva il valore del mese dal getter di frmModify
                     mese = frmMod.setMonth;
-                    //carica i dati da DB e li assegna alla lista
+                    //Carica i dati da DB e li assegna alla lista
                     listdata = model.loadDataCC(mese, year_manage);
 
-                    //utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
+                    //Utilizza una lista di appoggio per poter popolare ogni riga del DatagridView
                     i = 0;
                     while (i < listdata.Count)
                     {
@@ -626,12 +577,12 @@ namespace ContoCorrente
             {
                 MessageBox.Show("Nessuna riga selezionata per la modifica, selezionare una riga" + ex.Message, "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
 
+        }
 
         private void btnUp_Click(object sender, EventArgs e)
         {
-            //preleva l'indice della riga selezionata, se non selezionata esce
+            //Preleva l'indice della riga selezionata, se non selezionata esce
             int index = grdMonthVoices.Rows.IndexOf(grdMonthVoices.CurrentRow);
             if (index < 0) return;
 
@@ -643,7 +594,7 @@ namespace ContoCorrente
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            //preleva l'indice della riga selezionata, se non selezionata esce
+            //Preleva l'indice della riga selezionata, se non selezionata esce
             int index = grdMonthVoices.Rows.IndexOf(grdMonthVoices.CurrentRow);
             if (index < 0) return;
 
@@ -655,7 +606,7 @@ namespace ContoCorrente
         //Visualizza il form per le voci frequenti
         private void btnSetOftenValue_Click(object sender, EventArgs e)
         {
-            //istanzia la classe
+            //Istanzia la classe
             CreateFormOftenCause form = new CreateFormOftenCause();
             //imposta nel setter la textbox che deve acquisire il valoe dalla 
             //lista delle causali frequenti
@@ -713,11 +664,11 @@ namespace ContoCorrente
             //Se premuto ok nel SaveDialog
             if (svdPDF.ShowDialog() == DialogResult.OK)
             {
-                //istanza alla classe
+                //Istanza alla classe
                 DataGridViewToPDF dataPDF = new DataGridViewToPDF(grdMonthVoices);
-                //imposta il setter per il percorso del file da salvare
+                //Imposta il setter per il percorso del file da salvare
                 dataPDF.pathFile = svdPDF.FileName;
-                //crea il pdf
+                //Crea il pdf
                 dataPDF.CreatePDF();
             }
 
@@ -784,7 +735,7 @@ namespace ContoCorrente
 
         private void txtSearchVoice_TextChanged(object sender, EventArgs e)
         {
-            //cerco all'interno del datagridview passando la colonna in cui cercare
+            //Cerca all'interno del datagridview passando la colonna in cui cercare
             Searching search = new Searching(grdMonthVoices, table, txtSearchVoice);
             search.searchingRow(2);
         }

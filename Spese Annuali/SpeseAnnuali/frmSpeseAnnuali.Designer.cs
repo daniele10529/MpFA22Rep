@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("ANNI");
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("ANNI");
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.pageHome = new System.Windows.Forms.TabPage();
             this.roundedPanel3 = new RoundendControlCollections.RoundedPanel();
@@ -46,8 +46,6 @@
             this.btnNewYears = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoadYears = new System.Windows.Forms.Button();
-            this.grpSetting = new System.Windows.Forms.GroupBox();
-            this.btnSetting = new System.Windows.Forms.Button();
             this.pageInsert = new System.Windows.Forms.TabPage();
             this.roundedPanel2 = new RoundendControlCollections.RoundedPanel();
             this.txtImport = new RoundendControlCollections.RoundedTextBox();
@@ -87,6 +85,7 @@
             this.btnContoCorrente = new System.Windows.Forms.Button();
             this.btnSpeseAnnuali = new System.Windows.Forms.Button();
             this.pnlYears = new System.Windows.Forms.Panel();
+            this.treeYears = new RoundendControlCollections.CustomTreeView();
             this.label15 = new System.Windows.Forms.Label();
             this.btnLoadYear = new System.Windows.Forms.Button();
             this.btnNewYear = new System.Windows.Forms.Button();
@@ -133,14 +132,12 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtTotRestyear = new System.Windows.Forms.TextBox();
             this.pnlGrid = new RoundendControlCollections.RoundedPanel();
-            this.treeYears = new RoundendControlCollections.CustomTreeView();
             this.tabMenu.SuspendLayout();
             this.pageHome.SuspendLayout();
             this.roundedPanel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.grpRoundAnni.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.grpSetting.SuspendLayout();
             this.pageInsert.SuspendLayout();
             this.roundedPanel2.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -183,7 +180,6 @@
             this.pageHome.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.pageHome.Controls.Add(this.roundedPanel3);
             this.pageHome.Controls.Add(this.grpRoundAnni);
-            this.pageHome.Controls.Add(this.grpSetting);
             this.pageHome.Location = new System.Drawing.Point(4, 25);
             this.pageHome.Name = "pageHome";
             this.pageHome.Padding = new System.Windows.Forms.Padding(3);
@@ -262,7 +258,7 @@
             this.grpRoundAnni.GradientAngle = 90F;
             this.grpRoundAnni.GrdtBottom = System.Drawing.Color.Empty;
             this.grpRoundAnni.GrdtTop = System.Drawing.Color.Empty;
-            this.grpRoundAnni.Location = new System.Drawing.Point(185, 9);
+            this.grpRoundAnni.Location = new System.Drawing.Point(180, 9);
             this.grpRoundAnni.Name = "grpRoundAnni";
             this.grpRoundAnni.Padding = new System.Windows.Forms.Padding(3);
             this.grpRoundAnni.Size = new System.Drawing.Size(984, 75);
@@ -316,7 +312,7 @@
             this.btnNewYears.Size = new System.Drawing.Size(30, 30);
             this.btnNewYears.TabIndex = 6;
             this.btnNewYears.UseVisualStyleBackColor = true;
-            this.btnNewYears.Click += new System.EventHandler(this.btnNewYears_Click);
+            this.btnNewYears.Click += new System.EventHandler(this.btnNewYear_Click);
             // 
             // btnSave
             // 
@@ -344,27 +340,7 @@
             this.btnLoadYears.Size = new System.Drawing.Size(30, 30);
             this.btnLoadYears.TabIndex = 7;
             this.btnLoadYears.UseVisualStyleBackColor = true;
-            this.btnLoadYears.Click += new System.EventHandler(this.btnLoadYears_Click);
-            // 
-            // grpSetting
-            // 
-            this.grpSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpSetting.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.grpSetting.Controls.Add(this.btnSetting);
-            this.grpSetting.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpSetting.Location = new System.Drawing.Point(1061, 13);
-            this.grpSetting.Name = "grpSetting";
-            this.grpSetting.Size = new System.Drawing.Size(105, 66);
-            this.grpSetting.TabIndex = 33;
-            this.grpSetting.TabStop = false;
-            this.grpSetting.Text = "Impostazioni";
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.Location = new System.Drawing.Point(0, 0);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(75, 23);
-            this.btnSetting.TabIndex = 0;
+            this.btnLoadYears.Click += new System.EventHandler(this.btnLoadYear_Click);
             // 
             // pageInsert
             // 
@@ -396,7 +372,7 @@
             this.roundedPanel2.GradientAngle = 90F;
             this.roundedPanel2.GrdtBottom = System.Drawing.Color.Empty;
             this.roundedPanel2.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel2.Location = new System.Drawing.Point(185, 3);
+            this.roundedPanel2.Location = new System.Drawing.Point(180, 3);
             this.roundedPanel2.Name = "roundedPanel2";
             this.roundedPanel2.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel2.Size = new System.Drawing.Size(991, 85);
@@ -540,7 +516,7 @@
             this.roundedPanel1.GradientAngle = 90F;
             this.roundedPanel1.GrdtBottom = System.Drawing.Color.Empty;
             this.roundedPanel1.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel1.Location = new System.Drawing.Point(1176, 3);
+            this.roundedPanel1.Location = new System.Drawing.Point(1173, 3);
             this.roundedPanel1.Name = "roundedPanel1";
             this.roundedPanel1.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel1.Size = new System.Drawing.Size(70, 85);
@@ -557,7 +533,7 @@
             this.btnSaveData.Size = new System.Drawing.Size(30, 30);
             this.btnSaveData.TabIndex = 46;
             this.btnSaveData.UseVisualStyleBackColor = true;
-            this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
+            this.btnSaveData.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panel7
             // 
@@ -609,7 +585,7 @@
             this.roundedPanel7.GradientAngle = 90F;
             this.roundedPanel7.GrdtBottom = System.Drawing.Color.Empty;
             this.roundedPanel7.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel7.Location = new System.Drawing.Point(183, 7);
+            this.roundedPanel7.Location = new System.Drawing.Point(180, 7);
             this.roundedPanel7.Name = "roundedPanel7";
             this.roundedPanel7.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel7.Size = new System.Drawing.Size(914, 75);
@@ -702,7 +678,7 @@
             this.roundedPanel6.GradientAngle = 90F;
             this.roundedPanel6.GrdtBottom = System.Drawing.Color.Empty;
             this.roundedPanel6.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel6.Location = new System.Drawing.Point(1098, 7);
+            this.roundedPanel6.Location = new System.Drawing.Point(1095, 7);
             this.roundedPanel6.Name = "roundedPanel6";
             this.roundedPanel6.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel6.Size = new System.Drawing.Size(70, 75);
@@ -741,7 +717,7 @@
             this.btnSaveThree.Size = new System.Drawing.Size(30, 30);
             this.btnSaveThree.TabIndex = 8;
             this.btnSaveThree.UseVisualStyleBackColor = true;
-            this.btnSaveThree.Click += new System.EventHandler(this.btnSaveThree_Click);
+            this.btnSaveThree.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pageSearch
             // 
@@ -767,7 +743,7 @@
             this.roundedPanel8.GradientAngle = 90F;
             this.roundedPanel8.GrdtBottom = System.Drawing.Color.Empty;
             this.roundedPanel8.GrdtTop = System.Drawing.Color.Empty;
-            this.roundedPanel8.Location = new System.Drawing.Point(178, 7);
+            this.roundedPanel8.Location = new System.Drawing.Point(180, 7);
             this.roundedPanel8.Name = "roundedPanel8";
             this.roundedPanel8.Padding = new System.Windows.Forms.Padding(3);
             this.roundedPanel8.Size = new System.Drawing.Size(994, 75);
@@ -829,7 +805,7 @@
             this.btnRunningReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRunningReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunningReports.ForeColor = System.Drawing.Color.Green;
-            this.btnRunningReports.Location = new System.Drawing.Point(578, 21);
+            this.btnRunningReports.Location = new System.Drawing.Point(580, 21);
             this.btnRunningReports.Name = "btnRunningReports";
             this.btnRunningReports.Size = new System.Drawing.Size(50, 50);
             this.btnRunningReports.TabIndex = 17;
@@ -842,7 +818,7 @@
             this.btnPostPay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPostPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPostPay.ForeColor = System.Drawing.Color.Green;
-            this.btnPostPay.Location = new System.Drawing.Point(418, 21);
+            this.btnPostPay.Location = new System.Drawing.Point(420, 21);
             this.btnPostPay.Name = "btnPostPay";
             this.btnPostPay.Size = new System.Drawing.Size(50, 50);
             this.btnPostPay.TabIndex = 16;
@@ -855,7 +831,7 @@
             this.btnMantenimento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMantenimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMantenimento.ForeColor = System.Drawing.Color.Green;
-            this.btnMantenimento.Location = new System.Drawing.Point(498, 21);
+            this.btnMantenimento.Location = new System.Drawing.Point(500, 21);
             this.btnMantenimento.Name = "btnMantenimento";
             this.btnMantenimento.Size = new System.Drawing.Size(50, 50);
             this.btnMantenimento.TabIndex = 15;
@@ -868,7 +844,7 @@
             this.btnLibretto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLibretto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLibretto.ForeColor = System.Drawing.Color.Green;
-            this.btnLibretto.Location = new System.Drawing.Point(338, 21);
+            this.btnLibretto.Location = new System.Drawing.Point(340, 21);
             this.btnLibretto.Name = "btnLibretto";
             this.btnLibretto.Size = new System.Drawing.Size(50, 50);
             this.btnLibretto.TabIndex = 14;
@@ -881,7 +857,7 @@
             this.btnContoCorrente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnContoCorrente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContoCorrente.ForeColor = System.Drawing.Color.Green;
-            this.btnContoCorrente.Location = new System.Drawing.Point(258, 21);
+            this.btnContoCorrente.Location = new System.Drawing.Point(260, 21);
             this.btnContoCorrente.Name = "btnContoCorrente";
             this.btnContoCorrente.Size = new System.Drawing.Size(50, 50);
             this.btnContoCorrente.TabIndex = 13;
@@ -895,7 +871,7 @@
             this.btnSpeseAnnuali.Enabled = false;
             this.btnSpeseAnnuali.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSpeseAnnuali.ForeColor = System.Drawing.Color.Green;
-            this.btnSpeseAnnuali.Location = new System.Drawing.Point(178, 21);
+            this.btnSpeseAnnuali.Location = new System.Drawing.Point(180, 21);
             this.btnSpeseAnnuali.Name = "btnSpeseAnnuali";
             this.btnSpeseAnnuali.Size = new System.Drawing.Size(50, 50);
             this.btnSpeseAnnuali.TabIndex = 12;
@@ -914,6 +890,26 @@
             this.pnlYears.Name = "pnlYears";
             this.pnlYears.Size = new System.Drawing.Size(182, 730);
             this.pnlYears.TabIndex = 0;
+            // 
+            // treeYears
+            // 
+            this.treeYears.BorderSelectedNodeColor = System.Drawing.Color.SteelBlue;
+            this.treeYears.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
+            this.treeYears.FullRowSelect = true;
+            this.treeYears.ImageIndex = 0;
+            this.treeYears.Location = new System.Drawing.Point(1, 83);
+            this.treeYears.Name = "treeYears";
+            treeNode1.BackColor = System.Drawing.Color.AntiqueWhite;
+            treeNode1.ForeColor = System.Drawing.Color.SteelBlue;
+            treeNode1.Name = "ndAnni";
+            treeNode1.Text = "ANNI";
+            this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            this.treeYears.SelectedImageIndex = 0;
+            this.treeYears.ShowLines = false;
+            this.treeYears.Size = new System.Drawing.Size(177, 645);
+            this.treeYears.TabIndex = 39;
+            this.treeYears.DoubleClick += new System.EventHandler(this.treeYears_DoubleClick);
             // 
             // label15
             // 
@@ -1519,26 +1515,6 @@
             this.pnlGrid.Size = new System.Drawing.Size(994, 730);
             this.pnlGrid.TabIndex = 41;
             // 
-            // treeYears
-            // 
-            this.treeYears.BorderSelectedNodeColor = System.Drawing.Color.SteelBlue;
-            this.treeYears.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
-            this.treeYears.FullRowSelect = true;
-            this.treeYears.ImageIndex = 0;
-            this.treeYears.Location = new System.Drawing.Point(1, 83);
-            this.treeYears.Name = "treeYears";
-            treeNode1.BackColor = System.Drawing.Color.AntiqueWhite;
-            treeNode1.ForeColor = System.Drawing.Color.SteelBlue;
-            treeNode1.Name = "ndAnni";
-            treeNode1.Text = "ANNI";
-            this.treeYears.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.treeYears.SelectedImageIndex = 0;
-            this.treeYears.ShowLines = false;
-            this.treeYears.Size = new System.Drawing.Size(177, 645);
-            this.treeYears.TabIndex = 39;
-            this.treeYears.DoubleClick += new System.EventHandler(this.treeYears_DoubleClick);
-            // 
             // frmSpeseAnnuali
             // 
             this.AcceptButton = this.btnInsert;
@@ -1567,7 +1543,6 @@
             this.grpRoundAnni.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.grpSetting.ResumeLayout(false);
             this.pageInsert.ResumeLayout(false);
             this.roundedPanel2.ResumeLayout(false);
             this.roundedPanel2.PerformLayout();
@@ -1640,8 +1615,6 @@
         private System.Windows.Forms.TabPage pageModify;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.GroupBox grpSetting;
-        private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Panel pnlStatus;
         private System.Windows.Forms.Button btnSaveData;
         private System.Windows.Forms.TextBox textBox1;

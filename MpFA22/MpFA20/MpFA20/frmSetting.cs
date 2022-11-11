@@ -25,6 +25,7 @@ namespace MpFA20
         {
             InitializeComponent();
             isInRunning = false;
+            ModelDataSY.TestEnvironment = false;
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace MpFA20
 
         private void frmSetting_Load(object sender, EventArgs e)
         {
-            //rende invisibile la TextBox e il Button
+            //Rende invisibile la TextBox e il Button
             txtPathDump.Visible = false;
             btnChange.Visible = false;
             lblSetPath.Visible = false;
@@ -80,7 +81,7 @@ namespace MpFA20
         private void btnSetStart_Click(object sender, EventArgs e)
         {
             bool verify = false;
-            //istanzio la classe per il settaggio dei valori iniziali del DB
+            //Istanzia la classe per il settaggio dei valori iniziali del DB
             //necessario al fine di far tornare il conteggio allo start del DB
             //non deve più essere utilizzata successivamente
             if(MessageBox.Show("Attenzione deve essere stato generato il primo anno prima di continuare","Attenzione",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -93,10 +94,10 @@ namespace MpFA20
         }
 
 
-        //leggo il percorso salvato per effettuare il dump
+        //Legge il percorso salvato per effettuare il dump
         private void btnSetPathDump_Click(object sender, EventArgs e)
         {
-            //se visibile la textbox con il percorso di dump nascondi gli elementi per l'aggiornamento del percorso
+            //Se visibile la textbox con il percorso di dump nascondi gli elementi per l'aggiornamento del percorso
             if (txtPathDump.Visible == true)
             {
                 txtPathDump.Visible = false;
@@ -106,7 +107,7 @@ namespace MpFA20
             }
             try
             {
-                //leggo il percorso gerarchico del nodo che contiene il percorso
+                //Leggo il percorso gerarchico del nodo che contiene il percorso
                 XmlDocument xml = new XmlDocument();
                 xml.Load(pathXML);
                 XmlNodeList nodes = xml.SelectNodes("/path/setpath");
@@ -115,7 +116,7 @@ namespace MpFA20
                 btnChange.Visible = true;
                 lblSetPath.Visible = true;
                 txtPathDump.BorderColor = Color.DimGray;
-                //imposto il valore della casella di testo dal nodo xml
+                //Imposta il valore della casella di testo dal nodo xml
                 txtPathDump.Texts = nodes.Item(0).InnerText;
                 
             }
@@ -126,7 +127,7 @@ namespace MpFA20
             
         }
 
-        //cambio il percorso per effetture il dump
+        //Cambia il percorso per effetture il dump
         private void btnChange_Click(object sender, EventArgs e)
         {
             string nodespath = "/path/setpath";
