@@ -67,3 +67,5 @@ D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\DumpExec\bin\Debu
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\DumpExec\bin\Debug\Dumper\System.Memory.xml
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\DumpExec\bin\Debug\Dumper\System.Numerics.Vectors.xml
 D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\DumpExec\bin\Debug\Dumper\System.Runtime.CompilerServices.Unsafe.xml
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\DumpExec\bin\Debug\Dumper\GenericModelData.dll
+D:\Documenti\Programmi Visual Studio 2017\Linguaggio C#\MpFA22\DumpExec\bin\Debug\Dumper\GenericModelData.pdb
