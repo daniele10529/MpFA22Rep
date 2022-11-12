@@ -68,7 +68,7 @@ namespace MpFA20
             {
                 t.ForeColor = Color.FromArgb(6, 179, 29);
                 t.BorderColor = Color.FromArgb(133, 247, 190);
-                return "Contabilità ok";
+                return "Contabilità OK";
             }
             else
             {
@@ -77,9 +77,9 @@ namespace MpFA20
                 dif = conteggio - risparmiati;
                 if(!(dif.ToString().Length > 6))
                 {
-                    return "Contabilità ko..." + dif.ToString() + "€";
+                    return "Contabilità KO:  " + dif.ToString() + "€";
                 }
-                return "Contabilità ko..." + dif.ToString().Remove(6) + "€"; 
+                return "Contabilità KO  " + dif.ToString().Remove(6) + "€"; 
             }
         }
     }

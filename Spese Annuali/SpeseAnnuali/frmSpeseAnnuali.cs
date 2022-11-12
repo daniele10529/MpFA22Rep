@@ -935,7 +935,7 @@ namespace MpFA20
         private void txtCause_Enter(object sender, EventArgs e)
         {
             txtCause.BorderColor = Color.FromArgb(161, 223, 239);
-            txtCause.BackColor = Color.FromArgb(243, 221, 247);
+            txtCause.BackColor = Color.FromArgb(210, 228, 242);
         }
 
         private void txtCause_Leave(object sender, EventArgs e)
@@ -947,7 +947,7 @@ namespace MpFA20
         private void txtImport_Enter(object sender, EventArgs e)
         {
             txtImport.BorderColor = Color.FromArgb(161, 223, 239);
-            txtImport.BackColor = Color.FromArgb(243, 221, 247);
+            txtImport.BackColor = Color.FromArgb(210, 228, 242);
         }
 
         private void txtImport_Leave(object sender, EventArgs e)
@@ -958,7 +958,7 @@ namespace MpFA20
 
         private void txtPay_Enter(object sender, EventArgs e)
         {
-            txtPay.BackColor = Color.FromArgb(243, 221, 247);
+            txtPay.BackColor = Color.FromArgb(210, 228, 242);
         }
 
         private void txtPay_Leave(object sender, EventArgs e)
@@ -968,7 +968,7 @@ namespace MpFA20
 
         private void txtPlusEntry_Enter(object sender, EventArgs e)
         {
-            txtPlusEntry.BackColor = Color.FromArgb(243, 221, 247);
+            txtPlusEntry.BackColor = Color.FromArgb(210, 228, 242);
         }
 
         private void txtPlusEntry_Leave(object sender, EventArgs e)
@@ -978,7 +978,7 @@ namespace MpFA20
 
         private void txtMoney_Enter(object sender, EventArgs e)
         {
-            txtMoney.BackColor = Color.FromArgb(243, 221, 247);
+            txtMoney.BackColor = Color.FromArgb(210, 228, 242);
         }
 
         private void txtMoney_Leave(object sender, EventArgs e)
