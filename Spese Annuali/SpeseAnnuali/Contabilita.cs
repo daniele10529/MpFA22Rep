@@ -77,9 +77,9 @@ namespace MpFA20
                 dif = conteggio - risparmiati;
                 if(!(dif.ToString().Length > 6))
                 {
-                    return "Contabilità KO:  " + dif.ToString() + "€";
+                    return "Contabilità KO: " + dif.ToString() + "€";
                 }
-                return "Contabilità KO  " + dif.ToString().Remove(6) + "€"; 
+                return "Contabilità KO: " + dif.ToString().Remove(6) + "€"; 
             }
         }
     }
