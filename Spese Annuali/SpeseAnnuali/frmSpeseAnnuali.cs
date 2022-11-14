@@ -79,6 +79,7 @@ namespace MpFA20
             int i;
             double total = 0;
             DataRow row;
+            Checker check = new Checker();
 
             txtTotSpends.ResetText();
 
@@ -89,6 +90,8 @@ namespace MpFA20
                 total += Double.Parse(row[3].ToString());
             }
             txtTotSpends.Text = total.ToString();
+            //Arrotonda alla seconda cifra decimale
+            check.truncate(txtTotSpends, 2);
         }
 
         /// <summary>
@@ -99,6 +102,7 @@ namespace MpFA20
         {
             double pay = 0, payadd = 0, totalspend = 0;
             double moneyKeep = 0;
+            Checker check = new Checker();
 
             txtMoneyKeep.ResetText();
 
@@ -109,6 +113,8 @@ namespace MpFA20
             //Esegue il conteggio
             moneyKeep = (pay + payadd) - totalspend;
             txtMoneyKeep.Text = moneyKeep.ToString();
+            //Arrotonda alla seconda cifra decimale
+            check.truncate(txtMoneyKeep, 2);
             //Va in rosso se inferiore a 0
             if (moneyKeep > 0) txtMoneyKeep.ForeColor = Color.FromArgb(0, 128, 0);
             else txtMoneyKeep.ForeColor = Color.FromArgb(161, 31, 18);

@@ -201,11 +201,11 @@ namespace Checking
         }
 
         /// <summary>
-        /// Metodo per troncare i valori double a un certo numero di caratteri dopo la virgola
+        /// Metodo per troncare una stringa a un certo numero di caratteri dopo la virgola
         /// </summary>
         /// <param name="t">TextBox su cui troncare i caratteri</param>
         /// <param name="nChar">Numero di caratteri dopo la virgola</param>
-        public void truncate(TextBox t, int nChar = 0)
+        public void truncateString(TextBox t, int nChar = 0)
         {
             
             string text, newPart = "" , newVal;
@@ -239,5 +239,26 @@ namespace Checking
             t.Text = newVal;
 
         }
+
+        /// <summary>
+        /// Motodo per l'arrotondamento alla cifra decimale stabilita di un valore double
+        /// </summary>
+        /// <param name="t">TextBox con il valore da arrotondare</param>
+        /// <param name="nChar">Numero di decimali per l'arrotondamento</param>
+        public void truncate(TextBox t, int nChar = 0)
+        {
+            double showValue = 0, value = 0;
+            //Se non specificato un numero di decimali per l'arrotondamento
+            //viene settato alla seconda cifra decimale
+            if (nChar == 0) nChar = 2;
+            //Acquisisce il valore dalla TextBox
+            value = Double.Parse(t.Text);
+            //Arrotonda alla cifra decimale stabilita
+            showValue = Math.Round(value, nChar);
+            //Restituisce il valore arrotondato alla TextBox
+            t.Text = showValue.ToString();
+
+        }
+
     }
 }

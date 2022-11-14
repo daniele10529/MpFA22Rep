@@ -1025,7 +1025,7 @@
             this.txtContability.BorderFocusColor = System.Drawing.Color.LightSteelBlue;
             this.txtContability.BorderRadius = 10;
             this.txtContability.BorderSize = 1;
-            this.txtContability.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContability.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContability.Location = new System.Drawing.Point(8, 616);
             this.txtContability.Multiline = false;
             this.txtContability.Name = "txtContability";
