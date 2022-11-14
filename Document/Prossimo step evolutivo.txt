@@ -1,0 +1,6 @@
+Inserimento diretto nel DB moduli spese annuali, conto corrente, libretto:
+ - Revisione della libreria GeneralModelData.
+ - Eliminazione di utilizzo libreria ManageGrid e rimuovere utilizzo liste.
+
+Unificare form Modify per tutti i moduli, utilizzare un solo form che si adatti al chiamante.
+Rivedere i colori del form OftenCuases, allineare ai colori utilizzati su tutti i moduli.
