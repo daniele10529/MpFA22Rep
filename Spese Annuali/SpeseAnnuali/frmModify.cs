@@ -176,7 +176,7 @@ namespace MpFA20
         private void txtCause_Enter(object sender, EventArgs e)
         {
             txtCause.BorderColor = Color.FromArgb(161, 223, 239);
-            txtCause.BackColor = Color.FromArgb(243, 221, 247);
+            txtCause.BackColor = Color.FromArgb(210, 228, 242);
         }
 
         private void txtCause_Leave(object sender, EventArgs e)
@@ -188,7 +188,7 @@ namespace MpFA20
         private void txtNote_Enter(object sender, EventArgs e)
         {
             txtNote.BorderColor = Color.FromArgb(161, 223, 239);
-            txtNote.BackColor = Color.FromArgb(243, 221, 247);
+            txtNote.BackColor = Color.FromArgb(210, 228, 242);
         }
 
         private void txtNote_Leave(object sender, EventArgs e)
@@ -200,7 +200,7 @@ namespace MpFA20
         private void txtImport_Enter(object sender, EventArgs e)
         {
             txtImport.BorderColor = Color.FromArgb(161, 223, 239);
-            txtImport.BackColor = Color.FromArgb(243, 221, 247);
+            txtImport.BackColor = Color.FromArgb(210, 228, 242);
         }
 
         private void txtImport_Leave(object sender, EventArgs e)
