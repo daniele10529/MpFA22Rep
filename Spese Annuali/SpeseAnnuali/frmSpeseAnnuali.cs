@@ -836,8 +836,18 @@ namespace MpFA20
                 //Alla chiusura del form aggiorna il valore della cella note
                 frm.Deactivate += new EventHandler((obj, args) =>
                 {
-                    currentRow[2].Value = frm.LongDescription;
-                    longDescription = frm.LongDescription;
+                    if (frm.TextChanched)
+                    {
+                        //Acquisisce il valore della long description dal form e lo asseggna alla tabella
+                        currentRow[2].Value = frm.LongDescription;
+                        longDescription = frm.LongDescription;
+                        //Setta le variabili di ambiente
+                        isChanged = true;
+                        isSaved = false;
+                        //Aggiorna lo stato del pannello
+                        statusPanel();
+                    }
+                    
                 });
 
             }
