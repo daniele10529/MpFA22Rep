@@ -644,6 +644,42 @@ namespace Libretto
             creatMenu.showContextMenu(e);
         }
 
+        /// <summary>
+        /// Imposta il colore di sfondo della riga al passaggio del mouse
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void grdMonthVoices_MouseMove(object sender, MouseEventArgs e)
+        {
+            //Preleva la posizione del mouse e ne ricava l'indice della riga
+            int returnValue = grdMovLibVoices.HitTest(e.X, e.Y).RowIndex;
+            int colValue = grdMovLibVoices.HitTest(e.X, e.Y).ColumnIndex;
+            //Se il mouse è su una riga
+            if (returnValue >= 0)
+            {
+                foreach (DataGridViewCell cell in grdMovLibVoices.Rows[returnValue].Cells)
+                {
+                    cell.Style.BackColor = Color.FromArgb(173, 215, 222);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Ripristina il colore originale quando il mouse lascia la riga su cui è posizionato
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void grdMonthVoices_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                foreach (DataGridViewCell cell in grdMovLibVoices.Rows[e.RowIndex].Cells)
+                {
+                    cell.Style.BackColor = DefaultBackColor;
+                }
+            }
+        }
+
         #endregion
 
         #region Textbox

@@ -1194,8 +1194,10 @@
             this.grdMonthVoices.Size = new System.Drawing.Size(984, 720);
             this.grdMonthVoices.TabIndex = 21;
             this.grdMonthVoices.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdMonthVoices_CellEndEdit);
+            this.grdMonthVoices.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdMonthVoices_CellMouseLeave);
             this.grdMonthVoices.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdMonthVoices_CellValueChanged);
             this.grdMonthVoices.MouseClick += new System.Windows.Forms.MouseEventHandler(this.grdMonthVoices_MouseClick);
+            this.grdMonthVoices.MouseMove += new System.Windows.Forms.MouseEventHandler(this.grdMonthVoices_MouseMove);
             // 
             // frmContoCorrente
             // 

@@ -855,7 +855,7 @@ namespace MpFA20
         }
 
         /// <summary>
-        /// Imposta il colore di sfondo della cella long description al passaggio del mouse
+        /// Imposta il colore di sfondo della riga al passaggio del mouse
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -875,7 +875,7 @@ namespace MpFA20
         }
 
         /// <summary>
-        /// Ripristina il colore originale quando il mouse lascia la cella long description
+        /// Ripristina il colore originale quando il mouse lascia la riga su cui è posizionato
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
