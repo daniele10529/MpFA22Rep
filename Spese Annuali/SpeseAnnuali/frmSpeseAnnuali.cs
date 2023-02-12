@@ -865,10 +865,12 @@ namespace MpFA20
             int returnValue = grdMonthSpends.HitTest(e.X, e.Y).RowIndex;
             int colValue = grdMonthSpends.HitTest(e.X, e.Y).ColumnIndex;
             //Se il mouse è su una riga
-            if (returnValue >= 0 && colValue == 4)
+            if(returnValue >= 0)
             {
-                //Modifica il colore di sfondo
-                grdMonthSpends.Rows[returnValue].Cells[4].Style.BackColor = Color.FromArgb(173, 215, 222);
+                foreach(DataGridViewCell cell in grdMonthSpends.Rows[returnValue].Cells)
+                {
+                    cell.Style.BackColor = Color.FromArgb(173, 215, 222);
+                }
             }
         }
 
@@ -881,7 +883,10 @@ namespace MpFA20
         {
             if(e.RowIndex >= 0)
             {
-                grdMonthSpends.Rows[e.RowIndex].Cells[4].Style.BackColor = DefaultBackColor;
+                foreach (DataGridViewCell cell in grdMonthSpends.Rows[e.RowIndex].Cells)
+                {
+                    cell.Style.BackColor = DefaultBackColor;
+                }
             }
             
         }
